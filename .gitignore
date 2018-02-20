@@ -17,6 +17,9 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
+# production
+/build
+
 # nyc test coverage
 .nyc_output
 
@@ -28,9 +31,6 @@ bower_components
 
 # node-waf configuration
 .lock-wscript
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
 
 # Dependency directories
 node_modules/
@@ -64,4 +64,3 @@ typings/
 .env.test.local
 .env.production.local
 .idea
-
