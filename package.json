@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "license": "Apache",
+  "engines": {
+    "node": "^6.9.4"
   }
 }
