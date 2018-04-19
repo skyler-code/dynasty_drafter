@@ -40,6 +40,10 @@ export default function reduce(state = initialState, action = {}) {
 // selectors
 
 export function getPlayers(state) {
+  return state.draft.playerArray;
+}
+
+export function getPlayersMinimized(state) {
   return _.map( state.draft.playerArray, function( player ){
     return {
       PlayerID: player.PlayerID,
@@ -49,7 +53,6 @@ export function getPlayers(state) {
       Name: player.Name
     }
   } );
-  //return state.draft.playerArray;
 }
 
 export function getSelectedPlayer(state) {

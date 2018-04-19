@@ -104,7 +104,7 @@ renderLoading() {
 // which props do we want to inject, given the global store state?
 // always use selectors here and avoid accessing the state directly
 function mapStateToProps(state) {
-  const playersArray = draftSelectors.getPlayers(state);
+  const playersArray = draftSelectors.getPlayersMinimized(state);
   return {
     playersArray,
     selectedPlayerID: draftSelectors.getSelectedPlayerID(state),

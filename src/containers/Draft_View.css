@@ -1,38 +1,7 @@
 .DraftView {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.DraftView ul {
-  list-style: none;
-  padding-left: 0;
-  width: 640px;
-  margin: auto;
-  border: 1px solid #aaa;
-  max-height: calc(100vh - 110px);
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.DraftView li {
-  text-align: left;
-  border-bottom: 1px solid #aaa;
-  cursor: pointer;
-}
-
-.DraftView li > div {
-  padding-left: 20px;
-}
-
-.DraftView li h3 {
-  padding: 10px 0 0 0;
-  margin: 0;
-}
-
-.DraftView li p {
-  padding: 10px 0;
-  margin: 0;
+  height: 50%;
+  width: 50%;
 }
 
 .DraftPlayer {
