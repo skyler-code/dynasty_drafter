@@ -7,63 +7,96 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import './Draft_View.css';
+import 'react-table/react-table.css'
 import * as draftActions from '../store/draft/actions';
 import * as draftSelectors from '../store/draft/reducer';
-import ListView from '../components/ListView';
-import ListRow from '../components/ListRow';
+import ReactTable from 'react-table';
 
 class DraftView extends Component {
 
-  constructor(props) {
+constructor(props) {
     super(props);
     autoBind(this);
-  }
+}
 
-  componentDidMount() {
+componentDidMount() {
     this.props.dispatch(draftActions.fetchPlayers());
-  }
+}
 
-  render() {
-    if (!this.props.topicsByUrl) return this.renderLoading();
-    return (
-      <div className="DraftView">
-        <h3>Choose 3 topics of interest</h3>
-        <ListView
-          rowsIdArray={this.props.topicsUrlArray}
-          rowsById={this.props.topicsByUrl}
-          renderRow={this.renderRow} />
-        {!this.props.canFinalizeSelection ? false :
-          <button className="NextScreen" onClick={this.onNextScreenClick} />
+render() {
+    if (!this.props.playersArray) return this.renderLoading();
+
+    const columns = [
+        {
+            Header: "",
+            Cell: (row) => {
+                return <div><img height={65} src={row.original.PhotoUrl} alt={row.original.Name}/></div>
+            },
+            id: "image",
+            sortable: false,
+            minWidth: 25
+        },
+        {
+            Header: "Name",
+            accessor: "Name",
+            minWidth: 50
+        },
+        {
+            Header: "Team",
+            accessor: "Team",
+            minWidth: 25
+        },
+        {
+            Header: "Position",
+            accessor: "FantasyPosition",
+            minWidth: 25
         }
+    ];
+    return (
+        <div className="DraftView">
+              <ReactTable
+                data={this.props.playersArray}
+                columns={columns}
+                className="-striped -highlight"
+                getTrProps={(state, rowInfo, column) => {
+                rowInfo = rowInfo || {};
+                const selected = this.isSelected( ( rowInfo.original || {} ).PlayerID );
+                    return {
+                      style: {
+                        backgroundColor : selected ? '#c0f0ff' : null
+                      },
+                      onClick: (e) => {
+                        this.onRowClick(rowInfo.original.PlayerID);
+                      }
+                    }
+                } }
+              />
+            {!this.props.canFinalizeSelection ? false :
+                <div>
+                <button className="DraftPlayer" id="DraftPlayer" >Draft Player</button><br/>
+                <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} >Clear Selection</button>
+                </div>
+            }
       </div>
     );
-  }
+}
 
-  renderLoading() {
+renderLoading() {
     return (
-      <p>Loading...</p>
+        <p>Loading....</p>
     );
+}
+
+  onRowClick(playerID) {
+    this.props.dispatch(draftActions.selectPlayer(playerID));
   }
 
-  renderRow(topicUrl, topic) {
-    const selected = this.props.selectedTopicsByUrl[topicUrl];
-    return (
-      <ListRow
-        rowId={topicUrl}
-        onClick={this.onRowClick}
-        selected={selected}>
-        <h3>{topic.title}</h3>
-        <p>{topic.description}</p>
-      </ListRow>
-    )
+  onDeselectClick() {
+    this.props.dispatch(draftActions.clearPlayerSelection());
   }
 
-  onRowClick(topicUrl) {
-    this.props.dispatch(draftActions.selectTopic(topicUrl));
-  }
-
-  onNextScreenClick() {
-    this.props.dispatch(draftActions.finalizeTopicSelection());
+  isSelected( playerID ) {
+    return this.props.selectedPlayerID === playerID ;
   }
 
 }
@@ -71,11 +104,10 @@ class DraftView extends Component {
 // which props do we want to inject, given the global store state?
 // always use selectors here and avoid accessing the state directly
 function mapStateToProps(state) {
-  const [topicsByUrl, topicsUrlArray] = draftSelectors.getTopics(state);
+  const playersArray = draftSelectors.getPlayers(state);
   return {
-    topicsByUrl,
-    topicsUrlArray,
-    selectedTopicsByUrl: draftSelectors.getSelectedTopicsByUrl(state),
+    playersArray,
+    selectedPlayerID: draftSelectors.getSelectedPlayerID(state),
     canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
   };
 }

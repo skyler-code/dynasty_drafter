@@ -9,10 +9,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*{!this.props.isSelectionFinalized ?
-          <TopicsScreen /> :
-          <PostsScreen />
-        }*/}
         <DraftView />
       </div>
     );

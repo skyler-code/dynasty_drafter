@@ -9,8 +9,8 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 
 const initialState = Immutable({
-  players: undefined,
-  selectedTopicUrls: [],
+  playerArray: undefined,
+  selectedPlayer: undefined,
   selectionFinalized: false
 });
 
@@ -18,15 +18,19 @@ export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
     case types.PLAYERS_FETCHED:
       return state.merge({
-        players: action.topicsByUrl
+        playerArray: action.playerArray
       });
-    case types.TOPICS_SELECTED:
+    case types.PLAYER_SELECTED:
       return state.merge({
-        selectedTopicUrls: action.selectedTopicUrls
+        selectedPlayer: action.selectedPlayer
       });
-    case types.TOPIC_SELECTION_FINALIZED:
+    case types.PLAYER_SELECTION_MADE:
       return state.merge({
         selectionFinalized: true
+      });
+    case types.CLEAR_PLAYER_SELECTION:
+      return state.merge({
+        selectedPlayer: undefined
       });
     default:
       return state;
@@ -35,24 +39,31 @@ export default function reduce(state = initialState, action = {}) {
 
 // selectors
 
-export function getTopics(state) {
-  const topicsByUrl = state.draft.topicsByUrl;
-  const topicsUrlArray = _.keys(topicsByUrl);
-  return [topicsByUrl, topicsUrlArray];
+export function getPlayers(state) {
+  return _.map( state.draft.playerArray, function( player ){
+    return {
+      PlayerID: player.PlayerID,
+      Team: player.Team,
+      FantasyPosition: player.FantasyPosition,
+      PhotoUrl: player.PhotoUrl,
+      Name: player.Name
+    }
+  } );
+  //return state.draft.playerArray;
 }
 
-export function getSelectedTopicUrls(state) {
-  return state.topics.selectedTopicUrls;
+export function getSelectedPlayer(state) {
+  return state.draft.selectedPlayer;
 }
 
-export function getSelectedTopicsByUrl(state) {
-  return null; //_.mapValues(_.keyBy(state.topics.selectedTopicUrls), (topicUrl) => state.topics.topicsByUrl[topicUrl]);
+export function getSelectedPlayerID(state) {
+  return ( state.draft.selectedPlayer || {} ).PlayerID;
 }
 
 export function isTopicSelectionValid(state) {
-  return false;//state.topics.selectedTopicUrls.length === 3;
+  return !!state.draft.selectedPlayer;
 }
 
 export function isTopicSelectionFinalized(state) {
-  return state.topics.selectionFinalized;
+  return state.draft.selectionFinalized;
 }

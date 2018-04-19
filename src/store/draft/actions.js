@@ -8,36 +8,31 @@
 import _ from 'lodash';
 import * as types from './actionTypes';
 import fantasyPlayerService from '../../services/fantasy_data';
-import * as topicsSelectors from './reducer';
+import * as playerSelectors from './reducer';
 
 export function fetchPlayers() {
   return async(dispatch, getState) => {
     try {
       const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-      const activePlayerArray = _.filter(playerArray, function( player ){ return player.Active });
-      console.log(activePlayerArray)
-      dispatch({ type: types.PLAYERS_FETCHED, playerArray });
+      dispatch({ type: types.PLAYERS_FETCHED, playerArray: playerArray });
     } catch (error) {
       console.error(error);
     }
   };
 }
 
-export function selectTopic(topicUrl) {
+export function selectPlayer(playerID) {
   return (dispatch, getState) => {
-    const selectedTopics = topicsSelectors.getSelectedTopicUrls(getState());
-    let newSelectedTopics;
-    if (_.indexOf(selectedTopics, topicUrl) !== -1) {
-      newSelectedTopics = _.without(selectedTopics, topicUrl);
-    } else {
-      newSelectedTopics = selectedTopics.length < 3 ?
-        selectedTopics.concat(topicUrl) :
-        selectedTopics.slice(1).concat(topicUrl);
-    }
-    dispatch({ type: types.TOPICS_SELECTED, selectedTopicUrls: newSelectedTopics  });
+    const players = playerSelectors.getPlayers(getState());
+    let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
+    dispatch({ type: types.PLAYER_SELECTED, selectedPlayer: newSelectedPlayer  });
   };
 }
 
 export function finalizeTopicSelection() {
-  return({ type: types.TOPIC_SELECTION_FINALIZED });
+  return( { type: types.PLAYER_SELECTION_MADE } );
+}
+
+export function clearPlayerSelection() {
+  return({ type: types.CLEAR_PLAYER_SELECTION } );
 }
