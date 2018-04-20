@@ -12,7 +12,8 @@
         overflow-y: auto;
 }
 .rt-tr-group {
-        min-height:25px
+        min-height:25px;
+        max-height:100px;
 }
 .rt-thead {
         flex: 0 0 auto;
@@ -33,7 +34,6 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  /*position: fixed;*/
   width: 160px;
   height: 40px;
   border: 0;
@@ -60,12 +60,6 @@
   background-image: linear-gradient(to bottom, #D3D3D3, #A9A9A9);
   text-decoration: none;
 }
-
-/*
-#DraftPlayer {
-  top: 50%;
-  right: calc((100vw - 50%)/2 - 10px);
-}*/
 
 #DeselectPlayer {
   width: 200px;

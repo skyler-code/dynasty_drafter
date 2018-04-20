@@ -6,6 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
+import matchSorter from 'match-sorter'
 import _ from 'lodash';
 import '../containers/Draft_View.css'
 import 'react-table/react-table.css'
@@ -57,8 +58,12 @@ export default class PlayerPicker extends Component {
         },
         {
             Header: "Name",
-            accessor: "Name",
-            minWidth: 50
+            minWidth: 50,
+            filterable: true,
+            id: "Name",
+            accessor: p => p.Name,
+            filterMethod: (filter, rows) => matchSorter(rows, filter.value, { keys: ["Name"] }),
+            filterAll: true
         },
         {
             Header: "Team",
@@ -72,7 +77,25 @@ export default class PlayerPicker extends Component {
                     return -1;
                 }
                 return a > b ? 1 : -1;
-              }
+              },
+            filterable: true,
+            filterMethod: (filter, row) => {
+                if (filter.value === "all") {
+                  return true;
+                }
+                const selectedTeam = _.find(constants.NFL_TEAMS, (team) => team === filter.value );
+                if(selectedTeam)
+                    return row[filter.id] === selectedTeam;
+              },
+            Filter: ({ filter, onChange }) =>
+                <select
+                  onChange={event => onChange(event.target.value)}
+                  style={{ width: "100%" }}
+                  value={filter ? filter.value : "all"}
+                >
+                <option key="all" value="all">Show All</option>
+                { this.generateTeamFilter() }
+                </select>
         },
         {
             Header: "Position",
@@ -104,6 +127,7 @@ export default class PlayerPicker extends Component {
                 data={this.props.playersArray}
                 defaultFilterMethod={(filter, row) => String(row[filter.id]) === filter.value}
                 columns={columns}
+                minRows={0}
                 className="-striped -highlight"
                 defaultSorted={ [ { id: "adp", desc: false } ] }
                 getTrProps={(state, rowInfo, column) => {
@@ -147,6 +171,10 @@ export default class PlayerPicker extends Component {
 
   generatePositionFilter() {
     return constants.PLAYER_POSITIONS.map( ( position ) => <option key={position} value={position}>{position}</option> )
+  }
+
+  generateTeamFilter() {
+    return constants.NFL_TEAMS.map( ( team ) => <option key={team} value={team}>{team}</option> )
   }
 
 }
