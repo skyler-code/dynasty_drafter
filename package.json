@@ -2,11 +2,13 @@
   "name": "dynasty_drafter",
   "version": "0.1.0",
   "private": true,
+  "homepage": " https://skylerh15.github.io/dynasty_drafter",
   "devDependencies": {
     "react-scripts": "1.1.4"
   },
   "dependencies": {
     "dotenv": "^5.0.1",
+    "gh-pages": "^1.1.0",
     "lodash": "^4.17.5",
     "match-sorter": "^2.2.1",
     "moment": "^2.22.1",
@@ -20,9 +22,11 @@
     "seamless-immutable": "^7.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
