@@ -1,0 +1,127 @@
+// components are "dumb" react components that are not aware of redux
+// they receive data from their parents through regular react props
+// they are allowed to have local component state and view logic
+// use them to avoid having view logic & local component state in "smart" components
+
+import React, { Component } from 'react';
+import autoBind from 'react-autobind';
+import ReactTable from 'react-table';
+import '../containers/Draft_View.css'
+import 'react-table/react-table.css'
+
+export default class PlayerPicker extends Component {
+
+  constructor(props) {
+    super(props);
+    autoBind(this);
+  }
+
+  render() {
+    const columns = [
+        {
+            Header: "#",
+            Cell: (row) => {
+                return <div>{row.viewIndex + 1}</div>
+            },
+            id: "viewIndex",
+            sortable: false,
+            minWidth: 10,
+            resizable: false
+        },
+        {
+            Header: "",
+            Cell: (row) => {
+                return <div><img height={65} src={row.original.PhotoUrl} alt={row.original.Name}/></div>
+            },
+            id: "image",
+            sortable: false,
+            minWidth: 15,
+            resizable: false
+        },
+        {
+            Header: "ADP",
+            id:"adp",
+            accessor: "AverageDraftPosition",
+            minWidth: 20,
+            sortMethod: (a, b) => {
+                if(!a && b){
+                    return 1;
+                }
+                if(a && !b){
+                    return -1;
+                }
+                return a > b ? 1 : -1;
+              }
+        },
+        {
+            Header: "Name",
+            accessor: "Name",
+            minWidth: 50
+        },
+        {
+            Header: "Team",
+            accessor: "Team",
+            minWidth: 25,
+            sortMethod: (a, b) => {
+                if(!a && b){
+                    return 1;
+                }
+                if(a && !b){
+                    return -1;
+                }
+                return a > b ? 1 : -1;
+              }
+        },
+        {
+            Header: "Position",
+            accessor: "FantasyPosition",
+            minWidth: 25
+        }
+    ];
+    return (
+        <div className="DraftView">
+              <ReactTable
+                data={this.props.playersArray}
+                columns={columns}
+                className="-striped -highlight"
+                defaultSorted={ [ { id: "adp", desc: false } ] }
+                getTrProps={(state, rowInfo, column) => {
+                rowInfo = rowInfo || {};
+                const selected = this.isSelected( ( rowInfo.original || {} ).PlayerID );
+                    return {
+                      style: {
+                        backgroundColor : selected ? '#c0f0ff' : null
+                      },
+                      onClick: (e) => {
+                        this.onRowClick(rowInfo.original.PlayerID);
+                      }
+                    }
+                } }
+              />
+            <div>
+            <button className="DraftPlayer" id="DraftPlayer" disabled={!this.props.canFinalizeSelection} >Draft Player</button>
+            <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} disabled={!this.props.canFinalizeSelection} >Clear Selection</button>
+            </div>
+
+      </div>
+    );
+  }
+
+
+  onRowClick(playerID) {
+    if (typeof this.props.onClick === 'function') {
+      this.props.onClick(playerID);
+    }
+  }
+
+  onDeselectClick() {
+    if (typeof this.props.onDeselectClick === 'function') {
+      this.props.onDeselectClick();
+    }
+  }
+
+  isSelected( playerID ) {
+    return this.props.selectedPlayerID === playerID ;
+  }
+
+}
