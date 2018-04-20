@@ -50,7 +50,8 @@ export function getPlayersMinimized(state) {
       Team: player.Team,
       FantasyPosition: player.FantasyPosition,
       PhotoUrl: player.PhotoUrl,
-      Name: player.Name
+      Name: player.Name,
+      AverageDraftPosition: player.AverageDraftPosition
     }
   } );
 }

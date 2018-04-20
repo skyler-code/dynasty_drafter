@@ -28,13 +28,38 @@ render() {
 
     const columns = [
         {
+            Header: "#",
+            Cell: (row) => {
+                return <div>{row.viewIndex + 1}</div>
+            },
+            id: "viewIndex",
+            sortable: false,
+            minWidth: 10,
+            resizable: false
+        },
+        {
             Header: "",
             Cell: (row) => {
                 return <div><img height={65} src={row.original.PhotoUrl} alt={row.original.Name}/></div>
             },
             id: "image",
             sortable: false,
-            minWidth: 25
+            minWidth: 15,
+            resizable: false
+        },
+        {
+            Header: "ADP",
+            accessor: "AverageDraftPosition",
+            minWidth: 20,
+            sortMethod: (a, b) => {
+                if(!a && b){
+                    return 1;
+                }
+                if(a && !b){
+                    return -1;
+                }
+                return a > b ? 1 : -1;
+              }
         },
         {
             Header: "Name",
@@ -44,7 +69,16 @@ render() {
         {
             Header: "Team",
             accessor: "Team",
-            minWidth: 25
+            minWidth: 25,
+            sortMethod: (a, b) => {
+                if(!a && b){
+                    return 1;
+                }
+                if(a && !b){
+                    return -1;
+                }
+                return a > b ? 1 : -1;
+              }
         },
         {
             Header: "Position",
@@ -71,12 +105,11 @@ render() {
                     }
                 } }
               />
-            {!this.props.canFinalizeSelection ? false :
-                <div>
-                <button className="DraftPlayer" id="DraftPlayer" >Draft Player</button><br/>
-                <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} >Clear Selection</button>
-                </div>
-            }
+            <div>
+            <button className="DraftPlayer" id="DraftPlayer" disabled={!this.props.canFinalizeSelection} >Draft Player</button>
+            <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} disabled={!this.props.canFinalizeSelection} >Clear Selection</button>
+            </div>
+
       </div>
     );
 }
@@ -97,6 +130,10 @@ renderLoading() {
 
   isSelected( playerID ) {
     return this.props.selectedPlayerID === playerID ;
+  }
+
+  playerArrayLength(){
+    return this.props.playersArray.length;
   }
 
 }

@@ -1,7 +1,21 @@
 .DraftView {
   padding: 20px;
-  height: 50%;
-  width: 50%;
+  width: 45%;
+  min-width: 700px;
+}
+
+.rt-tbody {
+        height:500px;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+        position: relative; /* need this to position inner content */
+        overflow-y: auto;
+}
+.rt-tr-group {
+        min-height:25px
+}
+.rt-thead {
+        flex: 0 0 auto;
 }
 
 .DraftPlayer {
@@ -19,7 +33,7 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  position: fixed;
+  /*position: fixed;*/
   width: 160px;
   height: 40px;
   border: 0;
@@ -37,13 +51,22 @@
   text-decoration: none;
 }
 
-#DraftPlayer {
-  top: 50%;
-  right: calc((100vw - 640px)/2 - 170px);
+.DraftPlayer:disabled {
+  background: #D3D3D3;
+  background-image: -webkit-linear-gradient(top, #D3D3D3, #A9A9A9);
+  background-image: -moz-linear-gradient(top, #D3D3D3, #A9A9A9);
+  background-image: -ms-linear-gradient(top, #D3D3D3, #A9A9A9);
+  background-image: -o-linear-gradient(top, #D3D3D3, #A9A9A9);
+  background-image: linear-gradient(to bottom, #D3D3D3, #A9A9A9);
+  text-decoration: none;
 }
 
+/*
+#DraftPlayer {
+  top: 50%;
+  right: calc((100vw - 50%)/2 - 10px);
+}*/
+
 #DeselectPlayer {
-  top: 55%;
-  right: calc((100vw - 640px)/2 - 170px);
-  height: 60px;
+  width: 200px;
 }

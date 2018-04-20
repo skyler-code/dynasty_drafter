@@ -8,6 +8,7 @@ import playerData from '../data/player_data';
 
 
 const FANTASY_DATA_ENDPOINT = 'https://api.fantasydata.net/v3/nfl/stats/JSON';
+const playerPositions = ["qb", "rb", "wr", "te", "d/st", "k"];
 class FantasyPlayerService {
   async getFantasyPlayerData() {
     let returnData = playerData.players;
@@ -25,7 +26,7 @@ class FantasyPlayerService {
         }
         returnData = await response.json();
     }
-    returnData = _.take(returnData, 20);
+    returnData = _.filter(returnData, function( plr ){ return playerPositions.indexOf(plr.FantasyPosition.toLowerCase()) !== -1 } );
     return returnData;
   }
 
