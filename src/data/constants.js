@@ -1,0 +1,1 @@
+export const PLAYER_POSITIONS = ["QB", "RB", "WR", "TE", "D/ST", "K"];

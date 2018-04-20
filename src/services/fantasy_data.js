@@ -5,10 +5,10 @@
 import _ from 'lodash';
 import moment from 'moment';
 import playerData from '../data/player_data';
+import * as constants from '../data/constants'
 
 
 const FANTASY_DATA_ENDPOINT = 'https://api.fantasydata.net/v3/nfl/stats/JSON';
-const playerPositions = ["qb", "rb", "wr", "te", "d/st", "k"];
 class FantasyPlayerService {
   async getFantasyPlayerData() {
     let returnData = playerData.players;
@@ -26,7 +26,7 @@ class FantasyPlayerService {
         }
         returnData = await response.json();
     }
-    returnData = _.filter(returnData, function( plr ){ return playerPositions.indexOf(plr.FantasyPosition.toLowerCase()) !== -1 } );
+    returnData = _.filter(returnData, function( plr ){ return constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1 } );
     return returnData;
   }
 

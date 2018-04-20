@@ -6,8 +6,10 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
+import _ from 'lodash';
 import '../containers/Draft_View.css'
 import 'react-table/react-table.css'
+import * as constants from '../data/constants'
 
 export default class PlayerPicker extends Component {
 
@@ -75,13 +77,32 @@ export default class PlayerPicker extends Component {
         {
             Header: "Position",
             accessor: "FantasyPosition",
-            minWidth: 25
+            minWidth: 25,
+            filterable: true,
+            filterMethod: (filter, row) => {
+                if (filter.value === "all") {
+                  return true;
+                }
+                const selectedPosition = _.find(constants.PLAYER_POSITIONS, (position) => position === filter.value );
+                if(selectedPosition)
+                    return row[filter.id] === selectedPosition;
+              },
+            Filter: ({ filter, onChange }) =>
+                <select
+                  onChange={event => onChange(event.target.value)}
+                  style={{ width: "100%" }}
+                  value={filter ? filter.value : "all"}
+                >
+                <option key="all" value="all">Show All</option>
+                { this.generatePositionFilter() }
+                </select>
         }
     ];
     return (
         <div className="DraftView">
               <ReactTable
                 data={this.props.playersArray}
+                defaultFilterMethod={(filter, row) => String(row[filter.id]) === filter.value}
                 columns={columns}
                 className="-striped -highlight"
                 defaultSorted={ [ { id: "adp", desc: false } ] }
@@ -122,6 +143,10 @@ export default class PlayerPicker extends Component {
 
   isSelected( playerID ) {
     return this.props.selectedPlayerID === playerID ;
+  }
+
+  generatePositionFilter() {
+    return constants.PLAYER_POSITIONS.map( ( position ) => <option key={position} value={position}>{position}</option> )
   }
 
 }
