@@ -125,7 +125,7 @@ export default class PlayerPicker extends Component {
         <div className="DraftView">
               <ReactTable
                 data={this.props.playersArray}
-                defaultFilterMethod={(filter, row) => String(row[filter.id]) === filter.value}
+                noDataText="No players found."
                 columns={columns}
                 minRows={0}
                 className="-striped -highlight"
