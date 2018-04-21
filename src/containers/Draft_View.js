@@ -25,7 +25,7 @@ render() {
     if (!this.props.playersArray) return this.renderLoading();
     return (<PlayerPicker
             playersArray={this.props.playersArray}
-            selectedPlayerID={this.props.selectedPlayerID}
+            selectedPlayer={this.props.selectedPlayer}
             onClick={this.onRowClick}
             onDeselectClick={this.onDeselectClick}
             canFinalizeSelection={this.props.canFinalizeSelection}/>);
@@ -48,10 +48,10 @@ renderLoading() {
 }
 
 function mapStateToProps(state) {
-  const playersArray = draftSelectors.getPlayersMinimized(state);
+  const playersArray = draftSelectors.getPlayersForView(state);
   return {
     playersArray,
-    selectedPlayerID: draftSelectors.getSelectedPlayerID(state),
+    selectedPlayer: draftSelectors.getSelectedPlayer(state),
     canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
   };
 }

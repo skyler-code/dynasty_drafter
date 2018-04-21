@@ -13,23 +13,41 @@ class FantasyPlayerService {
   async getFantasyPlayerData() {
     let returnData = playerData.players;
     const playerDataCreationDate = moment( playerData.savedOn );
-    if ( playerDataCreationDate.diff(moment(), "days") >= 5 ){
+    if ( playerDataCreationDate.diff(moment(), "days") >= 99999 ){
         const url = `${FANTASY_DATA_ENDPOINT}/Players`;
         const response = await fetch(url, {
           method: 'GET',
           headers: {
             "Ocp-Apim-Subscription-Key": process.env.REACT_APP_FANTASY_DATA_KEY
           }
-            } );
+        } );
         if (!response.ok) {
           throw new Error(`FantasyPlayerService getFantasyPlayerData failed, HTTP status ${response.status}`);
         }
         returnData = await response.json();
     }
-    returnData = _.filter(returnData, function( plr ){ return constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1 } );
-    return returnData;
+    returnData = _.filter(returnData, function( plr ){ return ( constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1
+                                                                && plr.Active
+                                                                && plr.Team ) } );
+    return _.map( returnData, stripPlayerObject );
   }
+}
 
+function stripPlayerObject( plr ){
+    return {
+        PlayerID: plr.PlayerID,
+        Team: plr.Team,
+        Number: plr.Number,
+        FirstName: plr.FirstName,
+        LastName: plr.LastName,
+        Name: plr.Name,
+        Position: plr.Position,
+        Status: plr.Status,
+        FantasyPosition: plr.FantasyPosition,
+        PhotoUrl: plr.PhotoUrl,
+        AverageDraftPosition: plr.AverageDraftPosition,
+        Age: plr.Age
+    }
 }
 
 export default new FantasyPlayerService();

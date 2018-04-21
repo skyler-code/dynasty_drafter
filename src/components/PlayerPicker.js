@@ -132,7 +132,7 @@ export default class PlayerPicker extends Component {
                 defaultSorted={ [ { id: "adp", desc: false } ] }
                 getTrProps={(state, rowInfo, column) => {
                 rowInfo = rowInfo || {};
-                const selected = this.isSelected( ( rowInfo.original || {} ).PlayerID );
+                const selected = this.isSelected( rowInfo.original );
                     return {
                       style: {
                         backgroundColor : selected ? '#c0f0ff' : null
@@ -165,8 +165,8 @@ export default class PlayerPicker extends Component {
     }
   }
 
-  isSelected( playerID ) {
-    return this.props.selectedPlayerID === playerID ;
+  isSelected( player ) {
+    return ( this.props.selectedPlayer || {} ).PlayerID === player.PlayerID ;
   }
 
   generatePositionFilter() {
