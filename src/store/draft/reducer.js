@@ -3,17 +3,19 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 
 const initialState = Immutable({
-  playerArray: undefined,
+  leagueArray: undefined,
+  availablePlayers: undefined,
   selectedPlayer: undefined,
-  selectionFinalized: false
+  selectionFinalized: false,
+  currentPick: 1,
+  options: {
+    draftOrder: undefined,
+    secondsPerPick: 90
+  }
 });
 
 export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
-    case types.PLAYERS_FETCHED:
-      return state.merge({
-        playerArray: action.playerArray
-      });
     case types.PLAYER_SELECTED:
       return state.merge({
         selectedPlayer: action.selectedPlayer
@@ -35,10 +37,6 @@ export default function reduce(state = initialState, action = {}) {
 
 export function getPlayers(state) {
   return state.draft.playerArray;
-}
-
-export function getPlayersForView(state) {
-  return _.clone( state.draft.playerArray );
 }
 
 export function getSelectedPlayer(state) {

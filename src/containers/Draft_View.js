@@ -4,11 +4,11 @@
 // avoid having view logic & local component state in them, use "dumb" components instead
 
 import React, { Component } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import * as draftActions from '../store/draft/actions';
 import * as draftSelectors from '../store/draft/reducer';
+import * as importSelectors from '../store/leagueImport/reducer';
 import 'react-tabs/style/react-tabs.css';
 import PlayerPicker from "../components/PlayerPicker";
 
@@ -20,31 +20,17 @@ constructor(props) {
 }
 
 componentDidMount() {
-    this.props.dispatch(draftActions.fetchPlayers());
 }
 
 render() {
-    if (!this.props.playersArray) return this.renderLoading();
     return (
-
-
-<Tabs defaultIndex={0} onSelect={index => console.log(index)}>
-  <TabList>
-    <Tab>Setup</Tab>
-    <Tab>Draft</Tab>
-    <Tab>Results</Tab>
-  </TabList>
-  <TabPanel><PlayerPicker
-            playersArray={this.props.playersArray}
-            selectedPlayer={this.props.selectedPlayer}
-            onClick={this.onRowClick}
-            onDeselectClick={this.onDeselectClick}
-            canFinalizeSelection={this.props.canFinalizeSelection}/></TabPanel>
-  <TabPanel></TabPanel>
-  <TabPanel></TabPanel>
-</Tabs>
-
-            );
+        <PlayerPicker
+                playersArray={this.props.playersArray}
+                selectedPlayer={this.props.selectedPlayer}
+                onClick={this.onRowClick}
+                onDeselectClick={this.onDeselectClick}
+                canFinalizeSelection={this.props.canFinalizeSelection}/>
+    );
 }
 
 renderLoading() {
@@ -64,7 +50,7 @@ renderLoading() {
 }
 
 function mapStateToProps(state) {
-  const playersArray = draftSelectors.getPlayersForView(state);
+  const playersArray = importSelectors.getPlayersForView(state);
   return {
     playersArray,
     selectedPlayer: draftSelectors.getSelectedPlayer(state),

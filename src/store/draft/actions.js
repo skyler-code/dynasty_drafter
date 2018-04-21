@@ -7,25 +7,21 @@
 
 import _ from 'lodash';
 import * as types from './actionTypes';
-import fantasyPlayerService from '../../services/fantasy_data';
 import * as playerSelectors from './reducer';
-
-export function fetchPlayers() {
-  return async(dispatch, getState) => {
-    try {
-      const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-      dispatch({ type: types.PLAYERS_FETCHED, playerArray: playerArray });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-}
+import * as importSelectors from '../leagueImport/reducer';
 
 export function selectPlayer(playerID) {
   return (dispatch, getState) => {
-    const players = playerSelectors.getPlayers(getState());
+    const players = importSelectors.getPlayers(getState());
     let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
     dispatch({ type: types.PLAYER_SELECTED, selectedPlayer: newSelectedPlayer  });
+  };
+}
+export function pickPlayer(playerID) {
+  return (dispatch, getState) => {
+    const players = importSelectors.getPlayers(getState());
+    let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
+    dispatch({ type: types.PLAYER_SELECTION_MADE, selectedPlayer: newSelectedPlayer  });
   };
 }
 
