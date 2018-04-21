@@ -5,11 +5,12 @@
 import _ from 'lodash';
 import moment from 'moment';
 import playerData from '../data/player_data';
+import teamData from '../data/team_data'
 import * as constants from '../data/constants'
 
 
 const FANTASY_DATA_ENDPOINT = 'https://api.fantasydata.net/v3/nfl/stats/JSON';
-class FantasyPlayerService {
+class FantasyDataService {
   async getFantasyPlayerData() {
     let returnData = playerData.players;
     const playerDataCreationDate = moment( playerData.savedOn );
@@ -29,7 +30,8 @@ class FantasyPlayerService {
     returnData = _.filter(returnData, function( plr ){ return ( constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1
                                                                 && plr.Active
                                                                 && plr.Team ) } );
-    return _.map( returnData, stripPlayerObject );
+    returnData = _.map( returnData, stripPlayerObject ).concat( getDefenseData() );
+    return returnData;
   }
 }
 
@@ -50,4 +52,11 @@ function stripPlayerObject( plr ){
     }
 }
 
-export default new FantasyPlayerService();
+function getDefenseData(){
+    return _.each(teamData, function( team ){
+        team.PlayerID = team.Name;
+        team.FantasyPosition = "D/ST";
+    } );
+}
+
+export default new FantasyDataService();

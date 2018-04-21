@@ -8,7 +8,7 @@ import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
 import matchSorter from 'match-sorter'
 import _ from 'lodash';
-import '../containers/Draft_View.css'
+import '../css/PlayerPicker.css'
 import 'react-table/react-table.css'
 import * as constants from '../data/constants'
 
@@ -28,24 +28,22 @@ export default class PlayerPicker extends Component {
             },
             id: "viewIndex",
             sortable: false,
-            minWidth: 10,
-            resizable: false
+            minWidth: 10
         },
         {
             Header: "",
             Cell: (row) => {
-                return <div><img height={65} src={row.original.PhotoUrl} alt={row.original.Name}/></div>
+                return <div><img id="PlayerImage" src={row.original.PhotoUrl} alt={row.original.Name}/></div>
             },
             id: "image",
             sortable: false,
-            minWidth: 15,
-            resizable: false
+            minWidth: 15
         },
         {
             Header: "ADP",
             id:"adp",
             accessor: "AverageDraftPosition",
-            minWidth: 20,
+            minWidth: 15,
             sortMethod: (a, b) => {
                 if(!a && b){
                     return 1;
@@ -61,8 +59,8 @@ export default class PlayerPicker extends Component {
             minWidth: 50,
             filterable: true,
             id: "Name",
-            accessor: p => p.Name,
-            filterMethod: (filter, rows) => matchSorter(rows, filter.value, { keys: ["Name"] }),
+            accessor: "Name",
+            filterMethod: (filter, rows) => matchSorter( rows, filter.value, { keys: ["Name"] } ),
             filterAll: true
         },
         {
@@ -94,7 +92,7 @@ export default class PlayerPicker extends Component {
                   value={filter ? filter.value : "all"}
                 >
                 <option key="all" value="all">Show All</option>
-                { this.generateTeamFilter() }
+                { this.generateFilter( constants.NFL_TEAMS ) }
                 </select>
         },
         {
@@ -117,7 +115,7 @@ export default class PlayerPicker extends Component {
                   value={filter ? filter.value : "all"}
                 >
                 <option key="all" value="all">Show All</option>
-                { this.generatePositionFilter() }
+                { this.generateFilter( constants.PLAYER_POSITIONS ) }
                 </select>
         }
     ];
@@ -128,6 +126,7 @@ export default class PlayerPicker extends Component {
                 noDataText="No players found."
                 columns={columns}
                 minRows={0}
+                resizable={false}
                 className="-striped -highlight"
                 defaultSorted={ [ { id: "adp", desc: false } ] }
                 getTrProps={(state, rowInfo, column) => {
@@ -169,12 +168,8 @@ export default class PlayerPicker extends Component {
     return ( this.props.selectedPlayer || {} ).PlayerID === player.PlayerID ;
   }
 
-  generatePositionFilter() {
-    return constants.PLAYER_POSITIONS.map( ( position ) => <option key={position} value={position}>{position}</option> )
-  }
-
-  generateTeamFilter() {
-    return constants.NFL_TEAMS.map( ( team ) => <option key={team} value={team}>{team}</option> )
+  generateFilter( data ) {
+    return ( data || [] ).map( ( x ) => <option key={x} value={x}>{x}</option> )
   }
 
 }

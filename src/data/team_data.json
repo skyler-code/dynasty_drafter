@@ -1,0 +1,162 @@
+[
+	{
+		"Team": "ARI",
+		"Name": "Arizona Cardinals D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg"
+	},
+	{
+		"Team": "ATL",
+		"Name": "Atlanta Falcons D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/c/c5/Atlanta_Falcons_logo.svg"
+	},
+	{
+		"Team": "BAL",
+		"Name": "Baltimore Ravens D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/1/16/Baltimore_Ravens_logo.svg"
+	},
+	{
+		"Team": "BUF",
+		"Name": "Buffalo Bills D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/77/Buffalo_Bills_logo.svg"
+	},
+	{
+		"Team": "CAR",
+		"Name": "Carolina Panthers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Carolina_Panthers_logo.svg/191px-Carolina_Panthers_logo.svg.png"
+	},
+	{
+		"Team": "CHI",
+		"Name": "Chicago Bears D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Chicago_Bears_logo.svg"
+	},
+	{
+		"Team": "CIN",
+		"Name": "Cincinnati Bengals D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/100px-Cincinnati_Bengals_logo.svg.png"
+	},
+	{
+		"Team": "CLE",
+		"Name": "Cleveland Browns D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/d/d9/Cleveland_Browns_logo.svg"
+	},
+	{
+		"Team": "DAL",
+		"Name": "Dallas Cowboys D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Dallas_Cowboys.svg"
+	},
+	{
+		"Team": "DEN",
+		"Name": "Denver Broncos D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg"
+	},
+	{
+		"Team": "DET",
+		"Name": "Detroit Lions D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/71/Detroit_Lions_logo.svg"
+	},
+	{
+		"Team": "GB",
+		"Name": "Green Bay Packers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Green_Bay_Packers_logo.svg"
+	},
+	{
+		"Team": "HOU",
+		"Name": "Houston Texans D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/2/28/Houston_Texans_logo.svg"
+	},
+	{
+		"Team": "IND",
+		"Name": "Indianapolis Colts D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Indianapolis_Colts_logo.svg"
+	},
+	{
+		"Team": "JAX",
+		"Name": "Jacksonville Jaguars D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/74/Jacksonville_Jaguars_logo.svg"
+	},
+	{
+		"Team": "KC",
+		"Name": "Kansas City Chiefs D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/e/e1/Kansas_City_Chiefs_logo.svg"
+	},
+	{
+		"Team": "LAC",
+		"Name": "Los Angeles Chargers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/72/NFL_Chargers_logo.svg"
+	},
+	{
+		"Team": "LAR",
+		"Name": "Los Angeles Rams D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/8/8b/NFL_Rams_logo.svg"
+	},
+	{
+		"Team": "MIA",
+		"Name": "Miami Dolphins D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Miami_Dolphins_logo.svg/100px-Miami_Dolphins_logo.svg.png"
+	},
+	{
+		"Team": "MIN",
+		"Name": "Minnesota Vikings D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/4/48/Minnesota_Vikings_logo.svg"
+	},
+	{
+		"Team": "NE",
+		"Name": "New England Patriots D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/b/b9/New_England_Patriots_logo.svg"
+	},
+	{
+		"Team": "NO",
+		"Name": "New Orleans Saints D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/New_Orleans_Saints_logo.svg/192px-New_Orleans_Saints_logo.svg.png"
+	},
+	{
+		"Team": "NYG",
+		"Name": "New York Giants D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/New_York_Giants_logo.svg"
+	},
+	{
+		"Team": "NYJ",
+		"Name": "New York Jets D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/New_York_Jets_logo.svg"
+	},
+	{
+		"Team": "OAK",
+		"Name": "Oakland Raiders D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Oakland_Raiders_logo.svg/100px-Oakland_Raiders_logo.svg.png"
+	},
+	{
+		"Team": "PHI",
+		"Name": "Philadelphia Eagles D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/191px-Philadelphia_Eagles_logo.svg.png"
+	},
+	{
+		"Team": "PIT",
+		"Name": "Pittsburgh Steelers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Pittsburgh_Steelers_logo.svg"
+	},
+	{
+		"Team": "SEA",
+		"Name": "Seattle Seahawks D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seattle_Seahawks_logo.svg/100px-Seattle_Seahawks_logo.svg.png"
+	},
+	{
+		"Team": "SF",
+		"Name": "San Francisco 49ers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/460px-San_Francisco_49ers_logo.svg.png"
+	},
+	{
+		"Team": "TB",
+		"Name": "Tampa Bay Buccaneers D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/a/a2/Tampa_Bay_Buccaneers_logo.svg"
+	},
+	{
+		"Team": "TEN",
+		"Name": "Tennessee Titans D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/Tennessee_Titans_logo.svg"
+	},
+	{
+		"Team": "WAS",
+		"Name": "Washington Redskins D/ST",
+		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Washington_Redskins_logo.svg/1050px-Washington_Redskins_logo.svg.png"
+	}
+]
