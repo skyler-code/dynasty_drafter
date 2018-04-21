@@ -4,10 +4,12 @@
 // avoid having view logic & local component state in them, use "dumb" components instead
 
 import React, { Component } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import * as draftActions from '../store/draft/actions';
 import * as draftSelectors from '../store/draft/reducer';
+import 'react-tabs/style/react-tabs.css';
 import PlayerPicker from "../components/PlayerPicker";
 
 class DraftView extends Component {
@@ -23,12 +25,26 @@ componentDidMount() {
 
 render() {
     if (!this.props.playersArray) return this.renderLoading();
-    return (<PlayerPicker
+    return (
+
+
+<Tabs defaultIndex={0} onSelect={index => console.log(index)}>
+  <TabList>
+    <Tab>Setup</Tab>
+    <Tab>Draft</Tab>
+    <Tab>Results</Tab>
+  </TabList>
+  <TabPanel><PlayerPicker
             playersArray={this.props.playersArray}
             selectedPlayer={this.props.selectedPlayer}
             onClick={this.onRowClick}
             onDeselectClick={this.onDeselectClick}
-            canFinalizeSelection={this.props.canFinalizeSelection}/>);
+            canFinalizeSelection={this.props.canFinalizeSelection}/></TabPanel>
+  <TabPanel></TabPanel>
+  <TabPanel></TabPanel>
+</Tabs>
+
+            );
 }
 
 renderLoading() {
@@ -57,3 +73,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(DraftView);
+
+/**/
