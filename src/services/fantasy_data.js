@@ -40,16 +40,16 @@ function stripPlayerObject( plr ){
         PlayerID: plr.PlayerID,
         Team: plr.Team,
         Number: plr.Number,
-        FirstName: plr.FirstName,
-        LastName: plr.LastName,
+        FirstName: plr.FirstName || "",
+        LastName: plr.LastName || "",
         Name: plr.Name,
         Position: plr.Position,
-        Status: plr.Status,
+        Status: plr.Status || "",
         FantasyPosition: plr.FantasyPosition,
         PhotoUrl: plr.PhotoUrl,
         AverageDraftPosition: plr.AverageDraftPosition,
         Age: plr.Age,
-        College: plr.College
+        College: plr.College || ""
     }
 }
 
