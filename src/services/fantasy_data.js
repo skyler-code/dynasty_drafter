@@ -48,7 +48,8 @@ function stripPlayerObject( plr ){
         FantasyPosition: plr.FantasyPosition,
         PhotoUrl: plr.PhotoUrl,
         AverageDraftPosition: plr.AverageDraftPosition,
-        Age: plr.Age
+        Age: plr.Age,
+        College: plr.College
     }
 }
 
