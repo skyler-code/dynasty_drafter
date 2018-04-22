@@ -10,14 +10,14 @@ export default class PlayerViewer extends Component {
   }
 
   render() {
-    const player = this.selectedPlayer();
+    const plr = this.selectedPlayer();
     return (
         <div className="PlayerViewer">
           <Card>
             <Card.Content>
-              <Image floated='right' size='mini' src={player.PhotoUrl} />
+              <Image floated='left' size='mini' src={plr.PhotoUrl} />
               <Card.Header>
-                {player.Name || "No Selected Player"}
+                {plr.Name || "No Selected Player"}
               </Card.Header>
               <Card.Meta>
                 {this.generateMetaInfo()}
@@ -33,10 +33,10 @@ export default class PlayerViewer extends Component {
 
   generateMetaInfo(){
     if( this.isPlayerSelected() ){
-      const player = this.selectedPlayer();
+      const plr = this.selectedPlayer();
       return(
         <div>
-          {player.FantasyPosition} {player.Number ? " #" + player.Number : ""}
+          {plr.FantasyPosition} {plr.Number ? " #" + plr.Number : ""}
         </div>
       );
     }
@@ -44,12 +44,12 @@ export default class PlayerViewer extends Component {
 
   generatePlayerDescription(){
     if( this.isPlayerSelected() ){
-      const player = this.selectedPlayer();
+      const plr = this.selectedPlayer();
       return(
         <div>
-            <div>Team Name: {player.FullTeamName}</div>
-            <div>{player.College ? "College: " + player.College : ""}</div>
-            <div>{player.Age ? "Age: " + player.Age : "" }</div>
+            <div>Team Name: {plr.FullTeamName}</div>
+            <div>{plr.College ? "College: " + plr.College : ""}</div>
+            <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
         </div>
       );
     }
