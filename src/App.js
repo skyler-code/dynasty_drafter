@@ -5,13 +5,14 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import DraftView from './containers/Draft_View';
 import ImportView from './containers/Import_View';
 import './App.css';
+import 'react-tabs/style/react-tabs.css';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tabs defaultIndex={0}>
+        <Tabs defaultIndex={2}>
           <TabList>
             <Tab >Import</Tab>
             <Tab>Setup</Tab>

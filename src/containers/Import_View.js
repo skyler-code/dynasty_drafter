@@ -18,7 +18,6 @@ constructor(props) {
 }
 
 componentDidMount() {
-    this.props.dispatch(importActions.fetchPlayers());
 }
 
 render() {
@@ -36,9 +35,7 @@ renderLoading() {
 }
 
 function mapStateToProps(state) {
-  const playersArray = importSelectors.getPlayersForView(state);
   return {
-    playersArray
   };
 }
 

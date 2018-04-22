@@ -8,9 +8,9 @@ import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
 import matchSorter from 'match-sorter'
 import _ from 'lodash';
-import '../css/PlayerPicker.css'
-import 'react-table/react-table.css'
-import * as constants from '../data/constants'
+import '../css/PlayerPicker.css';
+import 'react-table/react-table.css';
+import * as constants from '../data/constants';
 
 export default class PlayerPicker extends Component {
 

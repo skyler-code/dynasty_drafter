@@ -39,6 +39,7 @@ function stripPlayerObject( plr ){
     return {
         PlayerID: plr.PlayerID,
         Team: plr.Team,
+        FullTeamName: getFullTeamName(plr.Team),
         Number: plr.Number,
         FirstName: plr.FirstName || "",
         LastName: plr.LastName || "",
@@ -49,15 +50,23 @@ function stripPlayerObject( plr ){
         PhotoUrl: plr.PhotoUrl,
         AverageDraftPosition: plr.AverageDraftPosition,
         Age: plr.Age,
-        College: plr.College || ""
+        College: plr.College
     }
 }
 
 function getDefenseData(){
-    return _.each(teamData, function( team ){
-        team.PlayerID = team.Name;
+    const defenseData = teamData;
+    return _.each(defenseData, function( team ){
+        team.PlayerID = team.Team;
+        team.Name = team.FullTeamName + " D/ST";
         team.FantasyPosition = "D/ST";
     } );
+}
+
+function getFullTeamName( teamName ){
+    return _.find( teamData, function( team ){
+        return team.Team === teamName;
+    } ).FullTeamName;
 }
 
 export default new FantasyDataService();

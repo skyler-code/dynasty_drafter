@@ -6,11 +6,13 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
+import { Grid } from 'semantic-ui-react';
 import * as draftActions from '../store/draft/actions';
 import * as draftSelectors from '../store/draft/reducer';
 import * as importSelectors from '../store/leagueImport/reducer';
-import 'react-tabs/style/react-tabs.css';
 import PlayerPicker from "../components/PlayerPicker";
+import PlayerViewer from "../components/PlayerViewer";
+import * as importActions from "../store/leagueImport/actions";
 
 class DraftView extends Component {
 
@@ -20,16 +22,31 @@ constructor(props) {
 }
 
 componentDidMount() {
+    if(!this.props.playersArray)
+        this.props.dispatch(importActions.fetchPlayers());
 }
 
 render() {
     return (
+    <div>
+    <Grid columns={2} divided>
+    <Grid.Row>
+      <Grid.Column>
         <PlayerPicker
                 playersArray={this.props.playersArray}
                 selectedPlayer={this.props.selectedPlayer}
                 onClick={this.onRowClick}
                 onDeselectClick={this.onDeselectClick}
                 canFinalizeSelection={this.props.canFinalizeSelection}/>
+      </Grid.Column>
+      <Grid.Column>
+        <PlayerViewer
+            selectedPlayer={this.props.selectedPlayer}/>
+      </Grid.Column>
+    </Grid.Row>
+  </Grid>
+    </div>
+
     );
 }
 
