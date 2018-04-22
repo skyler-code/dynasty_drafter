@@ -7,6 +7,9 @@
 
 import * as types from './actionTypes';
 import fantasyPlayerService from '../../services/fantasy_data';
+import espnParserService from '../../services/espn_parser';
+import _ from "lodash";
+import * as importSelectors from "./reducer";
 
 export function fetchPlayers() {
   return async(dispatch, getState) => {
@@ -16,5 +19,12 @@ export function fetchPlayers() {
     } catch (error) {
       console.error(error);
     }
+  };
+}
+
+export function processUserInput( input ){
+  return (dispatch, getState) => {
+    const parsedLeague = espnParserService.parseInput( input );
+    dispatch({ type: types.LEAGUE_IMPORTED, parsedLeague: parsedLeague  });
   };
 }

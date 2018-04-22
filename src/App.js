@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tabs defaultIndex={2}>
+        <Tabs defaultIndex={0}>
           <TabList>
             <Tab >Import</Tab>
             <Tab>Setup</Tab>

@@ -16,64 +16,62 @@ import * as importActions from "../store/leagueImport/actions";
 
 class DraftView extends Component {
 
-constructor(props) {
-    super(props);
-    autoBind(this);
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
+
+    componentDidMount() {
+        if(!this.props.playersArray)
+            this.props.dispatch(importActions.fetchPlayers());
+    }
+
+    render() {
+        return (
+        <div>
+            <Grid columns={2} divided>
+                <Grid.Row>
+                      <Grid.Column>
+                        <PlayerPicker
+                            playersArray={this.props.playersArray}
+                            selectedPlayer={this.props.selectedPlayer}
+                            onClick={this.onRowClick}
+                            onDeselectClick={this.onDeselectClick}
+                            canFinalizeSelection={this.props.canFinalizeSelection}/>
+                      </Grid.Column>
+                      <Grid.Column>
+                        <PlayerViewer
+                            selectedPlayer={this.props.selectedPlayer}/>
+                      </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </div>
+        );
+    }
+
+    renderLoading() {
+        return (
+            <p>Loading....</p>
+        );
+    }
+
+    onRowClick(playerID) {
+        this.props.dispatch(draftActions.selectPlayer(playerID));
+    }
+
+    onDeselectClick() {
+        this.props.dispatch(draftActions.clearPlayerSelection());
+    }
 }
 
-componentDidMount() {
-    if(!this.props.playersArray)
-        this.props.dispatch(importActions.fetchPlayers());
-}
-
-render() {
-    return (
-    <div>
-    <Grid columns={2} divided>
-    <Grid.Row>
-      <Grid.Column>
-        <PlayerPicker
-                playersArray={this.props.playersArray}
-                selectedPlayer={this.props.selectedPlayer}
-                onClick={this.onRowClick}
-                onDeselectClick={this.onDeselectClick}
-                canFinalizeSelection={this.props.canFinalizeSelection}/>
-      </Grid.Column>
-      <Grid.Column>
-        <PlayerViewer
-            selectedPlayer={this.props.selectedPlayer}/>
-      </Grid.Column>
-    </Grid.Row>
-  </Grid>
-    </div>
-
-    );
-}
-
-renderLoading() {
-    return (
-        <p>Loading....</p>
-    );
-}
-
-  onRowClick(playerID) {
-    this.props.dispatch(draftActions.selectPlayer(playerID));
-  }
-
-  onDeselectClick() {
-    this.props.dispatch(draftActions.clearPlayerSelection());
-  }
-
-}
-
-function mapStateToProps(state) {
-  const playersArray = importSelectors.getPlayersForView(state);
-  return {
-    playersArray,
-    selectedPlayer: draftSelectors.getSelectedPlayer(state),
-    canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
-  };
-}
+    function mapStateToProps(state) {
+        const playersArray = importSelectors.getPlayersForView(state);
+        return {
+            playersArray,
+            selectedPlayer: draftSelectors.getSelectedPlayer(state),
+            canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
+        };
+    }
 
 export default connect(mapStateToProps)(DraftView);
 
