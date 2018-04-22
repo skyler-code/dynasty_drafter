@@ -15,9 +15,9 @@ export default class PlayerViewer extends Component {
         <div className="PlayerViewer">
           <Card>
             <Card.Content>
-              <Image floated='left' size='mini' src={plr.PhotoUrl} />
+              {this.generatePlayerImage()}
               <Card.Header>
-                {plr.Name || "No Selected Player"}
+                {plr.Name || "No Player Selected"}
               </Card.Header>
               <Card.Meta>
                 {this.generateMetaInfo()}
@@ -29,6 +29,12 @@ export default class PlayerViewer extends Component {
           </Card>
         </div>
     );
+  }
+
+  generatePlayerImage(){
+    if( this.isPlayerSelected() ){
+      return( <Image floated='left' size='mini' src={this.selectedPlayer().PhotoUrl} /> )
+    }
   }
 
   generateMetaInfo(){
@@ -47,7 +53,7 @@ export default class PlayerViewer extends Component {
       const plr = this.selectedPlayer();
       return(
         <div>
-            <div>Team Name: {plr.FullTeamName}</div>
+            <div>Team: {plr.FullTeamName}</div>
             <div>{plr.College ? "College: " + plr.College : ""}</div>
             <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
         </div>
