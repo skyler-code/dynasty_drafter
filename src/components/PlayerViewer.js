@@ -56,6 +56,7 @@ export default class PlayerViewer extends Component {
             <div>Team: {plr.FullTeamName}</div>
             <div>{plr.College ? "College: " + plr.College : ""}</div>
             <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
+            <div>{plr.ExperienceString ? "Experience: " + plr.ExperienceString : ""}</div>
         </div>
       );
     }

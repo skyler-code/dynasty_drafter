@@ -50,7 +50,8 @@ function stripPlayerObject( plr ){
         PhotoUrl: plr.PhotoUrl,
         AverageDraftPosition: plr.AverageDraftPosition,
         Age: plr.Age,
-        College: plr.College
+        College: plr.College,
+        ExperienceString: plr.ExperienceString
     }
 }
 
