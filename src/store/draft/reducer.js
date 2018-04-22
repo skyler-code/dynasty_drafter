@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 

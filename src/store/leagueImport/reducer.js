@@ -1,6 +1,6 @@
 import Immutable from 'seamless-immutable';
 import * as types from "../leagueImport/actionTypes";
-import _ from "lodash";
+import _clone from 'lodash/clone'
 
 const initialState = Immutable({
   allPlayers: undefined,
@@ -22,5 +22,5 @@ export function getPlayers(state) {
 }
 
 export function getPlayersForView(state) {
-  return _.clone( state.leagueImport.allPlayers );
+  return _clone( state.leagueImport.allPlayers );
 }

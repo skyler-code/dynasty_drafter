@@ -6,8 +6,8 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
-import matchSorter from 'match-sorter'
-import _ from 'lodash';
+import matchSorter from 'match-sorter';
+import _find from 'lodash/find';
 import '../css/PlayerPicker.css';
 import 'react-table/react-table.css';
 import * as constants from '../data/constants';
@@ -81,7 +81,7 @@ export default class PlayerPicker extends Component {
                 if (filter.value === "all") {
                   return true;
                 }
-                const selectedTeam = _.find(constants.NFL_TEAMS, (team) => team === filter.value );
+                const selectedTeam = _find(constants.NFL_TEAMS, (team) => team === filter.value );
                 if(selectedTeam)
                     return row[filter.id] === selectedTeam;
               },
@@ -104,7 +104,7 @@ export default class PlayerPicker extends Component {
                 if (filter.value === "all") {
                   return true;
                 }
-                const selectedPosition = _.find(constants.PLAYER_POSITIONS, (position) => position === filter.value );
+                const selectedPosition = _find(constants.PLAYER_POSITIONS, (position) => position === filter.value );
                 if(selectedPosition)
                     return row[filter.id] === selectedPosition;
               },
