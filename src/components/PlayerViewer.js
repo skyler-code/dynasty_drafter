@@ -47,8 +47,9 @@ export default class PlayerViewer extends Component {
       const player = this.selectedPlayer();
       return(
         <div>
-          Team Name: {player.FullTeamName}<br/>
-          {player.College ? "College: " + player.College : ""}
+            <div>Team Name: {player.FullTeamName}</div>
+            <div>{player.College ? "College: " + player.College : ""}</div>
+            <div>{player.Age ? "Age: " + player.Age : "" }</div>
         </div>
       );
     }
