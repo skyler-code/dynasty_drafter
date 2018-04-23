@@ -4,6 +4,7 @@ import * as router from './store/router/reducer';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import DraftView from './containers/Draft_View';
 import ImportView from './containers/Import_View';
+import SetupView from './containers/Setup_View';
 import './App.css';
 import 'react-tabs/style/react-tabs.css';
 
@@ -22,7 +23,9 @@ class App extends Component {
           <TabPanel>
             <ImportView/>
           </TabPanel>
-          <TabPanel></TabPanel>
+          <TabPanel>
+            <SetupView/>
+          </TabPanel>
           <TabPanel>
             <DraftView/>
           </TabPanel>

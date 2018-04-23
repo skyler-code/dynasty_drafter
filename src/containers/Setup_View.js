@@ -6,8 +6,8 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import 'react-tabs/style/react-tabs.css';
-import * as importSelectors from "../store/leagueImport/reducer";
+import * as setupSelectors from "../store/setup/reducer";
+import * as setupActions from "../store/setup/actions";
 
 class SetupView extends Component {
 
@@ -17,28 +17,23 @@ class SetupView extends Component {
     }
 
     componentDidMount() {
-
+        if( !this.props.draftOrder )
+            this.props.dispatch( setupActions.getInitialDraftOrder() );
     }
 
     render() {
         return (
             <div>
-                <p>Hi</p>
+                {this.props.draftOrder ? this.props.draftOrder : ""}
             </div>
-        );
-    }
-
-    renderLoading() {
-        return (
-            <p>Loading....</p>
         );
     }
 }
 
 function mapStateToProps(state) {
-    const parsedLeague = importSelectors.getParsedLeague(state);
+    const draftOrder = setupSelectors.getDraftOrder(state);
     return {
-        parsedLeague
+        draftOrder
     };
 }
 

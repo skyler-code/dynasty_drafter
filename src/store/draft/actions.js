@@ -7,7 +7,7 @@
 
 import _ from 'lodash';
 import * as types from './actionTypes';
-import * as draftSelectors from '../draft/reducer';
+import * as draftSelectors from './reducer';
 import * as importSelectors from '../leagueImport/reducer';
 import espnParserService from "../../services/espn_parser";
 import fantasyPlayerService from "../../services/fantasy_data";
