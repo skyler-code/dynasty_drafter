@@ -6,10 +6,11 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Form } from 'semantic-ui-react';
+import { Form, Grid } from 'semantic-ui-react';
 import * as importActions from '../store/leagueImport/actions';
 import * as importSelectors from '../store/leagueImport/reducer';
 import 'react-tabs/style/react-tabs.css';
+import ImportedLeagueView from "../components/ImportedLeagueView";
 
 class ImportView extends Component {
 
@@ -23,14 +24,26 @@ class ImportView extends Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Input
-                    label='Paste ESPN League Here (Sample found here: https://pastebin.com/2eAbShZE)'
-                    control='textarea'
-                    rows='6'
-                    onChange={this.handleInputChange} />
-                <Form.TextArea label='About' value={JSON.stringify( this.props.parsedLeague )} />
-            </Form>
+            <div>
+                <Grid columns={2} divided>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Form>
+                                <Form.Group>
+                                    <Form.Input
+                                        label='Paste ESPN League Here (Sample found here: https://pastebin.com/2eAbShZE)'
+                                        control='textarea'
+                                        rows='6'
+                                        onChange={this.handleInputChange} />
+                                    </Form.Group>
+                                </Form>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </div>
         );
     }
 
