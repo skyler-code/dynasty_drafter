@@ -1,0 +1,19 @@
+.DraftPreview {
+  padding: 20px 10px;
+  max-width: 500px;
+}
+
+.rt-tbody {
+        height:500px;
+        justify-content: flex-start;
+        flex: 1 1 auto;
+        position: relative; /* need this to position inner content */
+        overflow-y: auto;
+}
+.rt-tr-group {
+        min-height:25px;
+        max-height:100px;
+}
+.rt-thead {
+        flex: 0 0 auto;
+}

@@ -6,8 +6,11 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
+
+import { Form } from 'semantic-ui-react';
 import * as setupSelectors from "../store/setup/reducer";
 import * as setupActions from "../store/setup/actions";
+import DraftPreview from "../components/DraftPreview";
 
 class SetupView extends Component {
 
@@ -18,22 +21,29 @@ class SetupView extends Component {
 
     componentDidMount() {
         if( !this.props.draftOrder )
-            this.props.dispatch( setupActions.getInitialDraftOrder() );
+            this.props.dispatch( setupActions.getInitialDraftInfo() );
     }
 
     render() {
         return (
             <div>
-                {this.props.draftOrder ? this.props.draftOrder : ""}
+                <div>{this.props.draftOrder ? this.props.draftOrder : ""}</div>
+                <DraftPreview
+                            draftArray={this.props.draftArray}
+                            leagueTeams={this.props.draftOrder}/>
             </div>
         );
     }
+
+
 }
 
 function mapStateToProps(state) {
     const draftOrder = setupSelectors.getDraftOrder(state);
+    const draftArray = setupSelectors.getDraftArray(state);
     return {
-        draftOrder
+        draftOrder,
+        draftArray
     };
 }
 
