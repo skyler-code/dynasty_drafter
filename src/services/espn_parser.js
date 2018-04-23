@@ -29,10 +29,9 @@ class ESPNParserService {
             }
             if( matchingPlayer )
                 claimedPlayers = _.without( claimedPlayers, matchingPlayer );
-            player.Owner = ( matchingPlayer || {} ).owner;
-            draftRoster.push( player );
+            if( !( matchingPlayer || {} ).owner )
+                draftRoster.push( player );
             } );
-        draftRoster = _.filter(draftRoster, function(player){ return !player.Owner } );
         return draftRoster;
     }
 }
