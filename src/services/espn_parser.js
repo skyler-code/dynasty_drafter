@@ -1,6 +1,5 @@
 import _ from "underscore";
 import teamData from '../data/team_data';
-import playerData from '../data/player_data';
 import * as constants from './../data/constants';
 
 
