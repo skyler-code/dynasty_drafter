@@ -2,7 +2,6 @@ import _ from "underscore";
 import teamData from '../data/team_data';
 import * as constants from './../data/constants';
 
-
 let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
 let periodRegex = /[.]/g;
 let playerPositions = ["qb", "rb", "wr", "te", "flex", "op", "d/st", "k", "bench", "ir"];
@@ -118,7 +117,8 @@ function createClaimedPlayerArray( leagueInfo ){
     let players = {};
     _.forEach(leagueInfo.teamInfo, function( team ){
         _.forEach(team.players, function( player ){
-            players[player.hashKey] = true;
+            if( !players[player.hashKey] )
+                players[player.hashKey] = player.Name;
         } );
     } );
     return players;
