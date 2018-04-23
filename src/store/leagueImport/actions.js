@@ -6,21 +6,8 @@
 //  plain object actions - when you just send a plain action to the reducer
 
 import * as types from './actionTypes';
-import fantasyPlayerService from '../../services/fantasy_data';
 import espnParserService from '../../services/espn_parser';
-import _ from "lodash";
 import * as importSelectors from "./reducer";
-
-export function fetchPlayers() {
-  return async(dispatch, getState) => {
-    try {
-      const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-      dispatch({ type: types.PLAYERS_FETCHED, allPlayers: playerArray });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-}
 
 export function processUserInput( input ){
   return (dispatch, getState) => {

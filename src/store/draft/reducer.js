@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
+import _clone from "lodash/clone";
 
 const initialState = Immutable({
   leagueArray: undefined,
@@ -27,6 +28,10 @@ export default function reduce(state = initialState, action = {}) {
       return state.merge({
         selectedPlayer: undefined
       });
+    case types.AVAILABLE_PLAYERS_LOADED:
+      return state.merge({
+        availablePlayers: action.availablePlayers
+      });
     default:
       return state;
   }
@@ -35,9 +40,12 @@ export default function reduce(state = initialState, action = {}) {
 // selectors
 
 export function getPlayers(state) {
-  return state.draft.playerArray;
+  return state.draft.availablePlayers;
 }
 
+export function getPlayersForView(state) {
+  return _clone( state.draft.availablePlayers );
+}
 export function getSelectedPlayer(state) {
   return state.draft.selectedPlayer;
 }

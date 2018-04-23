@@ -7,19 +7,45 @@
 
 import _ from 'lodash';
 import * as types from './actionTypes';
-import * as playerSelectors from './reducer';
+import * as draftSelectors from '../draft/reducer';
 import * as importSelectors from '../leagueImport/reducer';
+import espnParserService from "../../services/espn_parser";
+import fantasyPlayerService from "../../services/fantasy_data";
+
+export function fetchPlayers() {
+  return async(dispatch, getState) => {
+    try {
+      const playerArray = await fantasyPlayerService.getFantasyPlayerData();
+      dispatch({ type: types.PLAYERS_FETCHED, allPlayers: playerArray });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+}
+
+export function getAvailablePlayers(){
+    return async(dispatch, getState) => {
+        try {
+            const playerArray = await fantasyPlayerService.getFantasyPlayerData();
+            const parsedLeague = importSelectors.getParsedLeague( getState() );
+            const availablePlayers = espnParserService.getAvailablePlayers( playerArray, parsedLeague );
+            dispatch({ type: types.AVAILABLE_PLAYERS_LOADED, availablePlayers: availablePlayers  });
+        } catch (error) {
+            console.error(error);
+        }
+    };
+}
 
 export function selectPlayer(playerID) {
   return (dispatch, getState) => {
-    const players = importSelectors.getPlayers(getState());
+    const players = draftSelectors.getPlayers(getState());
     let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
     dispatch({ type: types.PLAYER_SELECTED, selectedPlayer: newSelectedPlayer  });
   };
 }
 export function pickPlayer(playerID) {
   return (dispatch, getState) => {
-    const players = importSelectors.getPlayers(getState());
+    const players = draftSelectors.getPlayers(getState());
     let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
     dispatch({ type: types.PLAYER_SELECTION_MADE, selectedPlayer: newSelectedPlayer  });
   };

@@ -7,12 +7,10 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react';
-import * as draftActions from '../store/draft/actions';
+import * as draftActions from "../store/draft/actions";
 import * as draftSelectors from '../store/draft/reducer';
-import * as importSelectors from '../store/leagueImport/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import PlayerViewer from "../components/PlayerViewer";
-import * as importActions from "../store/leagueImport/actions";
 
 class DraftView extends Component {
 
@@ -23,10 +21,11 @@ class DraftView extends Component {
 
     componentDidMount() {
         if(!this.props.playersArray)
-            this.props.dispatch(importActions.fetchPlayers());
+            this.props.dispatch(draftActions.getAvailablePlayers());
     }
 
     render() {
+        if(!this.props.playersArray) this.renderLoading();
         return (
         <div>
             <Grid columns={2} divided>
@@ -65,7 +64,7 @@ class DraftView extends Component {
 }
 
     function mapStateToProps(state) {
-        const playersArray = importSelectors.getPlayersForView(state);
+        const playersArray = draftSelectors.getPlayersForView(state);
         return {
             playersArray,
             selectedPlayer: draftSelectors.getSelectedPlayer(state),

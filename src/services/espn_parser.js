@@ -1,7 +1,8 @@
 import _ from "underscore";
+import nameParser from 'humanparser';
 
 let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
-var periodRegex = /[.]/g;
+let periodRegex = /[.]/g;
 let playerPositions = ["qb", "rb", "wr", "te", "flex", "op", "d/st", "k", "bench", "ir"];
 
 
@@ -13,6 +14,18 @@ class ESPNParserService {
         leagueInfo.teamCount = Object.keys(leagueInfo.teamInfo).length;
         return leagueInfo;
     }
+
+    getAvailablePlayers( allPlayers, leagueInfo ){
+    let draftRoster = [];
+    let claimedPlayers = createPlayerArray( leagueInfo );
+    _.forEach(allPlayers, function( player )
+        {
+        player.Owner = ( _.find( claimedPlayers, function( plr ){ return playerEvaluator( player, plr ) } ) || {} ).owner || null;
+        draftRoster.push( player );
+        } );
+    draftRoster = _.filter(draftRoster, function(player){ return !player.Owner } );
+    return draftRoster;
+}
 }
 
 function getLeagueName( str )
@@ -91,6 +104,36 @@ function parsePlayerInfoStr( str )
 
 function isNullOrWhitespace( input ) {
     return !input || !input.trim();
+}
+
+function playerEvaluator( firstPlayer, secondPlayer ) {
+    firstPlayer = _.mapObject( firstPlayer, strAdjust );
+    secondPlayer = _.mapObject( secondPlayer, strAdjust );
+
+    let firstName = nameParser.parseName(firstPlayer.Name);
+    let secondName = nameParser.parseName(secondPlayer.Name);
+
+    return ( firstName.lastName === secondName.lastName )
+    && (firstPlayer.Team === secondPlayer.Team)
+    && (firstPlayer.Position === secondPlayer.Position)
+    && ( firstName.firstName === secondName.firstName || ( firstName.firstName.startsWith( secondName.firstName ) || secondName.firstName.startsWith( firstName.firstName ) ) )
+}
+
+function strAdjust( str )
+{
+    return typeof(str) === "string" ? str.toLowerCase().replace( periodRegex, '' ) : str;
+}
+
+function createPlayerArray( leagueInfo ){
+    let players = [];
+    _.forEach(leagueInfo.teamInfo, function( team ){
+        _.forEach(team.players, function( player ){
+            let parsedName = nameParser.parseName(player.Name);
+            let fullName = parsedName.firstName + " " + parsedName.lastName;
+            players.push({ Name: fullName, owner: team.teamName, firstName: parsedName.firstName, lastName: parsedName.lastName, Position: player.Position, Team: player.Team });
+        } );
+    } );
+    return players;
 }
 
 export default new ESPNParserService();
