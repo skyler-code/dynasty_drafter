@@ -1,5 +1,6 @@
 import _ from "underscore";
 import nameParser from 'humanparser';
+import teamData from '../data/team_data'
 
 let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
 let periodRegex = /[.]/g;
@@ -16,16 +17,22 @@ class ESPNParserService {
     }
 
     getAvailablePlayers( allPlayers, leagueInfo ){
-    let draftRoster = [];
-    let claimedPlayers = createPlayerArray( leagueInfo );
-    _.forEach(allPlayers, function( player )
-        {
-        player.Owner = ( _.find( claimedPlayers, function( plr ){ return playerEvaluator( player, plr ) } ) || {} ).owner || null;
-        draftRoster.push( player );
-        } );
-    draftRoster = _.filter(draftRoster, function(player){ return !player.Owner } );
-    return draftRoster;
-}
+        let draftRoster = [];
+        let claimedPlayers = createPlayerArray( leagueInfo );
+        _.forEach(allPlayers, function( player )
+            {
+            let matchingPlayer = _.filter( claimedPlayers, function( plr ){ return playerEvaluator( player, plr ) } );
+            if(matchingPlayer.length > 1){
+                matchingPlayer = _.find( matchingPlayer, function( plr ){ return plr.Team === player.Team; } );
+            } else {
+                matchingPlayer = _.first(matchingPlayer);
+            }
+            player.Owner = ( matchingPlayer || {} ).owner;
+            draftRoster.push( player );
+            } );
+        draftRoster = _.filter(draftRoster, function(player){ return !player.Owner } );
+        return draftRoster;
+    }
 }
 
 function getLeagueName( str )
@@ -98,7 +105,11 @@ function parsePlayerInfoStr( str )
     let infoStr = (splitStr[1] || "").replace("QBreaking News", "").replace("Breaking News", "").replace("Breaking Video", "").replace("and Video", "").replace("Recent News", "").replace("IR", "").trim();
     let infoStrSplit = infoStr.split(" ");
     if( !isNullOrWhitespace( playerName ) && _.isString(infoStrSplit[0]) && _.isString(infoStrSplit[1]) )
-        playerInfo = { Name: playerName, Team: _.first( infoStrSplit ).toUpperCase(), Position: infoStrSplit[1] };
+        playerInfo = { Name: playerName, Team: _.first( infoStrSplit ).toUpperCase(), FantasyPosition: infoStrSplit[1] };
+    else if ( playerName.includes("D/ST") ){
+        let team = _.find(teamData, function( team ){ return team.Name.includes( playerName ) } );
+        playerInfo = { Name: team.Name, Team: team.Team, FantasyPosition: team.FantasyPosition };
+    }
     return playerInfo;
 }
 
@@ -114,8 +125,7 @@ function playerEvaluator( firstPlayer, secondPlayer ) {
     let secondName = nameParser.parseName(secondPlayer.Name);
 
     return ( firstName.lastName === secondName.lastName )
-    && (firstPlayer.Team === secondPlayer.Team)
-    && (firstPlayer.Position === secondPlayer.Position)
+    && (firstPlayer.FantasyPosition === secondPlayer.FantasyPosition)
     && ( firstName.firstName === secondName.firstName || ( firstName.firstName.startsWith( secondName.firstName ) || secondName.firstName.startsWith( firstName.firstName ) ) )
 }
 
@@ -130,7 +140,7 @@ function createPlayerArray( leagueInfo ){
         _.forEach(team.players, function( player ){
             let parsedName = nameParser.parseName(player.Name);
             let fullName = parsedName.firstName + " " + parsedName.lastName;
-            players.push({ Name: fullName, owner: team.teamName, firstName: parsedName.firstName, lastName: parsedName.lastName, Position: player.Position, Team: player.Team });
+            players.push({ Name: fullName, owner: team.teamName, firstName: parsedName.firstName, lastName: parsedName.lastName, FantasyPosition: player.FantasyPosition, Team: player.Team });
         } );
     } );
     return players;

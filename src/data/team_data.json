@@ -3,192 +3,288 @@
 		"Team": "ARI",
 		"FullTeamName": "Arizona Cardinals",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/72/Arizona_Cardinals_logo.svg",
-		"AverageDraftPosition": 193.8
+		"AverageDraftPosition": 193.8,
+		"PlayerID": "ARI",
+		"Name": "Arizona Cardinals D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "ATL",
 		"FullTeamName": "Atlanta Falcons",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/c/c5/Atlanta_Falcons_logo.svg",
-		"AverageDraftPosition": 201.7
+		"AverageDraftPosition": 201.7,
+		"PlayerID": "ATL",
+		"Name": "Atlanta Falcons D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "BAL",
 		"FullTeamName": "Baltimore Ravens",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/1/16/Baltimore_Ravens_logo.svg",
-		"AverageDraftPosition": 151.9
+		"AverageDraftPosition": 151.9,
+		"PlayerID": "BAL",
+		"Name": "Baltimore Ravens D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "BUF",
 		"FullTeamName": "Buffalo Bills",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/77/Buffalo_Bills_logo.svg",
-		"AverageDraftPosition": 197.2
+		"AverageDraftPosition": 197.2,
+		"PlayerID": "BUF",
+		"Name": "Buffalo Bills D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "CAR",
 		"FullTeamName": "Carolina Panthers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Carolina_Panthers_logo.svg/191px-Carolina_Panthers_logo.svg.png",
-		"AverageDraftPosition": 176.8
+		"AverageDraftPosition": 176.8,
+		"PlayerID": "CAR",
+		"Name": "Carolina Panthers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "CHI",
 		"FullTeamName": "Chicago Bears",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Chicago_Bears_logo.svg",
-		"AverageDraftPosition": 213
+		"AverageDraftPosition": 213,
+		"PlayerID": "CHI",
+		"Name": "Chicago Bears D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "CIN",
 		"FullTeamName": "Cincinnati Bengals",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/100px-Cincinnati_Bengals_logo.svg.png",
-		"AverageDraftPosition": 204
+		"AverageDraftPosition": 204,
+		"PlayerID": "CIN",
+		"Name": "Cincinnati Bengals D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "CLE",
 		"FullTeamName": "Cleveland Browns",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/d/d9/Cleveland_Browns_logo.svg",
-		"AverageDraftPosition": 211.9
+		"AverageDraftPosition": 211.9,
+		"PlayerID": "CLE",
+		"Name": "Cleveland Browns D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "DAL",
 		"FullTeamName": "Dallas Cowboys",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Dallas_Cowboys.svg",
-		"AverageDraftPosition": 208.5
+		"AverageDraftPosition": 208.5,
+		"PlayerID": "DAL",
+		"Name": "Dallas Cowboys D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "DEN",
 		"FullTeamName": "Denver Broncos",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/4/44/Denver_Broncos_logo.svg",
-		"AverageDraftPosition": 159.6
+		"AverageDraftPosition": 159.6,
+		"PlayerID": "DEN",
+		"Name": "Denver Broncos D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "DET",
 		"FullTeamName": "Detroit Lions",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/71/Detroit_Lions_logo.svg",
-		"AverageDraftPosition": 207.4
+		"AverageDraftPosition": 207.4,
+		"PlayerID": "DET",
+		"Name": "Detroit Lions D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "GB",
 		"FullTeamName": "Green Bay Packers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/Green_Bay_Packers_logo.svg",
-		"AverageDraftPosition": 199.5
+		"AverageDraftPosition": 199.5,
+		"PlayerID": "GB",
+		"Name": "Green Bay Packers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "HOU",
 		"FullTeamName": "Houston Texans",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/2/28/Houston_Texans_logo.svg",
-		"AverageDraftPosition": 144.6
+		"AverageDraftPosition": 144.6,
+		"PlayerID": "HOU",
+		"Name": "Houston Texans D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "IND",
 		"FullTeamName": "Indianapolis Colts",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Indianapolis_Colts_logo.svg",
-		"AverageDraftPosition": 210.7
+		"AverageDraftPosition": 210.7,
+		"PlayerID": "IND",
+		"Name": "Indianapolis Colts D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "JAX",
 		"FullTeamName": "Jacksonville Jaguars",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/74/Jacksonville_Jaguars_logo.svg",
-		"AverageDraftPosition": 128.3
+		"AverageDraftPosition": 128.3,
+		"PlayerID": "JAX",
+		"Name": "Jacksonville Jaguars D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "KC",
 		"FullTeamName": "Kansas City Chiefs",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/e/e1/Kansas_City_Chiefs_logo.svg",
-		"AverageDraftPosition": 150.3
+		"AverageDraftPosition": 150.3,
+		"PlayerID": "KC",
+		"Name": "Kansas City Chiefs D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "LAC",
 		"FullTeamName": "Los Angeles Chargers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/7/72/NFL_Chargers_logo.svg",
-		"AverageDraftPosition": 176.9
+		"AverageDraftPosition": 176.9,
+		"PlayerID": "LAC",
+		"Name": "Los Angeles Chargers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "LAR",
 		"FullTeamName": "Los Angeles Rams",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/8/8b/NFL_Rams_logo.svg",
-		"AverageDraftPosition": 143.1
+		"AverageDraftPosition": 143.1,
+		"PlayerID": "LAR",
+		"Name": "Los Angeles Rams D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "MIA",
 		"FullTeamName": "Miami Dolphins",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Miami_Dolphins_logo.svg/100px-Miami_Dolphins_logo.svg.png",
-		"AverageDraftPosition": 202.9
+		"AverageDraftPosition": 202.9,
+		"PlayerID": "MIA",
+		"Name": "Miami Dolphins D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "MIN",
 		"FullTeamName": "Minnesota Vikings",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/4/48/Minnesota_Vikings_logo.svg",
-		"AverageDraftPosition": 127.7
+		"AverageDraftPosition": 127.7,
+		"PlayerID": "MIN",
+		"Name": "Minnesota Vikings D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "NE",
 		"FullTeamName": "New England Patriots",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/b/b9/New_England_Patriots_logo.svg",
-		"AverageDraftPosition": 186
+		"AverageDraftPosition": 186,
+		"PlayerID": "NE",
+		"Name": "New England Patriots D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "NO",
 		"FullTeamName": "New Orleans Saints",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/New_Orleans_Saints_logo.svg/192px-New_Orleans_Saints_logo.svg.png",
-		"AverageDraftPosition": 188.3
+		"AverageDraftPosition": 188.3,
+		"PlayerID": "NO",
+		"Name": "New Orleans Saints D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "NYG",
 		"FullTeamName": "New York Giants",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/60/New_York_Giants_logo.svg",
-		"AverageDraftPosition": 195
+		"AverageDraftPosition": 195,
+		"PlayerID": "NYG",
+		"Name": "New York Giants D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "NYJ",
 		"FullTeamName": "New York Jets",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/6/6b/New_York_Jets_logo.svg",
-		"AverageDraftPosition": 209.6
+		"AverageDraftPosition": 209.6,
+		"PlayerID": "NYJ",
+		"Name": "New York Jets D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "OAK",
 		"FullTeamName": "Oakland Raiders",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Oakland_Raiders_logo.svg/100px-Oakland_Raiders_logo.svg.png",
-		"AverageDraftPosition": 198.4
+		"AverageDraftPosition": 198.4,
+		"PlayerID": "OAK",
+		"Name": "Oakland Raiders D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "PHI",
 		"FullTeamName": "Philadelphia Eagles",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Philadelphia_Eagles_logo.svg/191px-Philadelphia_Eagles_logo.svg.png",
-		"AverageDraftPosition": 150.1
+		"AverageDraftPosition": 150.1,
+		"PlayerID": "PHI",
+		"Name": "Philadelphia Eagles D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "PIT",
 		"FullTeamName": "Pittsburgh Steelers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Pittsburgh_Steelers_logo.svg",
-		"AverageDraftPosition": 181
+		"AverageDraftPosition": 181,
+		"PlayerID": "PIT",
+		"Name": "Pittsburgh Steelers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "SEA",
 		"FullTeamName": "Seattle Seahawks",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Seattle_Seahawks_logo.svg/100px-Seattle_Seahawks_logo.svg.png",
-		"AverageDraftPosition": 142.8
+		"AverageDraftPosition": 142.8,
+		"PlayerID": "SEA",
+		"Name": "Seattle Seahawks D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "SF",
 		"FullTeamName": "San Francisco 49ers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/460px-San_Francisco_49ers_logo.svg.png",
-		"AverageDraftPosition": 206.2
+		"AverageDraftPosition": 206.2,
+		"PlayerID": "SF",
+		"Name": "San Francisco 49ers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "TB",
 		"FullTeamName": "Tampa Bay Buccaneers",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/a/a2/Tampa_Bay_Buccaneers_logo.svg",
-		"AverageDraftPosition": 196.1
+		"AverageDraftPosition": 196.1,
+		"PlayerID": "TB",
+		"Name": "Tampa Bay Buccaneers D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "TEN",
 		"FullTeamName": "Tennessee Titans",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/c/c1/Tennessee_Titans_logo.svg",
-		"AverageDraftPosition": 205.1
+		"AverageDraftPosition": 205.1,
+		"PlayerID": "TEN",
+		"Name": "Tennessee Titans D/ST",
+		"FantasyPosition": "D/ST"
 	},
 	{
 		"Team": "WAS",
 		"FullTeamName": "Washington Redskins",
 		"PhotoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Washington_Redskins_logo.svg/1050px-Washington_Redskins_logo.svg.png",
-		"AverageDraftPosition": 200.6
+		"AverageDraftPosition": 200.6,
+		"PlayerID": "WAS",
+		"Name": "Washington Redskins D/ST",
+		"FantasyPosition": "D/ST"
 	}
 ]

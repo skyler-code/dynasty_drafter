@@ -30,7 +30,7 @@ class FantasyDataService {
     returnData = _.filter(returnData, function( plr ){ return ( constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1
                                                                 && plr.Active
                                                                 && plr.Team ) } );
-    returnData = _.map( returnData, stripPlayerObject ).concat( getDefenseData() );
+    returnData = _.map( returnData, stripPlayerObject ).concat( teamData );
     return returnData;
   }
 }
@@ -53,15 +53,6 @@ function stripPlayerObject( plr ){
         College: plr.College,
         ExperienceString: plr.ExperienceString
     }
-}
-
-function getDefenseData(){
-    const defenseData = teamData;
-    return _.each(defenseData, function( team ){
-        team.PlayerID = team.Team;
-        team.Name = team.FullTeamName + " D/ST";
-        team.FantasyPosition = "D/ST";
-    } );
 }
 
 function getFullTeamName( teamName ){
