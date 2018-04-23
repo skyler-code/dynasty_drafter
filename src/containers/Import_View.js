@@ -34,6 +34,7 @@ class ImportView extends Component {
                                         label='Paste ESPN League Here (Sample found here: https://pastebin.com/raw/2eAbShZE)'
                                         control='textarea'
                                         rows='6'
+                                        value={this.props.leagueInput}
                                         onChange={this.handleInputChange} />
                                 </Form.Group>
                                     <Form.Field
@@ -59,16 +60,16 @@ class ImportView extends Component {
 
     handleInputChange(e){
         const input = e.target.value;
-        if(input.length > 50){
-            this.props.dispatch(importActions.processUserInput(input));
-        }
+        this.props.dispatch(importActions.processUserInput(input));
     }
 }
 
 function mapStateToProps(state) {
     const parsedLeague = importSelectors.getParsedLeague(state);
+    const leagueInput = importSelectors.getLeagueInput(state);
     return {
-        parsedLeague
+        parsedLeague,
+        leagueInput
     };
 }
 

@@ -12,17 +12,6 @@ import * as importSelectors from '../leagueImport/reducer';
 import espnParserService from "../../services/espn_parser";
 import fantasyPlayerService from "../../services/fantasy_data";
 
-export function fetchPlayers() {
-  return async(dispatch, getState) => {
-    try {
-      const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-      dispatch({ type: types.PLAYERS_FETCHED, allPlayers: playerArray });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-}
-
 export function getAvailablePlayers(){
     return async(dispatch, getState) => {
         try {

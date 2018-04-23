@@ -1,5 +1,5 @@
 import Immutable from 'seamless-immutable';
-import * as types from "../leagueImport/actionTypes";
+import * as types from "./actionTypes";
 
 const initialState = Immutable({
   leagueInput: "",
@@ -10,17 +10,18 @@ export default function reduce(state = initialState, action = {}) {
   switch (action.type) {
     case types.LEAGUE_IMPORTED:
       return state.merge({
-        parsedLeague: action.parsedLeague
+        parsedLeague: action.parsedLeague,
+        leagueInput: action.leagueInput
       });
     default:
       return state;
   }
 }
 
-export function getPlayers(state) {
-  return state.leagueImport.allPlayers;
-}
-
 export function getParsedLeague(state){
   return state.leagueImport.parsedLeague;
+}
+
+export function getLeagueInput(state){
+  return state.leagueImport.leagueInput;
 }
