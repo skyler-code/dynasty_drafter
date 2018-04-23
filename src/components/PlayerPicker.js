@@ -117,6 +117,33 @@ export default class PlayerPicker extends Component {
                 <option key="all" value="all">Show All</option>
                 { this.generateFilter( constants.PLAYER_POSITIONS ) }
                 </select>
+        },
+        {
+            Header: "Rookie",
+            accessor: "Experience",
+            id: "rookie",
+            minWidth: 23,
+            filterable: true,
+            Cell: ({ value }) => ((value > 0 || value === undefined) ? "No" : "Yes"),
+            filterMethod: (filter, row) => {
+            if (filter.value === "all") {
+                return true;
+            }
+            if (filter.value === "true") {
+                return row[filter.id] === 0;
+            }
+                return row[filter.id] > 0 || row[filter.id] === undefined;
+            },
+            Filter: ({ filter, onChange }) =>
+                <select
+                  onChange={event => onChange(event.target.value)}
+                  style={{ width: "100%" }}
+                  value={filter ? filter.value : "all"}
+                >
+                  <option value="all">Show All</option>
+                  <option value="true">Rookies</option>
+                  <option value="false">No Rookies</option>
+                </select>
         }
     ];
     return (

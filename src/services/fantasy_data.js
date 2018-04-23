@@ -51,6 +51,7 @@ function stripPlayerObject( plr ){
         AverageDraftPosition: plr.AverageDraftPosition,
         Age: plr.Age,
         College: plr.College,
+        Experience: plr.Experience,
         ExperienceString: plr.ExperienceString
     }
 }

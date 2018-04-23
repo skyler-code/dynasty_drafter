@@ -1,5 +1,5 @@
 {
-	"savedOn": 1524430397321,
+	"savedOn": 1524452453009,
 	"players": [
 		{
 			"PlayerID": 19542,
@@ -16,6 +16,7 @@
 			"AverageDraftPosition": 923,
 			"Age": 24,
 			"College": "Temple",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -33,6 +34,7 @@
 			"AverageDraftPosition": 896,
 			"Age": 23,
 			"College": "Wyoming",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -50,6 +52,7 @@
 			"AverageDraftPosition": 971.5,
 			"Age": 23,
 			"College": "Maine",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -67,6 +70,7 @@
 			"AverageDraftPosition": 849.8,
 			"Age": 23,
 			"College": "Arizona State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -84,6 +88,7 @@
 			"AverageDraftPosition": 846.4,
 			"Age": 24,
 			"College": "Virginia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -101,6 +106,7 @@
 			"AverageDraftPosition": 847.5,
 			"Age": 24,
 			"College": "Oregon State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -118,6 +124,7 @@
 			"AverageDraftPosition": 844.1,
 			"Age": 22,
 			"College": "Mississippi",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -135,6 +142,7 @@
 			"AverageDraftPosition": 410.2,
 			"Age": 23,
 			"College": "Ashland",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -152,6 +160,7 @@
 			"AverageDraftPosition": 81,
 			"Age": 22,
 			"College": "North Carolina A&T",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -169,6 +178,7 @@
 			"AverageDraftPosition": 187,
 			"Age": 23,
 			"College": "North Carolina",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -186,6 +196,7 @@
 			"AverageDraftPosition": 639,
 			"Age": 24,
 			"College": "Harvard",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -203,6 +214,7 @@
 			"AverageDraftPosition": 782.1,
 			"Age": 25,
 			"College": "Liberty",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -220,6 +232,7 @@
 			"AverageDraftPosition": 500.4,
 			"Age": 23,
 			"College": "Houston",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -237,6 +250,7 @@
 			"AverageDraftPosition": 51.6,
 			"Age": 23,
 			"College": "Arkansas",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -254,6 +268,7 @@
 			"AverageDraftPosition": 18.3,
 			"Age": 23,
 			"College": "Indiana",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -271,6 +286,7 @@
 			"AverageDraftPosition": 436.1,
 			"Age": 24,
 			"College": "Cincinnati",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -288,6 +304,7 @@
 			"AverageDraftPosition": 776.5,
 			"Age": 24,
 			"College": "Louisiana Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -305,6 +322,7 @@
 			"AverageDraftPosition": 706.6,
 			"Age": 25,
 			"College": "None",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -322,6 +340,7 @@
 			"AverageDraftPosition": 520.7,
 			"Age": 26,
 			"College": "North Dakota State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -339,6 +358,7 @@
 			"AverageDraftPosition": 707.8,
 			"Age": 25,
 			"College": "Georgia Tech",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -356,6 +376,7 @@
 			"AverageDraftPosition": 624.4,
 			"Age": 26,
 			"College": "Rutgers",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -373,6 +394,7 @@
 			"AverageDraftPosition": 389.9,
 			"Age": 25,
 			"College": "Delaware",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -390,6 +412,7 @@
 			"AverageDraftPosition": 473.3,
 			"Age": 26,
 			"College": "Washington State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -407,6 +430,7 @@
 			"AverageDraftPosition": 304.3,
 			"Age": 26,
 			"College": "Southern California",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -424,6 +448,7 @@
 			"AverageDraftPosition": 462.1,
 			"Age": 24,
 			"College": "Minnesota",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -441,6 +466,7 @@
 			"AverageDraftPosition": 222,
 			"Age": 22,
 			"College": "Central Florida",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -458,6 +484,7 @@
 			"AverageDraftPosition": 211.9,
 			"Age": 24,
 			"College": "West Virginia",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -475,6 +502,7 @@
 			"AverageDraftPosition": 209.6,
 			"Age": 28,
 			"College": "Pittsburg State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -492,6 +520,7 @@
 			"AverageDraftPosition": 309.9,
 			"Age": 26,
 			"College": "Michigan State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -509,6 +538,7 @@
 			"AverageDraftPosition": 49.7,
 			"Age": 24,
 			"College": "Penn State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -526,6 +556,7 @@
 			"AverageDraftPosition": 454.2,
 			"Age": 26,
 			"College": "Auburn",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -543,6 +574,7 @@
 			"AverageDraftPosition": 218.6,
 			"Age": 27,
 			"College": "Abilene Christian",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -560,6 +592,7 @@
 			"AverageDraftPosition": 205.1,
 			"Age": 25,
 			"College": "Ball State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -577,6 +610,7 @@
 			"AverageDraftPosition": 162.3,
 			"Age": 26,
 			"College": "Florida",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -594,6 +628,7 @@
 			"AverageDraftPosition": 977.1,
 			"Age": 27,
 			"College": "Georgia",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -611,6 +646,7 @@
 			"AverageDraftPosition": 670.6,
 			"Age": 26,
 			"College": "Tennessee",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -628,6 +664,7 @@
 			"AverageDraftPosition": 356.1,
 			"Age": 27,
 			"College": "Middle Tennessee",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -645,6 +682,7 @@
 			"AverageDraftPosition": 515,
 			"Age": 27,
 			"College": "Michigan State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -662,6 +700,7 @@
 			"AverageDraftPosition": 344.9,
 			"Age": 28,
 			"College": "Louisville",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -679,6 +718,7 @@
 			"AverageDraftPosition": 166.6,
 			"Age": 28,
 			"College": "Texas",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -696,6 +736,7 @@
 			"AverageDraftPosition": 972.6,
 			"Age": 28,
 			"College": "Baylor",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -713,6 +754,7 @@
 			"AverageDraftPosition": 961.3,
 			"Age": 28,
 			"College": "Ohio State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -730,6 +772,7 @@
 			"AverageDraftPosition": null,
 			"Age": 33,
 			"College": "Chadron State - NE",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -747,6 +790,7 @@
 			"AverageDraftPosition": 63.9,
 			"Age": 30,
 			"College": "Texas Tech",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -764,6 +808,7 @@
 			"AverageDraftPosition": 616.5,
 			"Age": 31,
 			"College": "Missouri",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -781,6 +826,7 @@
 			"AverageDraftPosition": 229.9,
 			"Age": 33,
 			"College": "Delaware",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -798,6 +844,7 @@
 			"AverageDraftPosition": 161.2,
 			"Age": 30,
 			"College": "Missouri Western",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -815,6 +862,7 @@
 			"AverageDraftPosition": 94.9,
 			"Age": 26,
 			"College": "USC",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -832,6 +880,7 @@
 			"AverageDraftPosition": 237.8,
 			"Age": 27,
 			"College": "West Virginia",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -849,6 +898,7 @@
 			"AverageDraftPosition": 33.5,
 			"Age": 24,
 			"College": "Oregon State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -866,6 +916,7 @@
 			"AverageDraftPosition": 1.7,
 			"Age": 23,
 			"College": "Georgia",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -883,6 +934,7 @@
 			"AverageDraftPosition": 501.5,
 			"Age": 22,
 			"College": "Oregon State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -900,6 +952,7 @@
 			"AverageDraftPosition": 324.6,
 			"Age": 24,
 			"College": "Texas",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -917,6 +970,7 @@
 			"AverageDraftPosition": 84.4,
 			"Age": 23,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -934,6 +988,7 @@
 			"AverageDraftPosition": 365.1,
 			"Age": 25,
 			"College": "Western Kentucky",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -951,6 +1006,7 @@
 			"AverageDraftPosition": 392.2,
 			"Age": 23,
 			"College": "South Carolina",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -968,6 +1024,7 @@
 			"AverageDraftPosition": 626.6,
 			"Age": 24,
 			"College": "South Carolina State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -985,6 +1042,7 @@
 			"AverageDraftPosition": 537.6,
 			"Age": 25,
 			"College": "Arkansas",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1002,6 +1060,7 @@
 			"AverageDraftPosition": 786.6,
 			"Age": 25,
 			"College": "Iowa",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1019,6 +1078,7 @@
 			"AverageDraftPosition": 595.1,
 			"Age": 23,
 			"College": "Southern Mississippi",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1036,6 +1096,7 @@
 			"AverageDraftPosition": 823.8,
 			"Age": 25,
 			"College": "Penn State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1053,6 +1114,7 @@
 			"AverageDraftPosition": 395.6,
 			"Age": 23,
 			"College": "Texas A&M",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1070,6 +1132,7 @@
 			"AverageDraftPosition": 432.8,
 			"Age": 23,
 			"College": "South Alabama",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1087,6 +1150,7 @@
 			"AverageDraftPosition": 95.1,
 			"Age": 24,
 			"College": "Eastern Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1104,6 +1168,7 @@
 			"AverageDraftPosition": 610.8,
 			"Age": 23,
 			"College": "Virginia Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1121,6 +1186,7 @@
 			"AverageDraftPosition": 835.1,
 			"Age": 23,
 			"College": "Oregon",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1138,6 +1204,7 @@
 			"AverageDraftPosition": 917.4,
 			"Age": 22,
 			"College": "Southern Cal",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1155,6 +1222,7 @@
 			"AverageDraftPosition": 918.5,
 			"Age": 24,
 			"College": "Southern",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1172,6 +1240,7 @@
 			"AverageDraftPosition": 943.3,
 			"Age": 24,
 			"College": "Mississippi State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1189,6 +1258,7 @@
 			"AverageDraftPosition": 945.6,
 			"Age": null,
 			"College": "Florida State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1206,6 +1276,7 @@
 			"AverageDraftPosition": 853.1,
 			"Age": 24,
 			"College": "Nebraska",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1223,6 +1294,7 @@
 			"AverageDraftPosition": 854.3,
 			"Age": 23,
 			"College": "Texas-San Antonio",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1240,6 +1312,7 @@
 			"AverageDraftPosition": 868.9,
 			"Age": 24,
 			"College": "Lindenwood",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1257,6 +1330,7 @@
 			"AverageDraftPosition": 897.1,
 			"Age": 24,
 			"College": "Florida State",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -1274,6 +1348,7 @@
 			"AverageDraftPosition": 834,
 			"Age": 24,
 			"College": "Pittsburgh",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1291,6 +1366,7 @@
 			"AverageDraftPosition": 708.9,
 			"Age": 24,
 			"College": "Buffalo",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1308,6 +1384,7 @@
 			"AverageDraftPosition": 357.3,
 			"Age": 22,
 			"College": "Wyoming",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1325,6 +1402,7 @@
 			"AverageDraftPosition": 483.5,
 			"Age": 22,
 			"College": "Tennessee",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1342,6 +1420,7 @@
 			"AverageDraftPosition": 810.3,
 			"Age": 25,
 			"College": "Louisville",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1359,6 +1438,7 @@
 			"AverageDraftPosition": 244.6,
 			"Age": 23,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1376,6 +1456,7 @@
 			"AverageDraftPosition": 29.5,
 			"Age": 21,
 			"College": "Oklahoma",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1393,6 +1474,7 @@
 			"AverageDraftPosition": 677.3,
 			"Age": 25,
 			"College": "Texas A&M",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -1410,6 +1492,7 @@
 			"AverageDraftPosition": 513.9,
 			"Age": 25,
 			"College": "Wisconsin",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1427,6 +1510,7 @@
 			"AverageDraftPosition": 401.2,
 			"Age": 24,
 			"College": "Mississippi",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1444,6 +1528,7 @@
 			"AverageDraftPosition": 659.3,
 			"Age": 25,
 			"College": "Louisiana Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1461,6 +1546,7 @@
 			"AverageDraftPosition": 251.3,
 			"Age": 23,
 			"College": "Pittsburgh",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1478,6 +1564,7 @@
 			"AverageDraftPosition": 608.6,
 			"Age": 25,
 			"College": "Auburn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -1495,6 +1582,7 @@
 			"AverageDraftPosition": 598.4,
 			"Age": 25,
 			"College": "Rutgers",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -1512,6 +1600,7 @@
 			"AverageDraftPosition": 630,
 			"Age": 27,
 			"College": "Stanford",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1529,6 +1618,7 @@
 			"AverageDraftPosition": 123.1,
 			"Age": 27,
 			"College": "Notre Dame",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -1546,6 +1636,7 @@
 			"AverageDraftPosition": 184.5,
 			"Age": 26,
 			"College": "North Carolina",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -1563,6 +1654,7 @@
 			"AverageDraftPosition": 402.3,
 			"Age": 27,
 			"College": "USC",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -1580,6 +1672,7 @@
 			"AverageDraftPosition": 423.8,
 			"Age": 28,
 			"College": "Texas A&M",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -1597,6 +1690,7 @@
 			"AverageDraftPosition": 235.5,
 			"Age": 31,
 			"College": "LSU",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -1614,6 +1708,7 @@
 			"AverageDraftPosition": 223.1,
 			"Age": 30,
 			"College": "TCU",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -1631,6 +1726,7 @@
 			"AverageDraftPosition": 22.1,
 			"Age": 29,
 			"College": "Georgia",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -1648,6 +1744,7 @@
 			"AverageDraftPosition": 543.2,
 			"Age": 33,
 			"College": "Michigan State",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -1665,6 +1762,7 @@
 			"AverageDraftPosition": 225.4,
 			"Age": 37,
 			"College": "Mississippi",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -1682,6 +1780,7 @@
 			"AverageDraftPosition": 144.9,
 			"Age": 31,
 			"College": "Oregon",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -1699,6 +1798,7 @@
 			"AverageDraftPosition": 177.5,
 			"Age": 28,
 			"College": "Virginia Tech",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -1716,6 +1816,7 @@
 			"AverageDraftPosition": 552.2,
 			"Age": 29,
 			"College": "USC",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -1733,6 +1834,7 @@
 			"AverageDraftPosition": 45.1,
 			"Age": 27,
 			"College": "Baylor",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -1750,6 +1852,7 @@
 			"AverageDraftPosition": 49.8,
 			"Age": 25,
 			"College": "LSU",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1767,6 +1870,7 @@
 			"AverageDraftPosition": 697.6,
 			"Age": 26,
 			"College": "Coastal Carolina",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1784,6 +1888,7 @@
 			"AverageDraftPosition": 583.8,
 			"Age": 32,
 			"College": "Cal - Irvine",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1801,6 +1906,7 @@
 			"AverageDraftPosition": 453.1,
 			"Age": 26,
 			"College": "Saginaw Valley",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1818,6 +1924,7 @@
 			"AverageDraftPosition": 11.5,
 			"Age": 25,
 			"College": "LSU",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1835,6 +1942,7 @@
 			"AverageDraftPosition": 380.9,
 			"Age": 25,
 			"College": "Indiana",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1852,6 +1960,7 @@
 			"AverageDraftPosition": 36.4,
 			"Age": 26,
 			"College": "Ohio State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -1869,6 +1978,7 @@
 			"AverageDraftPosition": 105,
 			"Age": 24,
 			"College": "Miami",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -1886,6 +1996,7 @@
 			"AverageDraftPosition": 607.5,
 			"Age": 25,
 			"College": "Southern Cal",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1903,6 +2014,7 @@
 			"AverageDraftPosition": 284,
 			"Age": 25,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1920,6 +2032,7 @@
 			"AverageDraftPosition": 503.8,
 			"Age": 24,
 			"College": "Azusa Pacific",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -1937,6 +2050,7 @@
 			"AverageDraftPosition": 313.3,
 			"Age": 24,
 			"College": "Auburn",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1954,6 +2068,7 @@
 			"AverageDraftPosition": 196.1,
 			"Age": 23,
 			"College": "UCLA",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1971,6 +2086,7 @@
 			"AverageDraftPosition": 208.5,
 			"Age": 23,
 			"College": "Baylor",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -1988,6 +2104,7 @@
 			"AverageDraftPosition": 98.3,
 			"Age": 24,
 			"College": "Oklahoma",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2005,6 +2122,7 @@
 			"AverageDraftPosition": 351.6,
 			"Age": 23,
 			"College": "Colorado State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2022,6 +2140,7 @@
 			"AverageDraftPosition": 590.5,
 			"Age": 25,
 			"College": "South Carolina",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2039,6 +2158,7 @@
 			"AverageDraftPosition": 446.3,
 			"Age": 25,
 			"College": "Princeton",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2056,6 +2176,7 @@
 			"AverageDraftPosition": 568,
 			"Age": 24,
 			"College": "Northwestern",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2073,6 +2194,7 @@
 			"AverageDraftPosition": 679.6,
 			"Age": 24,
 			"College": "Eastern Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2090,6 +2212,7 @@
 			"AverageDraftPosition": 787.8,
 			"Age": 25,
 			"College": "Iowa",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2107,6 +2230,7 @@
 			"AverageDraftPosition": 960.2,
 			"Age": 25,
 			"College": "Penn State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2124,6 +2248,7 @@
 			"AverageDraftPosition": 328,
 			"Age": 24,
 			"College": "Bowling Green",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2141,6 +2266,7 @@
 			"AverageDraftPosition": 793.4,
 			"Age": 24,
 			"College": "Utah State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2158,6 +2284,7 @@
 			"AverageDraftPosition": 788.9,
 			"Age": 25,
 			"College": "Stanford",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2175,6 +2302,7 @@
 			"AverageDraftPosition": 795.7,
 			"Age": 25,
 			"College": "Virginia",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2192,6 +2320,7 @@
 			"AverageDraftPosition": 464.3,
 			"Age": 23,
 			"College": "Holy Cross",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2209,6 +2338,7 @@
 			"AverageDraftPosition": 820.5,
 			"Age": 23,
 			"College": "New Mexico",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2226,6 +2356,7 @@
 			"AverageDraftPosition": 180,
 			"Age": 21,
 			"College": "Miami",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2243,6 +2374,7 @@
 			"AverageDraftPosition": 815.9,
 			"Age": 24,
 			"College": "Pennsylvania",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2260,6 +2392,7 @@
 			"AverageDraftPosition": 455.3,
 			"Age": 23,
 			"College": "Southern Oregon",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2277,6 +2410,7 @@
 			"AverageDraftPosition": 818.2,
 			"Age": 26,
 			"College": "South Carolina State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2294,6 +2428,7 @@
 			"AverageDraftPosition": 806.9,
 			"Age": 24,
 			"College": "California",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2311,6 +2446,7 @@
 			"AverageDraftPosition": 323.4,
 			"Age": 23,
 			"College": "Clemson",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2328,6 +2464,7 @@
 			"AverageDraftPosition": 57.6,
 			"Age": 23,
 			"College": "Mississippi",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2345,6 +2482,7 @@
 			"AverageDraftPosition": 655.9,
 			"Age": 23,
 			"College": "California",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2362,6 +2500,7 @@
 			"AverageDraftPosition": 524.1,
 			"Age": 23,
 			"College": "North Carolina State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2379,6 +2518,7 @@
 			"AverageDraftPosition": 459.8,
 			"Age": 22,
 			"College": "Arizona State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2396,6 +2536,7 @@
 			"AverageDraftPosition": 604.1,
 			"Age": 23,
 			"College": "Miami",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2413,6 +2554,7 @@
 			"AverageDraftPosition": 845.2,
 			"Age": 24,
 			"College": "Tennessee-Chattanooga",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2430,6 +2572,7 @@
 			"AverageDraftPosition": 916.3,
 			"Age": 24,
 			"College": "Syracuse",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2447,6 +2590,7 @@
 			"AverageDraftPosition": 921.9,
 			"Age": 24,
 			"College": "San Jose State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2464,6 +2608,7 @@
 			"AverageDraftPosition": 919.6,
 			"Age": 23,
 			"College": "Virginia",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2481,6 +2626,7 @@
 			"AverageDraftPosition": 920.8,
 			"Age": 22,
 			"College": "Florida State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2498,6 +2644,7 @@
 			"AverageDraftPosition": 948.9,
 			"Age": null,
 			"College": "null",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2515,6 +2662,7 @@
 			"AverageDraftPosition": 924.1,
 			"Age": 25,
 			"College": "Shepherd",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2532,6 +2680,7 @@
 			"AverageDraftPosition": 925.3,
 			"Age": 23,
 			"College": "Wisconsin",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2549,6 +2698,7 @@
 			"AverageDraftPosition": 926.4,
 			"Age": 22,
 			"College": "Houston",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2566,6 +2716,7 @@
 			"AverageDraftPosition": 970.3,
 			"Age": 24,
 			"College": "Georgia Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2583,6 +2734,7 @@
 			"AverageDraftPosition": 944.4,
 			"Age": 27,
 			"College": "null",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2600,6 +2752,7 @@
 			"AverageDraftPosition": 890.3,
 			"Age": 23,
 			"College": "East Carolina",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2617,6 +2770,7 @@
 			"AverageDraftPosition": 838.5,
 			"Age": 24,
 			"College": "Arizona",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2634,6 +2788,7 @@
 			"AverageDraftPosition": 495.9,
 			"Age": 24,
 			"College": "West Virginia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2651,6 +2806,7 @@
 			"AverageDraftPosition": 182.3,
 			"Age": 23,
 			"College": "Memphis",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2668,6 +2824,7 @@
 			"AverageDraftPosition": 94.3,
 			"Age": 21,
 			"College": "Southern Cal",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2685,6 +2842,7 @@
 			"AverageDraftPosition": 382.1,
 			"Age": 24,
 			"College": "North Carolina",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2702,6 +2860,7 @@
 			"AverageDraftPosition": 311.1,
 			"Age": 23,
 			"College": "San Diego State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2719,6 +2878,7 @@
 			"AverageDraftPosition": 661.5,
 			"Age": 23,
 			"College": "Tennessee",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2736,6 +2896,7 @@
 			"AverageDraftPosition": 278.4,
 			"Age": 22,
 			"College": "Pittsburgh",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2753,6 +2914,7 @@
 			"AverageDraftPosition": 466.6,
 			"Age": 23,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2770,6 +2932,7 @@
 			"AverageDraftPosition": 803.6,
 			"Age": 25,
 			"College": "Memphis",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2787,6 +2950,7 @@
 			"AverageDraftPosition": 811.4,
 			"Age": 25,
 			"College": "Northern Michigan",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2804,6 +2968,7 @@
 			"AverageDraftPosition": 579.3,
 			"Age": 24,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2821,6 +2986,7 @@
 			"AverageDraftPosition": 790,
 			"Age": 27,
 			"College": "Washington State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2838,6 +3004,7 @@
 			"AverageDraftPosition": 792.3,
 			"Age": 31,
 			"College": "Florida",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -2855,6 +3022,7 @@
 			"AverageDraftPosition": 777.6,
 			"Age": 24,
 			"College": "Indiana",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2872,6 +3040,7 @@
 			"AverageDraftPosition": 249.1,
 			"Age": 24,
 			"College": "West Virginia",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2889,6 +3058,7 @@
 			"AverageDraftPosition": 102.3,
 			"Age": 25,
 			"College": "North Dakota State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -2906,6 +3076,7 @@
 			"AverageDraftPosition": 774.2,
 			"Age": 25,
 			"College": "Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -2923,6 +3094,7 @@
 			"AverageDraftPosition": 387.7,
 			"Age": 23,
 			"College": "Penn State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -2940,6 +3112,7 @@
 			"AverageDraftPosition": 169.8,
 			"Age": 24,
 			"College": "Southern California",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -2957,6 +3130,7 @@
 			"AverageDraftPosition": 39.4,
 			"Age": 24,
 			"College": "Boise State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -2974,6 +3148,7 @@
 			"AverageDraftPosition": 605.2,
 			"Age": 26,
 			"College": "Kent State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -2991,6 +3166,7 @@
 			"AverageDraftPosition": 614.2,
 			"Age": 26,
 			"College": "California",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3008,6 +3184,7 @@
 			"AverageDraftPosition": 343.7,
 			"Age": 27,
 			"College": "Michigan",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3025,6 +3202,7 @@
 			"AverageDraftPosition": 534.2,
 			"Age": 27,
 			"College": "Southern Cal",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3042,6 +3220,7 @@
 			"AverageDraftPosition": 403.5,
 			"Age": 27,
 			"College": "Rice",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3059,6 +3238,7 @@
 			"AverageDraftPosition": 182.7,
 			"Age": 27,
 			"College": "Rice",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3076,6 +3256,7 @@
 			"AverageDraftPosition": 93.3,
 			"Age": 26,
 			"College": "Clemson",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3093,6 +3274,7 @@
 			"AverageDraftPosition": 702.1,
 			"Age": 25,
 			"College": "Washington State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3110,6 +3292,7 @@
 			"AverageDraftPosition": 2.9,
 			"Age": 26,
 			"College": "Michigan State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3127,6 +3310,7 @@
 			"AverageDraftPosition": 545.5,
 			"Age": 29,
 			"College": "Oklahoma",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3144,6 +3328,7 @@
 			"AverageDraftPosition": 337,
 			"Age": 26,
 			"College": "Tennessee",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3161,6 +3346,7 @@
 			"AverageDraftPosition": 46.7,
 			"Age": 27,
 			"College": "Stanford",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3178,6 +3364,7 @@
 			"AverageDraftPosition": 41,
 			"Age": 28,
 			"College": "South Carolina",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -3195,6 +3382,7 @@
 			"AverageDraftPosition": 555.6,
 			"Age": 29,
 			"College": "Arizona",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -3212,6 +3400,7 @@
 			"AverageDraftPosition": 5.2,
 			"Age": 29,
 			"College": "Central Michigan",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -3229,6 +3418,7 @@
 			"AverageDraftPosition": 685.2,
 			"Age": 29,
 			"College": "LSU",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -3246,6 +3436,7 @@
 			"AverageDraftPosition": 102.7,
 			"Age": 36,
 			"College": "Miami - OH",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -3263,6 +3454,7 @@
 			"AverageDraftPosition": 173.3,
 			"Age": 31,
 			"College": "Mississippi",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -3280,6 +3472,7 @@
 			"AverageDraftPosition": 346,
 			"Age": 31,
 			"College": "Maryland",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -3297,6 +3490,7 @@
 			"AverageDraftPosition": 63.3,
 			"Age": 39,
 			"College": "Purdue",
+			"Experience": 20,
 			"ExperienceString": "18th Season"
 		},
 		{
@@ -3314,6 +3508,7 @@
 			"AverageDraftPosition": 441.8,
 			"Age": 37,
 			"College": "Georgia",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -3331,6 +3526,7 @@
 			"AverageDraftPosition": 133.3,
 			"Age": 33,
 			"College": "Ohio State",
+			"Experience": 13,
 			"ExperienceString": "12th Season"
 		},
 		{
@@ -3348,6 +3544,7 @@
 			"AverageDraftPosition": 631.1,
 			"Age": 29,
 			"College": "Illinois",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -3365,6 +3562,7 @@
 			"AverageDraftPosition": 26.9,
 			"Age": 28,
 			"College": "Alabama",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -3382,6 +3580,7 @@
 			"AverageDraftPosition": 632.2,
 			"Age": 28,
 			"College": "Nebraska",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -3399,6 +3598,7 @@
 			"AverageDraftPosition": 332.5,
 			"Age": 29,
 			"College": "Stanford",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -3416,6 +3616,7 @@
 			"AverageDraftPosition": 687.5,
 			"Age": 27,
 			"College": "Wake Forest",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3433,6 +3634,7 @@
 			"AverageDraftPosition": 330.2,
 			"Age": 28,
 			"College": "Pittsburgh",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3450,6 +3652,7 @@
 			"AverageDraftPosition": 493.6,
 			"Age": 26,
 			"College": "Oregon",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3467,6 +3670,7 @@
 			"AverageDraftPosition": 431.6,
 			"Age": 27,
 			"College": "Idaho State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3484,6 +3688,7 @@
 			"AverageDraftPosition": 731.4,
 			"Age": 28,
 			"College": "SMU",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -3501,6 +3706,7 @@
 			"AverageDraftPosition": 177.7,
 			"Age": 26,
 			"College": "Southern Cal",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3518,6 +3724,7 @@
 			"AverageDraftPosition": 257,
 			"Age": 26,
 			"College": "Central Florida",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3535,6 +3742,7 @@
 			"AverageDraftPosition": 141.7,
 			"Age": 24,
 			"College": "Mississippi",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3552,6 +3760,7 @@
 			"AverageDraftPosition": 358.4,
 			"Age": 25,
 			"College": "Washington",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -3569,6 +3778,7 @@
 			"AverageDraftPosition": 268.2,
 			"Age": 25,
 			"College": "Rutgers",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3586,6 +3796,7 @@
 			"AverageDraftPosition": 412.5,
 			"Age": 25,
 			"College": "Florida State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3603,6 +3814,7 @@
 			"AverageDraftPosition": 258.1,
 			"Age": 24,
 			"College": "Alabama",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3620,6 +3832,7 @@
 			"AverageDraftPosition": 277.2,
 			"Age": 25,
 			"College": "Arizona State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3637,6 +3850,7 @@
 			"AverageDraftPosition": 749.5,
 			"Age": 26,
 			"College": "Illinois State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3654,6 +3868,7 @@
 			"AverageDraftPosition": 482.4,
 			"Age": 25,
 			"College": "Notre Dame",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3671,6 +3886,7 @@
 			"AverageDraftPosition": 492.5,
 			"Age": 25,
 			"College": "Indiana",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3688,6 +3904,7 @@
 			"AverageDraftPosition": 510.5,
 			"Age": 26,
 			"College": "Auburn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3705,6 +3922,7 @@
 			"AverageDraftPosition": 135.7,
 			"Age": 25,
 			"College": "Illinois State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3722,6 +3940,7 @@
 			"AverageDraftPosition": 759.6,
 			"Age": 27,
 			"College": "Texas A&M",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -3739,6 +3958,7 @@
 			"AverageDraftPosition": 384.3,
 			"Age": 24,
 			"College": "Southern Cal",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3756,6 +3976,7 @@
 			"AverageDraftPosition": 15.8,
 			"Age": 25,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3773,6 +3994,7 @@
 			"AverageDraftPosition": 264.8,
 			"Age": 24,
 			"College": "Arkansas",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3790,6 +4012,7 @@
 			"AverageDraftPosition": 544.3,
 			"Age": 25,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3807,6 +4030,7 @@
 			"AverageDraftPosition": 785.5,
 			"Age": 24,
 			"College": "North Carolina State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -3824,6 +4048,7 @@
 			"AverageDraftPosition": 797.9,
 			"Age": 24,
 			"College": "South Carolina",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -3841,6 +4066,7 @@
 			"AverageDraftPosition": 175.7,
 			"Age": 23,
 			"College": "Georgia State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3858,6 +4084,7 @@
 			"AverageDraftPosition": 475.6,
 			"Age": 25,
 			"College": "Iowa",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -3875,6 +4102,7 @@
 			"AverageDraftPosition": 449.7,
 			"Age": 25,
 			"College": "Northern Illinois",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -3892,6 +4120,7 @@
 			"AverageDraftPosition": 612,
 			"Age": 25,
 			"College": "Tennessee",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3909,6 +4138,7 @@
 			"AverageDraftPosition": 533.1,
 			"Age": 24,
 			"College": "Louisiana Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3926,6 +4156,7 @@
 			"AverageDraftPosition": 821.6,
 			"Age": 24,
 			"College": "Air Force",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3943,6 +4174,7 @@
 			"AverageDraftPosition": 7,
 			"Age": 22,
 			"College": "Tennessee",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3960,6 +4192,7 @@
 			"AverageDraftPosition": 817.1,
 			"Age": 24,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3977,6 +4210,7 @@
 			"AverageDraftPosition": 10.9,
 			"Age": 23,
 			"College": "LSU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -3994,6 +4228,7 @@
 			"AverageDraftPosition": 297.5,
 			"Age": 24,
 			"College": "Oklahoma",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4011,6 +4246,7 @@
 			"AverageDraftPosition": 885.8,
 			"Age": 24,
 			"College": "LSU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4028,6 +4264,7 @@
 			"AverageDraftPosition": 914,
 			"Age": 25,
 			"College": "Kentucky Wesleyan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4045,6 +4282,7 @@
 			"AverageDraftPosition": 911.7,
 			"Age": 24,
 			"College": "Illinois",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -4062,6 +4300,7 @@
 			"AverageDraftPosition": 862.2,
 			"Age": 24,
 			"College": "Northwestern",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4079,6 +4318,7 @@
 			"AverageDraftPosition": 856.5,
 			"Age": 27,
 			"College": "BYU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4096,6 +4336,7 @@
 			"AverageDraftPosition": 941,
 			"Age": null,
 			"College": "Wisconsin-Platteville",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4113,6 +4354,7 @@
 			"AverageDraftPosition": 934.3,
 			"Age": 23,
 			"College": "Maryland",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4130,6 +4372,7 @@
 			"AverageDraftPosition": 915.1,
 			"Age": 24,
 			"College": "Oregon State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4147,6 +4390,7 @@
 			"AverageDraftPosition": 959.1,
 			"Age": 24,
 			"College": "None",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -4164,6 +4408,7 @@
 			"AverageDraftPosition": 956.8,
 			"Age": null,
 			"College": "None",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -4181,6 +4426,7 @@
 			"AverageDraftPosition": 864.4,
 			"Age": 24,
 			"College": "Arkansas",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4198,6 +4444,7 @@
 			"AverageDraftPosition": 865.5,
 			"Age": 24,
 			"College": "Wyoming",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4215,6 +4462,7 @@
 			"AverageDraftPosition": 912.9,
 			"Age": 24,
 			"College": "Iowa",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4232,6 +4480,7 @@
 			"AverageDraftPosition": 448.5,
 			"Age": 23,
 			"College": "Georgia State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4249,6 +4498,7 @@
 			"AverageDraftPosition": 713.4,
 			"Age": 23,
 			"College": "Arkansas",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4266,6 +4516,7 @@
 			"AverageDraftPosition": 107.1,
 			"Age": 22,
 			"College": "Oklahoma",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4283,6 +4534,7 @@
 			"AverageDraftPosition": 427.1,
 			"Age": 25,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -4300,6 +4552,7 @@
 			"AverageDraftPosition": 198.4,
 			"Age": 25,
 			"College": "Tulane",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -4317,6 +4570,7 @@
 			"AverageDraftPosition": 675.1,
 			"Age": 24,
 			"College": "Oregon",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4334,6 +4588,7 @@
 			"AverageDraftPosition": 681.8,
 			"Age": 24,
 			"College": "Georgia",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -4351,6 +4606,7 @@
 			"AverageDraftPosition": 270.5,
 			"Age": 25,
 			"College": "Georgia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4368,6 +4624,7 @@
 			"AverageDraftPosition": 542.1,
 			"Age": 25,
 			"College": "Stanford",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -4385,6 +4642,7 @@
 			"AverageDraftPosition": 175.7,
 			"Age": 25,
 			"College": "TCU",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -4402,6 +4660,7 @@
 			"AverageDraftPosition": 757.3,
 			"Age": 25,
 			"College": "Florida",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -4419,6 +4678,7 @@
 			"AverageDraftPosition": 451.9,
 			"Age": 26,
 			"College": "SUNY-Stony Brook",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -4436,6 +4696,7 @@
 			"AverageDraftPosition": 755.1,
 			"Age": 26,
 			"College": "Pittsburgh",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -4453,6 +4714,7 @@
 			"AverageDraftPosition": 388.8,
 			"Age": 25,
 			"College": "Miami",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -4470,6 +4732,7 @@
 			"AverageDraftPosition": 111.2,
 			"Age": 24,
 			"College": "Duke",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -4487,6 +4750,7 @@
 			"AverageDraftPosition": 517.3,
 			"Age": 25,
 			"College": "Notre Dame",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4504,6 +4768,7 @@
 			"AverageDraftPosition": 184.8,
 			"Age": 26,
 			"College": "Colorado",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4521,6 +4786,7 @@
 			"AverageDraftPosition": 546.6,
 			"Age": 25,
 			"College": "Colorado State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4538,6 +4804,7 @@
 			"AverageDraftPosition": 157.7,
 			"Age": 26,
 			"College": "Wisconsin",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4555,6 +4822,7 @@
 			"AverageDraftPosition": 204,
 			"Age": 25,
 			"College": "Vanderbilt",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4572,6 +4840,7 @@
 			"AverageDraftPosition": 171.8,
 			"Age": 25,
 			"College": "LSU",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4589,6 +4858,7 @@
 			"AverageDraftPosition": 308.8,
 			"Age": 27,
 			"College": "Tennessee",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4606,6 +4876,7 @@
 			"AverageDraftPosition": 160.8,
 			"Age": 27,
 			"College": "Florida State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4623,6 +4894,7 @@
 			"AverageDraftPosition": 84.8,
 			"Age": 27,
 			"College": "Florida",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4640,6 +4912,7 @@
 			"AverageDraftPosition": 409.1,
 			"Age": 27,
 			"College": "Florida State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -4657,6 +4930,7 @@
 			"AverageDraftPosition": 197.2,
 			"Age": 27,
 			"College": "Florida",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4674,6 +4948,7 @@
 			"AverageDraftPosition": 104,
 			"Age": 27,
 			"College": "Nebraska",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4691,6 +4966,7 @@
 			"AverageDraftPosition": 554.5,
 			"Age": 29,
 			"College": "Brown",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4708,6 +4984,7 @@
 			"AverageDraftPosition": 74.3,
 			"Age": 29,
 			"College": "Monmouth - NJ",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -4725,6 +5002,7 @@
 			"AverageDraftPosition": 331.3,
 			"Age": 28,
 			"College": "Appalachian State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -4742,6 +5020,7 @@
 			"AverageDraftPosition": 522.9,
 			"Age": 28,
 			"College": "Clemson",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -4759,6 +5038,7 @@
 			"AverageDraftPosition": 572.5,
 			"Age": 28,
 			"College": "Mississippi",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -4776,6 +5056,7 @@
 			"AverageDraftPosition": 25.1,
 			"Age": 28,
 			"College": "Arizona",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -4793,6 +5074,7 @@
 			"AverageDraftPosition": 578.2,
 			"Age": 31,
 			"College": "Texas",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -4810,6 +5092,7 @@
 			"AverageDraftPosition": 386.6,
 			"Age": 34,
 			"College": "Maryland",
+			"Experience": 14,
 			"ExperienceString": "13th Season"
 		},
 		{
@@ -4827,6 +5110,7 @@
 			"AverageDraftPosition": 51.1,
 			"Age": 40,
 			"College": "Michigan",
+			"Experience": 21,
 			"ExperienceString": "19th Season"
 		},
 		{
@@ -4844,6 +5128,7 @@
 			"AverageDraftPosition": 157.6,
 			"Age": 34,
 			"College": "Memphis",
+			"Experience": 14,
 			"ExperienceString": "13th Season"
 		},
 		{
@@ -4861,6 +5146,7 @@
 			"AverageDraftPosition": 162.5,
 			"Age": 33,
 			"College": "Utah",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -4878,6 +5164,7 @@
 			"AverageDraftPosition": 642.4,
 			"Age": 32,
 			"College": "UCLA",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -4895,6 +5182,7 @@
 			"AverageDraftPosition": 199.5,
 			"Age": 29,
 			"College": "Rutgers",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -4912,6 +5200,7 @@
 			"AverageDraftPosition": 123.3,
 			"Age": 31,
 			"College": "Kent State",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -4929,6 +5218,7 @@
 			"AverageDraftPosition": 266,
 			"Age": 32,
 			"College": "Michigan State",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -4946,6 +5236,7 @@
 			"AverageDraftPosition": 433.9,
 			"Age": 31,
 			"College": "South Carolina",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -4963,6 +5254,7 @@
 			"AverageDraftPosition": 73.6,
 			"Age": 33,
 			"College": "Central Missouri",
+			"Experience": 14,
 			"ExperienceString": "13th Season"
 		},
 		{
@@ -4980,6 +5272,7 @@
 			"AverageDraftPosition": 26.4,
 			"Age": 34,
 			"College": "California",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -4997,6 +5290,7 @@
 			"AverageDraftPosition": 191.8,
 			"Age": 33,
 			"College": "Colorado",
+			"Experience": 13,
 			"ExperienceString": "12th Season"
 		},
 		{
@@ -5014,6 +5308,7 @@
 			"AverageDraftPosition": 465.5,
 			"Age": 32,
 			"College": "Bethune-Cookman",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -5031,6 +5326,7 @@
 			"AverageDraftPosition": 96.1,
 			"Age": 27,
 			"College": "Pittsburgh",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -5048,6 +5344,7 @@
 			"AverageDraftPosition": 84.8,
 			"Age": 31,
 			"College": "Miami",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -5065,6 +5362,7 @@
 			"AverageDraftPosition": 160.1,
 			"Age": 28,
 			"College": "Nevada",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -5082,6 +5380,7 @@
 			"AverageDraftPosition": 633.4,
 			"Age": 29,
 			"College": "Tennessee",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -5099,6 +5398,7 @@
 			"AverageDraftPosition": 602.9,
 			"Age": 30,
 			"College": "Wisconsin",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -5116,6 +5416,7 @@
 			"AverageDraftPosition": 627.7,
 			"Age": 28,
 			"College": "Missouri",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -5133,6 +5434,7 @@
 			"AverageDraftPosition": 122.7,
 			"Age": 27,
 			"College": "Kentucky",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -5150,6 +5452,7 @@
 			"AverageDraftPosition": 668.3,
 			"Age": 30,
 			"College": "Monmouth - IL",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5167,6 +5470,7 @@
 			"AverageDraftPosition": 635.6,
 			"Age": 28,
 			"College": "Ouachita Baptist - AR",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -5184,6 +5488,7 @@
 			"AverageDraftPosition": 734.8,
 			"Age": 26,
 			"College": "Toledo",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5201,6 +5506,7 @@
 			"AverageDraftPosition": 334.7,
 			"Age": 27,
 			"College": "Wake Forest",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -5218,6 +5524,7 @@
 			"AverageDraftPosition": 23.3,
 			"Age": 25,
 			"College": "Fresno State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -5235,6 +5542,7 @@
 			"AverageDraftPosition": 139.5,
 			"Age": 24,
 			"College": "Oregon",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -5252,6 +5560,7 @@
 			"AverageDraftPosition": 70,
 			"Age": 21,
 			"College": "Stanford",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -5269,6 +5578,7 @@
 			"AverageDraftPosition": 559,
 			"Age": 24,
 			"College": "UCLA",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -5286,6 +5596,7 @@
 			"AverageDraftPosition": 300.9,
 			"Age": 25,
 			"College": "Oklahoma",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -5303,6 +5614,7 @@
 			"AverageDraftPosition": 442.9,
 			"Age": 25,
 			"College": "Virginia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5320,6 +5632,7 @@
 			"AverageDraftPosition": 754,
 			"Age": 26,
 			"College": "Northern Illinois",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5337,6 +5650,7 @@
 			"AverageDraftPosition": 770.9,
 			"Age": 26,
 			"College": "None",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5354,6 +5668,7 @@
 			"AverageDraftPosition": 34.6,
 			"Age": 23,
 			"College": "Alabama",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -5371,6 +5686,7 @@
 			"AverageDraftPosition": 377.5,
 			"Age": 24,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -5388,6 +5704,7 @@
 			"AverageDraftPosition": 352.8,
 			"Age": 23,
 			"College": "Massachusetts",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5405,6 +5722,7 @@
 			"AverageDraftPosition": 286.3,
 			"Age": 24,
 			"College": "Illinois",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -5422,6 +5740,7 @@
 			"AverageDraftPosition": 547.7,
 			"Age": 25,
 			"College": "Michigan",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -5439,6 +5758,7 @@
 			"AverageDraftPosition": 654.8,
 			"Age": 24,
 			"College": "Wesley",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -5456,6 +5776,7 @@
 			"AverageDraftPosition": 802.4,
 			"Age": 25,
 			"College": "Miami",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5473,6 +5794,7 @@
 			"AverageDraftPosition": 74.6,
 			"Age": 23,
 			"College": "Western Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5490,6 +5812,7 @@
 			"AverageDraftPosition": 252.4,
 			"Age": 22,
 			"College": "Notre Dame",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5507,6 +5830,7 @@
 			"AverageDraftPosition": 291.9,
 			"Age": 23,
 			"College": "Western Kentucky",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5524,6 +5848,7 @@
 			"AverageDraftPosition": 408,
 			"Age": 22,
 			"College": "Florida International",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5541,6 +5866,7 @@
 			"AverageDraftPosition": 88,
 			"Age": 23,
 			"College": "BYU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5558,6 +5884,7 @@
 			"AverageDraftPosition": 132.3,
 			"Age": 23,
 			"College": "UTEP",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5575,6 +5902,7 @@
 			"AverageDraftPosition": 375.3,
 			"Age": 23,
 			"College": "Purdue",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5592,6 +5920,7 @@
 			"AverageDraftPosition": 526.3,
 			"Age": 23,
 			"College": "Utah State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5609,6 +5938,7 @@
 			"AverageDraftPosition": 836.2,
 			"Age": 23,
 			"College": "Old Dominion",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5626,6 +5956,7 @@
 			"AverageDraftPosition": 508.3,
 			"Age": 23,
 			"College": "California",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5643,6 +5974,7 @@
 			"AverageDraftPosition": 884.7,
 			"Age": 23,
 			"College": "Marshall",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5660,6 +5992,7 @@
 			"AverageDraftPosition": 907.2,
 			"Age": 23,
 			"College": "Indiana State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5677,6 +6010,7 @@
 			"AverageDraftPosition": 894.8,
 			"Age": 23,
 			"College": "Northern Illinois",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5694,6 +6028,7 @@
 			"AverageDraftPosition": 855.4,
 			"Age": 22,
 			"College": "Marshall",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5711,6 +6046,7 @@
 			"AverageDraftPosition": 935.4,
 			"Age": 24,
 			"College": "Western Kentucky",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5728,6 +6064,7 @@
 			"AverageDraftPosition": 939.9,
 			"Age": 23,
 			"College": "BYU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5745,6 +6082,7 @@
 			"AverageDraftPosition": 144.6,
 			"Age": 23,
 			"College": "Florida",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5762,6 +6100,7 @@
 			"AverageDraftPosition": 955.7,
 			"Age": null,
 			"College": "Barry",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -5779,6 +6118,7 @@
 			"AverageDraftPosition": 962.5,
 			"Age": 24,
 			"College": "Georgia Southern",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5796,6 +6136,7 @@
 			"AverageDraftPosition": 867.8,
 			"Age": null,
 			"College": "Harvard",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5813,6 +6154,7 @@
 			"AverageDraftPosition": 909.5,
 			"Age": 24,
 			"College": "Stephen F. Austin",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5830,6 +6172,7 @@
 			"AverageDraftPosition": 882.4,
 			"Age": 25,
 			"College": "Alabama",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5847,6 +6190,7 @@
 			"AverageDraftPosition": 883.6,
 			"Age": 22,
 			"College": "Hawaii",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -5864,6 +6208,7 @@
 			"AverageDraftPosition": 191.1,
 			"Age": 22,
 			"College": "Georgia Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5881,6 +6226,7 @@
 			"AverageDraftPosition": 471.1,
 			"Age": 24,
 			"College": "Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5898,6 +6244,7 @@
 			"AverageDraftPosition": 163.4,
 			"Age": 22,
 			"College": "Texas Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5915,6 +6262,7 @@
 			"AverageDraftPosition": 145.2,
 			"Age": 22,
 			"College": "Texas",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5932,6 +6280,7 @@
 			"AverageDraftPosition": 8.3,
 			"Age": 22,
 			"College": "Toledo",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5949,6 +6298,7 @@
 			"AverageDraftPosition": 548.8,
 			"Age": 24,
 			"College": "Jacksonville State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5966,6 +6316,7 @@
 			"AverageDraftPosition": 53.6,
 			"Age": 22,
 			"College": "Clemson",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -5983,6 +6334,7 @@
 			"AverageDraftPosition": 804.7,
 			"Age": 23,
 			"College": "Temple",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -6000,6 +6352,7 @@
 			"AverageDraftPosition": 809.2,
 			"Age": 24,
 			"College": "LSU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -6017,6 +6370,7 @@
 			"AverageDraftPosition": 791.2,
 			"Age": 24,
 			"College": "Virginia Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -6034,6 +6388,7 @@
 			"AverageDraftPosition": 539.8,
 			"Age": 25,
 			"College": "California",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6051,6 +6406,7 @@
 			"AverageDraftPosition": 967,
 			"Age": 25,
 			"College": "Colorado",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -6068,6 +6424,7 @@
 			"AverageDraftPosition": 428.3,
 			"Age": 24,
 			"College": "UCLA",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6085,6 +6442,7 @@
 			"AverageDraftPosition": 476.7,
 			"Age": 24,
 			"College": "Western Michigan",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -6102,6 +6460,7 @@
 			"AverageDraftPosition": 335.8,
 			"Age": 23,
 			"College": "Florida",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6119,6 +6478,7 @@
 			"AverageDraftPosition": 391.1,
 			"Age": 24,
 			"College": "San Jose State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6136,6 +6496,7 @@
 			"AverageDraftPosition": 36,
 			"Age": 24,
 			"College": "West Alabama",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6153,6 +6514,7 @@
 			"AverageDraftPosition": 262.6,
 			"Age": 25,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6170,6 +6532,7 @@
 			"AverageDraftPosition": 715.6,
 			"Age": 27,
 			"College": "Eastern Kentucky",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6187,6 +6550,7 @@
 			"AverageDraftPosition": 120,
 			"Age": 24,
 			"College": "Notre Dame",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6204,6 +6568,7 @@
 			"AverageDraftPosition": 768.6,
 			"Age": 26,
 			"College": "Alabama",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6221,6 +6586,7 @@
 			"AverageDraftPosition": 516.2,
 			"Age": 25,
 			"College": "Purdue",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6238,6 +6604,7 @@
 			"AverageDraftPosition": 233.3,
 			"Age": 25,
 			"College": "Georgia",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6255,6 +6622,7 @@
 			"AverageDraftPosition": 643.5,
 			"Age": 26,
 			"College": "Southern Illinois",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6272,6 +6640,7 @@
 			"AverageDraftPosition": 350.5,
 			"Age": 25,
 			"College": "Auburn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6289,6 +6658,7 @@
 			"AverageDraftPosition": 379.8,
 			"Age": 26,
 			"College": "South Carolina",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6306,6 +6676,7 @@
 			"AverageDraftPosition": 507.2,
 			"Age": 25,
 			"College": "Oregon",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6323,6 +6694,7 @@
 			"AverageDraftPosition": 236.7,
 			"Age": 26,
 			"College": "Abilene Christian",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6340,6 +6712,7 @@
 			"AverageDraftPosition": 963.6,
 			"Age": 28,
 			"College": "Penn State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6357,6 +6730,7 @@
 			"AverageDraftPosition": 486.9,
 			"Age": 26,
 			"College": "Wisconsin - Milwaukee",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6374,6 +6748,7 @@
 			"AverageDraftPosition": 148.1,
 			"Age": 26,
 			"College": "LSU",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6391,6 +6766,7 @@
 			"AverageDraftPosition": 974.9,
 			"Age": 28,
 			"College": "Rutgers",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6408,6 +6784,7 @@
 			"AverageDraftPosition": 282.9,
 			"Age": 26,
 			"College": "Oklahoma",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6425,6 +6802,7 @@
 			"AverageDraftPosition": 530.8,
 			"Age": 25,
 			"College": "Texas Tech",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6442,6 +6820,7 @@
 			"AverageDraftPosition": 67.5,
 			"Age": 24,
 			"College": "Clemson",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6459,6 +6838,7 @@
 			"AverageDraftPosition": 561.2,
 			"Age": 25,
 			"College": "Auburn",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6476,6 +6856,7 @@
 			"AverageDraftPosition": null,
 			"Age": 26,
 			"College": "Iowa",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6493,6 +6874,7 @@
 			"AverageDraftPosition": 33.5,
 			"Age": 28,
 			"College": "Cincinnati",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6510,6 +6892,7 @@
 			"AverageDraftPosition": 285.1,
 			"Age": 26,
 			"College": "Utah State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6527,6 +6910,7 @@
 			"AverageDraftPosition": 397.8,
 			"Age": 28,
 			"College": "Connecticut",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6544,6 +6928,7 @@
 			"AverageDraftPosition": 6.9,
 			"Age": 25,
 			"College": "Clemson",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6561,6 +6946,7 @@
 			"AverageDraftPosition": 541,
 			"Age": 34,
 			"College": "Oklahoma State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -6578,6 +6964,7 @@
 			"AverageDraftPosition": 719,
 			"Age": 27,
 			"College": "Georgia",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -6595,6 +6982,7 @@
 			"AverageDraftPosition": 575.9,
 			"Age": 29,
 			"College": "Connecticut",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -6612,6 +7000,7 @@
 			"AverageDraftPosition": 40.9,
 			"Age": 27,
 			"College": "Miami",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -6629,6 +7018,7 @@
 			"AverageDraftPosition": 667.2,
 			"Age": 31,
 			"College": "UAB",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -6646,6 +7036,7 @@
 			"AverageDraftPosition": 362.9,
 			"Age": 32,
 			"College": "Michigan",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -6663,6 +7054,7 @@
 			"AverageDraftPosition": 79.2,
 			"Age": 31,
 			"College": "Mount Union - OH",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -6680,6 +7072,7 @@
 			"AverageDraftPosition": 339.2,
 			"Age": 35,
 			"College": "Tennessee",
+			"Experience": 18,
 			"ExperienceString": "16th Season"
 		},
 		{
@@ -6697,6 +7090,7 @@
 			"AverageDraftPosition": 188.8,
 			"Age": 36,
 			"College": "Penn State",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -6714,6 +7108,7 @@
 			"AverageDraftPosition": 192,
 			"Age": 30,
 			"College": "Oklahoma State",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -6731,6 +7126,7 @@
 			"AverageDraftPosition": 299.8,
 			"Age": 29,
 			"College": "SMU",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6748,6 +7144,7 @@
 			"AverageDraftPosition": 288.5,
 			"Age": 29,
 			"College": "Florida",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6765,6 +7162,7 @@
 			"AverageDraftPosition": 213,
 			"Age": 29,
 			"College": "SMU",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -6782,6 +7180,7 @@
 			"AverageDraftPosition": null,
 			"Age": 28,
 			"College": "Oklahoma",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -6799,6 +7198,7 @@
 			"AverageDraftPosition": 298.7,
 			"Age": 27,
 			"College": "Harvard",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6816,6 +7216,7 @@
 			"AverageDraftPosition": 116.5,
 			"Age": 27,
 			"College": "Texas",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6833,6 +7234,7 @@
 			"AverageDraftPosition": 556.7,
 			"Age": 29,
 			"College": "Michigan State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -6850,6 +7252,7 @@
 			"AverageDraftPosition": 399,
 			"Age": 29,
 			"College": "North Texas",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6867,6 +7270,7 @@
 			"AverageDraftPosition": 227.7,
 			"Age": 28,
 			"College": "Baylor",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -6884,6 +7288,7 @@
 			"AverageDraftPosition": 76,
 			"Age": 26,
 			"College": "Eastern Illinois",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6901,6 +7306,7 @@
 			"AverageDraftPosition": 973.7,
 			"Age": 28,
 			"College": "Nebraska",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -6918,6 +7324,7 @@
 			"AverageDraftPosition": 154.4,
 			"Age": 26,
 			"College": "Miami",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6935,6 +7342,7 @@
 			"AverageDraftPosition": 79.1,
 			"Age": 25,
 			"College": "Georgia Southern",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -6952,6 +7360,7 @@
 			"AverageDraftPosition": 527.4,
 			"Age": 25,
 			"College": "Mississippi State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6969,6 +7378,7 @@
 			"AverageDraftPosition": 756.2,
 			"Age": 25,
 			"College": "Texas A&M",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -6986,6 +7396,7 @@
 			"AverageDraftPosition": 566.9,
 			"Age": 24,
 			"College": "Texas  ",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7003,6 +7414,7 @@
 			"AverageDraftPosition": 551.1,
 			"Age": 26,
 			"College": "Ohio State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7020,6 +7432,7 @@
 			"AverageDraftPosition": 349.4,
 			"Age": 26,
 			"College": "Purdue",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7037,6 +7450,7 @@
 			"AverageDraftPosition": 763,
 			"Age": 25,
 			"College": "Sacramento State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7054,6 +7468,7 @@
 			"AverageDraftPosition": 766.4,
 			"Age": 26,
 			"College": "UTEP",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7071,6 +7486,7 @@
 			"AverageDraftPosition": 2.8,
 			"Age": 22,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7088,6 +7504,7 @@
 			"AverageDraftPosition": 129,
 			"Age": 24,
 			"College": "Mississippi State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7105,6 +7522,7 @@
 			"AverageDraftPosition": 498.1,
 			"Age": 24,
 			"College": "Baylor",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7122,6 +7540,7 @@
 			"AverageDraftPosition": 488,
 			"Age": 24,
 			"College": "Michigan State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7139,6 +7558,7 @@
 			"AverageDraftPosition": 584.9,
 			"Age": 24,
 			"College": "Incarnate Word",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7156,6 +7576,7 @@
 			"AverageDraftPosition": 814.8,
 			"Age": 23,
 			"College": "Duke",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7173,6 +7594,7 @@
 			"AverageDraftPosition": 440.7,
 			"Age": 24,
 			"College": "Iowa",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7190,6 +7612,7 @@
 			"AverageDraftPosition": 393.3,
 			"Age": 23,
 			"College": "North Carolina",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7207,6 +7630,7 @@
 			"AverageDraftPosition": 680.7,
 			"Age": 24,
 			"College": "Utah",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7224,6 +7648,7 @@
 			"AverageDraftPosition": 184.6,
 			"Age": 24,
 			"College": "Iowa",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7241,6 +7666,7 @@
 			"AverageDraftPosition": 318.9,
 			"Age": 23,
 			"College": "Louisiana Tech",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7258,6 +7684,7 @@
 			"AverageDraftPosition": 333.6,
 			"Age": 22,
 			"College": "Boise State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7275,6 +7702,7 @@
 			"AverageDraftPosition": 490.2,
 			"Age": 22,
 			"College": "Ohio State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7292,6 +7720,7 @@
 			"AverageDraftPosition": 899.3,
 			"Age": 23,
 			"College": "Oklahoma State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7309,6 +7738,7 @@
 			"AverageDraftPosition": 900.5,
 			"Age": 24,
 			"College": "Central Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7326,6 +7756,7 @@
 			"AverageDraftPosition": 874.6,
 			"Age": 23,
 			"College": "Oregon State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7343,6 +7774,7 @@
 			"AverageDraftPosition": 875.7,
 			"Age": 22,
 			"College": "Eastern Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7360,6 +7792,7 @@
 			"AverageDraftPosition": 269.4,
 			"Age": 23,
 			"College": "Georgia Southern",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7377,6 +7810,7 @@
 			"AverageDraftPosition": 876.8,
 			"Age": 22,
 			"College": "Baylor",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7394,6 +7828,7 @@
 			"AverageDraftPosition": 877.9,
 			"Age": 23,
 			"College": "Louisville",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7411,6 +7846,7 @@
 			"AverageDraftPosition": 879.1,
 			"Age": 23,
 			"College": "Southern Mississippi",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7428,6 +7864,7 @@
 			"AverageDraftPosition": 942.2,
 			"Age": 23,
 			"College": "Western Illinois",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7445,6 +7882,7 @@
 			"AverageDraftPosition": 936.5,
 			"Age": 25,
 			"College": "Mississippi",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7462,6 +7900,7 @@
 			"AverageDraftPosition": 938.8,
 			"Age": 26,
 			"College": "No College",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7479,6 +7918,7 @@
 			"AverageDraftPosition": 933.2,
 			"Age": 22,
 			"College": "Georgia",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7496,6 +7936,7 @@
 			"AverageDraftPosition": 861,
 			"Age": 23,
 			"College": "Mississippi",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7513,6 +7954,7 @@
 			"AverageDraftPosition": 830.6,
 			"Age": 24,
 			"College": "San Diego State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7530,6 +7972,7 @@
 			"AverageDraftPosition": 831.7,
 			"Age": 23,
 			"College": "Kansas State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7547,6 +7990,7 @@
 			"AverageDraftPosition": 306.5,
 			"Age": 23,
 			"College": "Louisiana-Lafayette",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7564,6 +8008,7 @@
 			"AverageDraftPosition": 840.7,
 			"Age": 24,
 			"College": "Akron",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7581,6 +8026,7 @@
 			"AverageDraftPosition": 609.7,
 			"Age": 23,
 			"College": "Drake",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7598,6 +8044,7 @@
 			"AverageDraftPosition": 557.9,
 			"Age": 22,
 			"College": "Virginia Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7615,6 +8062,7 @@
 			"AverageDraftPosition": 477.8,
 			"Age": 23,
 			"College": "Clemson",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7632,6 +8080,7 @@
 			"AverageDraftPosition": 312.2,
 			"Age": 23,
 			"College": "California",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7649,6 +8098,7 @@
 			"AverageDraftPosition": 263.7,
 			"Age": 24,
 			"College": "Alabama",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7666,6 +8116,7 @@
 			"AverageDraftPosition": 822.7,
 			"Age": 25,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7683,6 +8134,7 @@
 			"AverageDraftPosition": 800.2,
 			"Age": 25,
 			"College": "Michigan State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7700,6 +8152,7 @@
 			"AverageDraftPosition": 723.5,
 			"Age": 23,
 			"College": "Texas",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7717,6 +8170,7 @@
 			"AverageDraftPosition": 140.4,
 			"Age": 24,
 			"College": "Temple",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7734,6 +8188,7 @@
 			"AverageDraftPosition": 338.1,
 			"Age": 22,
 			"College": "Ohio State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7751,6 +8206,7 @@
 			"AverageDraftPosition": 280.6,
 			"Age": 25,
 			"College": "Clemson",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7768,6 +8224,7 @@
 			"AverageDraftPosition": 695.4,
 			"Age": 24,
 			"College": "UCLA",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -7785,6 +8242,7 @@
 			"AverageDraftPosition": 340.4,
 			"Age": 23,
 			"College": "Stanford",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7802,6 +8260,7 @@
 			"AverageDraftPosition": 404.6,
 			"Age": 23,
 			"College": "Penn State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7819,6 +8278,7 @@
 			"AverageDraftPosition": 600.7,
 			"Age": 26,
 			"College": "UTEP",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7836,6 +8296,7 @@
 			"AverageDraftPosition": 767.5,
 			"Age": 25,
 			"College": "Florida Atlantic",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7853,6 +8314,7 @@
 			"AverageDraftPosition": 463.2,
 			"Age": 25,
 			"College": "William & Mary",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7870,6 +8332,7 @@
 			"AverageDraftPosition": 181.7,
 			"Age": 22,
 			"College": "Central Michigan",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7887,6 +8350,7 @@
 			"AverageDraftPosition": 751.7,
 			"Age": 23,
 			"College": "LSU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7904,6 +8368,7 @@
 			"AverageDraftPosition": 385.4,
 			"Age": 26,
 			"College": "Monmouth",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7921,6 +8386,7 @@
 			"AverageDraftPosition": 589.4,
 			"Age": 22,
 			"College": "Miami",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7938,6 +8404,7 @@
 			"AverageDraftPosition": 61.6,
 			"Age": 25,
 			"College": "Indiana",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -7955,6 +8422,7 @@
 			"AverageDraftPosition": 744.9,
 			"Age": 26,
 			"College": "Colorado State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -7972,6 +8440,7 @@
 			"AverageDraftPosition": 743.8,
 			"Age": 26,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -7989,6 +8458,7 @@
 			"AverageDraftPosition": 460.9,
 			"Age": 26,
 			"College": "Baylor",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8006,6 +8476,7 @@
 			"AverageDraftPosition": 305.4,
 			"Age": 26,
 			"College": "ECU",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8023,6 +8494,7 @@
 			"AverageDraftPosition": 494.8,
 			"Age": 25,
 			"College": "Louisville",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8040,6 +8512,7 @@
 			"AverageDraftPosition": 17.7,
 			"Age": 26,
 			"College": "Florida State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8057,6 +8530,7 @@
 			"AverageDraftPosition": 420.4,
 			"Age": 26,
 			"College": "Tulane",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8074,6 +8548,7 @@
 			"AverageDraftPosition": 730.3,
 			"Age": 27,
 			"College": "Northern Iowa",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8091,6 +8566,7 @@
 			"AverageDraftPosition": 735.9,
 			"Age": 25,
 			"College": "Nebraska",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8108,6 +8584,7 @@
 			"AverageDraftPosition": 100.9,
 			"Age": 25,
 			"College": "Alabama State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8125,6 +8602,7 @@
 			"AverageDraftPosition": 729.2,
 			"Age": 29,
 			"College": "Grand Valley State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8142,6 +8620,7 @@
 			"AverageDraftPosition": 219.8,
 			"Age": 28,
 			"College": "Washington",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -8159,6 +8638,7 @@
 			"AverageDraftPosition": 174.7,
 			"Age": 28,
 			"College": "Rutgers",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -8176,6 +8656,7 @@
 			"AverageDraftPosition": 17.7,
 			"Age": 29,
 			"College": "Alabama",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -8193,6 +8674,7 @@
 			"AverageDraftPosition": 135.6,
 			"Age": 28,
 			"College": "Ohio State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -8210,6 +8692,7 @@
 			"AverageDraftPosition": 485.7,
 			"Age": 31,
 			"College": "UCLA",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -8227,6 +8710,7 @@
 			"AverageDraftPosition": 364,
 			"Age": 30,
 			"College": "Citadel",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -8244,6 +8728,7 @@
 			"AverageDraftPosition": 90,
 			"Age": 29,
 			"College": "Louisville",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -8261,6 +8746,7 @@
 			"AverageDraftPosition": 599.6,
 			"Age": 36,
 			"College": "Virginia",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -8278,6 +8764,7 @@
 			"AverageDraftPosition": 181.4,
 			"Age": 42,
 			"College": "Baylor",
+			"Experience": 19,
 			"ExperienceString": "17th Season"
 		},
 		{
@@ -8295,6 +8782,7 @@
 			"AverageDraftPosition": 112.6,
 			"Age": 32,
 			"College": "Boston College",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -8312,6 +8800,7 @@
 			"AverageDraftPosition": 279.5,
 			"Age": 38,
 			"College": "Sam Houston State",
+			"Experience": 18,
 			"ExperienceString": "16th Season"
 		},
 		{
@@ -8329,6 +8818,7 @@
 			"AverageDraftPosition": 60.6,
 			"Age": 30,
 			"College": "Georgia Tech",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -8346,6 +8836,7 @@
 			"AverageDraftPosition": 75.7,
 			"Age": 31,
 			"College": "SMU",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -8363,6 +8854,7 @@
 			"AverageDraftPosition": 89.6,
 			"Age": 28,
 			"College": "Notre Dame",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -8380,6 +8872,7 @@
 			"AverageDraftPosition": 220.9,
 			"Age": 28,
 			"College": "Baylor",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -8397,6 +8890,7 @@
 			"AverageDraftPosition": 67.7,
 			"Age": 29,
 			"College": "Michigan State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -8414,6 +8908,7 @@
 			"AverageDraftPosition": 429.4,
 			"Age": 30,
 			"College": "UCLA",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -8431,6 +8926,7 @@
 			"AverageDraftPosition": 145,
 			"Age": 27,
 			"College": "Central Florida",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -8448,6 +8944,7 @@
 			"AverageDraftPosition": 422.6,
 			"Age": 26,
 			"College": "Temple",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8465,6 +8962,7 @@
 			"AverageDraftPosition": 497,
 			"Age": 27,
 			"College": "Georgia",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8482,6 +8980,7 @@
 			"AverageDraftPosition": 180.1,
 			"Age": 30,
 			"College": "Houston",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -8499,6 +8998,7 @@
 			"AverageDraftPosition": 33,
 			"Age": 27,
 			"College": "Minnesota State - Mankato",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -8516,6 +9016,7 @@
 			"AverageDraftPosition": 746.1,
 			"Age": 26,
 			"College": "Oklahoma",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8533,6 +9034,7 @@
 			"AverageDraftPosition": 580.4,
 			"Age": 23,
 			"College": "Ohio State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8550,6 +9052,7 @@
 			"AverageDraftPosition": 45.2,
 			"Age": 24,
 			"College": "Maryland",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8567,6 +9070,7 @@
 			"AverageDraftPosition": 696.5,
 			"Age": 26,
 			"College": "Nebraska",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8584,6 +9088,7 @@
 			"AverageDraftPosition": 504.9,
 			"Age": 26,
 			"College": "Florida",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8601,6 +9106,7 @@
 			"AverageDraftPosition": 247.9,
 			"Age": 26,
 			"College": "Northwestern",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -8618,6 +9124,7 @@
 			"AverageDraftPosition": 325.7,
 			"Age": 26,
 			"College": "Rice",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8635,6 +9142,7 @@
 			"AverageDraftPosition": 758.5,
 			"Age": 25,
 			"College": "None",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8652,6 +9160,7 @@
 			"AverageDraftPosition": 979.4,
 			"Age": 25,
 			"College": "Illinois",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8669,6 +9178,7 @@
 			"AverageDraftPosition": 259.2,
 			"Age": 25,
 			"College": "Utah",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8686,6 +9196,7 @@
 			"AverageDraftPosition": 775.4,
 			"Age": 26,
 			"College": "BYU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8703,6 +9214,7 @@
 			"AverageDraftPosition": 400.1,
 			"Age": 24,
 			"College": "Memphis",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8720,6 +9232,7 @@
 			"AverageDraftPosition": 254.7,
 			"Age": 22,
 			"College": "Mississippi",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8737,6 +9250,7 @@
 			"AverageDraftPosition": 618.7,
 			"Age": 24,
 			"College": "Texas-San Antonio",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8754,6 +9268,7 @@
 			"AverageDraftPosition": 366.3,
 			"Age": 24,
 			"College": "Nebraska",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -8771,6 +9286,7 @@
 			"AverageDraftPosition": 965.8,
 			"Age": 25,
 			"College": "Texas A&M",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8788,6 +9304,7 @@
 			"AverageDraftPosition": 701,
 			"Age": 25,
 			"College": "Arizona",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8805,6 +9322,7 @@
 			"AverageDraftPosition": 560.1,
 			"Age": 24,
 			"College": "Augustana-SD",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8822,6 +9340,7 @@
 			"AverageDraftPosition": 819.3,
 			"Age": 24,
 			"College": "Wisconsin",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8839,6 +9358,7 @@
 			"AverageDraftPosition": 805.8,
 			"Age": 25,
 			"College": "UTEP",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8856,6 +9376,7 @@
 			"AverageDraftPosition": 13.4,
 			"Age": 22,
 			"College": "Florida State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8873,6 +9394,7 @@
 			"AverageDraftPosition": 565.8,
 			"Age": 22,
 			"College": "Michigan",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8890,6 +9412,7 @@
 			"AverageDraftPosition": 657,
 			"Age": 24,
 			"College": "Mississippi",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8907,6 +9430,7 @@
 			"AverageDraftPosition": 315.6,
 			"Age": 23,
 			"College": "Louisiana Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -8924,6 +9448,7 @@
 			"AverageDraftPosition": 355,
 			"Age": 23,
 			"College": "Georgia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8941,6 +9466,7 @@
 			"AverageDraftPosition": 320.1,
 			"Age": 25,
 			"College": "Coastal Carolina",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8958,6 +9484,7 @@
 			"AverageDraftPosition": 489.1,
 			"Age": 23,
 			"College": "Miami",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8975,6 +9502,7 @@
 			"AverageDraftPosition": 902.7,
 			"Age": 24,
 			"College": "Northern Colorado",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -8992,6 +9520,7 @@
 			"AverageDraftPosition": 848.6,
 			"Age": 24,
 			"College": "Utah",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9009,6 +9538,7 @@
 			"AverageDraftPosition": 969.2,
 			"Age": 24,
 			"College": "Michigan State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9026,6 +9556,7 @@
 			"AverageDraftPosition": 953.4,
 			"Age": null,
 			"College": "Washington State",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -9043,6 +9574,7 @@
 			"AverageDraftPosition": 958,
 			"Age": null,
 			"College": "Concordia-Moorhead, MN",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -9060,6 +9592,7 @@
 			"AverageDraftPosition": 954.6,
 			"Age": null,
 			"College": "UTEP",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -9077,6 +9610,7 @@
 			"AverageDraftPosition": 850.9,
 			"Age": 24,
 			"College": "North Carolina-Charlotte",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9094,6 +9628,7 @@
 			"AverageDraftPosition": 852,
 			"Age": 22,
 			"College": "Mississippi State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9111,6 +9646,7 @@
 			"AverageDraftPosition": 908.4,
 			"Age": 24,
 			"College": "Oregon",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9128,6 +9664,7 @@
 			"AverageDraftPosition": 891.5,
 			"Age": 24,
 			"College": "Tennessee",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9145,6 +9682,7 @@
 			"AverageDraftPosition": 892.6,
 			"Age": 24,
 			"College": "Nebraska",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9162,6 +9700,7 @@
 			"AverageDraftPosition": 893.7,
 			"Age": 22,
 			"College": "Louisville",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9179,6 +9718,7 @@
 			"AverageDraftPosition": 828.3,
 			"Age": 22,
 			"College": "LSU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9196,6 +9736,7 @@
 			"AverageDraftPosition": 827.2,
 			"Age": 23,
 			"College": "West Georgia",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9213,6 +9754,7 @@
 			"AverageDraftPosition": 512.8,
 			"Age": 23,
 			"College": "Pittsburgh",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9230,6 +9772,7 @@
 			"AverageDraftPosition": 242.3,
 			"Age": 21,
 			"College": "Ohio State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9247,6 +9790,7 @@
 			"AverageDraftPosition": 215.3,
 			"Age": 23,
 			"College": "East Carolina",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9264,6 +9808,7 @@
 			"AverageDraftPosition": 23,
 			"Age": 21,
 			"College": "Stanford",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9281,6 +9826,7 @@
 			"AverageDraftPosition": 799,
 			"Age": 24,
 			"College": "Memphis",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9298,6 +9844,7 @@
 			"AverageDraftPosition": 794.5,
 			"Age": 25,
 			"College": "Montana",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9315,6 +9862,7 @@
 			"AverageDraftPosition": 784.4,
 			"Age": 25,
 			"College": "TCU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9332,6 +9880,7 @@
 			"AverageDraftPosition": 649.2,
 			"Age": 26,
 			"College": "Canisius",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -9349,6 +9898,7 @@
 			"AverageDraftPosition": 769.7,
 			"Age": 25,
 			"College": "Tennessee",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -9366,6 +9916,7 @@
 			"AverageDraftPosition": 457.6,
 			"Age": 25,
 			"College": "Auburn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9383,6 +9934,7 @@
 			"AverageDraftPosition": 761.9,
 			"Age": 25,
 			"College": "Old Dominion",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9400,6 +9952,7 @@
 			"AverageDraftPosition": 764.1,
 			"Age": 24,
 			"College": "Delaware Valley",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -9417,6 +9970,7 @@
 			"AverageDraftPosition": 760.7,
 			"Age": 26,
 			"College": "Bowie State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9434,6 +9988,7 @@
 			"AverageDraftPosition": 438.4,
 			"Age": 25,
 			"College": "South Carolina",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -9451,6 +10006,7 @@
 			"AverageDraftPosition": 519.5,
 			"Age": 26,
 			"College": "Utah",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9468,6 +10024,7 @@
 			"AverageDraftPosition": 577,
 			"Age": 25,
 			"College": "Florida State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -9485,6 +10042,7 @@
 			"AverageDraftPosition": 369.7,
 			"Age": 25,
 			"College": "Auburn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9502,6 +10060,7 @@
 			"AverageDraftPosition": 574.8,
 			"Age": 26,
 			"College": "Missouri",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9519,6 +10078,7 @@
 			"AverageDraftPosition": 105.6,
 			"Age": 23,
 			"College": "Michigan",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9536,6 +10096,7 @@
 			"AverageDraftPosition": 742.7,
 			"Age": 26,
 			"College": "SMU",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -9553,6 +10114,7 @@
 			"AverageDraftPosition": 80,
 			"Age": 27,
 			"College": "Florida State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -9570,6 +10132,7 @@
 			"AverageDraftPosition": 619.8,
 			"Age": 25,
 			"College": "Virginia Tech",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9587,6 +10150,7 @@
 			"AverageDraftPosition": 368.5,
 			"Age": 29,
 			"College": "Texas",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -9604,6 +10168,7 @@
 			"AverageDraftPosition": 564.6,
 			"Age": 27,
 			"College": "Alabama",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -9621,6 +10186,7 @@
 			"AverageDraftPosition": 506,
 			"Age": 29,
 			"College": "South Carolina",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -9638,6 +10204,7 @@
 			"AverageDraftPosition": 314.4,
 			"Age": 27,
 			"College": "LSU",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -9655,6 +10222,7 @@
 			"AverageDraftPosition": 295.3,
 			"Age": 30,
 			"College": "Temple",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -9672,6 +10240,7 @@
 			"AverageDraftPosition": 406.8,
 			"Age": 29,
 			"College": "Appalachian State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -9689,6 +10258,7 @@
 			"AverageDraftPosition": 361.8,
 			"Age": 28,
 			"College": "Arkansas",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -9706,6 +10276,7 @@
 			"AverageDraftPosition": 272.7,
 			"Age": 29,
 			"College": "Hillsdale - MI",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -9723,6 +10294,7 @@
 			"AverageDraftPosition": 606.3,
 			"Age": 29,
 			"College": "Eastern Washington",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9740,6 +10312,7 @@
 			"AverageDraftPosition": 77,
 			"Age": 28,
 			"College": "Auburn",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9757,6 +10330,7 @@
 			"AverageDraftPosition": 190.8,
 			"Age": 31,
 			"College": "Florida State",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -9774,6 +10348,7 @@
 			"AverageDraftPosition": 17.6,
 			"Age": 29,
 			"College": "Pittsburgh",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -9791,6 +10366,7 @@
 			"AverageDraftPosition": 307.7,
 			"Age": 30,
 			"College": "Tiffin - OH",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -9808,6 +10384,7 @@
 			"AverageDraftPosition": 430.5,
 			"Age": 32,
 			"College": "North Carolina State",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -9825,6 +10402,7 @@
 			"AverageDraftPosition": 273.9,
 			"Age": 29,
 			"College": "TCU",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9842,6 +10420,7 @@
 			"AverageDraftPosition": 181.6,
 			"Age": 29,
 			"College": "Tulsa",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9859,6 +10438,7 @@
 			"AverageDraftPosition": 216.4,
 			"Age": 29,
 			"College": "Maryland",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9876,6 +10456,7 @@
 			"AverageDraftPosition": 62.1,
 			"Age": 33,
 			"College": "Miami",
+			"Experience": 13,
 			"ExperienceString": "12th Season"
 		},
 		{
@@ -9893,6 +10474,7 @@
 			"AverageDraftPosition": 113.8,
 			"Age": 34,
 			"College": "Miami",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -9910,6 +10492,7 @@
 			"AverageDraftPosition": 491.4,
 			"Age": 33,
 			"College": "Oregon State",
+			"Experience": 13,
 			"ExperienceString": "12th Season"
 		},
 		{
@@ -9927,6 +10510,7 @@
 			"AverageDraftPosition": 121.3,
 			"Age": 31,
 			"College": "California",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -9944,6 +10528,7 @@
 			"AverageDraftPosition": 601.8,
 			"Age": 35,
 			"College": "Harvard",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -9961,6 +10546,7 @@
 			"AverageDraftPosition": 176.6,
 			"Age": 32,
 			"College": "Texas Tech",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -9978,6 +10564,7 @@
 			"AverageDraftPosition": 240.1,
 			"Age": 28,
 			"College": "Oregon State",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -9995,6 +10582,7 @@
 			"AverageDraftPosition": 725.8,
 			"Age": 29,
 			"College": "Texas A&M",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -10012,6 +10600,7 @@
 			"AverageDraftPosition": 640.1,
 			"Age": 27,
 			"College": "Arizona State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -10029,6 +10618,7 @@
 			"AverageDraftPosition": 726.9,
 			"Age": 28,
 			"College": "Stanford",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10046,6 +10636,7 @@
 			"AverageDraftPosition": 669.4,
 			"Age": 28,
 			"College": "Tulane",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -10063,6 +10654,7 @@
 			"AverageDraftPosition": 480.1,
 			"Age": 28,
 			"College": "Tennessee",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10080,6 +10672,7 @@
 			"AverageDraftPosition": 214.1,
 			"Age": 26,
 			"College": "Oklahoma",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -10097,6 +10690,7 @@
 			"AverageDraftPosition": 717.9,
 			"Age": 27,
 			"College": "San Diego State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -10114,6 +10708,7 @@
 			"AverageDraftPosition": 622.1,
 			"Age": 28,
 			"College": "Minnesota",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -10131,6 +10726,7 @@
 			"AverageDraftPosition": 255.8,
 			"Age": 25,
 			"College": "Georgia State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -10148,6 +10744,7 @@
 			"AverageDraftPosition": 664.9,
 			"Age": 27,
 			"College": "San Jose State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10165,6 +10762,7 @@
 			"AverageDraftPosition": 439.5,
 			"Age": 26,
 			"College": "Louisville",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10182,6 +10780,7 @@
 			"AverageDraftPosition": 468.8,
 			"Age": 27,
 			"College": "Clemson",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -10199,6 +10798,7 @@
 			"AverageDraftPosition": 94,
 			"Age": 25,
 			"College": "Louisville",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10216,6 +10816,7 @@
 			"AverageDraftPosition": 145.3,
 			"Age": 24,
 			"College": "Florida State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10233,6 +10834,7 @@
 			"AverageDraftPosition": 173.6,
 			"Age": 26,
 			"College": "Harvard",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10250,6 +10852,7 @@
 			"AverageDraftPosition": 22.9,
 			"Age": 24,
 			"College": "Texas A&M",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -10267,6 +10870,7 @@
 			"AverageDraftPosition": 360.6,
 			"Age": 26,
 			"College": "North Greenville",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10284,6 +10888,7 @@
 			"AverageDraftPosition": 748.3,
 			"Age": 25,
 			"College": "Michigan State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10301,6 +10906,7 @@
 			"AverageDraftPosition": 421.5,
 			"Age": 26,
 			"College": "Arkansas",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10318,6 +10924,7 @@
 			"AverageDraftPosition": 261.5,
 			"Age": 25,
 			"College": "Clemson",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -10335,6 +10942,7 @@
 			"AverageDraftPosition": 62.9,
 			"Age": 24,
 			"College": "Alabama",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10352,6 +10960,7 @@
 			"AverageDraftPosition": 394.4,
 			"Age": 24,
 			"College": "Rutgers",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10369,6 +10978,7 @@
 			"AverageDraftPosition": 528.6,
 			"Age": 25,
 			"College": "Texas Tech",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10386,6 +10996,7 @@
 			"AverageDraftPosition": 698.7,
 			"Age": 24,
 			"College": "Arizona State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10403,6 +11014,7 @@
 			"AverageDraftPosition": 711.1,
 			"Age": 23,
 			"College": "UCLA",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10420,6 +11032,7 @@
 			"AverageDraftPosition": 645.8,
 			"Age": 26,
 			"College": "Miami",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10437,6 +11050,7 @@
 			"AverageDraftPosition": 509.4,
 			"Age": 23,
 			"College": "Auburn",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10454,6 +11068,7 @@
 			"AverageDraftPosition": 562.4,
 			"Age": 24,
 			"College": "Memphis",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10471,6 +11086,7 @@
 			"AverageDraftPosition": 467.7,
 			"Age": 24,
 			"College": "Ferris State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10488,6 +11104,7 @@
 			"AverageDraftPosition": 275,
 			"Age": 22,
 			"College": "Penn State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10505,6 +11122,7 @@
 			"AverageDraftPosition": 165.4,
 			"Age": 23,
 			"College": "Alabama",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10522,6 +11140,7 @@
 			"AverageDraftPosition": 829.5,
 			"Age": 22,
 			"College": "Virginia Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10539,6 +11158,7 @@
 			"AverageDraftPosition": 841.9,
 			"Age": 25,
 			"College": "Louisville",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10556,6 +11176,7 @@
 			"AverageDraftPosition": 968.1,
 			"Age": 24,
 			"College": "New Hampshire",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10573,6 +11194,7 @@
 			"AverageDraftPosition": 881.3,
 			"Age": 23,
 			"College": "Florida State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10590,6 +11212,7 @@
 			"AverageDraftPosition": 858.8,
 			"Age": 23,
 			"College": "Arkansas",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10607,6 +11230,7 @@
 			"AverageDraftPosition": 857.6,
 			"Age": 24,
 			"College": "Miami",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10624,6 +11248,7 @@
 			"AverageDraftPosition": 880.2,
 			"Age": 24,
 			"College": "Laval",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10641,6 +11266,7 @@
 			"AverageDraftPosition": 952.3,
 			"Age": 23,
 			"College": "Stanford",
+			"Experience": 0,
 			"ExperienceString": "Rookie"
 		},
 		{
@@ -10658,6 +11284,7 @@
 			"AverageDraftPosition": 932,
 			"Age": 23,
 			"College": "Texas",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10675,6 +11302,7 @@
 			"AverageDraftPosition": 951.2,
 			"Age": 23,
 			"College": "Stephen F. Austin",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10692,6 +11320,7 @@
 			"AverageDraftPosition": 843,
 			"Age": 23,
 			"College": "Temple",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10709,6 +11338,7 @@
 			"AverageDraftPosition": 888.1,
 			"Age": 22,
 			"College": "Marian",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10726,6 +11356,7 @@
 			"AverageDraftPosition": 837.4,
 			"Age": 23,
 			"College": "Washington",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10743,6 +11374,7 @@
 			"AverageDraftPosition": 126.2,
 			"Age": 23,
 			"College": "Oklahoma State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10760,6 +11392,7 @@
 			"AverageDraftPosition": 470,
 			"Age": 23,
 			"College": "East Central Oklahoma",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10777,6 +11410,7 @@
 			"AverageDraftPosition": 826.1,
 			"Age": 22,
 			"College": "Miami",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10794,6 +11428,7 @@
 			"AverageDraftPosition": null,
 			"Age": 23,
 			"College": "South Florida",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10811,6 +11446,7 @@
 			"AverageDraftPosition": 596.2,
 			"Age": 24,
 			"College": "Virginia Commonwealth",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10828,6 +11464,7 @@
 			"AverageDraftPosition": 825,
 			"Age": 24,
 			"College": "LSU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -10845,6 +11482,7 @@
 			"AverageDraftPosition": 518.4,
 			"Age": 24,
 			"College": "Michigan",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10862,6 +11500,7 @@
 			"AverageDraftPosition": 147.4,
 			"Age": 22,
 			"College": "South Florida",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10879,6 +11518,7 @@
 			"AverageDraftPosition": 813.7,
 			"Age": 24,
 			"College": "Wake Forest",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10896,6 +11536,7 @@
 			"AverageDraftPosition": 808.1,
 			"Age": 25,
 			"College": "Ferris State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10913,6 +11554,7 @@
 			"AverageDraftPosition": 370.8,
 			"Age": 25,
 			"College": "Wisconsin",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10930,6 +11572,7 @@
 			"AverageDraftPosition": 796.8,
 			"Age": 24,
 			"College": "Southern Cal",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10947,6 +11590,7 @@
 			"AverageDraftPosition": 294.1,
 			"Age": 24,
 			"College": "Grambling",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10964,6 +11608,7 @@
 			"AverageDraftPosition": 801.3,
 			"Age": 24,
 			"College": "Arkansas State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -10981,6 +11626,7 @@
 			"AverageDraftPosition": 783.3,
 			"Age": 23,
 			"College": "Texas",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -10998,6 +11644,7 @@
 			"AverageDraftPosition": 479,
 			"Age": 24,
 			"College": "Illinois",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11015,6 +11662,7 @@
 			"AverageDraftPosition": 778.8,
 			"Age": 24,
 			"College": "TCU",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -11032,6 +11680,7 @@
 			"AverageDraftPosition": 224.3,
 			"Age": 23,
 			"College": "Notre Dame",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11049,6 +11698,7 @@
 			"AverageDraftPosition": 651.4,
 			"Age": 25,
 			"College": "North Carolina State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11066,6 +11716,7 @@
 			"AverageDraftPosition": 591.7,
 			"Age": 25,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11083,6 +11734,7 @@
 			"AverageDraftPosition": 636.8,
 			"Age": 25,
 			"College": "Penn State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11100,6 +11752,7 @@
 			"AverageDraftPosition": 445.2,
 			"Age": 26,
 			"College": "Marist",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11117,6 +11770,7 @@
 			"AverageDraftPosition": 752.8,
 			"Age": 25,
 			"College": "Utah",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -11134,6 +11788,7 @@
 			"AverageDraftPosition": 210.7,
 			"Age": 24,
 			"College": "Kansas State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11151,6 +11806,7 @@
 			"AverageDraftPosition": 747.2,
 			"Age": 25,
 			"College": "South Carolina",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11168,6 +11824,7 @@
 			"AverageDraftPosition": 447.4,
 			"Age": 26,
 			"College": "Georgia Tech",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -11185,6 +11842,7 @@
 			"AverageDraftPosition": 531.9,
 			"Age": 23,
 			"College": "Alabama",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11202,6 +11860,7 @@
 			"AverageDraftPosition": 511.7,
 			"Age": 22,
 			"College": "Florida",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11219,6 +11878,7 @@
 			"AverageDraftPosition": 378.7,
 			"Age": 25,
 			"College": "Valdosta State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -11236,6 +11896,7 @@
 			"AverageDraftPosition": 175.1,
 			"Age": 25,
 			"College": "North Carolina",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -11253,6 +11914,7 @@
 			"AverageDraftPosition": 367.4,
 			"Age": 27,
 			"College": "Tulane",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -11270,6 +11932,7 @@
 			"AverageDraftPosition": 662.7,
 			"Age": 25,
 			"College": "Miami",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -11287,6 +11950,7 @@
 			"AverageDraftPosition": 374.2,
 			"Age": 25,
 			"College": "Miami",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -11304,6 +11968,7 @@
 			"AverageDraftPosition": 690.9,
 			"Age": 27,
 			"College": "Texas A&M",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -11321,6 +11986,7 @@
 			"AverageDraftPosition": 267.1,
 			"Age": 28,
 			"College": "Clemson",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11338,6 +12004,7 @@
 			"AverageDraftPosition": 686.3,
 			"Age": 27,
 			"College": "Cincinnati",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11355,6 +12022,7 @@
 			"AverageDraftPosition": 119.7,
 			"Age": 27,
 			"College": "Western Kentucky",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11372,6 +12040,7 @@
 			"AverageDraftPosition": 737.1,
 			"Age": 26,
 			"College": "LSU",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11389,6 +12058,7 @@
 			"AverageDraftPosition": 637.9,
 			"Age": 28,
 			"College": "Southern Mississippi",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11406,6 +12076,7 @@
 			"AverageDraftPosition": 245.7,
 			"Age": 28,
 			"College": "Utah State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11423,6 +12094,7 @@
 			"AverageDraftPosition": 47.6,
 			"Age": 29,
 			"College": "Wisconsin",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11440,6 +12112,7 @@
 			"AverageDraftPosition": 31.7,
 			"Age": 28,
 			"College": "Florida International",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11457,6 +12130,7 @@
 			"AverageDraftPosition": 93.8,
 			"Age": 28,
 			"College": "Stanford",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11474,6 +12148,7 @@
 			"AverageDraftPosition": 36.3,
 			"Age": 29,
 			"College": "Stanford",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -11491,6 +12166,7 @@
 			"AverageDraftPosition": 597.3,
 			"Age": 30,
 			"College": "Oregon",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -11508,6 +12184,7 @@
 			"AverageDraftPosition": 417,
 			"Age": 40,
 			"College": "Florida State",
+			"Experience": 20,
 			"ExperienceString": "18th Season"
 		},
 		{
@@ -11525,6 +12202,7 @@
 			"AverageDraftPosition": 415.9,
 			"Age": 45,
 			"College": "South Dakota State",
+			"Experience": 25,
 			"ExperienceString": "23rd Season"
 		},
 		{
@@ -11542,6 +12220,7 @@
 			"AverageDraftPosition": 52.4,
 			"Age": 34,
 			"College": "Pittsburgh",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -11559,6 +12238,7 @@
 			"AverageDraftPosition": 424.9,
 			"Age": 43,
 			"College": "Texas",
+			"Experience": 22,
 			"ExperienceString": "20th Season"
 		},
 		{
@@ -11576,6 +12256,7 @@
 			"AverageDraftPosition": 108.3,
 			"Age": 36,
 			"College": "North Carolina State",
+			"Experience": 16,
 			"ExperienceString": "15th Season"
 		},
 		{
@@ -11593,6 +12274,7 @@
 			"AverageDraftPosition": 373,
 			"Age": 29,
 			"College": "Oklahoma",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -11610,6 +12292,7 @@
 			"AverageDraftPosition": 232.2,
 			"Age": 30,
 			"College": "Oklahoma",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -11627,6 +12310,7 @@
 			"AverageDraftPosition": 499.3,
 			"Age": 29,
 			"College": "Nevada",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -11644,6 +12328,7 @@
 			"AverageDraftPosition": 260.3,
 			"Age": 28,
 			"College": "Miami",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -11661,6 +12346,7 @@
 			"AverageDraftPosition": 634.5,
 			"Age": 30,
 			"College": "Henderson State - AR",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11678,6 +12364,7 @@
 			"AverageDraftPosition": 371.9,
 			"Age": 27,
 			"College": "Arkansas",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11695,6 +12382,7 @@
 			"AverageDraftPosition": 587.2,
 			"Age": 27,
 			"College": "West Virginia",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11712,6 +12400,7 @@
 			"AverageDraftPosition": 419.2,
 			"Age": 28,
 			"College": "Florida",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11729,6 +12418,7 @@
 			"AverageDraftPosition": 20.8,
 			"Age": 26,
 			"College": "California",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11746,6 +12436,7 @@
 			"AverageDraftPosition": 290.8,
 			"Age": 28,
 			"College": "San Diego State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11763,6 +12454,7 @@
 			"AverageDraftPosition": 281.8,
 			"Age": 28,
 			"College": "North Carolina State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -11780,6 +12472,7 @@
 			"AverageDraftPosition": 732.6,
 			"Age": 28,
 			"College": "Arizona State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11797,6 +12490,7 @@
 			"AverageDraftPosition": 502.6,
 			"Age": 26,
 			"College": "Fresno State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11814,6 +12508,7 @@
 			"AverageDraftPosition": 535.3,
 			"Age": 25,
 			"College": "Boston College",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11831,6 +12526,7 @@
 			"AverageDraftPosition": 714.5,
 			"Age": 27,
 			"College": "Miami",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11848,6 +12544,7 @@
 			"AverageDraftPosition": 11.3,
 			"Age": 25,
 			"College": "Wisconsin",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11865,6 +12562,7 @@
 			"AverageDraftPosition": 7.1,
 			"Age": 26,
 			"College": "Northern Iowa",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11882,6 +12580,7 @@
 			"AverageDraftPosition": 226.5,
 			"Age": 24,
 			"College": "UAB",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11899,6 +12598,7 @@
 			"AverageDraftPosition": 521.8,
 			"Age": 26,
 			"College": "UConn",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11916,6 +12616,7 @@
 			"AverageDraftPosition": 592.8,
 			"Age": 25,
 			"College": "Eastern Michigan",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11933,6 +12634,7 @@
 			"AverageDraftPosition": 206.2,
 			"Age": 26,
 			"College": "Western Oregon",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11950,6 +12652,7 @@
 			"AverageDraftPosition": 641.3,
 			"Age": 27,
 			"College": "Purdue",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -11967,6 +12670,7 @@
 			"AverageDraftPosition": 75.8,
 			"Age": 23,
 			"College": "Arkansas",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -11984,6 +12688,7 @@
 			"AverageDraftPosition": 613.1,
 			"Age": 25,
 			"College": "Ohio State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12001,6 +12706,7 @@
 			"AverageDraftPosition": 458.7,
 			"Age": 23,
 			"College": "Florida State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12018,6 +12724,7 @@
 			"AverageDraftPosition": 660.4,
 			"Age": 26,
 			"College": "Western Kentucky",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12035,6 +12742,7 @@
 			"AverageDraftPosition": 525.2,
 			"Age": 25,
 			"College": "Wisconsin",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12052,6 +12760,7 @@
 			"AverageDraftPosition": 650.3,
 			"Age": 25,
 			"College": "Montana State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12069,6 +12778,7 @@
 			"AverageDraftPosition": 692,
 			"Age": 24,
 			"College": "Missouri",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12086,6 +12796,7 @@
 			"AverageDraftPosition": 474.5,
 			"Age": 24,
 			"College": "Arizona State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12103,6 +12814,7 @@
 			"AverageDraftPosition": 712.3,
 			"Age": 24,
 			"College": "South Alabama",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12120,6 +12832,7 @@
 			"AverageDraftPosition": 976,
 			"Age": 25,
 			"College": "East Carolina",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12137,6 +12850,7 @@
 			"AverageDraftPosition": 646.9,
 			"Age": 24,
 			"College": "Idaho",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12154,6 +12868,7 @@
 			"AverageDraftPosition": 326.8,
 			"Age": 23,
 			"College": "Grambling State",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12171,6 +12886,7 @@
 			"AverageDraftPosition": 189.6,
 			"Age": 23,
 			"College": "Clemson",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12188,6 +12904,7 @@
 			"AverageDraftPosition": 529.7,
 			"Age": 23,
 			"College": "North Carolina",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12205,6 +12922,7 @@
 			"AverageDraftPosition": 832.9,
 			"Age": 23,
 			"College": "Pennsylvania",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12222,6 +12940,7 @@
 			"AverageDraftPosition": 886.9,
 			"Age": 24,
 			"College": "Rutgers",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12239,6 +12958,7 @@
 			"AverageDraftPosition": 889.2,
 			"Age": 23,
 			"College": "Texas A&M",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12256,6 +12976,7 @@
 			"AverageDraftPosition": 872.3,
 			"Age": 25,
 			"College": "Lake Erie",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12273,6 +12994,7 @@
 			"AverageDraftPosition": 946.7,
 			"Age": 24,
 			"College": "Towson",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12290,6 +13012,7 @@
 			"AverageDraftPosition": 927.5,
 			"Age": 24,
 			"College": "Missouri",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12307,6 +13030,7 @@
 			"AverageDraftPosition": 928.6,
 			"Age": 22,
 			"College": "Western State (CO)",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12324,6 +13048,7 @@
 			"AverageDraftPosition": 929.8,
 			"Age": 23,
 			"College": "Rutgers",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12341,6 +13066,7 @@
 			"AverageDraftPosition": 930.9,
 			"Age": 23,
 			"College": "Clemson",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12358,6 +13084,7 @@
 			"AverageDraftPosition": 871.2,
 			"Age": 23,
 			"College": "Arkansas",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12375,6 +13102,7 @@
 			"AverageDraftPosition": 870,
 			"Age": 23,
 			"College": "Oregon",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12392,6 +13120,7 @@
 			"AverageDraftPosition": 873.4,
 			"Age": 23,
 			"College": "Southern Cal",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12409,6 +13138,7 @@
 			"AverageDraftPosition": 903.9,
 			"Age": null,
 			"College": "Alabama State",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12426,6 +13156,7 @@
 			"AverageDraftPosition": 905,
 			"Age": 24,
 			"College": "Pittsburgh",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12443,6 +13174,7 @@
 			"AverageDraftPosition": 906.1,
 			"Age": 24,
 			"College": "Cincinnati",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12460,6 +13192,7 @@
 			"AverageDraftPosition": 302,
 			"Age": 22,
 			"College": "North Carolina",
+			"Experience": 1,
 			"ExperienceString": "1st Season"
 		},
 		{
@@ -12477,6 +13210,7 @@
 			"AverageDraftPosition": 153.2,
 			"Age": 24,
 			"College": "Northern Illinois",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12494,6 +13228,7 @@
 			"AverageDraftPosition": 586,
 			"Age": 23,
 			"College": "Toledo",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12511,6 +13246,7 @@
 			"AverageDraftPosition": 246.8,
 			"Age": 24,
 			"College": "Southern Mississippi",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12528,6 +13264,7 @@
 			"AverageDraftPosition": 710,
 			"Age": 25,
 			"College": "Monmouth",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12545,6 +13282,7 @@
 			"AverageDraftPosition": 978.2,
 			"Age": 23,
 			"College": "Jacksonville",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12562,6 +13300,7 @@
 			"AverageDraftPosition": 481.2,
 			"Age": 24,
 			"College": "Eastern Oregon",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12579,6 +13318,7 @@
 			"AverageDraftPosition": 550,
 			"Age": 26,
 			"College": "Cincinnati",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12596,6 +13336,7 @@
 			"AverageDraftPosition": 405.7,
 			"Age": 24,
 			"College": "Washington",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12613,6 +13354,7 @@
 			"AverageDraftPosition": 621,
 			"Age": 25,
 			"College": "Michigan",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12630,6 +13372,7 @@
 			"AverageDraftPosition": 243.4,
 			"Age": 25,
 			"College": "Texas Tech",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12647,6 +13390,7 @@
 			"AverageDraftPosition": 625.5,
 			"Age": 25,
 			"College": "Michigan State",
+			"Experience": 3,
 			"ExperienceString": "3rd Season"
 		},
 		{
@@ -12664,6 +13408,7 @@
 			"AverageDraftPosition": 699.9,
 			"Age": 25,
 			"College": "Texas Tech",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12681,6 +13426,7 @@
 			"AverageDraftPosition": 276.1,
 			"Age": 26,
 			"College": "South Dakota State",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12698,6 +13444,7 @@
 			"AverageDraftPosition": 193.8,
 			"Age": 24,
 			"College": "Nebraska",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12715,6 +13462,7 @@
 			"AverageDraftPosition": 43.2,
 			"Age": 23,
 			"College": "Alabama",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12732,6 +13480,7 @@
 			"AverageDraftPosition": 241.2,
 			"Age": 27,
 			"College": "West Alabama",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12749,6 +13498,7 @@
 			"AverageDraftPosition": 569.1,
 			"Age": 26,
 			"College": "San Jose State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -12766,6 +13516,7 @@
 			"AverageDraftPosition": 322.3,
 			"Age": 25,
 			"College": "Notre Dame",
+			"Experience": 4,
 			"ExperienceString": "4th Season"
 		},
 		{
@@ -12783,6 +13534,7 @@
 			"AverageDraftPosition": 125.1,
 			"Age": 27,
 			"College": "Fresno State",
+			"Experience": 5,
 			"ExperienceString": "5th Season"
 		},
 		{
@@ -12800,6 +13552,7 @@
 			"AverageDraftPosition": 553.4,
 			"Age": 28,
 			"College": "Rice",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12817,6 +13570,7 @@
 			"AverageDraftPosition": 536.5,
 			"Age": 26,
 			"College": "Stanford",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12834,6 +13588,7 @@
 			"AverageDraftPosition": 733.7,
 			"Age": 27,
 			"College": "California",
+			"Experience": 2,
 			"ExperienceString": "2nd Season"
 		},
 		{
@@ -12851,6 +13606,7 @@
 			"AverageDraftPosition": 617.6,
 			"Age": 27,
 			"College": "Wisconsin - Beloit",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12868,6 +13624,7 @@
 			"AverageDraftPosition": 170.7,
 			"Age": 26,
 			"College": "Notre Dame",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12885,6 +13642,7 @@
 			"AverageDraftPosition": 644.6,
 			"Age": 28,
 			"College": "Florida State",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12902,6 +13660,7 @@
 			"AverageDraftPosition": 964.7,
 			"Age": 28,
 			"College": "Stanford",
+			"Experience": 6,
 			"ExperienceString": "6th Season"
 		},
 		{
@@ -12919,6 +13678,7 @@
 			"AverageDraftPosition": 88.7,
 			"Age": 29,
 			"College": "Boise State",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -12936,6 +13696,7 @@
 			"AverageDraftPosition": 94.4,
 			"Age": 28,
 			"College": "California",
+			"Experience": 7,
 			"ExperienceString": "7th Season"
 		},
 		{
@@ -12953,6 +13714,7 @@
 			"AverageDraftPosition": 450.8,
 			"Age": 30,
 			"College": "East Carolina",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -12970,6 +13732,7 @@
 			"AverageDraftPosition": 61.5,
 			"Age": 29,
 			"College": "Notre Dame",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -12987,6 +13750,7 @@
 			"AverageDraftPosition": 100.9,
 			"Age": 31,
 			"College": "Oregon",
+			"Experience": 10,
 			"ExperienceString": "9th Season"
 		},
 		{
@@ -13004,6 +13768,7 @@
 			"AverageDraftPosition": 593.9,
 			"Age": 30,
 			"College": "Marshall",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -13021,6 +13786,7 @@
 			"AverageDraftPosition": 54.5,
 			"Age": 32,
 			"College": "California",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		},
 		{
@@ -13038,6 +13804,7 @@
 			"AverageDraftPosition": 666.1,
 			"Age": 31,
 			"College": "San Diego",
+			"Experience": 9,
 			"ExperienceString": "8th Season"
 		},
 		{
@@ -13055,6 +13822,7 @@
 			"AverageDraftPosition": 342.6,
 			"Age": 31,
 			"College": "South Carolina",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -13072,6 +13840,7 @@
 			"AverageDraftPosition": 573.6,
 			"Age": 35,
 			"College": "USC",
+			"Experience": 15,
 			"ExperienceString": "14th Season"
 		},
 		{
@@ -13089,6 +13858,7 @@
 			"AverageDraftPosition": 126.1,
 			"Age": 30,
 			"College": "Georgia",
+			"Experience": 11,
 			"ExperienceString": "10th Season"
 		},
 		{
@@ -13106,6 +13876,7 @@
 			"AverageDraftPosition": 184.3,
 			"Age": 33,
 			"College": "Central Florida",
+			"Experience": 13,
 			"ExperienceString": "12th Season"
 		},
 		{
@@ -13123,6 +13894,7 @@
 			"AverageDraftPosition": 53.1,
 			"Age": 32,
 			"College": "Kansas State",
+			"Experience": 12,
 			"ExperienceString": "11th Season"
 		}
 	]
