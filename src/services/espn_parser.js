@@ -27,6 +27,8 @@ class ESPNParserService {
             } else {
                 matchingPlayer = _.first(matchingPlayer);
             }
+            if( matchingPlayer )
+                claimedPlayers = _.without( claimedPlayers, matchingPlayer );
             player.Owner = ( matchingPlayer || {} ).owner;
             draftRoster.push( player );
             } );
