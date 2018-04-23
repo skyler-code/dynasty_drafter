@@ -1,6 +1,7 @@
 import _ from "underscore";
-import nameParser from 'humanparser';
-import teamData from '../data/team_data'
+import teamData from '../data/team_data';
+import * as constants from './../data/constants';
+
 
 let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
 let periodRegex = /[.]/g;
@@ -8,6 +9,7 @@ let playerPositions = ["qb", "rb", "wr", "te", "flex", "op", "d/st", "k", "bench
 
 
 class ESPNParserService {
+
     parseInput( input ) {
         let leagueInfo = {};
         leagueInfo.teamInfo = getTeamInfo( input );
@@ -18,18 +20,10 @@ class ESPNParserService {
 
     getAvailablePlayers( allPlayers, leagueInfo ){
         let draftRoster = [];
-        let claimedPlayers = createPlayerArray( leagueInfo );
+        let claimedPlayers = createClaimedPlayerArray( leagueInfo );
         _.forEach(allPlayers, function( player )
             {
-            let matchingPlayer = _.filter( claimedPlayers, function( plr ){ return playerEvaluator( player, plr ) } );
-            if(matchingPlayer.length > 1){
-                matchingPlayer = _.find( matchingPlayer, function( plr ){ return plr.Team === player.Team; } );
-            } else {
-                matchingPlayer = _.first(matchingPlayer);
-            }
-            if( matchingPlayer )
-                claimedPlayers = _.without( claimedPlayers, matchingPlayer );
-            if( !( matchingPlayer || {} ).owner )
+            if( !claimedPlayers[ player.hashKey ])
                 draftRoster.push( player );
             } );
         return draftRoster;
@@ -111,6 +105,8 @@ function parsePlayerInfoStr( str )
         let team = _.find(teamData, function( team ){ return team.Name.includes( playerName ) } );
         playerInfo = { Name: team.Name, Team: team.Team, FantasyPosition: team.FantasyPosition };
     }
+    if( playerInfo )
+        playerInfo.hashKey = constants.hashPlayerInfo( playerInfo );
     return playerInfo;
 }
 
@@ -118,30 +114,11 @@ function isNullOrWhitespace( input ) {
     return !input || !input.trim();
 }
 
-function playerEvaluator( firstPlayer, secondPlayer ) {
-    firstPlayer = _.mapObject( firstPlayer, strAdjust );
-    secondPlayer = _.mapObject( secondPlayer, strAdjust );
-
-    let firstName = nameParser.parseName(firstPlayer.Name);
-    let secondName = nameParser.parseName(secondPlayer.Name);
-
-    return ( firstName.lastName === secondName.lastName )
-    && (firstPlayer.FantasyPosition === secondPlayer.FantasyPosition)
-    && ( firstName.firstName === secondName.firstName || ( firstName.firstName.startsWith( secondName.firstName ) || secondName.firstName.startsWith( firstName.firstName ) ) )
-}
-
-function strAdjust( str )
-{
-    return typeof(str) === "string" ? str.toLowerCase().replace( periodRegex, '' ) : str;
-}
-
-function createPlayerArray( leagueInfo ){
-    let players = [];
+function createClaimedPlayerArray( leagueInfo ){
+    let players = {};
     _.forEach(leagueInfo.teamInfo, function( team ){
         _.forEach(team.players, function( player ){
-            let parsedName = nameParser.parseName(player.Name);
-            let fullName = parsedName.firstName + " " + parsedName.lastName;
-            players.push({ Name: fullName, owner: team.teamName, firstName: parsedName.firstName, lastName: parsedName.lastName, FantasyPosition: player.FantasyPosition, Team: player.Team });
+            players[player.hashKey] = true;
         } );
     } );
     return players;

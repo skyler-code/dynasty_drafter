@@ -31,12 +31,16 @@ class ImportView extends Component {
                             <Form>
                                 <Form.Group>
                                     <Form.Input
-                                        label='Paste ESPN League Here (Sample found here: https://pastebin.com/2eAbShZE)'
+                                        label='Paste ESPN League Here (Sample found here: https://pastebin.com/raw/2eAbShZE)'
                                         control='textarea'
                                         rows='6'
                                         onChange={this.handleInputChange} />
-                                    </Form.Group>
-                                </Form>
+                                </Form.Group>
+                                    <Form.Field
+                                        value={JSON.stringify(this.props.parsedLeague, null, "\t")}
+                                        control='textarea'
+                                        rows='6'/>
+                            </Form>
                         </Grid.Column>
                         <Grid.Column>
                             <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>

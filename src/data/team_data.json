@@ -6,7 +6,8 @@
 		"AverageDraftPosition": 193.8,
 		"PlayerID": "ARI",
 		"Name": "Arizona Cardinals D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 650757928
 	},
 	{
 		"Team": "ATL",
@@ -15,7 +16,8 @@
 		"AverageDraftPosition": 201.7,
 		"PlayerID": "ATL",
 		"Name": "Atlanta Falcons D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2295684540
 	},
 	{
 		"Team": "BAL",
@@ -24,7 +26,8 @@
 		"AverageDraftPosition": 151.9,
 		"PlayerID": "BAL",
 		"Name": "Baltimore Ravens D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2569668863
 	},
 	{
 		"Team": "BUF",
@@ -33,7 +36,8 @@
 		"AverageDraftPosition": 197.2,
 		"PlayerID": "BUF",
 		"Name": "Buffalo Bills D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 3332168584
 	},
 	{
 		"Team": "CAR",
@@ -42,7 +46,8 @@
 		"AverageDraftPosition": 176.8,
 		"PlayerID": "CAR",
 		"Name": "Carolina Panthers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1291159575
 	},
 	{
 		"Team": "CHI",
@@ -51,7 +56,8 @@
 		"AverageDraftPosition": 213,
 		"PlayerID": "CHI",
 		"Name": "Chicago Bears D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1812032746
 	},
 	{
 		"Team": "CIN",
@@ -60,7 +66,8 @@
 		"AverageDraftPosition": 204,
 		"PlayerID": "CIN",
 		"Name": "Cincinnati Bengals D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2031788743
 	},
 	{
 		"Team": "CLE",
@@ -69,7 +76,8 @@
 		"AverageDraftPosition": 211.9,
 		"PlayerID": "CLE",
 		"Name": "Cleveland Browns D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 759921358
 	},
 	{
 		"Team": "DAL",
@@ -78,7 +86,8 @@
 		"AverageDraftPosition": 208.5,
 		"PlayerID": "DAL",
 		"Name": "Dallas Cowboys D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2223214734
 	},
 	{
 		"Team": "DEN",
@@ -87,7 +96,8 @@
 		"AverageDraftPosition": 159.6,
 		"PlayerID": "DEN",
 		"Name": "Denver Broncos D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1395120389
 	},
 	{
 		"Team": "DET",
@@ -96,7 +106,8 @@
 		"AverageDraftPosition": 207.4,
 		"PlayerID": "DET",
 		"Name": "Detroit Lions D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2798576935
 	},
 	{
 		"Team": "GB",
@@ -105,7 +116,8 @@
 		"AverageDraftPosition": 199.5,
 		"PlayerID": "GB",
 		"Name": "Green Bay Packers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 580104729
 	},
 	{
 		"Team": "HOU",
@@ -114,7 +126,8 @@
 		"AverageDraftPosition": 144.6,
 		"PlayerID": "HOU",
 		"Name": "Houston Texans D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 756086468
 	},
 	{
 		"Team": "IND",
@@ -123,7 +136,8 @@
 		"AverageDraftPosition": 210.7,
 		"PlayerID": "IND",
 		"Name": "Indianapolis Colts D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1903138063
 	},
 	{
 		"Team": "JAX",
@@ -132,7 +146,8 @@
 		"AverageDraftPosition": 128.3,
 		"PlayerID": "JAX",
 		"Name": "Jacksonville Jaguars D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 494602103
 	},
 	{
 		"Team": "KC",
@@ -141,7 +156,8 @@
 		"AverageDraftPosition": 150.3,
 		"PlayerID": "KC",
 		"Name": "Kansas City Chiefs D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1943156437
 	},
 	{
 		"Team": "LAC",
@@ -150,7 +166,8 @@
 		"AverageDraftPosition": 176.9,
 		"PlayerID": "LAC",
 		"Name": "Los Angeles Chargers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 3966224825
 	},
 	{
 		"Team": "LAR",
@@ -159,7 +176,8 @@
 		"AverageDraftPosition": 143.1,
 		"PlayerID": "LAR",
 		"Name": "Los Angeles Rams D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 3190745135
 	},
 	{
 		"Team": "MIA",
@@ -168,7 +186,8 @@
 		"AverageDraftPosition": 202.9,
 		"PlayerID": "MIA",
 		"Name": "Miami Dolphins D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 3613186031
 	},
 	{
 		"Team": "MIN",
@@ -177,7 +196,8 @@
 		"AverageDraftPosition": 127.7,
 		"PlayerID": "MIN",
 		"Name": "Minnesota Vikings D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 3679315178
 	},
 	{
 		"Team": "NE",
@@ -186,7 +206,8 @@
 		"AverageDraftPosition": 186,
 		"PlayerID": "NE",
 		"Name": "New England Patriots D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2994888068
 	},
 	{
 		"Team": "NO",
@@ -195,7 +216,8 @@
 		"AverageDraftPosition": 188.3,
 		"PlayerID": "NO",
 		"Name": "New Orleans Saints D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2573143427
 	},
 	{
 		"Team": "NYG",
@@ -204,7 +226,8 @@
 		"AverageDraftPosition": 195,
 		"PlayerID": "NYG",
 		"Name": "New York Giants D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 4090176816
 	},
 	{
 		"Team": "NYJ",
@@ -213,7 +236,8 @@
 		"AverageDraftPosition": 209.6,
 		"PlayerID": "NYJ",
 		"Name": "New York Jets D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 4121249790
 	},
 	{
 		"Team": "OAK",
@@ -222,7 +246,8 @@
 		"AverageDraftPosition": 198.4,
 		"PlayerID": "OAK",
 		"Name": "Oakland Raiders D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 4190041437
 	},
 	{
 		"Team": "PHI",
@@ -231,7 +256,8 @@
 		"AverageDraftPosition": 150.1,
 		"PlayerID": "PHI",
 		"Name": "Philadelphia Eagles D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 668089117
 	},
 	{
 		"Team": "PIT",
@@ -240,7 +266,8 @@
 		"AverageDraftPosition": 181,
 		"PlayerID": "PIT",
 		"Name": "Pittsburgh Steelers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 2521441258
 	},
 	{
 		"Team": "SEA",
@@ -249,7 +276,8 @@
 		"AverageDraftPosition": 142.8,
 		"PlayerID": "SEA",
 		"Name": "Seattle Seahawks D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1537655946
 	},
 	{
 		"Team": "SF",
@@ -258,7 +286,8 @@
 		"AverageDraftPosition": 206.2,
 		"PlayerID": "SF",
 		"Name": "San Francisco 49ers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1672413662
 	},
 	{
 		"Team": "TB",
@@ -267,7 +296,8 @@
 		"AverageDraftPosition": 196.1,
 		"PlayerID": "TB",
 		"Name": "Tampa Bay Buccaneers D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 948715471
 	},
 	{
 		"Team": "TEN",
@@ -276,7 +306,8 @@
 		"AverageDraftPosition": 205.1,
 		"PlayerID": "TEN",
 		"Name": "Tennessee Titans D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 4251732676
 	},
 	{
 		"Team": "WAS",
@@ -285,6 +316,7 @@
 		"AverageDraftPosition": 200.6,
 		"PlayerID": "WAS",
 		"Name": "Washington Redskins D/ST",
-		"FantasyPosition": "D/ST"
+		"FantasyPosition": "D/ST",
+		"hashKey": 1385008130
 	}
 ]
