@@ -6,5 +6,5 @@ export const NFL_TEAMS = ["ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CIN", "CLE"
 
 export function hashPlayerInfo( player ){
     let playerName = nameParser.parseName( player.Name.toLowerCase().replace(/[.]/g, "") );
-    return stringHash( playerName.firstName + " " + playerName.lastName + player.FantasyPosition.toLowerCase() );
+    return stringHash( playerName.firstName.substring(0, 5) + " " + playerName.lastName + player.FantasyPosition.toLowerCase() );
 }
