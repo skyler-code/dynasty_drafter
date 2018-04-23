@@ -49,7 +49,7 @@ export default class ImportedLeagueView extends Component {
         return players.map( function ( player ){
             return (
                 <div key={player.Name}>
-                    {player.Name + " - " + player.Position}
+                    {player.Name + " - " + player.FantasyPosition}
                 </div>
             );
         } );
