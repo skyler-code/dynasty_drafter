@@ -1,6 +1,7 @@
 import _ from "underscore";
 import teamData from '../data/team_data';
 import * as constants from './../data/constants';
+import stringHash from 'string-hash';
 
 let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
 let periodRegex = /[.]/g;
@@ -11,7 +12,7 @@ class ESPNParserService {
 
     parseInput( input ) {
         let leagueInfo = {};
-        leagueInfo.teamInfo = getTeamInfo( input );
+        leagueInfo.teamInfo = generateTeamHashKeys( getTeamInfo( input ) );
         leagueInfo.leagueName = getLeagueName( input );
         leagueInfo.teamCount = Object.keys(leagueInfo.teamInfo).length;
         return leagueInfo;
@@ -72,6 +73,13 @@ function getTeamInfo( str )
                 }
             }
         }
+    } );
+    return teamInfo;
+}
+
+function generateTeamHashKeys( teamInfo ){
+    _.forEach( teamInfo, function( team ){
+        team.hashKey = stringHash( JSON.stringify( team.players ) );
     } );
     return teamInfo;
 }

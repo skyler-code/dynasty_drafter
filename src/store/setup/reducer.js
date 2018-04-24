@@ -1,5 +1,6 @@
 import Immutable from 'seamless-immutable';
 import * as types from './actionTypes';
+import _ from 'lodash';
 
 const initialState = Immutable({
     draftOrder: undefined,
@@ -37,11 +38,25 @@ export default function reduce(state = initialState, action = {}) {
 }
 
 export function getDraftOrder(state){
-    return state.setup.draftOrder;
+    const draftOrder = state.setup.draftOrder;
+    const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
+    return { draftOrder: draftOrder, teamNames: teamNames };
 }
 
 export function getDraftArray(state){
     return state.setup.draftArray;
+}
+
+export function getDraftArrayForView(state){
+    return _.map(state.setup.draftArray, function( pick ){
+        let tradedTo = pick.Traded_To || {};
+        return {
+            Original_Owner_Name: pick.Original_Owner.teamName,
+            Original_Owner_Hash_Key: pick.Original_Owner.hashKey,
+            Traded_To_Name: tradedTo.teamName,
+            Traded_To_Hash_Key: tradedTo.hashKey
+        };
+    } );
 }
 
 export function getNumOfRounds(state){

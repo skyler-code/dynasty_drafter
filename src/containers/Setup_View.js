@@ -20,29 +20,35 @@ class SetupView extends Component {
     }
 
     componentDidMount() {
-        if( !this.props.draftOrder )
+        if( ( !this.props.draftArray || !this.props.draftArray.length) )
             this.props.dispatch( setupActions.getInitialDraftInfo() );
     }
 
     render() {
         return (
             <div>
-                <div>{this.props.draftOrder ? this.props.draftOrder : ""}</div>
                 <DraftPreview
                             draftArray={this.props.draftArray}
-                            leagueTeams={this.props.draftOrder}/>
+                            draftOrder={this.props.draftOrder}
+                            teamNames={this.props.teamNames}
+                            handlePickTrade={this.handlePickTrade}/>
             </div>
         );
+    }
+
+    handlePickTrade(index, tradedTo){
+        this.props.dispatch( setupActions.makeDraftTrade( index, tradedTo ) );
     }
 
 
 }
 
 function mapStateToProps(state) {
-    const draftOrder = setupSelectors.getDraftOrder(state);
-    const draftArray = setupSelectors.getDraftArray(state);
+    const { draftOrder, teamNames } = setupSelectors.getDraftOrder(state);
+    const draftArray = setupSelectors.getDraftArrayForView(state);
     return {
         draftOrder,
+        teamNames,
         draftArray
     };
 }

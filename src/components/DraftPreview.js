@@ -8,74 +8,76 @@ import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
 import '../css/DraftPreview.css';
 import 'react-table/react-table.css';
-import _ from 'lodash';
-import * as constants from "../data/constants";
+import _filter from 'lodash/filter';
 
 export default class DraftPreview extends Component {
 
-  constructor(props) {
-    super(props);
-    autoBind(this);
-  }
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
 
-  render() {
-    const columns = [
-        {
-            Header: "#",
-            Cell: (row) => {
-                return <div>{row.viewIndex + 1}</div>
+    render() {
+        const columns = [
+            {
+                Header: "#",
+                Cell: (row) => {
+                    return <div>{row.viewIndex + 1}</div>
+                },
+                id: "viewIndex",
+                sortable: false,
+                minWidth: 10
             },
-            id: "viewIndex",
-            sortable: false,
-            minWidth: 10
-        },
-        {
-            Header: "Owner",
-            id: "originalOwner",
-            accessor: "Original_Owner",
-            sortable: false,
-            minWidth: 15
-        },
-        {
-            Header: "Trade Pick?",
-            id: "newOwner",
-            Cell: (row) => {
-               return( <select
-                  onChange={event => this.onChange(event.target.value)}
-                  style={{ width: "100%" }}
-                  defaultValue={"No"}
-                >
-                <option key="no" value="No">No</option>
-                { this.generateFilter( this.props.leagueTeams, row.original.Original_Owner ) }
-                </select> )
+            {
+                Header: "Owner",
+                id: "originalOwner",
+                accessor: "Original_Owner_Name",
+                sortable: false,
+                minWidth: 15
             },
-            sortable: false,
-            minWidth: 15
-        }
-    ];
-    return (
-        <div className="DraftPreview">
-              <ReactTable
-                data={this.props.draftArray}
-                noDataText="No draft found."
-                columns={columns}
-                minRows={0}
-                resizable={false}
-                className="-striped -highlight"
-                sortable={false}
-              />
+            {
+                Header: "Trade Pick?",
+                id: "newOwner",
+                accessor: "Traded_To_Hash_Key",
+                Cell: (row) => {
+                   return( <select
+                      onChange={event => this.handlePickTrade(row.index, event.target.value)}
+                      style={{ width: "100%" }}
+                      value={row.value}
+                    >
+                    <option key="no" value=""/>
+                    { this.generateFilter( this.props.teamNames, row.Original_Owner_Hash_Key ) }
+                    </select> )
+                },
+                sortable: false,
+                minWidth: 15
+            }
+        ];
+        return (
+            <div className="DraftPreview">
+                <ReactTable
+                    data={this.props.draftArray}
+                    noDataText="No draft found."
+                    columns={columns}
+                    minRows={0}
+                    resizable={false}
+                    className="-striped -highlight"
+                    sortable={false}
+                    pageSize={this.props.draftArray.length}
+                    showPagination={false}/>
+            </div>
+        );
+    }
 
-      </div>
-    );
+  generateFilter( teamNames, owner ) {
+    let dataWithout = _filter(teamNames, function( team ){ return team.hashKey !== owner });
+    return ( dataWithout || [] ).map( ( x ) => <option key={x.hashKey} value={x.hashKey}>{x.teamName}</option> )
   }
 
-  generateFilter( data, owner ) {
-    data = _.without(data, owner);
-    return ( data || [] ).map( ( x ) => <option key={x} value={x}>{x}</option> )
-  }
-
-  onChange(value){
-    console.log(value)
+  handlePickTrade( index, tradedTo ) {
+    if (typeof this.props.handlePickTrade === 'function') {
+      this.props.handlePickTrade( index, tradedTo );
+    }
   }
 
 }
