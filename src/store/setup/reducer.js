@@ -40,7 +40,7 @@ export default function reduce(state = initialState, action = {}) {
 export function getDraftOrder(state){
     const draftOrder = state.setup.draftOrder;
     const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
-    return { draftOrder: draftOrder, teamNames: teamNames };
+    return { draftOrder: draftOrder, teamNames: teamNames, numOfTeams: teamNames.length };
 }
 
 export function getDraftArray(state){

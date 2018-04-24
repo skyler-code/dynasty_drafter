@@ -23,7 +23,7 @@ export default class DraftPreview extends Component {
                 Header: "Round",
                 id: "round",
                 Cell: (row) => {
-                    return <div>{~~(row.index / 10)+1}</div>
+                    return <div>{~~( row.index / this.props.numOfTeams )+1}</div>
                 },
                 sortable: false,
                 minWidth: 5

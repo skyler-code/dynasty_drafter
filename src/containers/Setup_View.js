@@ -31,6 +31,7 @@ class SetupView extends Component {
                             draftArray={this.props.draftArray}
                             draftOrder={this.props.draftOrder}
                             teamNames={this.props.teamNames}
+                            numOfTeams={this.props.numOfTeams}
                             handlePickTrade={this.handlePickTrade}/>
             </div>
         );
@@ -44,12 +45,13 @@ class SetupView extends Component {
 }
 
 function mapStateToProps(state) {
-    const { draftOrder, teamNames } = setupSelectors.getDraftOrder(state);
+    const { draftOrder, teamNames, numOfTeams } = setupSelectors.getDraftOrder(state);
     const draftArray = setupSelectors.getDraftArrayForView(state);
     return {
         draftOrder,
         teamNames,
-        draftArray
+        draftArray,
+        numOfTeams
     };
 }
 
