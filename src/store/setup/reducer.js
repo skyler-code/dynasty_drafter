@@ -26,7 +26,8 @@ export default function reduce(state = initialState, action = {}) {
             });
         case types.NUM_OF_ROUNDS_UPDATED:
             return state.merge({
-                numOfRounds: action.numOfRounds
+                numOfRounds: action.numOfRounds,
+                draftArray: action.draftArray
             });
         case types.SECONDS_PER_PICK_UPDATED:
             return state.merge({
@@ -40,7 +41,7 @@ export default function reduce(state = initialState, action = {}) {
 export function getDraftOrder(state){
     const draftOrder = state.setup.draftOrder;
     const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
-    return { draftOrder: draftOrder, teamNames: teamNames, numOfTeams: teamNames.length };
+    return { draftOrder: draftOrder, teamNames: teamNames };
 }
 
 export function getDraftArray(state){
@@ -65,4 +66,8 @@ export function getNumOfRounds(state){
 
 export function getSecondsPerPick(state){
     return state.setup.secondsPerPick;
+}
+
+export function getNumberOfTeams(state){
+    return ( state.setup.draftOrder || [] ).length;
 }

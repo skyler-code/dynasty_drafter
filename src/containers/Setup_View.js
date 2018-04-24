@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 
-import { Form } from 'semantic-ui-react';
+import { Grid, Form } from 'semantic-ui-react';
 import * as setupSelectors from "../store/setup/reducer";
 import * as setupActions from "../store/setup/actions";
 import DraftPreview from "../components/DraftPreview";
@@ -27,12 +27,38 @@ class SetupView extends Component {
     render() {
         return (
             <div>
-                <DraftPreview
-                            draftArray={this.props.draftArray}
-                            draftOrder={this.props.draftOrder}
-                            teamNames={this.props.teamNames}
-                            numOfTeams={this.props.numOfTeams}
-                            handlePickTrade={this.handlePickTrade}/>
+            <Grid columns={2} divided>
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Form>
+                                <Form.Group>
+                                    <Form.Input
+                                        label='Number of Rounds (4-8)'
+                                        control='input'
+                                        type='number'
+                                        min={1}
+                                        value={this.props.numOfRounds}
+                                        onChange={this.handleNumOfRounds} />
+
+                                    <Form.Input
+                                        label='Seconds Per Pick'
+                                        control='input'
+                                        type='number'
+                                        value={this.props.secondsPerPick}
+                                        onChange={this.handleSecondsPerPicks} />
+                                </Form.Group>
+                            </Form>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <DraftPreview
+                                draftArray={this.props.draftArray}
+                                draftOrder={this.props.draftOrder}
+                                teamNames={this.props.teamNames}
+                                numOfTeams={this.props.numOfTeams}
+                                handlePickTrade={this.handlePickTrade}/>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </div>
         );
     }
@@ -41,17 +67,30 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.makeDraftTrade( index, tradedTo ) );
     }
 
+    handleNumOfRounds( val ){
+        this.props.dispatch( setupActions.updateNumberOfRounds( val.target.value ) );
+    }
+
+    handleSecondsPerPicks( val ){
+        this.props.dispatch( setupActions.updateSecondsPerPick( val.target.value ) );
+    }
+
 
 }
 
 function mapStateToProps(state) {
-    const { draftOrder, teamNames, numOfTeams } = setupSelectors.getDraftOrder(state);
+    const { draftOrder, teamNames } = setupSelectors.getDraftOrder(state);
+    const numOfTeams = setupSelectors.getNumberOfTeams(state);
     const draftArray = setupSelectors.getDraftArrayForView(state);
+    const numOfRounds = setupSelectors.getNumOfRounds(state);
+    const secondsPerPick = setupSelectors.getSecondsPerPick(state);
     return {
         draftOrder,
         teamNames,
         draftArray,
-        numOfTeams
+        numOfTeams,
+        numOfRounds,
+        secondsPerPick
     };
 }
 
