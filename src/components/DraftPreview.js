@@ -20,13 +20,22 @@ export default class DraftPreview extends Component {
     render() {
         const columns = [
             {
+                Header: "Round",
+                id: "round",
+                Cell: (row) => {
+                    return <div>{~~(row.index / 10)+1}</div>
+                },
+                sortable: false,
+                minWidth: 5
+            },
+            {
                 Header: "#",
                 Cell: (row) => {
-                    return <div>{row.viewIndex + 1}</div>
+                    return <div>{row.index + 1}</div>
                 },
                 id: "viewIndex",
                 sortable: false,
-                minWidth: 10
+                minWidth: 7
             },
             {
                 Header: "Owner",
@@ -46,7 +55,7 @@ export default class DraftPreview extends Component {
                       value={row.value}
                     >
                     <option key="no" value=""/>
-                    { this.generateFilter( this.props.teamNames, row.Original_Owner_Hash_Key ) }
+                    { this.generateFilter( this.props.teamNames, row.original.Original_Owner_Hash_Key ) }
                     </select> )
                 },
                 sortable: false,

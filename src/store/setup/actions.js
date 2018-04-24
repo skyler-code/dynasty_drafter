@@ -29,7 +29,6 @@ export function makeDraftTrade( index, tradedTo ){
         let pick = _.clone(draftArray[index]);
         pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
         draftArray[index] = pick;
-        console.log(draftArray[index]);
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
     };
 }
