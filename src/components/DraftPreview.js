@@ -1,8 +1,3 @@
-// components are "dumb" react components that are not aware of redux
-// they receive data from their parents through regular react props
-// they are allowed to have local component state and view logic
-// use them to avoid having view logic & local component state in "smart" components
-
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
@@ -15,6 +10,18 @@ export default class DraftPreview extends Component {
     constructor(props) {
         super(props);
         autoBind(this);
+    }
+
+    componentDidMount() {
+        if (typeof this.props.createDraftArray === 'function') {
+          this.props.createDraftArray();
+        }
+    }
+
+    componentWillUnmount() {
+        if (typeof this.props.unloadDraftArray === 'function') {
+          this.props.unloadDraftArray();
+        }
     }
 
     render() {

@@ -11,11 +11,6 @@ const initialState = Immutable({
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-        case types.FETCH_INITIAL_DRAFT_SETUP:
-            return state.merge({
-                draftOrder: action.draftOrder,
-                draftArray: action.draftArray
-            });
         case types.DRAFT_ORDER_CHANGED:
             return state.merge({
                 draftOrder: action.draftOrder
@@ -26,8 +21,7 @@ export default function reduce(state = initialState, action = {}) {
             });
         case types.NUM_OF_ROUNDS_UPDATED:
             return state.merge({
-                numOfRounds: action.numOfRounds,
-                draftArray: action.draftArray
+                numOfRounds: action.numOfRounds
             });
         case types.SECONDS_PER_PICK_UPDATED:
             return state.merge({
@@ -69,5 +63,5 @@ export function getSecondsPerPick(state){
 }
 
 export function getNumberOfTeams(state){
-    return ( state.setup.draftOrder || [] ).length;
+    return ( state.leagueImport.parsedLeague || {} ).teamCount;
 }

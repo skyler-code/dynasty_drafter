@@ -6,10 +6,8 @@ import * as importSelectors from "../leagueImport/reducer";
 export function getInitialDraftInfo() {
     return (dispatch, getState) => {
         const leagueInfo = importSelectors.getParsedLeague(getState());
-        const numberOfRounds = setupSelectors.getNumOfRounds(getState());
         const draftOrder = _.toArray( (  leagueInfo || {} ).teamInfo );
-        const draftArray = createDraftArray( draftOrder, numberOfRounds );
-        dispatch( { type: types.FETCH_INITIAL_DRAFT_SETUP, draftOrder: draftOrder, draftArray: draftArray } );
+        dispatch( { type: types.DRAFT_ORDER_CHANGED, draftOrder: draftOrder } );
     };
 }
 
@@ -27,15 +25,8 @@ export function makeDraftTrade( index, tradedTo ){
 export function updateNumberOfRounds( value ){
     return (dispatch, getState) => {
         const numOfRounds = setupSelectors.getNumOfRounds(getState());
-        const draftOrder = setupSelectors.getDraftOrder(getState());
-        let draftArray = _.clone(setupSelectors.getDraftArray(getState()));
-        let numOfTeams = setupSelectors.getNumberOfTeams(getState());
         value = value >= 4 && value <= 8 ? value : numOfRounds;
-        if(numOfRounds > value)
-            draftArray = _.dropRight(draftArray, numOfTeams * ( numOfRounds - value ) );
-        else if ( numOfRounds < value )
-            draftArray = createDraftArray(draftOrder.draftOrder, value, draftArray, numOfRounds);
-        dispatch( { type: types.NUM_OF_ROUNDS_UPDATED, numOfRounds: value, draftArray: draftArray } );
+        dispatch( { type: types.NUM_OF_ROUNDS_UPDATED, numOfRounds: value } );
     };
 }
 
@@ -46,25 +37,26 @@ export function updateSecondsPerPick( value ){
     };
 }
 
-function createDraftArray(draftOrder, numberOfRounds, oldDraftArray, oldNumberOfRounds){
-    let draftArray = oldDraftArray || [];
-    let startRound = oldNumberOfRounds || 0;
-    function addToDraftArray(team){
-        draftArray.push( {
-            Original_Owner: {teamName: team.teamName, hashKey: team.hashKey},
-            Traded_To: undefined
-        } );
-    }
-    for(; startRound<numberOfRounds; startRound++){
-        _.forEach(draftOrder, addToDraftArray );
-    }
-    return draftArray;
+export function createDraftArray(){
+    return (dispatch, getState) => {
+        let draftArray = [];
+        let numberOfRounds = setupSelectors.getNumOfRounds(getState());
+        let draftOrder = setupSelectors.getDraftOrder(getState());
+        function addToDraftArray(team){
+            draftArray.push( {
+                Original_Owner: {teamName: team.teamName, hashKey: team.hashKey},
+                Traded_To: undefined
+            } );
+        }
+        for(let i=0; i<numberOfRounds; i++){
+            _.forEach(draftOrder.draftOrder, addToDraftArray );
+        }
+        dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
+    };
 }
 
-/*
-export function updateDraftArray(){
-  return (dispatch, getState) => {
-    const currentDraftArray = setupSelectors.getDraftArray( getState() );
-    dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftOrder } );
-  };
-}*/
+export function unloadDraftArray(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: undefined } );
+    };
+}
