@@ -61,12 +61,14 @@ export default class DraftPreview extends Component {
                 Cell: (row) => {
                     const index = row.viewIndex;
                     const lastIndex = ( this.props.draftOrder || [] ).length - 1;
+                    const upIndex = index > 0 ? index - 1 : lastIndex;
+                    const downIndex = index + 1 > lastIndex ? 0 : index + 1;
                     return (
                         <div>
-                            <Button icon disabled={index === 0} onClick={() => this.props.shiftDraftOrder( index, index > 0 ? index - 1 : 0 )}>
+                            <Button icon onClick={() => this.props.shiftDraftOrder( index, upIndex )}>
                                 <Icon name='chevron up' />
                             </Button>
-                            <Button icon disabled={index === lastIndex} onClick={() => this.props.shiftDraftOrder (index, index + 1 )}>
+                            <Button icon onClick={() => this.props.shiftDraftOrder (index, downIndex )}>
                                 <Icon name='chevron down' />
                             </Button>
                         </div>)
