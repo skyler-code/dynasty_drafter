@@ -33,23 +33,23 @@ export default class DraftOptions extends Component {
                             type='number'
                             value={this.props.secondsPerPick}
                             onChange={this.props.handleSecondsPerPicks} />
+                    </Form.Group>
+                    <Form.Group>
                         <Form.Field>
-                        <Radio
-                            label='Snake'
-                            name='radioGroup'
-                            value='true'
-                            checked={this.props.draftType}
-                            onChange={this.handleChange}
-                        />
+                            <Radio
+                                label='Snake'
+                                name='radioGroup'
+                                value='true'
+                                checked={this.props.draftType}
+                                onChange={this.handleChange} />
                         </Form.Field>
                         <Form.Field>
-                          <Radio
-                            label='Linear'
-                            name='radioGroup'
-                            value='false'
-                            checked={this.props.draftType === false}
-                            onChange={this.handleChange}
-                          />
+                              <Radio
+                                label='Linear'
+                                name='radioGroup'
+                                value='false'
+                                checked={!this.props.draftType}
+                                onChange={this.handleChange} />
                         </Form.Field>
                     </Form.Group>
                 </Form>

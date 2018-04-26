@@ -26,7 +26,7 @@ export function makeDraftTrade( index, tradedTo ){
 export function updateNumberOfRounds( value ){
     return (dispatch, getState) => {
         const numOfRounds = setupSelectors.getNumOfRounds(getState());
-        value = value >= 2 && value <= 8 ? value : numOfRounds;
+        value = value >= 4 && value <= 8 ? value : numOfRounds;
         dispatch( { type: types.NUM_OF_ROUNDS_UPDATED, numOfRounds: value } );
     };
 }
