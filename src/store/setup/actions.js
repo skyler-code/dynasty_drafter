@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import _ from "lodash";
+import arraymove from 'array-move';
 import * as setupSelectors from "./reducer";
 import * as importSelectors from "../leagueImport/reducer";
 
@@ -14,7 +15,7 @@ export function getInitialDraftInfo() {
 export function makeDraftTrade( index, tradedTo ){
     return (dispatch, getState) => {
         let draftArray = _.clone(setupSelectors.getDraftArray(getState()));
-        const draftOrder = setupSelectors.getDraftOrder(getState());
+        const draftOrder = setupSelectors.getDraftOrderForView(getState());
         let pick = _.clone(draftArray[index]);
         pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
         draftArray[index] = pick;
@@ -25,7 +26,7 @@ export function makeDraftTrade( index, tradedTo ){
 export function updateNumberOfRounds( value ){
     return (dispatch, getState) => {
         const numOfRounds = setupSelectors.getNumOfRounds(getState());
-        value = value >= 4 && value <= 8 ? value : numOfRounds;
+        value = value >= 2 && value <= 8 ? value : numOfRounds;
         dispatch( { type: types.NUM_OF_ROUNDS_UPDATED, numOfRounds: value } );
     };
 }
@@ -41,7 +42,8 @@ export function createDraftArray(){
     return (dispatch, getState) => {
         let draftArray = [];
         let numberOfRounds = setupSelectors.getNumOfRounds(getState());
-        let draftOrder = setupSelectors.getDraftOrder(getState());
+        let { draftOrder } = setupSelectors.getDraftOrderForView(getState());
+        const snakeDraft = setupSelectors.isSnakeDraftEnabled(getState());
         function addToDraftArray(team){
             draftArray.push( {
                 Original_Owner: {teamName: team.teamName, hashKey: team.hashKey},
@@ -49,14 +51,39 @@ export function createDraftArray(){
             } );
         }
         for(let i=0; i<numberOfRounds; i++){
-            _.forEach(draftOrder.draftOrder, addToDraftArray );
+            _.forEach(draftOrder, addToDraftArray );
+            if(snakeDraft)
+                _.reverse(draftOrder);
         }
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
+    };
+}
+
+
+export function updateDraftOrder( draftOrder ){
+    return (dispatch, getState) => {
+        dispatch( { type: types.DRAFT_ORDER_CHANGED, draftOrder: draftOrder } );
+    };
+}
+
+
+export function shiftDraftOrder( index, newIndex ){
+    return (dispatch, getState) => {
+        let { draftOrder } = setupSelectors.getDraftOrderForView(getState());
+        draftOrder = arraymove(draftOrder, index, newIndex);
+        dispatch( { type: types.DRAFT_ORDER_CHANGED, draftOrder: draftOrder } );
     };
 }
 
 export function unloadDraftArray(){
     return (dispatch, getState) => {
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: undefined } );
+    };
+}
+
+export function updateDraftType( snakeEnabled ){
+    return (dispatch, getState) => {
+        const newValue = snakeEnabled === 'true';
+        dispatch( { type: types.DRAFT_TYPE_CHANGED, snakeDraft: newValue } );
     };
 }

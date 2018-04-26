@@ -65,11 +65,9 @@ class ImportView extends Component {
 }
 
 function mapStateToProps(state) {
-    const parsedLeague = importSelectors.getParsedLeague(state);
-    const leagueInput = importSelectors.getLeagueInput(state);
     return {
-        parsedLeague,
-        leagueInput
+        parsedLeague: importSelectors.getParsedLeague(state),
+        leagueInput: importSelectors.getLeagueInput(state)
     };
 }
 

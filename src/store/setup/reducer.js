@@ -6,7 +6,8 @@ const initialState = Immutable({
     draftOrder: undefined,
     draftArray: undefined,
     numOfRounds: 6,
-    secondsPerPick: 90
+    secondsPerPick: 90,
+    snakeDraft: false
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -14,6 +15,10 @@ export default function reduce(state = initialState, action = {}) {
         case types.DRAFT_ORDER_CHANGED:
             return state.merge({
                 draftOrder: action.draftOrder
+            });
+        case types.DRAFT_TYPE_CHANGED:
+            return state.merge({
+                snakeDraft: action.snakeDraft
             });
         case types.DRAFT_ARRAY_CHANGED:
             return state.merge({
@@ -32,8 +37,8 @@ export default function reduce(state = initialState, action = {}) {
     }
 }
 
-export function getDraftOrder(state){
-    const draftOrder = state.setup.draftOrder;
+export function getDraftOrderForView(state){
+    const draftOrder = _.clone((state.setup || {}).draftOrder);
     const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
     return { draftOrder: draftOrder, teamNames: teamNames };
 }
@@ -64,4 +69,8 @@ export function getSecondsPerPick(state){
 
 export function getNumberOfTeams(state){
     return ( state.leagueImport.parsedLeague || {} ).teamCount;
+}
+
+export function isSnakeDraftEnabled(state){
+    return state.setup.snakeDraft;
 }

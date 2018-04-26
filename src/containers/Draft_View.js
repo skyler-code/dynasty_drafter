@@ -64,9 +64,8 @@ class DraftView extends Component {
 }
 
     function mapStateToProps(state) {
-        const playersArray = draftSelectors.getPlayersForView(state);
         return {
-            playersArray,
+            playersArray: draftSelectors.getPlayersForView(state),
             selectedPlayer: draftSelectors.getSelectedPlayer(state),
             canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
         };

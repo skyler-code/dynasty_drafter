@@ -6,11 +6,11 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Form } from 'semantic-ui-react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Container } from 'semantic-ui-react';
 import * as setupSelectors from "../store/setup/reducer";
 import * as setupActions from "../store/setup/actions";
 import DraftPreview from "../components/DraftPreview";
+import DraftOptions from "../components/DraftOptions";
 import DraftOrderSorter from "../components/DraftOrderSorter";
 
 class SetupView extends Component {
@@ -21,51 +21,52 @@ class SetupView extends Component {
     }
 
     componentDidMount() {
-        if( ( !this.props.draftArray || !this.props.draftArray.length) )
+        if( ( !this.props.draftOrder || !this.props.draftOrder.length) )
             this.props.dispatch( setupActions.getInitialDraftInfo() );
     }
 
+
+
     render() {
+        const panes = [
+            {
+                menuItem: 'Settings',
+                render: () =>
+                    <Tab.Pane textAlign='center'>
+                        <div>
+                        <Container textAlign='center'>
+                        <DraftOptions
+                            numOfRounds={this.props.numOfRounds}
+                            handleNumOfRounds={this.handleNumOfRounds}
+                            secondsPerPick={this.props.secondsPerPick}
+                            handleSecondsPerPicks={this.handleSecondsPerPicks}
+                            draftType={this.props.draftType}
+                            updateDraftType={this.updateDraftType}/>
+                        <DraftOrderSorter
+                            draftOrder={this.props.draftOrder}
+                            updateDraftOrder={this.updateDraftOrder}
+                            shiftDraftOrder={this.shiftDraftOrder}/>
+                        </Container>
+                        </div>
+                    </Tab.Pane>
+            },
+            {
+                menuItem: 'Trade',
+                render: () =>
+                    <Tab.Pane>
+                        <DraftPreview
+                            draftArray={this.props.draftArray}
+                            teamNames={this.props.teamNames}
+                            numOfTeams={this.props.numOfTeams}
+                            handlePickTrade={this.handlePickTrade}
+                            createDraftArray={this.createDraftArray}
+                            unloadDraftArray={this.unloadDraftArray}/>
+                    </Tab.Pane>
+            }
+        ];
         return (
             <div>
-                <Tabs defaultIndex={0}>
-                  <TabList>
-                    <Tab>Settings</Tab>
-                    <Tab>Trade</Tab>
-                  </TabList>
-                  <TabPanel>
-                    <Form>
-                        <Form.Group>
-                            <Form.Input
-                                label='Number of Rounds (4-8)'
-                                control='input'
-                                type='number'
-                                min={4}
-                                max={8}
-                                value={this.props.numOfRounds}
-                                onChange={this.handleNumOfRounds} />
-                            <Form.Input
-                                label='Seconds Per Pick'
-                                control='input'
-                                type='number'
-                                value={this.props.secondsPerPick}
-                                onChange={this.handleSecondsPerPicks} />
-                        </Form.Group>
-                    </Form>
-                    <DraftOrderSorter
-                        forceDraftPreviewUpdate={this.forceDraftPreviewUpdate}/>
-                  </TabPanel>
-                  <TabPanel>
-                    <DraftPreview
-                        draftArray={this.props.draftArray}
-                        draftOrder={this.props.draftOrder}
-                        teamNames={this.props.teamNames}
-                        numOfTeams={this.props.numOfTeams}
-                        handlePickTrade={this.handlePickTrade}
-                        createDraftArray={this.createDraftArray}
-                        unloadDraftArray={this.unloadDraftArray}/>
-                  </TabPanel>
-                </Tabs>
+                <Tab panes={panes}/>
             </div>
         );
     }
@@ -86,25 +87,34 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.createDraftArray() );
     }
 
+    updateDraftOrder( draftOrder ){
+        this.props.dispatch( setupActions.updateDraftOrder( draftOrder ) )
+    }
+
+    shiftDraftOrder( index, newIndex ){
+        this.props.dispatch( setupActions.shiftDraftOrder( index, newIndex ) );
+    }
+
     unloadDraftArray(){
         this.props.dispatch( setupActions.unloadDraftArray() );
+    }
+
+    updateDraftType( snakeEnabled ){
+        this.props.dispatch( setupActions.updateDraftType( snakeEnabled ) );
     }
 
 }
 
 function mapStateToProps(state) {
-    const { draftOrder, teamNames } = setupSelectors.getDraftOrder(state);
-    const numOfTeams = setupSelectors.getNumberOfTeams(state);
-    const draftArray = setupSelectors.getDraftArrayForView(state);
-    const numOfRounds = setupSelectors.getNumOfRounds(state);
-    const secondsPerPick = setupSelectors.getSecondsPerPick(state);
+    const { draftOrder, teamNames } = setupSelectors.getDraftOrderForView(state);
     return {
         draftOrder,
         teamNames,
-        draftArray,
-        numOfTeams,
-        numOfRounds,
-        secondsPerPick
+        draftArray: setupSelectors.getDraftArrayForView(state),
+        numOfTeams: setupSelectors.getNumberOfTeams(state),
+        numOfRounds: setupSelectors.getNumOfRounds(state),
+        secondsPerPick: setupSelectors.getSecondsPerPick(state),
+        draftType: setupSelectors.isSnakeDraftEnabled(state)
     };
 }
 
