@@ -25,13 +25,17 @@ class ImportView extends Component {
     render() {
         return (
             <div>
+                <div>
+                    <strong>Instructions:</strong> Go to your ESPN fantasy league (link to come, sample here: https://pastebin.com/raw/2eAbShZE ),
+                    use Control-A to select the <strong>entire</strong> page.<br/>Paste into the box below. League preview will show in right pane. Then, go to the Setup tab.
+                </div>
                 <Grid columns={2} divided>
                     <Grid.Row>
                         <Grid.Column>
                             <Form>
                                 <Form.Group>
                                     <Form.Input
-                                        label='Paste ESPN League Here (Sample found here: https://pastebin.com/raw/2eAbShZE)'
+                                        label='Paste ESPN League Here'
                                         control='textarea'
                                         rows='6'
                                         value={this.props.leagueInput}
