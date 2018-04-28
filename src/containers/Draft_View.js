@@ -21,7 +21,7 @@ class DraftView extends Component {
 
     componentDidMount() {
         if(!this.props.playersArray)
-            this.props.dispatch(draftActions.getAvailablePlayers());
+            this.props.dispatch(draftActions.setInitialDraftData());
     }
 
     render() {
@@ -36,7 +36,8 @@ class DraftView extends Component {
                             selectedPlayer={this.props.selectedPlayer}
                             onClick={this.onRowClick}
                             onDeselectClick={this.onDeselectClick}
-                            canFinalizeSelection={this.props.canFinalizeSelection}/>
+                            canFinalizeSelection={this.props.canFinalizeSelection}
+                            canDraftPlayer={this.props.canDraftPlayer}/>
                       </Grid.Column>
                       <Grid.Column>
                         <PlayerViewer
@@ -67,7 +68,8 @@ class DraftView extends Component {
         return {
             playersArray: draftSelectors.getPlayersForView(state),
             selectedPlayer: draftSelectors.getSelectedPlayer(state),
-            canFinalizeSelection: draftSelectors.isTopicSelectionValid(state)
+            canFinalizeSelection: draftSelectors.isTopicSelectionValid(state),
+            canDraftPlayer: draftSelectors.canDraftPlayer(state)
         };
     }
 

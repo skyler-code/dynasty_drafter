@@ -42,6 +42,9 @@ export function getDraftOrderForView(state){
     const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
     return { draftOrder: draftOrder, teamNames: teamNames };
 }
+export function getDraftOrder(state){
+    return state.draft.draftOrder;
+}
 
 export function getDraftArray(state){
     return state.setup.draftArray;

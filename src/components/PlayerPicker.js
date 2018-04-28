@@ -170,7 +170,7 @@ export default class PlayerPicker extends Component {
                 } }
               />
             <div>
-            <button className="DraftPlayer" id="DraftPlayer" disabled={!this.props.canFinalizeSelection} >Draft Player</button>
+            <button className="DraftPlayer" id="DraftPlayer" disabled={!this.props.canDraftPlayer}>Draft Player</button>
             <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} disabled={!this.props.canFinalizeSelection} >Clear Selection</button>
             </div>
 

@@ -9,16 +9,25 @@ import _ from 'lodash';
 import * as types from './actionTypes';
 import * as draftSelectors from './reducer';
 import * as importSelectors from '../leagueImport/reducer';
+import * as setupSelectors from '../setup/reducer';
 import espnParserService from "../../services/espn_parser";
 import fantasyPlayerService from "../../services/fantasy_data";
 
-export function getAvailablePlayers(){
+export function startDraft(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.DRAFT_STARTED } );
+    };
+}
+
+export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const playerArray = await fantasyPlayerService.getFantasyPlayerData();
             const parsedLeague = importSelectors.getParsedLeague( getState() );
+            const draftOrder = setupSelectors.getDraftOrder( getState() );
+            const secondsPerPick = setupSelectors.getSecondsPerPick( getState() ) * 1000;
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, parsedLeague );
-            dispatch({ type: types.AVAILABLE_PLAYERS_LOADED, availablePlayers: availablePlayers  });
+            dispatch( { type: types.SET_INITIAL_DRAFT_DATA, availablePlayers: availablePlayers, leagueArray: parsedLeague, draftOrder: draftOrder, secondsPerPick: secondsPerPick } );
         } catch (error) {
             console.error(error);
         }
