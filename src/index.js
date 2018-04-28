@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import App from './App';
 import './index.css';
-
+import 'semantic-ui-css/semantic.min.css';
 import * as reducers from './store/reducers';
 const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
 

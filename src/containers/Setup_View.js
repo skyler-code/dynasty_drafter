@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Tab, Container } from 'semantic-ui-react';
+import { Tab, Grid } from 'semantic-ui-react';
 import * as setupSelectors from "../store/setup/reducer";
 import * as setupActions from "../store/setup/actions";
 import DraftPreview from "../components/DraftPreview";
@@ -32,21 +32,27 @@ class SetupView extends Component {
             {
                 menuItem: 'Settings',
                 render: () =>
-                    <Tab.Pane textAlign='center'>
+                    <Tab.Pane>
                         <div>
-                        <Container textAlign='center'>
-                        <DraftOptions
-                            numOfRounds={this.props.numOfRounds}
-                            handleNumOfRounds={this.handleNumOfRounds}
-                            secondsPerPick={this.props.secondsPerPick}
-                            handleSecondsPerPicks={this.handleSecondsPerPicks}
-                            draftType={this.props.draftType}
-                            updateDraftType={this.updateDraftType}/>
-                        <DraftOrderSorter
-                            draftOrder={this.props.draftOrder}
-                            updateDraftOrder={this.updateDraftOrder}
-                            shiftDraftOrder={this.shiftDraftOrder}/>
-                        </Container>
+                            <Grid centered columns={2} divided>
+                                <Grid.Row centered>
+                                    <Grid.Column width={5} centered>
+                                        <DraftOptions
+                                            numOfRounds={this.props.numOfRounds}
+                                            handleNumOfRounds={this.handleNumOfRounds}
+                                            secondsPerPick={this.props.secondsPerPick}
+                                            handleSecondsPerPicks={this.handleSecondsPerPicks}
+                                            draftType={this.props.draftType}
+                                            updateDraftType={this.updateDraftType}/>
+                                    </Grid.Column>
+                                    <Grid.Column centered>
+                                        <DraftOrderSorter
+                                            draftOrder={this.props.draftOrder}
+                                            updateDraftOrder={this.updateDraftOrder}
+                                            shiftDraftOrder={this.shiftDraftOrder}/>
+                                        </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
                         </div>
                     </Tab.Pane>
             },
