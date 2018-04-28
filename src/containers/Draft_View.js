@@ -6,11 +6,12 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Grid, Statistic, Button } from 'semantic-ui-react';
+import { Grid, Button } from 'semantic-ui-react';
 import * as draftActions from "../store/draft/actions";
 import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import PlayerViewer from "../components/PlayerViewer";
+import DraftTimer from "../components/DraftTimer";
 
 class DraftView extends Component {
 
@@ -35,10 +36,9 @@ class DraftView extends Component {
             <Grid columns={2} divided>
                 <Grid.Row>
                     <Grid.Column>
-                        <Statistic>
-                            <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
-                            <Statistic.Label>Time Left</Statistic.Label>
-                        </Statistic>
+                        <DraftTimer
+                            timeLeftString={this.props.timeLeftString}
+                            isDraftInProgress={this.props.isDraftInProgress}/>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
