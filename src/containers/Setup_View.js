@@ -34,9 +34,9 @@ class SetupView extends Component {
                 render: () =>
                     <Tab.Pane>
                         <div>
-                            <Grid centered columns={2} divided>
-                                <Grid.Row centered>
-                                    <Grid.Column width={5} centered>
+                            <Grid columns={2} divided>
+                                <Grid.Row>
+                                    <Grid.Column width={5}>
                                         <DraftOptions
                                             numOfRounds={this.props.numOfRounds}
                                             handleNumOfRounds={this.handleNumOfRounds}
@@ -45,7 +45,7 @@ class SetupView extends Component {
                                             draftType={this.props.draftType}
                                             updateDraftType={this.updateDraftType}/>
                                     </Grid.Column>
-                                    <Grid.Column centered>
+                                    <Grid.Column>
                                         <DraftOrderSorter
                                             draftOrder={this.props.draftOrder}
                                             updateDraftOrder={this.updateDraftOrder}

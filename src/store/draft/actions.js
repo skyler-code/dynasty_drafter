@@ -15,7 +15,8 @@ import fantasyPlayerService from "../../services/fantasy_data";
 
 export function startDraft(){
     return (dispatch, getState) => {
-        dispatch( { type: types.DRAFT_STARTED } );
+        const secondsPerPick = setupSelectors.getSecondsPerPick( getState() );
+        dispatch( { type: types.DRAFT_STARTED, timeLeft: secondsPerPick } );
     };
 }
 
@@ -23,11 +24,10 @@ export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-            const parsedLeague = importSelectors.getParsedLeague( getState() );
+            const parsedLeague = importSelectors.getParsedLeague( getState() ) || {};
             const draftOrder = setupSelectors.getDraftOrder( getState() );
-            const secondsPerPick = setupSelectors.getSecondsPerPick( getState() ) * 1000;
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, parsedLeague );
-            dispatch( { type: types.SET_INITIAL_DRAFT_DATA, availablePlayers: availablePlayers, leagueArray: parsedLeague, draftOrder: draftOrder, secondsPerPick: secondsPerPick } );
+            dispatch( { type: types.SET_INITIAL_DRAFT_DATA, availablePlayers: availablePlayers, leagueArray: parsedLeague, draftOrder: draftOrder } );
         } catch (error) {
             console.error(error);
         }
@@ -54,5 +54,25 @@ export function finalizeTopicSelection() {
 }
 
 export function clearPlayerSelection() {
-  return({ type: types.CLEAR_PLAYER_SELECTION } );
+    return (dispatch, getState) => {
+        dispatch( { type: types.CLEAR_PLAYER_SELECTION  } );
+    };
+}
+
+export function timerTick() {
+    return (dispatch, getState) => {
+        const isDraftInProgress = draftSelectors.isDraftInProgress(getState());
+        const timeLeft = draftSelectors.getTimeLeft(getState());
+        if(isDraftInProgress && timeLeft > 1){
+            dispatch( { type: types.TIMER_TICK, timeLeft: timeLeft - 1 } );
+        } else {
+            dispatch( { type: types.STOP_DRAFT } );
+        }
+    };
+}
+
+export function endDraft() {
+    return (dispatch, getState) => {
+        console.log("types.STOP_DRAFT");
+    };
 }

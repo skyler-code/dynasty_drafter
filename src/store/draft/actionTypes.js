@@ -4,3 +4,4 @@ export const CLEAR_PLAYER_SELECTION = 'draft.CLEAR_PLAYER_SELECTION';
 export const SET_INITIAL_DRAFT_DATA = 'draft.SET_INITIAL_DRAFT_DATA';
 export const DRAFT_STARTED = 'draft.DRAFT_STARTED';
 export const TIMER_TICK = 'draft.TIMER_TICK';
+export const STOP_DRAFT = 'draft.STOP_DRAFT';

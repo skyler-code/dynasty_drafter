@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Statistic, Button } from 'semantic-ui-react';
 import * as draftActions from "../store/draft/actions";
 import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
@@ -19,6 +19,10 @@ class DraftView extends Component {
         autoBind(this);
     }
 
+    state = {
+        timer: null
+    };
+
     componentDidMount() {
         if(!this.props.playersArray)
             this.props.dispatch(draftActions.setInitialDraftData());
@@ -30,18 +34,36 @@ class DraftView extends Component {
         <div>
             <Grid columns={2} divided>
                 <Grid.Row>
-                      <Grid.Column>
-                        <PlayerPicker
-                            playersArray={this.props.playersArray}
-                            selectedPlayer={this.props.selectedPlayer}
-                            onClick={this.onRowClick}
-                            onDeselectClick={this.onDeselectClick}
-                            canFinalizeSelection={this.props.canFinalizeSelection}
-                            canDraftPlayer={this.props.canDraftPlayer}/>
-                      </Grid.Column>
-                      <Grid.Column>
-                        <PlayerViewer
-                            selectedPlayer={this.props.selectedPlayer}/>
+                    <Grid.Column>
+                        <Statistic>
+                            <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
+                            <Statistic.Label>Time Left</Statistic.Label>
+                        </Statistic>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                        <Grid.Column>
+                            <PlayerPicker
+                                playersArray={this.props.playersArray}
+                                selectedPlayer={this.props.selectedPlayer}
+                                onClick={this.onRowClick}
+                                onDeselectClick={this.onDeselectClick}
+                                canFinalizeSelection={this.props.canFinalizeSelection}
+                                canDraftPlayer={this.props.canDraftPlayer}/>
+                        </Grid.Column>
+                        <Grid.Column>
+                            <div>
+                                <PlayerViewer
+                                    selectedPlayer={this.props.selectedPlayer}/>
+                            </div><br/>
+                            <div>
+                                <Button
+                                    primary={!this.props.isDraftInProgress}
+                                    secondary={this.props.isDraftInProgress}
+                                    onClick={() =>  this.startOrStopDraft()}>
+                                {(this.props.isDraftInProgress ? "Stop" : "Start") + " Draft"}
+                                </Button>
+                            </div>
                       </Grid.Column>
                 </Grid.Row>
             </Grid>
@@ -62,14 +84,38 @@ class DraftView extends Component {
     onDeselectClick() {
         this.props.dispatch(draftActions.clearPlayerSelection());
     }
+
+    startOrStopDraft(e) {
+        if(this.props.isDraftInProgress){
+            this.props.dispatch(draftActions.setInitialDraftData());
+        } else {
+            this.props.dispatch(draftActions.startDraft());
+            let timer = setInterval(this.tick, 1000);
+            this.setState({timer});
+        }
+    }
+
+    tick() {
+        if( this.props.isDraftInProgress ){
+            this.props.dispatch(draftActions.timerTick());
+        } else {
+            clearInterval(this.state.timer);
+        }
+    }
 }
 
     function mapStateToProps(state) {
+        const { timeLeft, secondsLeft, timeLeftString, percentValue } = draftSelectors.getTimeLeftInfo(state);
         return {
+            timeLeft,
+            timeLeftString,
+            percentValue,
+            secondsLeft,
             playersArray: draftSelectors.getPlayersForView(state),
             selectedPlayer: draftSelectors.getSelectedPlayer(state),
             canFinalizeSelection: draftSelectors.isTopicSelectionValid(state),
-            canDraftPlayer: draftSelectors.canDraftPlayer(state)
+            canDraftPlayer: draftSelectors.canDraftPlayer(state),
+            isDraftInProgress: draftSelectors.isDraftInProgress(state)
         };
     }
 
