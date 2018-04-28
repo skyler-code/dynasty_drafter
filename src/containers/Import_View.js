@@ -9,7 +9,6 @@ import { connect } from 'react-redux';
 import { Form, Grid } from 'semantic-ui-react';
 import * as importActions from '../store/leagueImport/actions';
 import * as importSelectors from '../store/leagueImport/reducer';
-import 'react-tabs/style/react-tabs.css';
 import ImportedLeagueView from "../components/ImportedLeagueView";
 
 class ImportView extends Component {

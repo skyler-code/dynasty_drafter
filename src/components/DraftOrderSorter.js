@@ -68,7 +68,7 @@ export default class DraftPreview extends Component {
                             <Button icon onClick={() => this.props.shiftDraftOrder( index, upIndex )}>
                                 <Icon name='chevron up' />
                             </Button>
-                            <Button icon onClick={() => this.props.shiftDraftOrder (index, downIndex )}>
+                            <Button icon onClick={() => this.props.shiftDraftOrder( index, downIndex )}>
                                 <Icon name='chevron down' />
                             </Button>
                         </div>)
