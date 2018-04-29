@@ -1,10 +1,14 @@
 import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 import _clone from 'lodash/clone';
+import moment from 'moment';
+import momentDuration from 'moment-duration-format'
+momentDuration(moment);
 
 const initialState = Immutable({
   leagueArray: undefined,
   availablePlayers: undefined,
+  bestAvailablePlayer: undefined,
   selectedPlayer: undefined,
   draftInProgress: false,
   currentPick: 1,
@@ -36,6 +40,7 @@ export default function reduce(state = initialState, action = {}) {
             leagueArray: action.leagueArray,
             draftOrder: action.draftOrder,
             secondsPerPick: action.secondsPerPick,
+            bestAvailablePlayer: action.bestAvailablePlayer,
             currentPick: 1,
             draftInProgress: false,
             selectedPlayer: undefined
@@ -44,8 +49,11 @@ export default function reduce(state = initialState, action = {}) {
         return state.merge({
             timeLeft: action.timeLeft
         });
+    case types.PICK_TIME_EXPIRED:
+        return state.merge({
+
+        });
     case types.STOP_DRAFT:
-        console.log("types.STOP_DRAFT")
         return state.merge({
             draftInProgress: false
         });
@@ -75,6 +83,10 @@ export function canDraftPlayer(state){
     return !!state.draft.selectedPlayer && state.draft.draftInProgress;
 }
 
+export function getBestAvailablePlayer(state){
+    return state.draft.bestAvailablePlayer;
+}
+
 export function isDraftInProgress(state){
     return state.draft.draftInProgress;
 }
@@ -90,7 +102,7 @@ export function getTimeLeftInfo(state){
     if( timeLeft ){
         timeLeftInfo.secondsLeft = timeLeft;
         timeLeftInfo.percentValue = Number( timeLeft ) / Number( secondsPerPick );
-        timeLeftInfo.timeLeftString = timeLeft + "";
+        timeLeftInfo.timeLeftString = moment.duration( timeLeft, "seconds" ).format( "mm:ss", { trim: false } );
     }
     return timeLeftInfo;
 }

@@ -54,7 +54,9 @@ class DraftView extends Component {
                         <Grid.Column>
                             <div>
                                 <PlayerViewer
-                                    selectedPlayer={this.props.selectedPlayer}/>
+                                    selectedPlayer={this.props.selectedPlayer}
+                                    bestAvailablePlayer={this.props.bestAvailablePlayer}
+                                    isDraftInProgress={this.props.isDraftInProgress}/>
                             </div><br/>
                             <div>
                                 <Button
@@ -115,7 +117,8 @@ class DraftView extends Component {
             selectedPlayer: draftSelectors.getSelectedPlayer(state),
             canFinalizeSelection: draftSelectors.isTopicSelectionValid(state),
             canDraftPlayer: draftSelectors.canDraftPlayer(state),
-            isDraftInProgress: draftSelectors.isDraftInProgress(state)
+            isDraftInProgress: draftSelectors.isDraftInProgress(state),
+            bestAvailablePlayer: draftSelectors.getBestAvailablePlayer(state)
         };
     }
 

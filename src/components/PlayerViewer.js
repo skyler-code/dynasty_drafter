@@ -4,42 +4,42 @@ import { Card, Image } from 'semantic-ui-react'
 
 export default class PlayerViewer extends Component {
 
-  constructor(props) {
-    super(props);
-    autoBind(this);
-  }
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
 
-  render() {
-    const plr = this.selectedPlayer();
-    return (
-        <div className="PlayerViewer">
-          <Card>
-            <Card.Content>
-              {this.generatePlayerImage()}
-              <Card.Header>
-                {plr.Name || "No Player Selected"}
-              </Card.Header>
-              <Card.Meta>
-                {this.generateMetaInfo()}
-              </Card.Meta>
-              <Card.Description>
-                  {this.generatePlayerDescription()}
-              </Card.Description>
-            </Card.Content>
-          </Card>
-        </div>
-    );
-  }
+    render() {
+        const plr = this.selectedPlayer();
+        return (
+            <div className="PlayerViewer">
+                <Card>
+                    <Card.Content>
+                        {this.generatePlayerImage()}
+                        <Card.Header>
+                            {plr.Name || "No Player Selected"}
+                        </Card.Header>
+                        <Card.Meta>
+                            {this.generateMetaInfo()}
+                        </Card.Meta>
+                        <Card.Description>
+                            {this.generatePlayerDescription()}
+                        </Card.Description>
+                    </Card.Content>
+                </Card>
+            </div>
+        );
+    }
 
   generatePlayerImage(){
     if( this.isPlayerSelected() ){
-      return( <Image floated='left' size='mini' src={this.selectedPlayer().PhotoUrl} /> )
+      return( <Image floated='left' size='mini' src={this.props.selectedPlayer.PhotoUrl} /> )
     }
   }
 
   generateMetaInfo(){
     if( this.isPlayerSelected() ){
-      const plr = this.selectedPlayer();
+      const plr = this.props.selectedPlayer;
       return(
         <div>
           {plr.FantasyPosition} {plr.Number ? " #" + plr.Number : ""}
@@ -48,22 +48,33 @@ export default class PlayerViewer extends Component {
     }
   }
 
-  generatePlayerDescription(){
-    if( this.isPlayerSelected() ){
-      const plr = this.selectedPlayer();
-      return(
-        <div>
-            <div>Team: {plr.FullTeamName}</div>
-            <div>{plr.College ? "College: " + plr.College : ""}</div>
-            <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
-            <div>{plr.ExperienceString ? "Experience: " + plr.ExperienceString : ""}</div>
-        </div>
-      );
+    generatePlayerDescription(){
+        if( this.isPlayerSelected() ){
+            const plr = this.selectedPlayer();
+            return(
+                <div>
+                    <div>Team: {plr.FullTeamName}</div>
+                    <div>{plr.College ? "College: " + plr.College : ""}</div>
+                    <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
+                    <div>{plr.ExperienceString ? "Experience: " + plr.ExperienceString : ""}</div>
+                </div>
+            );
+        } else if ( this.props.isDraftInProgress ) {
+            const bestPlr = this.bestAvailablePlayer();
+            return(
+                <div>
+                    If no player selected, {bestPlr.Name} ({bestPlr.Position}) will be picked when time expires.
+                </div>
+            )
+        }
     }
-  }
 
   selectedPlayer() {
     return ( this.props.selectedPlayer || {} ) ;
+  }
+
+  bestAvailablePlayer() {
+    return ( this.props.bestAvailablePlayer || {} ) ;
   }
 
   isPlayerSelected() {

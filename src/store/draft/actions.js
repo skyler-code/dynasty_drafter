@@ -27,7 +27,13 @@ export function setInitialDraftData(){
             const parsedLeague = importSelectors.getParsedLeague( getState() ) || {};
             const draftOrder = setupSelectors.getDraftOrder( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, parsedLeague );
-            dispatch( { type: types.SET_INITIAL_DRAFT_DATA, availablePlayers: availablePlayers, leagueArray: parsedLeague, draftOrder: draftOrder } );
+            const bestAvailablePlayer = _.minBy(availablePlayers, 'AverageDraftPosition');
+            dispatch( { type: types.SET_INITIAL_DRAFT_DATA,
+                        availablePlayers: availablePlayers,
+                        leagueArray: parsedLeague,
+                        draftOrder: draftOrder,
+                        bestAvailablePlayer: bestAvailablePlayer
+            } );
         } catch (error) {
             console.error(error);
         }
@@ -63,10 +69,10 @@ export function timerTick() {
     return (dispatch, getState) => {
         const isDraftInProgress = draftSelectors.isDraftInProgress(getState());
         const timeLeft = draftSelectors.getTimeLeft(getState());
-        if(isDraftInProgress && timeLeft > 1){
+        if(isDraftInProgress && timeLeft >= 1){
             dispatch( { type: types.TIMER_TICK, timeLeft: timeLeft - 1 } );
         } else {
-            dispatch( { type: types.STOP_DRAFT } );
+            dispatch( { type: types.PICK_TIME_EXPIRED } );
         }
     };
 }
