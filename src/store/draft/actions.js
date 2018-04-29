@@ -24,14 +24,14 @@ export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-            const parsedLeague = importSelectors.getParsedLeague( getState() ) || {};
-            const draftOrder = setupSelectors.getDraftOrder( getState() );
-            const availablePlayers = espnParserService.getAvailablePlayers( playerArray, parsedLeague );
-            const bestAvailablePlayer = _.minBy(availablePlayers, 'AverageDraftPosition');
+            const leagueArray = importSelectors.getParsedLeague( getState() ) || {};
+            const draftArray = setupSelectors.getFinalDraftArray( getState() );
+            const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
+            const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
             dispatch( { type: types.SET_INITIAL_DRAFT_DATA,
                         availablePlayers: availablePlayers,
-                        leagueArray: parsedLeague,
-                        draftOrder: draftOrder,
+                        leagueArray: leagueArray,
+                        draftArray: draftArray,
                         bestAvailablePlayer: bestAvailablePlayer
             } );
         } catch (error) {
@@ -42,21 +42,24 @@ export function setInitialDraftData(){
 
 export function selectPlayer(playerID) {
   return (dispatch, getState) => {
-    const players = draftSelectors.getPlayers(getState());
+    const players = draftSelectors.getAvailablePlayers(getState());
     let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
     dispatch({ type: types.PLAYER_SELECTED, selectedPlayer: newSelectedPlayer  });
   };
 }
 export function pickPlayer(playerID) {
   return (dispatch, getState) => {
-    const players = draftSelectors.getPlayers(getState());
+    const players = draftSelectors.getAvailablePlayers(getState());
     let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
     dispatch({ type: types.PLAYER_SELECTION_MADE, selectedPlayer: newSelectedPlayer  });
   };
 }
 
-export function finalizeTopicSelection() {
-  return( { type: types.PLAYER_SELECTION_MADE } );
+export function finalizePlayerSelection() {
+  return (dispatch, getState) => {
+    const pickInfo = makePick();
+    dispatch( { type: types.PLAYER_SELECTION_MADE } );
+  };
 }
 
 export function clearPlayerSelection() {
@@ -71,8 +74,6 @@ export function timerTick() {
         const timeLeft = draftSelectors.getTimeLeft(getState());
         if(isDraftInProgress && timeLeft >= 1){
             dispatch( { type: types.TIMER_TICK, timeLeft: timeLeft - 1 } );
-        } else {
-            dispatch( { type: types.PICK_TIME_EXPIRED } );
         }
     };
 }
@@ -81,4 +82,23 @@ export function endDraft() {
     return (dispatch, getState) => {
         console.log("types.STOP_DRAFT");
     };
+}
+
+export function makePick( state ) {
+    return (dispatch, getState) => {
+        const availablePlayers = draftSelectors.getAvailablePlayersForView(getState());
+        const selectedPlayer = draftSelectors.getSelectedPlayer(getState());
+        const draftArray = draftSelectors.getDraftArrayForEdit(getState());
+        const timeLeft = setupSelectors.getSecondsPerPick(getState());
+        let currentPickInfo = draftSelectors.getCurrentPickInfo(getState());
+        let currentPick = draftSelectors.getCurrentPick(getState());
+        console.log(currentPick)
+    };
+    /*availablePlayers: action.availablePlayers,
+            bestAvailablePlayer: action.bestAvailablePlayer,
+            leagueArray: action.leagueArray,
+            draftArray: action.draftArray,
+            currentPick: action.currentPick,
+            timeLeft: action.timeLeft*/
+
 }

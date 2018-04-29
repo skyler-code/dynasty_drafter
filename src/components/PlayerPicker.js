@@ -11,6 +11,7 @@ import _find from 'lodash/find';
 import '../css/PlayerPicker.css';
 import 'react-table/react-table.css';
 import * as constants from '../data/constants';
+import { Button } from 'semantic-ui-react';
 
 export default class PlayerPicker extends Component {
 
@@ -170,8 +171,18 @@ export default class PlayerPicker extends Component {
                 } }
               />
             <div>
-            <button className="DraftPlayer" id="DraftPlayer" disabled={!this.props.canDraftPlayer}>Draft Player</button>
-            <button className="DraftPlayer" id="DeselectPlayer" onClick={this.onDeselectClick} disabled={!this.props.canFinalizeSelection} >Clear Selection</button>
+                <Button
+                    primary={this.props.canDraftPlayer}
+                    disabled={!this.props.canDraftPlayer}
+                    onClick={() => this.finalizePlayerSelection()}>
+                Draft Player
+                </Button>
+                <Button
+                    primary={this.props.canFinalizeSelection}
+                    disabled={!this.props.canFinalizeSelection}
+                    onClick={() => this.onDeselectClick()}>
+                    Clear Selection
+                </Button>
             </div>
 
       </div>
@@ -188,6 +199,12 @@ export default class PlayerPicker extends Component {
   onDeselectClick() {
     if (typeof this.props.onDeselectClick === 'function') {
       this.props.onDeselectClick();
+    }
+  }
+
+  finalizePlayerSelection() {
+    if (typeof this.props.finalizePlayerSelection === 'function') {
+      this.props.finalizePlayerSelection();
     }
   }
 

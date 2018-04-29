@@ -66,7 +66,8 @@ class SetupView extends Component {
                             numOfTeams={this.props.numOfTeams}
                             handlePickTrade={this.handlePickTrade}
                             createDraftArray={this.createDraftArray}
-                            unloadDraftArray={this.unloadDraftArray}/>
+                            unloadDraftArray={this.unloadDraftArray}
+                            saveFinalDraftArray={this.saveFinalDraftArray}/>
                     </Tab.Pane>
             }
         ];
@@ -107,6 +108,10 @@ class SetupView extends Component {
 
     updateDraftType( snakeEnabled ){
         this.props.dispatch( setupActions.updateDraftType( snakeEnabled ) );
+    }
+
+    saveFinalDraftArray(){
+        this.props.dispatch( setupActions.saveFinalDraftArray() );
     }
 
 }

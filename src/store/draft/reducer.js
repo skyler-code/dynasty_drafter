@@ -11,8 +11,8 @@ const initialState = Immutable({
   bestAvailablePlayer: undefined,
   selectedPlayer: undefined,
   draftInProgress: false,
-  currentPick: 1,
-  draftOrder: undefined,
+  currentPick: 0,
+  draftArray: undefined,
   timeLeft: undefined
 });
 
@@ -21,7 +21,7 @@ export default function reduce(state = initialState, action = {}) {
     case types.DRAFT_STARTED:
         return state.merge({
             draftInProgress: true,
-            timeLeft: action.timeLeft
+            timeLeft: action.timeLeft,
         });
     case types.PLAYER_SELECTED:
         return state.merge({
@@ -29,19 +29,27 @@ export default function reduce(state = initialState, action = {}) {
         });
     case types.PLAYER_SELECTION_MADE:
         return state.merge({
+            availablePlayers: action.availablePlayers,
+            bestAvailablePlayer: action.bestAvailablePlayer,
+            leagueArray: action.leagueArray,
+            draftArray: action.draftArray,
+            selectedPlayer: undefined,
+            currentPick: action.currentPick,
+            timeLeft: action.timeLeft
         });
     case types.CLEAR_PLAYER_SELECTION:
         return state.merge({
             selectedPlayer: undefined
         });
     case types.SET_INITIAL_DRAFT_DATA:
+        console.log(action.availablePlayers)
         return state.merge({
             availablePlayers: action.availablePlayers,
             leagueArray: action.leagueArray,
-            draftOrder: action.draftOrder,
+            draftArray: action.draftArray,
             secondsPerPick: action.secondsPerPick,
             bestAvailablePlayer: action.bestAvailablePlayer,
-            currentPick: 1,
+            currentPick: 0,
             draftInProgress: false,
             selectedPlayer: undefined
         });
@@ -64,13 +72,18 @@ export default function reduce(state = initialState, action = {}) {
 
 // selectors
 
-export function getPlayers(state) {
+export function getAvailablePlayers(state) {
     return state.draft.availablePlayers;
 }
 
-export function getPlayersForView(state) {
+export function getAvailablePlayersForView(state) {
     return _clone( state.draft.availablePlayers );
 }
+
+export function getDraftArrayForEdit(state){
+    return _clone( state.draft.draftArray );
+}
+
 export function getSelectedPlayer(state) {
     return state.draft.selectedPlayer;
 }
@@ -93,6 +106,15 @@ export function isDraftInProgress(state){
 
 export function getTimeLeft(state){
     return state.draft.timeLeft;
+}
+
+export function getCurrentPick(state){
+    return state.draft.currentPick;
+}
+
+export function getCurrentPickInfo(state){
+    const draftArray = state.draft.draftArray || [];
+    return _clone(draftArray[ state.draft.currentPick ]);
 }
 
 export function getTimeLeftInfo(state){

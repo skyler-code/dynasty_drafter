@@ -87,3 +87,10 @@ export function updateDraftType( snakeEnabled ){
         dispatch( { type: types.DRAFT_TYPE_CHANGED, snakeDraft: newValue } );
     };
 }
+
+export function saveFinalDraftArray(){
+    return (dispatch, getState) => {
+        const draftArray = _.clone( setupSelectors.getDraftArray(getState()) );
+        dispatch( { type: types.SAVE_FINAL_DRAFT_ORDER, finalDraftArray: draftArray } );
+    };
+}

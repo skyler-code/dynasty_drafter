@@ -39,6 +39,7 @@ class DraftView extends Component {
                         <DraftTimer
                             timeLeftString={this.props.timeLeftString}
                             isDraftInProgress={this.props.isDraftInProgress}/>
+                        {this.props.isDraftInProgress ? this.props.currentPickInfo.Original_Owner.teamName : ""}
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row>
@@ -49,7 +50,8 @@ class DraftView extends Component {
                                 onClick={this.onRowClick}
                                 onDeselectClick={this.onDeselectClick}
                                 canFinalizeSelection={this.props.canFinalizeSelection}
-                                canDraftPlayer={this.props.canDraftPlayer}/>
+                                canDraftPlayer={this.props.canDraftPlayer}
+                                finalizePlayerSelection={this.finalizePlayerSelection}/>
                         </Grid.Column>
                         <Grid.Column>
                             <div>
@@ -104,6 +106,10 @@ class DraftView extends Component {
             clearInterval(this.state.timer);
         }
     }
+
+    finalizePlayerSelection(){
+        this.props.dispatch(draftActions.finalizePlayerSelection());
+    }
 }
 
     function mapStateToProps(state) {
@@ -113,12 +119,13 @@ class DraftView extends Component {
             timeLeftString,
             percentValue,
             secondsLeft,
-            playersArray: draftSelectors.getPlayersForView(state),
+            playersArray: draftSelectors.getAvailablePlayersForView(state),
             selectedPlayer: draftSelectors.getSelectedPlayer(state),
             canFinalizeSelection: draftSelectors.isTopicSelectionValid(state),
             canDraftPlayer: draftSelectors.canDraftPlayer(state),
             isDraftInProgress: draftSelectors.isDraftInProgress(state),
-            bestAvailablePlayer: draftSelectors.getBestAvailablePlayer(state)
+            bestAvailablePlayer: draftSelectors.getBestAvailablePlayer(state),
+            currentPickInfo: draftSelectors.getCurrentPickInfo(state)
         };
     }
 

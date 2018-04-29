@@ -7,7 +7,8 @@ const initialState = Immutable({
     draftArray: undefined,
     numOfRounds: 6,
     secondsPerPick: 90,
-    snakeDraft: false
+    snakeDraft: false,
+    finalDraftArray: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -32,6 +33,10 @@ export default function reduce(state = initialState, action = {}) {
             return state.merge({
                 secondsPerPick: action.secondsPerPick
             });
+        case types.SAVE_FINAL_DRAFT_ORDER:
+            return state.merge({
+                finalDraftArray: action.finalDraftArray
+            });
         default:
             return state;
     }
@@ -43,11 +48,15 @@ export function getDraftOrderForView(state){
     return { draftOrder: draftOrder, teamNames: teamNames };
 }
 export function getDraftOrder(state){
-    return state.draft.draftOrder;
+    return state.setup.draftOrder;
 }
 
 export function getDraftArray(state){
     return state.setup.draftArray;
+}
+
+export function getFinalDraftArray(state){
+    return state.setup.finalDraftArray;
 }
 
 export function getDraftArrayForView(state){
