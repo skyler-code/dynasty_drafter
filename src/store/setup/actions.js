@@ -47,7 +47,8 @@ export function createDraftArray(){
         function addToDraftArray(team){
             draftArray.push( {
                 Original_Owner: {teamName: team.teamName, hashKey: team.hashKey},
-                Traded_To: undefined
+                Traded_To: undefined,
+                Player_Picked: undefined
             } );
         }
         for(let i=0; i<numberOfRounds; i++){

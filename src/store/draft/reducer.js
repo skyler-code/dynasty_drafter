@@ -35,14 +35,14 @@ export default function reduce(state = initialState, action = {}) {
             draftArray: action.draftArray,
             selectedPlayer: undefined,
             currentPick: action.currentPick,
-            timeLeft: action.timeLeft
+            timeLeft: action.timeLeft,
+            draftInProgress: action.draftInProgress
         });
     case types.CLEAR_PLAYER_SELECTION:
         return state.merge({
             selectedPlayer: undefined
         });
     case types.SET_INITIAL_DRAFT_DATA:
-        console.log(action.availablePlayers)
         return state.merge({
             availablePlayers: action.availablePlayers,
             leagueArray: action.leagueArray,
@@ -86,6 +86,10 @@ export function getDraftArrayForEdit(state){
 
 export function getSelectedPlayer(state) {
     return state.draft.selectedPlayer;
+}
+
+export function getSelectedOrBestPlayer(state) {
+    return state.draft.selectedPlayer || state.draft.bestAvailablePlayer;
 }
 
 export function isTopicSelectionValid(state) {

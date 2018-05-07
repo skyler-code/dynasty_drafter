@@ -45,7 +45,7 @@ export default class DraftPreview extends Component {
                 },
                 id: "index",
                 sortable: false,
-                minWidth: 7
+                minWidth: 3
             },
             {
                 Header: "Team",
@@ -54,6 +54,13 @@ export default class DraftPreview extends Component {
                 Cell: this.renderEditable,
                 sortable: false,
                 minWidth: 15
+            },
+            {
+                Header: "Record",
+                id: "record",
+                accessor: t => t.record.recordString,
+                sortable: false,
+                minWidth: 3
             },
             {
                 Header: "",

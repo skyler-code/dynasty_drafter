@@ -123,7 +123,7 @@ export default class PlayerPicker extends Component {
             Header: "Rookie",
             accessor: "Experience",
             id: "rookie",
-            minWidth: 23,
+            minWidth: 25,
             filterable: true,
             Cell: ({ value }) => ((value > 0 || value === undefined) ? "No" : "Yes"),
             filterMethod: (filter, row) => {

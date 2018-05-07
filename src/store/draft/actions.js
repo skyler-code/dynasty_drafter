@@ -57,8 +57,10 @@ export function pickPlayer(playerID) {
 
 export function finalizePlayerSelection() {
   return (dispatch, getState) => {
-    const pickInfo = makePick();
-    dispatch( { type: types.PLAYER_SELECTION_MADE } );
+    const pickInfo = makePick(getState());
+    console.log(pickInfo)
+
+    //dispatch( { type: types.PLAYER_SELECTION_MADE } );
   };
 }
 
@@ -84,21 +86,24 @@ export function endDraft() {
     };
 }
 
-export function makePick( state ) {
-    return (dispatch, getState) => {
-        const availablePlayers = draftSelectors.getAvailablePlayersForView(getState());
-        const selectedPlayer = draftSelectors.getSelectedPlayer(getState());
-        const draftArray = draftSelectors.getDraftArrayForEdit(getState());
-        const timeLeft = setupSelectors.getSecondsPerPick(getState());
-        let currentPickInfo = draftSelectors.getCurrentPickInfo(getState());
-        let currentPick = draftSelectors.getCurrentPick(getState());
-        console.log(currentPick)
-    };
+function makePick( state ) {
+        const draftArray = draftSelectors.getDraftArrayForEdit(state);
+        const selectedPlayer = draftSelectors.getSelectedOrBestPlayer(state);
+        const timeLeft = setupSelectors.getSecondsPerPick(state);
+        const availablePlayers = _.without( draftSelectors.getAvailablePlayersForView(state), selectedPlayer );
+        let currentPickInfo = draftSelectors.getCurrentPickInfo(state);
+        let currentPick = draftSelectors.getCurrentPick(state);
+        const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+        currentPickInfo.Player_Picked = selectedPlayer;
+        draftArray[currentPick] = currentPickInfo;
+
+        return draftArray;
     /*availablePlayers: action.availablePlayers,
             bestAvailablePlayer: action.bestAvailablePlayer,
             leagueArray: action.leagueArray,
             draftArray: action.draftArray,
             currentPick: action.currentPick,
-            timeLeft: action.timeLeft*/
+            timeLeft: action.timeLeft,
+            draftInProgress: action.draftInProgress*/
 
 }
