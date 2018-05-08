@@ -40,48 +40,50 @@ class DraftView extends Component {
         return (
         <div>
             <Grid columns={2} divided>
-                <Grid.Row>
-                    <CurrentPickInfo
-                        timeLeftString={this.props.timeLeftString}
-                        isDraftInProgress={this.props.isDraftInProgress}
-                        currentPick={this.props.currentPick}
-                        currentRound={this.props.currentRound}
-                        getCurrentPickName={this.props.getCurrentPickName}/>
-                </Grid.Row>
-                <Grid.Row>
-                        <Grid.Column>
-                            <PlayerPicker
-                                playersArray={this.props.playersArray}
-                                selectedPlayer={this.props.selectedPlayer}
-                                onClick={this.onRowClick}
-                                onDeselectClick={this.onDeselectClick}
-                                canFinalizeSelection={this.props.canFinalizeSelection}
-                                canDraftPlayer={this.props.canDraftPlayer}
-                                finalizePlayerSelection={this.finalizePlayerSelection}/>
-                        </Grid.Column>
-                        <Grid.Column>
-                            <div>
-                                <PlayerViewer
-                                    selectedPlayer={this.props.selectedPlayer}
-                                    bestAvailablePlayer={this.props.bestAvailablePlayer}
-                                    isDraftInProgress={this.props.isDraftInProgress}/>
-                            </div><br/>
-                            <div>
-                                <Button
-                                    primary={!this.props.isDraftInProgress}
-                                    secondary={this.props.isDraftInProgress}
-                                    onClick={() =>  this.startOrStopDraft()}>
-                                {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
-                                </Button>
-                                <Button
-                                    primary={true}
-                                    onClick={() =>  this.resetDraft()}>
-                                Reset Draft
-                                </Button>
-                            </div>
-                      </Grid.Column>
-                </Grid.Row>
+                <Grid.Column>
+                    <Grid.Row>
+                        <CurrentPickInfo
+                            timeLeftString={this.props.timeLeftString}
+                            isDraftInProgress={this.props.isDraftInProgress}
+                            currentPick={this.props.currentPick}
+                            currentRound={this.props.currentRound}
+                            getCurrentPickName={this.props.getCurrentPickName}/>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <PlayerPicker
+                            playersArray={this.props.playersArray}
+                            selectedPlayer={this.props.selectedPlayer}
+                            onClick={this.onRowClick}
+                            onDeselectClick={this.onDeselectClick}
+                            canFinalizeSelection={this.props.canFinalizeSelection}
+                            canDraftPlayer={this.props.canDraftPlayer}
+                            finalizePlayerSelection={this.finalizePlayerSelection}/>
+                    </Grid.Row>
+                </Grid.Column>
+                <Grid.Column>
+                    <Grid.Row centered>
+                        <PlayerViewer
+                            selectedPlayer={this.props.selectedPlayer}
+                            bestAvailablePlayer={this.props.bestAvailablePlayer}
+                            isDraftInProgress={this.props.isDraftInProgress}/>
+                    </Grid.Row>
+                    <Grid.Row textAlign='left'>
+                    </Grid.Row>
+                </Grid.Column>
             </Grid>
+            <div>
+                <Button
+                    primary={!this.props.isDraftInProgress}
+                    secondary={this.props.isDraftInProgress}
+                    onClick={() =>  this.startOrStopDraft()}>
+                {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
+                </Button>
+                <Button
+                    primary={true}
+                    onClick={() =>  this.resetDraft()}>
+                Reset Draft
+                </Button>
+            </div>
         </div>
         );
     }
