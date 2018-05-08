@@ -146,13 +146,14 @@ export function getCurrentRound(state){
 }
 
 export function getTimeLeftInfo(state){
-    const timeLeft = state.draft.timeLeft;
+    let timeLeft = state.draft.timeLeft;
     const secondsPerPick = state.setup.secondsPerPick;
-    let timeLeftInfo = { timeLeft: timeLeft };
+    let timeLeftInfo = {};
     if( timeLeft ){
-        timeLeftInfo.secondsLeft = timeLeft;
+        timeLeftInfo.timeLeft = timeLeft;
         timeLeftInfo.percentValue = Number( timeLeft ) / Number( secondsPerPick );
-        timeLeftInfo.timeLeftString = moment.duration( timeLeft, "seconds" ).format( "mm:ss", { trim: false } );
+        let timeUnits = timeLeft % 60 ? timeLeft : Number( timeLeft ) / 60;
+        timeLeftInfo.timeLeftString = moment.duration( timeUnits, (timeLeft % 60 ? "seconds" : "minutes") ).format( "m:ss" );
     }
     return timeLeftInfo;
 }

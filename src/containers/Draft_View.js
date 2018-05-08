@@ -94,8 +94,7 @@ class DraftView extends Component {
             this.props.dispatch(draftActions.setInitialDraftData());
         } else {
             this.props.dispatch(draftActions.startDraft());
-            let timer = setInterval(this.tick, 1000);
-            this.setState({timer});
+            this.startTimer();
         }
     }
 
@@ -111,11 +110,12 @@ class DraftView extends Component {
 
     finalizePlayerSelection(){
         this.props.dispatch(draftActions.finalizePlayerSelection());
-        this.restartTimer();
+        this.startTimer();
     }
 
-    restartTimer(){
-        clearInterval(this.state.timer);
+    startTimer(){
+        if( this.state.timer )
+            clearInterval(this.state.timer);
         let timer = setInterval(this.tick, 1000);
         this.setState({timer});
     }
