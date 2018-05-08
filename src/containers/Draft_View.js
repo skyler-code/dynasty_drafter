@@ -11,7 +11,7 @@ import * as draftActions from "../store/draft/actions";
 import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import PlayerViewer from "../components/PlayerViewer";
-import DraftTimer from "../components/DraftTimer";
+import CurrentPickInfo from "../components/CurrentPickInfo";
 
 class DraftView extends Component {
 
@@ -35,12 +35,12 @@ class DraftView extends Component {
         <div>
             <Grid columns={2} divided>
                 <Grid.Row>
-                    <Grid.Column>
-                        <DraftTimer
-                            timeLeftString={this.props.timeLeftString}
-                            isDraftInProgress={this.props.isDraftInProgress}/>
-                        {this.props.isDraftInProgress ? this.props.currentPickInfo.Original_Owner.teamName : ""}
-                    </Grid.Column>
+                    <CurrentPickInfo
+                        timeLeftString={this.props.timeLeftString}
+                        isDraftInProgress={this.props.isDraftInProgress}
+                        currentPick={this.props.currentPick}
+                        currentRound={this.props.currentRound}
+                        getCurrentPickName={this.props.getCurrentPickName}/>
                 </Grid.Row>
                 <Grid.Row>
                         <Grid.Column>
@@ -111,6 +111,13 @@ class DraftView extends Component {
 
     finalizePlayerSelection(){
         this.props.dispatch(draftActions.finalizePlayerSelection());
+        this.restartTimer();
+    }
+
+    restartTimer(){
+        clearInterval(this.state.timer);
+        let timer = setInterval(this.tick, 1000);
+        this.setState({timer});
     }
 }
 
@@ -127,7 +134,9 @@ class DraftView extends Component {
             canDraftPlayer: draftSelectors.canDraftPlayer(state),
             isDraftInProgress: draftSelectors.isDraftInProgress(state),
             bestAvailablePlayer: draftSelectors.getBestAvailablePlayer(state),
-            currentPickInfo: draftSelectors.getCurrentPickInfo(state)
+            getCurrentPickName: draftSelectors.getCurrentPickName(state),
+            currentPick: draftSelectors.getCurrentPickForView(state),
+            currentRound: draftSelectors.getCurrentRound(state)
         };
     }
 

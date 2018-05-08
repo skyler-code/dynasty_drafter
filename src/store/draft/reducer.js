@@ -120,9 +120,29 @@ export function getCurrentPick(state){
     return state.draft.currentPick;
 }
 
+export function getCurrentPickForView(state){
+    return state.draft.currentPick + 1;
+}
+
+export function getCurrentPickName(state){
+    const draftArray = state.draft.draftArray || [];
+    const currentPick = draftArray[ state.draft.currentPick ] || {};
+    let currentPickName = "";
+    if( currentPick.Traded_To )
+        currentPickName = currentPick.Traded_To.teamName;
+    else if ( currentPick.Original_Owner )
+        currentPickName = currentPick.Original_Owner.teamName;
+    return currentPickName;
+}
+
 export function getCurrentPickInfo(state){
     const draftArray = state.draft.draftArray || [];
     return _clone(draftArray[ state.draft.currentPick ]);
+}
+
+export function getCurrentRound(state){
+    const numOfTeams = ( state.draft.leagueArray || {} ).teamCount || 0;
+    return ~~( state.draft.currentPick / numOfTeams ) + 1;
 }
 
 export function getTimeLeftInfo(state){
