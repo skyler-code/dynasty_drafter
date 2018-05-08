@@ -15,7 +15,7 @@ import fantasyPlayerService from "../../services/fantasy_data";
 
 export function startDraft(){
     return (dispatch, getState) => {
-        const secondsPerPick = setupSelectors.getSecondsPerPick( getState() );
+        const secondsPerPick = draftSelectors.getTimeLeft( getState() ) || setupSelectors.getSecondsPerPick( getState() );
         dispatch( { type: types.DRAFT_STARTED, timeLeft: secondsPerPick } );
     };
 }
@@ -28,11 +28,13 @@ export function setInitialDraftData(){
             const draftArray = setupSelectors.getFinalDraftArray( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
             const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+            const timeLeft = setupSelectors.getSecondsPerPick( getState() );
             dispatch( { type: types.SET_INITIAL_DRAFT_DATA,
                         availablePlayers: availablePlayers,
                         leagueArray: leagueArray,
                         draftArray: draftArray,
-                        bestAvailablePlayer: bestAvailablePlayer
+                        bestAvailablePlayer: bestAvailablePlayer,
+                        timeLeft: timeLeft
             } );
         } catch (error) {
             console.error(error);

@@ -51,15 +51,12 @@ export default function reduce(state = initialState, action = {}) {
             bestAvailablePlayer: action.bestAvailablePlayer,
             currentPick: 0,
             draftInProgress: false,
-            selectedPlayer: undefined
+            selectedPlayer: undefined,
+            timeLeft: action.timeLeft
         });
     case types.TIMER_TICK:
         return state.merge({
             timeLeft: action.timeLeft
-        });
-    case types.PICK_TIME_EXPIRED:
-        return state.merge({
-
         });
     case types.STOP_DRAFT:
         return state.merge({

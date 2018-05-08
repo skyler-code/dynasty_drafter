@@ -73,6 +73,11 @@ class DraftView extends Component {
                                     onClick={() =>  this.startOrStopDraft()}>
                                 {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
                                 </Button>
+                                <Button
+                                    primary={true}
+                                    onClick={() =>  this.resetDraft()}>
+                                Reset Draft
+                                </Button>
                             </div>
                       </Grid.Column>
                 </Grid.Row>
@@ -103,6 +108,10 @@ class DraftView extends Component {
             this.props.dispatch(draftActions.startDraft());
             this.startTimer();
         }
+    }
+
+    resetDraft() {
+        this.props.dispatch(draftActions.setInitialDraftData());
     }
 
     tick() {
