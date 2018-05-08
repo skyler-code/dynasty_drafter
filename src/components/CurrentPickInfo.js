@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Grid } from 'semantic-ui-react';
-import DraftTimer from "./DraftTimer";
+import { Grid, Statistic } from 'semantic-ui-react';
 
 export default class CurrentPickInfo extends Component {
 
@@ -18,9 +17,10 @@ export default class CurrentPickInfo extends Component {
         return (
             <Grid columns={2} divided>
                 <Grid.Column>
-                    <DraftTimer
-                        timeLeftString={this.props.timeLeftString}
-                        isDraftInProgress={this.props.isDraftInProgress}/>
+                    <Statistic>
+                        <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
+                        <Statistic.Label>Time Left</Statistic.Label>
+                    </Statistic>
                 </Grid.Column>
                 <Grid.Column>
                     <div>
