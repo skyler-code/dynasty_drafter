@@ -51,7 +51,6 @@ export default function reduce(state = initialState, action = {}) {
             bestAvailablePlayer: action.bestAvailablePlayer,
             currentPick: 0,
             draftInProgress: false,
-            selectedPlayer: undefined,
             timeLeft: action.timeLeft
         });
     case types.TIMER_TICK:
