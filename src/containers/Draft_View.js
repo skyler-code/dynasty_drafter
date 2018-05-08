@@ -29,6 +29,12 @@ class DraftView extends Component {
             this.props.dispatch(draftActions.setInitialDraftData());
     }
 
+    componentWillUnmount() {
+        if( this.state.timer )
+            clearInterval(this.state.timer);
+        this.props.dispatch(draftActions.endDraft());
+    }
+
     render() {
         if(!this.props.playersArray) this.renderLoading();
         return (
@@ -65,7 +71,7 @@ class DraftView extends Component {
                                     primary={!this.props.isDraftInProgress}
                                     secondary={this.props.isDraftInProgress}
                                     onClick={() =>  this.startOrStopDraft()}>
-                                {(this.props.isDraftInProgress ? "Stop" : "Start") + " Draft"}
+                                {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
                                 </Button>
                             </div>
                       </Grid.Column>
@@ -89,9 +95,10 @@ class DraftView extends Component {
         this.props.dispatch(draftActions.clearPlayerSelection());
     }
 
-    startOrStopDraft(e) {
+    startOrStopDraft() {
         if(this.props.isDraftInProgress){
-            this.props.dispatch(draftActions.setInitialDraftData());
+            clearInterval(this.state.timer);
+            this.props.dispatch(draftActions.endDraft());
         } else {
             this.props.dispatch(draftActions.startDraft());
             this.startTimer();

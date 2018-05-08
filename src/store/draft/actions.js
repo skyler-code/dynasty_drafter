@@ -71,7 +71,7 @@ export function finalizePlayerSelection() {
 
 export function clearPlayerSelection() {
     return (dispatch, getState) => {
-        dispatch( { type: types.CLEAR_PLAYER_SELECTION  } );
+        dispatch( { type: types.CLEAR_PLAYER_SELECTION } );
     };
 }
 
@@ -87,7 +87,7 @@ export function timerTick() {
 
 export function endDraft() {
     return (dispatch, getState) => {
-        console.log("types.STOP_DRAFT");
+        dispatch( { type: types.STOP_DRAFT } )
     };
 }
 
