@@ -84,6 +84,10 @@ export function getDraftArrayForEdit(state){
     return _clone( state.draft.draftArray );
 }
 
+export function getLeagueArrayForEdit(state){
+    return _clone( state.draft.leagueArray );
+}
+
 export function getSelectedPlayer(state) {
     return state.draft.selectedPlayer;
 }

@@ -100,11 +100,13 @@ class DraftView extends Component {
     }
 
     tick() {
-        if( this.props.timeLeft > 1 && this.props.isDraftInProgress ){
+        if( this.props.timeLeft > 1 ){
             this.props.dispatch(draftActions.timerTick());
         } else {
-            clearInterval(this.state.timer);
+            this.props.dispatch(draftActions.finalizePlayerSelection());
         }
+        if ( !this.props.isDraftInProgress )
+            clearInterval(this.state.timer);
     }
 
     finalizePlayerSelection(){

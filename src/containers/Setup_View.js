@@ -42,6 +42,7 @@ class SetupView extends Component {
                                             handleNumOfRounds={this.handleNumOfRounds}
                                             secondsPerPick={this.props.secondsPerPick}
                                             handleSecondsPerPicks={this.handleSecondsPerPicks}
+                                            handleTempSecondsPerPicks={this.handleTempSecondsPerPicks}
                                             draftType={this.props.draftType}
                                             updateDraftType={this.updateDraftType}/>
                                     </Grid.Column>
@@ -88,6 +89,10 @@ class SetupView extends Component {
 
     handleSecondsPerPicks( val ){
         this.props.dispatch( setupActions.updateSecondsPerPick( val.target.value ) );
+    }
+
+    handleTempSecondsPerPicks( val ){
+        this.props.dispatch( setupActions.tempUpdateSecondsPerPick( val.target.value ) );
     }
 
     createDraftArray(){

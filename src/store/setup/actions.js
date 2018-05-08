@@ -33,7 +33,16 @@ export function updateNumberOfRounds( value ){
 
 export function updateSecondsPerPick( value ){
     return (dispatch, getState) => {
-        value = value >= 1 ? value : setupSelectors.getSecondsPerPick(getState());
+        if( value < 45 )
+            value = 45;
+        if ( value > 300 )
+            value = 300;
+        dispatch( { type: types.SECONDS_PER_PICK_UPDATED, secondsPerPick: value } );
+    };
+}
+
+export function tempUpdateSecondsPerPick( value ){
+    return (dispatch, getState) => {
         dispatch( { type: types.SECONDS_PER_PICK_UPDATED, secondsPerPick: value } );
     };
 }

@@ -28,11 +28,14 @@ export default class DraftOptions extends Component {
                             value={this.props.numOfRounds}
                             onChange={this.props.handleNumOfRounds} />
                         <Form.Input
-                            label='Seconds Per Pick'
+                            label='Seconds Per Pick (45-300)'
                             control='input'
                             type='number'
+                            min={45}
+                            max={300}
                             value={this.props.secondsPerPick}
-                            onChange={this.props.handleSecondsPerPicks} />
+                            onChange={this.props.handleTempSecondsPerPicks}
+                            onBlur={this.props.handleSecondsPerPicks} />
                     </Form.Group>
                     <Form.Group>
                         <Form.Field>
