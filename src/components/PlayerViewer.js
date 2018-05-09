@@ -63,7 +63,7 @@ export default class PlayerViewer extends Component {
             const bestPlr = this.bestAvailablePlayer();
             return(
                 <div>
-                    If no player selected, {bestPlr.Name} ({bestPlr.Position}) will be picked when time expires.
+                    If no player selected, {bestPlr.Name} {bestPlr.Position ? "(" + bestPlr.Position + ")" : ""} will be picked when time expires.
                 </div>
             )
         }
