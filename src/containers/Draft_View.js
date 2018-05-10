@@ -10,7 +10,6 @@ import { Grid, Button } from 'semantic-ui-react';
 import * as draftActions from "../store/draft/actions";
 import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
-import PlayerViewer from "../components/PlayerViewer";
 import CurrentPickInfo from "../components/CurrentPickInfo";
 import DraftStatusTabs from "../components/DraftStatusTabs";
 
@@ -48,7 +47,9 @@ class DraftView extends Component {
                             isDraftInProgress={this.props.isDraftInProgress}
                             currentPick={this.props.currentPick}
                             currentRound={this.props.currentRound}
-                            getCurrentPickName={this.props.getCurrentPickName}/>
+                            getCurrentPickName={this.props.getCurrentPickName}
+                            selectedPlayer={this.props.selectedPlayer}
+                            bestAvailablePlayer={this.props.bestAvailablePlayer}/>
                     </Grid.Row>
                     <Grid.Row>
                         <PlayerPicker
@@ -62,12 +63,6 @@ class DraftView extends Component {
                     </Grid.Row>
                 </Grid.Column>
                 <Grid.Column>
-                    <Grid.Row centered>
-                        <PlayerViewer
-                            selectedPlayer={this.props.selectedPlayer}
-                            bestAvailablePlayer={this.props.bestAvailablePlayer}
-                            isDraftInProgress={this.props.isDraftInProgress}/>
-                    </Grid.Row>
                     <Grid.Row>
                         <DraftStatusTabs
                             getCurrentPickName={this.props.getCurrentPickName}

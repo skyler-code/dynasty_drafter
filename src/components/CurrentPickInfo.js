@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Grid, Statistic } from 'semantic-ui-react';
+import PlayerViewer from "./PlayerViewer";
 
 export default class CurrentPickInfo extends Component {
 
@@ -15,7 +16,7 @@ export default class CurrentPickInfo extends Component {
     render() {
         if(!this.props.isDraftInProgress) return null;
         return (
-            <Grid columns={2} divided>
+            <Grid columns={3} divided>
                 <Grid.Column>
                     <Statistic>
                         <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
@@ -32,6 +33,12 @@ export default class CurrentPickInfo extends Component {
                     <div>
                         { "Current Pick: " + this.props.getCurrentPickName }
                     </div>
+                </Grid.Column>
+                <Grid.Column>
+                        <PlayerViewer
+                            selectedPlayer={this.props.selectedPlayer}
+                            bestAvailablePlayer={this.props.bestAvailablePlayer}
+                            isDraftInProgress={this.props.isDraftInProgress}/>
                 </Grid.Column>
             </Grid>
         );
