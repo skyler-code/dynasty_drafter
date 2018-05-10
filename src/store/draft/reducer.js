@@ -1,6 +1,6 @@
 import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
-import _clone from 'lodash/clone';
+import _ from 'lodash';
 import moment from 'moment';
 import momentDuration from 'moment-duration-format'
 momentDuration(moment);
@@ -73,15 +73,15 @@ export function getAvailablePlayers(state) {
 }
 
 export function getAvailablePlayersForView(state) {
-    return _clone( state.draft.availablePlayers );
+    return _.clone( state.draft.availablePlayers );
 }
 
 export function getDraftArrayForEdit(state){
-    return _clone( state.draft.draftArray );
+    return _.clone( state.draft.draftArray );
 }
 
 export function getLeagueArrayForEdit(state){
-    return _clone( state.draft.leagueArray );
+    return _.clone( state.draft.leagueArray );
 }
 
 export function getSelectedPlayer(state) {
@@ -120,6 +120,23 @@ export function getCurrentPickForView(state){
     return state.draft.currentPick + 1;
 }
 
+export function getDraftStatusLeague(state){
+    let draftArray = state.draft.draftArray;
+    function formatPlayerName( pick ){
+        const plr = pick.Player_Picked;
+        return plr ? plr.Name + ( plr.FantasyPosition === 'D/ST' ? "" : " (" + plr.FantasyPosition + ")" ) : "";
+    }
+    function formatTeamName( pick ){
+        return pick.Traded_To ? pick.Traded_To.teamName : pick.Original_Owner.teamName;
+    }
+    return _.map(draftArray, function( pick ){
+        return {
+            teamName: formatTeamName(pick),
+            playerName: formatPlayerName(pick)
+        };
+    } );
+}
+
 export function getCurrentPickName(state){
     const draftArray = state.draft.draftArray || [];
     const currentPick = draftArray[ state.draft.currentPick ] || {};
@@ -133,7 +150,7 @@ export function getCurrentPickName(state){
 
 export function getCurrentPickInfo(state){
     const draftArray = state.draft.draftArray || [];
-    return _clone(draftArray[ state.draft.currentPick ]);
+    return _.clone(draftArray[ state.draft.currentPick ]);
 }
 
 export function getCurrentRound(state){

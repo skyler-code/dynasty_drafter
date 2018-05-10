@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Tab } from 'semantic-ui-react';
+import DraftStatusLeague from '../components/DraftStatusLeague';
 
 export default class DraftPreview extends Component {
 
@@ -16,7 +17,6 @@ export default class DraftPreview extends Component {
     }
 
     render() {
-        if(!this.props.isDraftInProgress) return null;
         const currentTeamInfoTabName = this.props.getCurrentPickName + " Team Info";
         const panes = [
             {
@@ -24,6 +24,8 @@ export default class DraftPreview extends Component {
                 render: () =>
                     <Tab.Pane>
                         <div>
+                            <DraftStatusLeague
+                                draftStatusLeague={this.props.draftStatusLeague}/>
                         </div>
                     </Tab.Pane>
             },
