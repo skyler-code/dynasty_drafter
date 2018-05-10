@@ -12,6 +12,7 @@ import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import PlayerViewer from "../components/PlayerViewer";
 import CurrentPickInfo from "../components/CurrentPickInfo";
+import DraftStatusTabs from "../components/DraftStatusTabs";
 
 class DraftView extends Component {
 
@@ -67,7 +68,10 @@ class DraftView extends Component {
                             bestAvailablePlayer={this.props.bestAvailablePlayer}
                             isDraftInProgress={this.props.isDraftInProgress}/>
                     </Grid.Row>
-                    <Grid.Row textAlign='left'>
+                    <Grid.Row>
+                        <DraftStatusTabs
+                            getCurrentPickName={this.props.getCurrentPickName}
+                            isDraftInProgress={this.props.isDraftInProgress}/>
                     </Grid.Row>
                 </Grid.Column>
             </Grid>
