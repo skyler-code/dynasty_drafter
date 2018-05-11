@@ -4,7 +4,7 @@ import _ from 'lodash';
 import moment from 'moment';
 
 const initialState = Immutable({
-  leagueArray: undefined,
+  leagueArray: undefined, // actually object
   availablePlayers: undefined,
   bestAvailablePlayer: undefined,
   selectedPlayer: undefined,
@@ -133,6 +133,31 @@ export function getDraftStatusLeague(state){
             playerName: formatPlayerName(pick)
         };
     } );
+}
+
+export function getDraftStatusTeam(state){
+    let draftArray = state.draft.draftArray || [];
+    let currentPick = draftArray[ state.draft.currentPick ];
+    if( !currentPick )
+        return {};
+    let leagueArray = state.draft.leagueArray || {};
+    let currentPickHashKey = currentPick.Traded_To ? currentPick.Traded_To.hashKey : currentPick.Original_Owner.hashKey;
+    let teamFromLeagueArray = _.find( leagueArray.teamInfo, function(team){
+        return team.hashKey === currentPickHashKey;
+    } );
+    let draftPicks = _.filter(draftArray, function(pick){
+        return pick.ownerHashKey === currentPickHashKey;
+    } );
+    let draftedPlayers = _.map(draftPicks, function(pick){
+        let plr = pick.Player_Picked;
+        let isDefense = plr.FantasyPosition === 'D/ST';
+        return {
+            Name: isDefense ? plr.FullTeamName : plr.Name,
+            Team: plr.Team,
+            FantasyPosition: plr.FantasyPosition
+        };
+    });
+    return _.concat( teamFromLeagueArray.players, draftedPlayers );
 }
 
 export function getCurrentPickName(state){

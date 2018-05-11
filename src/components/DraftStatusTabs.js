@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Tab } from 'semantic-ui-react';
 import DraftStatusLeague from '../components/DraftStatusLeague';
+import DraftStatusTeam from '../components/DraftStatusTeam';
 
 export default class DraftStatusTabs extends Component {
 
@@ -33,6 +34,10 @@ export default class DraftStatusTabs extends Component {
                 menuItem: currentTeamInfoTabName,
                 render: () =>
                     <Tab.Pane>
+                        <div>
+                            <DraftStatusTeam
+                                draftStatusTeam={this.props.draftStatusTeam}/>
+                        </div>
                     </Tab.Pane>
             }
         ];

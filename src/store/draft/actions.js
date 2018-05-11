@@ -97,6 +97,7 @@ function makePick( state ) {
     let draftInProgress = true;
     const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
     currentPickInfo.Player_Picked = selectedPlayer;
+    currentPickInfo.ownerHashKey = currentPickInfo.Traded_To ? currentPickInfo.Traded_To.hashKey : currentPickInfo.Original_Owner.hashKey;
     draftArray[currentPick] = currentPickInfo;
 
     if(currentPick < draftArray.length - 1)
