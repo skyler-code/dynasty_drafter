@@ -18,6 +18,7 @@ export function makeDraftTrade( index, tradedTo ){
         const draftOrder = setupSelectors.getDraftOrderForView(getState());
         let pick = _.clone(draftArray[index]);
         pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
+        pick.ownerHashKey = pick.Traded_To.hashKey;
         draftArray[index] = pick;
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
     };
@@ -57,7 +58,8 @@ export function createDraftArray(){
             draftArray.push( {
                 Original_Owner: {teamName: team.teamName, hashKey: team.hashKey},
                 Traded_To: undefined,
-                Player_Picked: undefined
+                Player_Picked: undefined,
+                ownerHashKey: team.hashKey
             } );
         }
         for(let i=0; i<numberOfRounds; i++){

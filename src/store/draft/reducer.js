@@ -141,12 +141,11 @@ export function getDraftStatusTeam(state){
     if( !currentPick )
         return {};
     let leagueArray = state.draft.leagueArray || {};
-    let currentPickHashKey = currentPick.Traded_To ? currentPick.Traded_To.hashKey : currentPick.Original_Owner.hashKey;
     let teamFromLeagueArray = _.find( leagueArray.teamInfo, function(team){
-        return team.hashKey === currentPickHashKey;
+        return team.hashKey === currentPick.ownerHashKey;
     } );
     let draftPicks = _.filter(draftArray, function(pick){
-        return pick.ownerHashKey === currentPickHashKey;
+        return pick.ownerHashKey === currentPick.ownerHashKey && pick.Player_Picked;
     } );
     let draftedPlayers = _.map(draftPicks, function(pick){
         let plr = pick.Player_Picked;
