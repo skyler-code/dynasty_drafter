@@ -4,7 +4,7 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import '../css/DraftStatusLeague.css';
 
-export default class PlayerPicker extends Component {
+export default class DraftStatusLeague extends Component {
     constructor(props) {
         super(props);
         autoBind(this);

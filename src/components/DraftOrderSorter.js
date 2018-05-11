@@ -6,7 +6,7 @@ import _ from 'lodash';
 import '../css/DraftOrderSorter.css';
 import 'react-table/react-table.css';
 
-export default class DraftPreview extends Component {
+export default class DraftOrderSorter extends Component {
 
     constructor(props) {
         super(props);

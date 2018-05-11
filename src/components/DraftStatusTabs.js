@@ -3,7 +3,7 @@ import autoBind from 'react-autobind';
 import { Tab } from 'semantic-ui-react';
 import DraftStatusLeague from '../components/DraftStatusLeague';
 
-export default class DraftPreview extends Component {
+export default class DraftStatusTabs extends Component {
 
     constructor(props) {
         super(props);
