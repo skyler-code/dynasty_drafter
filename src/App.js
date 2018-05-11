@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Helmet} from 'react-helmet';
 import { connect } from 'react-redux';
 import * as router from './store/router/reducer';
 import { Tab } from 'semantic-ui-react';
@@ -48,6 +49,9 @@ class App extends Component {
         ];
         return (
             <div className="App">
+                <Helmet>
+                    <style>{'body { background-color: #D3D3D3; }'}</style>
+                </Helmet>
                 <Tab panes={panes}/>
             </div>
         );
