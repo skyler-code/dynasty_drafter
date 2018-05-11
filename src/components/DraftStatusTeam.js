@@ -29,11 +29,13 @@ export default class DraftStatusTeam extends Component {
                 Header: "Team",
                 id: "team",
                 accessor: "Team",
+                minWidth: 15
             },
             {
                 Header: "Position",
                 id: "position",
                 accessor: "FantasyPosition",
+                minWidth: 15
             }
         ];
         return (
