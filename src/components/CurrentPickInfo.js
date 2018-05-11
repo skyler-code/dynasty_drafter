@@ -16,7 +16,7 @@ export default class CurrentPickInfo extends Component {
     render() {
         if(!this.props.isDraftInProgress) return null;
         return (
-            <Grid columns={3} divided>
+            <Grid columns={3} divided verticalAlign='middle'>
                 <Grid.Column>
                     <Statistic>
                         <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
@@ -35,10 +35,10 @@ export default class CurrentPickInfo extends Component {
                     </div>
                 </Grid.Column>
                 <Grid.Column>
-                        <PlayerViewer
-                            selectedPlayer={this.props.selectedPlayer}
-                            bestAvailablePlayer={this.props.bestAvailablePlayer}
-                            isDraftInProgress={this.props.isDraftInProgress}/>
+                    <PlayerViewer
+                        selectedPlayer={this.props.selectedPlayer}
+                        bestAvailablePlayer={this.props.bestAvailablePlayer}
+                        isDraftInProgress={this.props.isDraftInProgress}/>
                 </Grid.Column>
             </Grid>
         );

@@ -2,8 +2,6 @@ import * as types from './actionTypes';
 import Immutable from 'seamless-immutable';
 import _ from 'lodash';
 import moment from 'moment';
-import momentDuration from 'moment-duration-format'
-momentDuration(moment);
 
 const initialState = Immutable({
   leagueArray: undefined,
@@ -165,8 +163,9 @@ export function getTimeLeftInfo(state){
     if( timeLeft ){
         timeLeftInfo.timeLeft = timeLeft;
         timeLeftInfo.percentValue = Number( timeLeft ) / Number( secondsPerPick );
-        let timeUnits = timeLeft % 60 ? timeLeft : Number( timeLeft ) / 60;
-        timeLeftInfo.timeLeftString = moment.duration( timeUnits, (timeLeft % 60 ? "seconds" : "minutes") ).format( "m:ss" );
+        let mins = timeLeft > 60 ? Math.floor( timeLeft / 60 ) : 0;
+        let secs = timeLeft % 60;
+        timeLeftInfo.timeLeftString = moment().minute(mins).second(secs).format('m:ss')
     }
     return timeLeftInfo;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Card, Image } from 'semantic-ui-react'
+import '../css/PlayerViewer.css';
 
 export default class PlayerViewer extends Component {
 

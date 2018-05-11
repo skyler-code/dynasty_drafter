@@ -49,13 +49,6 @@ export function selectPlayer(playerID) {
     dispatch({ type: types.PLAYER_SELECTED, selectedPlayer: newSelectedPlayer  });
   };
 }
-export function pickPlayer(playerID) {
-  return (dispatch, getState) => {
-    const players = draftSelectors.getAvailablePlayers(getState());
-    let newSelectedPlayer = _.find(players, function( plr ){ return plr.PlayerID === playerID } );
-    dispatch({ type: types.PLAYER_SELECTION_MADE, selectedPlayer: newSelectedPlayer  });
-  };
-}
 
 export function finalizePlayerSelection() {
     return (dispatch, getState) => {
@@ -94,38 +87,30 @@ export function endDraft() {
 }
 
 function makePick( state ) {
-        const draftArray = draftSelectors.getDraftArrayForEdit(state);
-        const leagueArray = draftSelectors.getLeagueArrayForEdit(state);
-        const selectedPlayer = draftSelectors.getSelectedOrBestPlayer(state);
-        const timeLeft = setupSelectors.getSecondsPerPick(state);
-        const availablePlayers = _.filter( draftSelectors.getAvailablePlayersForView(state), function(p){ return p.hashKey !== selectedPlayer.hashKey; } );
-        let currentPickInfo = draftSelectors.getCurrentPickInfo(state);
-        let currentPick = draftSelectors.getCurrentPick(state);
-        let draftInProgress = true;
-        const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
-        currentPickInfo.Player_Picked = selectedPlayer;
-        draftArray[currentPick] = currentPickInfo;
+    const draftArray = draftSelectors.getDraftArrayForEdit(state);
+    const leagueArray = draftSelectors.getLeagueArrayForEdit(state);
+    const selectedPlayer = draftSelectors.getSelectedOrBestPlayer(state);
+    const timeLeft = setupSelectors.getSecondsPerPick(state);
+    const availablePlayers = _.filter( draftSelectors.getAvailablePlayersForView(state), function(p){ return p.hashKey !== selectedPlayer.hashKey; } );
+    let currentPickInfo = draftSelectors.getCurrentPickInfo(state);
+    let currentPick = draftSelectors.getCurrentPick(state);
+    let draftInProgress = true;
+    const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+    currentPickInfo.Player_Picked = selectedPlayer;
+    draftArray[currentPick] = currentPickInfo;
 
-        if(currentPick < draftArray.length - 1)
-            currentPick = currentPick + 1;
-        else
-            draftInProgress = false;
+    if(currentPick < draftArray.length - 1)
+        currentPick = currentPick + 1;
+    else
+        draftInProgress = false;
 
-        return {
-            availablePlayers: availablePlayers,
-            bestAvailablePlayer: bestAvailablePlayer,
-            leagueArray: leagueArray,
-            draftArray: draftArray,
-            currentPick: currentPick,
-            timeLeft: timeLeft,
-            draftInProgress: draftInProgress
-        }
-    /*availablePlayers: action.availablePlayers,
-            bestAvailablePlayer: action.bestAvailablePlayer,
-            leagueArray: action.leagueArray,
-            draftArray: action.draftArray,
-            currentPick: action.currentPick,
-            timeLeft: action.timeLeft,
-            draftInProgress: action.draftInProgress*/
-
+    return {
+        availablePlayers: availablePlayers,
+        bestAvailablePlayer: bestAvailablePlayer,
+        leagueArray: leagueArray,
+        draftArray: draftArray,
+        currentPick: currentPick,
+        timeLeft: timeLeft,
+        draftInProgress: draftInProgress
+    }
 }
