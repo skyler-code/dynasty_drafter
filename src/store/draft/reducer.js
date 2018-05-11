@@ -163,9 +163,7 @@ export function getTimeLeftInfo(state){
     if( timeLeft ){
         timeLeftInfo.timeLeft = timeLeft;
         timeLeftInfo.percentValue = Number( timeLeft ) / Number( secondsPerPick );
-        let mins = timeLeft >= 60 ? Math.floor( timeLeft / 60 ) : 0;
-        let secs = timeLeft % 60;
-        timeLeftInfo.timeLeftString = moment().minute(mins).second(secs).format('m:ss')
+        timeLeftInfo.timeLeftString = moment().minute( Math.floor( timeLeft / 60 ) ).second( timeLeft % 60 ).format('m:ss')
     }
     return timeLeftInfo;
 }
