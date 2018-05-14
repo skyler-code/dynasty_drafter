@@ -2,7 +2,7 @@
   "name": "dynasty_drafter",
   "version": "0.1.0",
   "private": true,
-  "homepage": " https://skylerh15.github.io/dynasty_drafter",
+  "homepage": "https://skylerh15.github.io/dynasty_drafter",
   "devDependencies": {
     "react-scripts": "1.1.4"
   },
