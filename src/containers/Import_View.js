@@ -40,11 +40,6 @@ class ImportView extends Component {
                                         width={12}
                                         value={this.props.leagueInput}
                                         onChange={this.handleInputChange} />
-                                    <Form.Field
-                                        label='JSON Output (DEV)'
-                                        value={JSON.stringify(this.props.parsedLeague, null, "\t")}
-                                        control='textarea'
-                                        rows='6'/>
                                 </Form.Group>
                             </Form>
                         </Grid.Column>

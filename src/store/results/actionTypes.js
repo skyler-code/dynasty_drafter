@@ -1,1 +1,1 @@
-//export const LEAGUE_IMPORTED = 'setup.LEAGUE_IMPORTED';
+export const SET_RESULT_DATA = 'results.SET_RESULT_DATA';

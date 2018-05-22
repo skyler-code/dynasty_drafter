@@ -45,12 +45,12 @@ class App extends Component {
             },
             {
                 menuItem: 'Results',
-                render: () => 1 === 2 ?
+                render: () =>
                     <Tab.Pane>
                         <div>
                             <ResultsView/>
                         </div>
-                    </Tab.Pane> : null
+                    </Tab.Pane>
             }
         ];
         const panes2 = _.initial(panes);
