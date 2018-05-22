@@ -5,7 +5,7 @@ import _ from 'lodash';
 const initialState = Immutable({
     draftOrder: undefined,
     draftArray: undefined,
-    numOfRounds: 6,
+    numOfRounds: 4,
     secondsPerPick: 90,
     snakeDraft: false,
     finalDraftArray: undefined

@@ -106,7 +106,7 @@ export function isDraftInProgress(state){
     return state.draft.draftInProgress;
 }
 
-export function canStartDraft(state){
+export function isDraftFinished(state){
     let lastPick = _.last(state.draft.draftArray) || {};
     return !!lastPick.Player_Picked;
 }

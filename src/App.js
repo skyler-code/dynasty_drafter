@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 import { connect } from 'react-redux';
-import * as router from './store/router/reducer';
+import _ from 'lodash';
+//import * as router from './store/router/reducer';
+import { isDraftFinished } from './store/draft/reducer';
 import { Tab } from 'semantic-ui-react';
 import DraftView from './containers/Draft_View';
 import ImportView from './containers/Import_View';
 import SetupView from './containers/Setup_View';
+import ResultsView from './containers/Results_View';
 import './App.css';
 
 
@@ -18,7 +21,7 @@ class App extends Component {
                 render: () =>
                     <Tab.Pane textAlign='center'>
                         <div>
-                          <ImportView/>
+                            <ImportView/>
                         </div>
                     </Tab.Pane>
             },
@@ -42,26 +45,30 @@ class App extends Component {
             },
             {
                 menuItem: 'Results',
-                render: () =>
+                render: () => 1 === 2 ?
                     <Tab.Pane>
-                    </Tab.Pane>
+                        <div>
+                            <ResultsView/>
+                        </div>
+                    </Tab.Pane> : null
             }
         ];
+        const panes2 = _.initial(panes);
         return (
             <div className="App">
                 <Helmet>
                     <style>{'body { background-color: #D3D3D3; }'}</style>
                 </Helmet>
-                <Tab panes={panes}/>
+                <Tab panes={ this.props.draftFinished ? panes : panes2 } renderActiveOnly={true}/>
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-  return {
-    currentTab: router.getCurrentTab(state)
-  };
+    return {
+        draftFinished: isDraftFinished(state)
+    };
 }
 
 export default connect(mapStateToProps)(App);

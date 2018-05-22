@@ -76,7 +76,7 @@ class DraftView extends Component {
                 <Button
                     primary={!this.props.isDraftInProgress}
                     secondary={this.props.isDraftInProgress}
-                    disabled={this.props.canStartDraft}
+                    disabled={this.props.isDraftFinished}
                     onClick={() =>  this.startOrStopDraft()}>
                 {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
                 </Button>
@@ -159,7 +159,7 @@ class DraftView extends Component {
             currentRound: draftSelectors.getCurrentRound(state),
             draftStatusLeague: draftSelectors.getDraftStatusLeague(state),
             draftStatusTeam: draftSelectors.getDraftStatusTeam(state),
-            canStartDraft: draftSelectors.canStartDraft(state)
+            isDraftFinished: draftSelectors.isDraftFinished(state)
         };
     }
 
