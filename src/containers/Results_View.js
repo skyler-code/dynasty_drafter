@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Form, Grid, TextArea, Tab, Dropdown } from 'semantic-ui-react';
 import * as resultActions from '../store/results/actions';
 import * as resultSelectors from '../store/results/reducer';
+import TeamStatusTable from '../components/results/TeamStatusTable';
 
 class ResultsView extends Component {
 
@@ -54,6 +55,10 @@ class ResultsView extends Component {
                         <div>
                             <Dropdown selection options={this.props.teamDropDownList} defaultValue={this.props.selectedTeam} onChange={(e, d) => this.onTeamDropDownChange(d)}/>
                         </div>
+                        <div>
+                            <TeamStatusTable
+                                selectedTeamStatus={this.props.selectedTeamStatus}/>
+                        </div>
                     </Tab.Pane>
             },
             {
@@ -80,7 +85,8 @@ function mapStateToProps(state) {
         finalDraftArray: resultSelectors.getFinalDraftArray(state),
         finalLeagueArray: resultSelectors.getFinalLeagueArray(state),
         teamDropDownList: resultSelectors.getTeamList(state),
-        selectedTeam: resultSelectors.getSelectedTeam(state)
+        selectedTeam: resultSelectors.getSelectedTeam(state),
+        selectedTeamStatus: resultSelectors.getSelectedTeamInfo(state)
     };
 }
 

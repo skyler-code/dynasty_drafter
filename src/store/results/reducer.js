@@ -42,3 +42,27 @@ export function getTeamList(state) {
         return { text: team.teamName, key: team.hashKey, value: team.hashKey };
     } );
 }
+
+export function getSelectedTeamInfo(state){
+    let draftArray = state.results.finalDraftArray;
+    let leagueArray = (state.results.finalLeagueArray || {}).teamInfo;
+    let selectedTeam = state.results.selectedTeam;
+    if(!leagueArray)
+        return [];
+    let teamFromLeagueArray = _.find( leagueArray, function(team){
+        return team.hashKey === selectedTeam;
+    } );
+    let draftPicks = _.filter(draftArray, function(pick){
+        return pick.ownerHashKey === selectedTeam && pick.Player_Picked;
+    } );
+    let draftedPlayers = _.map(draftPicks, function(pick){
+        let plr = pick.Player_Picked;
+        let isDefense = plr.FantasyPosition === 'D/ST';
+        return {
+            Name: isDefense ? plr.FullTeamName : plr.Name,
+            Team: plr.Team,
+            FantasyPosition: plr.FantasyPosition
+        };
+    });
+    return _.concat( (teamFromLeagueArray || {}).players, draftedPlayers );
+}
