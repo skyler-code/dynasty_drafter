@@ -126,7 +126,7 @@ export function getCurrentPickForView(state){
 export function getDraftStatusLeague(state){
     let draftArray = state.draft.draftArray;
     function formatPlayerName( pick ){
-        const plr = pick.Player_Picked;
+        let plr = pick.Player_Picked;
         return plr ? plr.Name + ( plr.FantasyPosition === 'D/ST' ? "" : " (" + plr.FantasyPosition + ")" ) : "";
     }
     function formatTeamName( pick ){

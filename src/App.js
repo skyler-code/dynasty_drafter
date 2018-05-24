@@ -59,7 +59,7 @@ class App extends Component {
                 <Helmet>
                     <style>{'body { background-color: #D3D3D3; }'}</style>
                 </Helmet>
-                <Tab panes={ this.props.draftFinished ? panes : panes2 } renderActiveOnly={true}/>
+                <Tab panes={ this.props.draftFinished ? panes : panes2 }/>
             </div>
         );
     }
