@@ -64,5 +64,5 @@ export function getSelectedTeamInfo(state){
             FantasyPosition: plr.FantasyPosition
         };
     });
-    return _.concat( (teamFromLeagueArray || {}).players, draftedPlayers );
+    return _.concat( teamFromLeagueArray.players, draftedPlayers );
 }
