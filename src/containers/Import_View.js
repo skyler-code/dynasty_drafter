@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Form, Grid } from 'semantic-ui-react';
+import { Form, Grid, Header } from 'semantic-ui-react';
 import * as importActions from '../store/leagueImport/actions';
 import * as importSelectors from '../store/leagueImport/reducer';
 import ImportedLeagueView from "../components/ImportedLeagueView";
@@ -44,6 +44,7 @@ class ImportView extends Component {
                             </Form>
                         </Grid.Column>
                         <Grid.Column>
+                            <Header as='h2'>{this.props.leagueName}</Header>
                             <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
                         </Grid.Column>
                     </Grid.Row>
@@ -67,7 +68,8 @@ class ImportView extends Component {
 function mapStateToProps(state) {
     return {
         parsedLeague: importSelectors.getParsedLeague(state),
-        leagueInput: importSelectors.getLeagueInput(state)
+        leagueInput: importSelectors.getLeagueInput(state),
+        leagueName: importSelectors.getLeagueName(state)
     };
 }
 
