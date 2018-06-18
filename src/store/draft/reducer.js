@@ -71,15 +71,15 @@ export function getAvailablePlayers(state) {
 }
 
 export function getAvailablePlayersForView(state) {
-    return _.clone( state.draft.availablePlayers );
+    return _.cloneDeep( state.draft.availablePlayers );
 }
 
 export function getDraftArrayForEdit(state){
-    return _.clone( state.draft.draftArray );
+    return _.cloneDeep( state.draft.draftArray );
 }
 
 export function getLeagueArrayForEdit(state){
-    return _.clone( state.draft.leagueArray );
+    return _.cloneDeep( state.draft.leagueArray );
 }
 
 export function getSelectedPlayer(state) {
@@ -177,7 +177,7 @@ export function getCurrentPickName(state){
 
 export function getCurrentPickInfo(state){
     const draftArray = state.draft.draftArray || [];
-    return _.clone(draftArray[ state.draft.currentPick ]);
+    return _.cloneDeep(draftArray[ state.draft.currentPick ]);
 }
 
 export function getCurrentRound(state){

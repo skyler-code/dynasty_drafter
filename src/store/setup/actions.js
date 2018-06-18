@@ -14,9 +14,9 @@ export function getInitialDraftInfo() {
 
 export function makeDraftTrade( index, tradedTo ){
     return (dispatch, getState) => {
-        let draftArray = _.clone(setupSelectors.getDraftArray(getState()));
+        let draftArray = _.cloneDeep(setupSelectors.getDraftArray(getState()));
         const draftOrder = setupSelectors.getDraftOrderForView(getState());
-        let pick = _.clone(draftArray[index]);
+        let pick = _.cloneDeep(draftArray[index]);
         pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
         pick.ownerHashKey = pick.Traded_To.hashKey;
         draftArray[index] = pick;
@@ -102,7 +102,9 @@ export function updateDraftType( snakeEnabled ){
 
 export function saveFinalDraftArray(){
     return (dispatch, getState) => {
-        const draftArray = _.clone( setupSelectors.getDraftArray(getState()) );
-        dispatch( { type: types.SAVE_FINAL_DRAFT_ORDER, finalDraftArray: draftArray } );
+        const draftArray = _.cloneDeep( setupSelectors.getDraftArray( getState() ) );
+        let leagueArray = _.cloneDeep( importSelectors.getParsedLeague( getState() ) );
+        leagueArray.teamInfo = setupSelectors.getDraftOrderForView( getState() ).draftOrder;
+        dispatch( { type: types.SAVE_FINAL_DRAFT_ORDER, finalDraftArray: draftArray, finalLeagueArray: leagueArray } );
     };
 }

@@ -8,7 +8,6 @@
 import _ from 'lodash';
 import * as types from './actionTypes';
 import * as draftSelectors from './reducer';
-import * as importSelectors from '../leagueImport/reducer';
 import * as setupSelectors from '../setup/reducer';
 import espnParserService from "../../services/espn_parser";
 import fantasyPlayerService from "../../services/fantasy_data";
@@ -24,7 +23,7 @@ export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const playerArray = await fantasyPlayerService.getFantasyPlayerData();
-            const leagueArray = importSelectors.getParsedLeague( getState() ) || {};
+            const leagueArray = setupSelectors.getFinalLeagueArray( getState() ) || {};
             const draftArray = setupSelectors.getFinalDraftArray( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
             const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );

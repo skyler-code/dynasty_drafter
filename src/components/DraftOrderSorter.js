@@ -24,7 +24,7 @@ export default class DraftOrderSorter extends Component {
         suppressContentEditableWarning
         onBlur={e => {
           const draftOrder = [...this.props.draftOrder];
-          const cell = _.clone(draftOrder[cellInfo.index]);
+          const cell = _.cloneDeep(draftOrder[cellInfo.index]);
           cell[cellInfo.column.id] = e.target.innerHTML;
           draftOrder[cellInfo.index] = cell;
           this.props.updateDraftOrder( draftOrder );

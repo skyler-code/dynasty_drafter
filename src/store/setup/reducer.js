@@ -8,7 +8,8 @@ const initialState = Immutable({
     numOfRounds: 4,
     secondsPerPick: 90,
     snakeDraft: false,
-    finalDraftArray: undefined
+    finalDraftArray: undefined,
+    finalLeagueArray: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -35,7 +36,8 @@ export default function reduce(state = initialState, action = {}) {
             });
         case types.SAVE_FINAL_DRAFT_ORDER:
             return state.merge({
-                finalDraftArray: action.finalDraftArray
+                finalDraftArray: action.finalDraftArray,
+                finalLeagueArray: action.finalLeagueArray
             });
         default:
             return state;
@@ -43,12 +45,9 @@ export default function reduce(state = initialState, action = {}) {
 }
 
 export function getDraftOrderForView(state){
-    const draftOrder = _.clone((state.setup || {}).draftOrder);
+    const draftOrder = _.cloneDeep((state.setup || {}).draftOrder);
     const teamNames = _.map(draftOrder, function( team ) { return { teamName: team.teamName, hashKey: team.hashKey } } );
     return { draftOrder: draftOrder, teamNames: teamNames };
-}
-export function getDraftOrder(state){
-    return state.setup.draftOrder;
 }
 
 export function getDraftArray(state){
@@ -57,6 +56,10 @@ export function getDraftArray(state){
 
 export function getFinalDraftArray(state){
     return state.setup.finalDraftArray;
+}
+
+export function getFinalLeagueArray(state){
+    return state.setup.finalLeagueArray;
 }
 
 export function getDraftArrayForView(state){
