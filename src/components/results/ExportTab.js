@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { Form } from 'semantic-ui-react';
-import 'react-table/react-table.css';
 import fileDownload from 'js-file-download';
 
 export default class ExportTab extends Component {
