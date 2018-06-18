@@ -42,6 +42,12 @@ export function updateSecondsPerPick( value ){
     };
 }
 
+export function updateDefenseEnabled( value ){
+    return (dispatch, getState) => {
+        dispatch( { type: types.DEFENSE_UPDATED, defenseEnabled: value } );
+    };
+}
+
 export function tempUpdateSecondsPerPick( value ){
     return (dispatch, getState) => {
         dispatch( { type: types.SECONDS_PER_PICK_UPDATED, secondsPerPick: value } );

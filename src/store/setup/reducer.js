@@ -8,6 +8,7 @@ const initialState = Immutable({
     numOfRounds: 4,
     secondsPerPick: 90,
     snakeDraft: false,
+    defenseEnabled: true,
     finalDraftArray: undefined,
     finalLeagueArray: undefined
 });
@@ -33,6 +34,10 @@ export default function reduce(state = initialState, action = {}) {
         case types.SECONDS_PER_PICK_UPDATED:
             return state.merge({
                 secondsPerPick: action.secondsPerPick
+            });
+        case types.DEFENSE_UPDATED:
+            return state.merge({
+                defenseEnabled: action.defenseEnabled
             });
         case types.SAVE_FINAL_DRAFT_ORDER:
             return state.merge({
@@ -88,4 +93,8 @@ export function getNumberOfTeams(state){
 
 export function isSnakeDraftEnabled(state){
     return state.setup.snakeDraft;
+}
+
+export function isDefenseEnabled(state){
+    return state.setup.defenseEnabled;
 }

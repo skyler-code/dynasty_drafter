@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Form, Radio } from 'semantic-ui-react';
+import { Form, Radio, Checkbox } from 'semantic-ui-react';
 
 export default class DraftOptions extends Component {
 
@@ -13,6 +13,7 @@ export default class DraftOptions extends Component {
     }
 
     handleChange = (e, { value }) => this.props.updateDraftType(value);
+    handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
 
     render() {
         return (
@@ -53,6 +54,15 @@ export default class DraftOptions extends Component {
                                 value='false'
                                 checked={!this.props.draftType}
                                 onChange={this.handleChange} />
+                        </Form.Field>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Field>
+                            <Checkbox
+                                label='Defenses Enabled'
+                                name='defense_checkbox'
+                                checked={this.props.defenseEnabled}
+                                onChange={this.handleDefenseChange} />
                         </Form.Field>
                     </Form.Group>
                 </Form>

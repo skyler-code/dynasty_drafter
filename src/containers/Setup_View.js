@@ -44,7 +44,9 @@ class SetupView extends Component {
                                             handleSecondsPerPicks={this.handleSecondsPerPicks}
                                             handleTempSecondsPerPicks={this.handleTempSecondsPerPicks}
                                             draftType={this.props.draftType}
-                                            updateDraftType={this.updateDraftType}/>
+                                            updateDraftType={this.updateDraftType}
+                                            defenseEnabled={this.props.defenseEnabled}
+                                            updateDefenseEnabled={this.updateDefenseEnabled}/>
                                     </Grid.Column>
                                     <Grid.Column>
                                         <DraftOrderSorter
@@ -115,6 +117,10 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.updateDraftType( snakeEnabled ) );
     }
 
+    updateDefenseEnabled( value ){
+        this.props.dispatch( setupActions.updateDefenseEnabled( value ) );
+    }
+
     saveFinalDraftArray(){
         this.props.dispatch( setupActions.saveFinalDraftArray() );
     }
@@ -130,6 +136,7 @@ function mapStateToProps(state) {
         numOfTeams: setupSelectors.getNumberOfTeams(state),
         numOfRounds: setupSelectors.getNumOfRounds(state),
         secondsPerPick: setupSelectors.getSecondsPerPick(state),
+        defenseEnabled: setupSelectors.isDefenseEnabled(state),
         draftType: setupSelectors.isSnakeDraftEnabled(state)
     };
 }
