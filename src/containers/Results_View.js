@@ -6,6 +6,7 @@ import * as resultActions from '../store/results/actions';
 import * as resultSelectors from '../store/results/reducer';
 import TeamStatusTable from '../components/results/TeamStatusTable';
 import DraftResultsTable from '../components/results/DraftResultsTable';
+import ExportTab from '../components/results/ExportTab';
 
 class ResultsView extends Component {
 
@@ -48,6 +49,9 @@ class ResultsView extends Component {
                 menuItem: 'Export',
                 render: () =>
                     <Tab.Pane>
+                        <ExportTab
+                            draftResultsCSV={this.props.draftResultsCSV}
+                            formatDraftResultsCSVName={this.props.formatDraftResultsCSVName}/>
                     </Tab.Pane>
             }
         ];
@@ -70,7 +74,9 @@ function mapStateToProps(state) {
         teamDropDownList: resultSelectors.getTeamList(state),
         selectedTeam: resultSelectors.getSelectedTeam(state),
         selectedTeamStatus: resultSelectors.getSelectedTeamInfo(state),
-        draftResults: resultSelectors.getDraftResultsTable(state)
+        draftResults: resultSelectors.getDraftResultsTable(state),
+        draftResultsCSV: resultSelectors.getDraftResultCSV(state),
+        formatDraftResultsCSVName: resultSelectors.formatDraftResultsCSVName(state)
     };
 }
 
