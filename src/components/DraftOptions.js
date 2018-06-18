@@ -12,7 +12,7 @@ export default class DraftOptions extends Component {
     componentDidMount() {
     }
 
-    handleChange = (e, { value }) => this.props.updateDraftType(value);
+    handleSnakeChange = (e, { value }) => this.props.updateDraftType(value);
     handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
 
     render() {
@@ -45,7 +45,7 @@ export default class DraftOptions extends Component {
                                 name='radioGroup'
                                 value='true'
                                 checked={this.props.draftType}
-                                onChange={this.handleChange} />
+                                onChange={this.handleSnakeChange} />
                         </Form.Field>
                         <Form.Field>
                               <Radio
@@ -53,7 +53,7 @@ export default class DraftOptions extends Component {
                                 name='radioGroup'
                                 value='false'
                                 checked={!this.props.draftType}
-                                onChange={this.handleChange} />
+                                onChange={this.handleSnakeChange} />
                         </Form.Field>
                     </Form.Group>
                     <Form.Group>
