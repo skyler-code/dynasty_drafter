@@ -27,8 +27,7 @@ export default class DraftResultsTable extends Component {
             {
                 Header: "Team",
                 id: "team",
-                accessor: "Team",
-                minWidth: 15
+                accessor: "Team"
             }
         ];
         return (

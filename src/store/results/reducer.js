@@ -70,8 +70,10 @@ export function getSelectedTeamInfo(state){
 export function getDraftResultsTable(state){
     let draftArray = state.results.finalDraftArray;
     return _.map( draftArray, function( pick ){
+        let plr = pick.Player_Picked;
+        let isDefense = plr.FantasyPosition === 'D/ST';
         return {
-            Player: pick.Player_Picked.Name + "(" + pick.Player_Picked.FantasyPosition + ")",
+            Player: ( isDefense ? plr.FullTeamName : plr.Name ) + " (" + plr.FantasyPosition + ")",
             Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName
         };
     } );
