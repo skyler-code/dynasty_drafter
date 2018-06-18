@@ -5,28 +5,36 @@ import _ from 'lodash';
 
 export default class ImportedLeagueView extends Component {
 
-  constructor(props) {
-    super(props);
-    autoBind(this);
-  }
-  state = { activeIndex: 0 };
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
+    state = { activeIndex: 0 };
 
-  handleClick = (e, titleProps) => {
-    const { index } = titleProps;
-    const { activeIndex } = this.state;
-    const newIndex = activeIndex === index ? -1 : index;
+    handleClick = (e, titleProps) => {
+        const { index } = titleProps;
+        const { activeIndex } = this.state;
+        const newIndex = activeIndex === index ? -1 : index;
+        this.setState({ activeIndex: newIndex });
+    };
 
-    this.setState({ activeIndex: newIndex })
-  };
+    render() {
+        const { activeIndex } = this.state;
+        const self = this;
 
-  render() {
-    const { activeIndex } = this.state;
-    const self = this;
+        function generateAccordion() {
+            if(self.props.parsedLeague){
+                return(
+                    <Accordion styled>
+                        {generateAccordionRows()}
+                    </Accordion>
+                )
+            }
+        }
 
-    function generateAccordion() {
-        let currentIndex = 0;
-        if(self.props.parsedLeague){
+        function generateAccordionRows(){
             const teamInfoArray = _.toArray(self.props.parsedLeague.teamInfo);
+            let currentIndex = 0;
             return teamInfoArray.map( function( team ){
                 currentIndex++;
                 return(
@@ -38,27 +46,25 @@ export default class ImportedLeagueView extends Component {
                         <Accordion.Content active={activeIndex === currentIndex}>
                             { generateAccordionContent( team.players ) }
                         </Accordion.Content>
-
                     </div>
                 );
             } );
         }
-    }
 
-    function generateAccordionContent( players ){
-        return players.map( function ( player ){
-            return (
-                <div key={player.Name}>
-                    {player.Name + " - " + player.FantasyPosition}
-                </div>
-            );
-        } );
-    }
+        function generateAccordionContent( players ){
+            return players.map( function ( player ){
+                return (
+                    <div key={player.Name}>
+                        {player.Name + " - " + player.FantasyPosition}
+                    </div>
+                );
+            } );
+        }
 
-    return (
-      <Accordion styled>
-          {generateAccordion()}
-      </Accordion>
-    )
-  }
+        return (
+            <div>
+                {generateAccordion()}
+            </div>
+        )
+    }
 }

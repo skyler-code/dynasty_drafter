@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Form, Grid, Header } from 'semantic-ui-react';
+import { Form, Grid, Header, Icon } from 'semantic-ui-react';
 import * as importActions from '../store/leagueImport/actions';
 import * as importSelectors from '../store/leagueImport/reducer';
 import ImportedLeagueView from "../components/ImportedLeagueView";
@@ -19,6 +19,21 @@ class ImportView extends Component {
     }
 
     componentDidMount() {
+    }
+
+    validLeagueIndicator(){
+        if(this.props.parsedLeague && this.props.parsedLeague.teamCount)
+            return(
+                <div>
+                <Header as='h2'><Icon name='checkmark' color='green' size='large'/>Successful Import!</Header>
+                </div>
+            );
+        else if (this.props.leagueInput && this.props.parsedLeague && !this.props.parsedLeague.teamCount)
+            return(
+                <div>
+                <Header as='h2'><Icon name='close' color='red' size='large'/>Invalid Input!</Header>
+                </div>
+            );
     }
 
     render() {
@@ -42,8 +57,9 @@ class ImportView extends Component {
                                         onChange={this.handleInputChange} />
                                 </Form.Group>
                             </Form>
+                            {this.validLeagueIndicator()}
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column verticalAlign='middle'>
                             <Header as='h2'>{this.props.leagueName}</Header>
                             <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
                         </Grid.Column>
