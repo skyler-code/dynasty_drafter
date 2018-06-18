@@ -66,3 +66,13 @@ export function getSelectedTeamInfo(state){
     });
     return _.concat( teamFromLeagueArray.players, draftedPlayers );
 }
+
+export function getDraftResultsTable(state){
+    let draftArray = state.results.finalDraftArray;
+    return _.map( draftArray, function( pick ){
+        return {
+            Player: pick.Player_Picked.Name + "(" + pick.Player_Picked.FantasyPosition + ")",
+            Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName
+        };
+    } );
+}
