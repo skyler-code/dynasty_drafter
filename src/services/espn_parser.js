@@ -74,7 +74,7 @@ function getTeamInfo( str )
             }
         }
     } );
-    return teamInfo;
+    return _.toArray(teamInfo);
 }
 
 function generateTeamHashKeys( teamInfo ){

@@ -7,7 +7,7 @@ import * as importSelectors from "../leagueImport/reducer";
 export function getInitialDraftInfo() {
     return (dispatch, getState) => {
         const leagueInfo = importSelectors.getParsedLeague(getState());
-        const draftOrder = _.toArray( (  leagueInfo || {} ).teamInfo );
+        const draftOrder = (  leagueInfo || {} ).teamInfo;
         dispatch( { type: types.DRAFT_ORDER_CHANGED, draftOrder: draftOrder } );
     };
 }
