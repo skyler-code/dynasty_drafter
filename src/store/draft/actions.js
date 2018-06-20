@@ -15,12 +15,12 @@ import fantasyPlayerService from "../../services/fantasy_data";
 
 export function startDraft(){
     return (dispatch, getState) => {
-        const secondsPerPick = draftSelectors.getTimeLeft( getState() ) || setupSelectors.getSecondsPerPick( getState() );
+        const secondsPerPick = draftSelectors.getTimeLeft( getState() ) || draftSelectors.getSecondsPerPick( getState() );
         dispatch( { type: types.DRAFT_STARTED, timeLeft: secondsPerPick } );
     };
 }
 
-export function setInitialDraftData(reset = false){
+export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const isDefenseEnabled = setupSelectors.isDefenseEnabled( getState() );
@@ -36,6 +36,7 @@ export function setInitialDraftData(reset = false){
                         draftArray: draftArray,
                         bestAvailablePlayer: bestAvailablePlayer,
                         timeLeft: timeLeft,
+                        secondsPerPick: timeLeft,
                         isDefenseEnabled: isDefenseEnabled
             } );
         } catch (error) {
@@ -92,7 +93,7 @@ function makePick( state ) {
     const draftArray = draftSelectors.getDraftArrayForEdit(state);
     const leagueArray = draftSelectors.getLeagueArrayForEdit(state);
     const selectedPlayer = draftSelectors.getSelectedOrBestPlayer(state);
-    const timeLeft = setupSelectors.getSecondsPerPick(state);
+    const timeLeft = draftSelectors.getSecondsPerPick(state);
     const availablePlayers = _.filter( draftSelectors.getAvailablePlayersForView(state), function(p){ return p.hashKey !== selectedPlayer.hashKey; } );
     let currentPickInfo = draftSelectors.getCurrentPickInfo(state);
     let currentPick = draftSelectors.getCurrentPick(state);

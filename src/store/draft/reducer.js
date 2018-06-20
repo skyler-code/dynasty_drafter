@@ -12,6 +12,7 @@ const initialState = Immutable({
   currentPick: 0,
   draftArray: undefined,
   timeLeft: undefined,
+  secondsPerPick: undefined,
   isDefenseEnabled: undefined
 });
 
@@ -94,6 +95,10 @@ export function getSelectedPlayer(state) {
 
 export function getSelectedOrBestPlayer(state) {
     return state.draft.selectedPlayer || state.draft.bestAvailablePlayer;
+}
+
+export function getSecondsPerPick(state){
+    return state.draft.secondsPerPick;
 }
 
 export function isTopicSelectionValid(state) {

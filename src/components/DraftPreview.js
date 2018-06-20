@@ -12,12 +12,6 @@ export default class DraftPreview extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-        if (typeof this.props.createDraftArray === 'function') {
-          this.props.createDraftArray();
-        }
-    }
-
     render() {
         const columns = [
             {

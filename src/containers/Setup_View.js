@@ -29,8 +29,8 @@ class SetupView extends Component {
         const panes = [
             {
                 menuItem: 'Settings',
-                render: () =>
-                    <Tab.Pane>
+                pane:
+                    <Tab.Pane key='Settings'>
                         <div>
                             <Grid columns={2} divided>
                                 <Grid.Row>
@@ -59,23 +59,28 @@ class SetupView extends Component {
             },
             {
                 menuItem: 'Trade',
-                render: () =>
-                    <Tab.Pane>
+                pane:
+                    <Tab.Pane key='Trade'>
                         <DraftPreview
                             draftArray={this.props.draftArray}
                             teamNames={this.props.teamNames}
                             numOfTeams={this.props.numOfTeams}
-                            handlePickTrade={this.handlePickTrade}
-                            createDraftArray={this.createDraftArray}
-                            unloadDraftArray={this.unloadDraftArray}/>
+                            handlePickTrade={this.handlePickTrade}/>
                     </Tab.Pane>
             }
         ];
         return (
             <div>
-                <Tab panes={panes}/>
+                <Tab panes={panes} renderActiveOnly={false} onTabChange={this.onTabChange}/>
             </div>
         );
+    }
+
+    onTabChange( e, t ){
+        if( t.activeIndex && !this.props.draftArray.length )
+             this.props.dispatch( setupActions.createDraftArray() );
+        else if ( !t.activeIndex )
+            this.props.dispatch( setupActions.unloadDraftArray() );
     }
 
     handlePickTrade(index, tradedTo){
@@ -94,20 +99,12 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.tempUpdateSecondsPerPick( val.target.value ) );
     }
 
-    createDraftArray(){
-        this.props.dispatch( setupActions.createDraftArray() );
-    }
-
     updateDraftOrder( draftOrder ){
         this.props.dispatch( setupActions.updateDraftOrder( draftOrder ) )
     }
 
     shiftDraftOrder( index, newIndex ){
         this.props.dispatch( setupActions.shiftDraftOrder( index, newIndex ) );
-    }
-
-    unloadDraftArray(){
-        this.props.dispatch( setupActions.unloadDraftArray() );
     }
 
     updateDraftType( snakeEnabled ){

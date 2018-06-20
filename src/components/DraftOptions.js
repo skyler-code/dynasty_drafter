@@ -9,9 +9,6 @@ export default class DraftOptions extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-    }
-
     handleSnakeChange = (e, { value }) => this.props.updateDraftType(value);
     handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
 

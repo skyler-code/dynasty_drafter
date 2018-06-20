@@ -25,7 +25,9 @@ class DraftView extends Component {
     renderSettingsHeader(){
         if( this.props.haveSettingsChanged )
             return(
-                <Header as='h2' color='red'>Settings have changed. Reset draft to have them reflected here.</Header>
+                <Header as='h2' color='red'>
+                Settings have changed. Reset draft to have them reflected here.<Button icon='close' onClick={() => this.props.dispatch(setupActions.resetSettingsChanged())}/>
+                </Header>
             )
     }
 
@@ -114,7 +116,7 @@ class DraftView extends Component {
     }
 
     resetDraft() {
-        this.props.dispatch(draftActions.setInitialDraftData(true));
+        this.props.dispatch(draftActions.setInitialDraftData());
         this.props.dispatch(setupActions.resetSettingsChanged());
         this.props.dispatch(routerActions.endDraft());
     }
