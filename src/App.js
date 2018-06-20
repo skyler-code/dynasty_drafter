@@ -53,14 +53,13 @@ class App extends Component {
         };
         let displayPanes = function(){
             let panes = [importPane];
-            /*if ( !this.props.isDraftInProgress )
-                panes.push( importPane );*/
-            if( this.props.successfulImport )
+            if( this.props.successfulImport ){
                 panes.push( setupPane );
-            if( this.props.draftArrayExists )
-                panes.push( draftPane );
-            if( this.props.draftFinished )
-                panes.push( resultPane );
+                if( this.props.draftArrayExists )
+                    panes.push( draftPane );
+                if( this.props.draftFinished )
+                    panes.push( resultPane );
+            }
             return panes;
         }.bind( this );
         return (

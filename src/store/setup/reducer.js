@@ -6,7 +6,7 @@ const initialState = Immutable({
     draftOrder: undefined,
     draftArray: undefined,
     numOfRounds: 4,
-    secondsPerPick: 90,
+    secondsPerPick: 1,
     snakeDraft: false,
     defenseEnabled: true,
     finalDraftArray: undefined,
