@@ -42,7 +42,8 @@ class DraftView extends Component {
                             isDraftInProgress={this.props.isDraftInProgress}
                             currentPick={this.props.currentPick}
                             currentRound={this.props.currentRound}
-                            getCurrentPickName={this.props.getCurrentPickName}
+                            currentPickName={this.props.currentPickName}
+                            nextPickName={this.props.nextPickName}
                             selectedPlayer={this.props.selectedPlayer}
                             bestAvailablePlayer={this.props.bestAvailablePlayer}/>
                     </Grid.Row>
@@ -61,7 +62,7 @@ class DraftView extends Component {
                 <Grid.Column>
                     <Grid.Row>
                         <DraftStatusTabs
-                            getCurrentPickName={this.props.getCurrentPickName}
+                            currentPickName={this.props.currentPickName}
                             isDraftInProgress={this.props.isDraftInProgress}
                             draftStatusLeague={this.props.draftStatusLeague}
                             draftStatusTeam={this.props.draftStatusTeam}/>
@@ -150,7 +151,8 @@ class DraftView extends Component {
             canDraftPlayer: draftSelectors.canDraftPlayer(state),
             isDraftInProgress: draftSelectors.isDraftInProgress(state),
             bestAvailablePlayer: draftSelectors.getBestAvailablePlayer(state),
-            getCurrentPickName: draftSelectors.getCurrentPickName(state),
+            currentPickName: draftSelectors.getCurrentPickName(state),
+            nextPickName: draftSelectors.getNextPickName(state),
             currentPick: draftSelectors.getCurrentPickForView(state),
             currentRound: draftSelectors.getCurrentRound(state),
             draftStatusLeague: draftSelectors.getDraftStatusLeague(state),

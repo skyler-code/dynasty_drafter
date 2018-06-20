@@ -18,7 +18,7 @@ export default class DraftStatusTabs extends Component {
     }
 
     render() {
-        const currentTeamInfoTabName = this.props.getCurrentPickName + " Team Info";
+        const currentTeamInfoTabName = this.props.currentPickName + " Team Info";
         const panes = [
             {
                 menuItem: 'Draft Results',

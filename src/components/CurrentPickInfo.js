@@ -31,7 +31,10 @@ export default class CurrentPickInfo extends Component {
                         { "Round: " + this.props.currentRound }
                     </div>
                     <div>
-                        { "Current Pick: " + this.props.getCurrentPickName }
+                        { "Current Pick: " + this.props.currentPickName }
+                    </div>
+                    <div>
+                        { this.props.nextPickName ? "Next Pick: " + this.props.nextPickName : "" }
                     </div>
                 </Grid.Column>
                 <Grid.Column>
