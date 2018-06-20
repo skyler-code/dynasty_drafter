@@ -36,10 +36,7 @@ export default class DraftResultsTable extends Component {
                 accessor: "Team",
                 filterable: true,
                 filterMethod: (filter, row) => {
-                if (filter.value === "all") {
-                  return true;
-                }
-                return filter.value === row.hashKey.toString();
+                return filter.value === "all" || filter.value === row.hashKey.toString();
                 },
             Filter: ({ filter, onChange }) =>
                 <select
