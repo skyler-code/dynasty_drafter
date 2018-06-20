@@ -4,9 +4,10 @@ import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import * as routerSelectors from './store/router/reducer';
 import * as routerActions from './store/router/actions';
-import { isDraftFinished, isDraftInProgress } from './store/draft/reducer';
+import  * as draftSelectors from './store/draft/reducer';
 import { successfulImport } from './store/leagueImport/reducer';
 import { draftArrayExists } from './store/setup/reducer';
+import * as setupActions from './store/setup/actions';
 import { Tab } from 'semantic-ui-react';
 import DraftView from './containers/Draft_View';
 import ImportView from './containers/Import_View';
@@ -86,8 +87,10 @@ class App extends Component {
     }
 
     setActiveIndex( e, t ){
-        if ( t.panes[t.activeIndex].menuItem === 'Draft' )
+        if ( t.panes[t.activeIndex].menuItem === 'Draft' && !this.props.draftTabLoaded ){
             this.props.dispatch(draftActions.setInitialDraftData());
+            this.props.dispatch(setupActions.resetSettingsChanged());
+        }
         this.props.dispatch( routerActions.setActiveIndex( t.activeIndex ) );
     }
 }
@@ -95,10 +98,11 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         activeIndex: routerSelectors.getActiveIndex(state),
-        draftFinished: isDraftFinished(state),
+        draftFinished: draftSelectors.isDraftFinished(state),
         successfulImport: successfulImport(state),
         draftArrayExists: draftArrayExists(state),
-        isDraftInProgress: isDraftInProgress(state)
+        isDraftInProgress: draftSelectors.isDraftInProgress(state),
+        draftTabLoaded: draftSelectors.draftArrayExists(state)
     };
 }
 

@@ -72,6 +72,10 @@ export function getAvailablePlayers(state) {
     return state.draft.availablePlayers;
 }
 
+export function draftArrayExists(state){
+    return !!state.draft.draftArray
+}
+
 export function getAvailablePlayersForView(state) {
     return _.cloneDeep( state.draft.availablePlayers );
 }

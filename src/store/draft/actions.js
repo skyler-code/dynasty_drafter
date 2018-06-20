@@ -23,8 +23,6 @@ export function startDraft(){
 export function setInitialDraftData(reset = false){
     return async(dispatch, getState) => {
         try {
-            if( !reset && draftSelectors.getAvailablePlayers( getState() ) )
-                return;
             const isDefenseEnabled = setupSelectors.isDefenseEnabled( getState() );
             const playerArray = await fantasyPlayerService.getFantasyPlayerData( isDefenseEnabled );
             const leagueArray = importSelectors.getParsedLeague( getState() ) || {};

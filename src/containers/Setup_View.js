@@ -67,8 +67,7 @@ class SetupView extends Component {
                             numOfTeams={this.props.numOfTeams}
                             handlePickTrade={this.handlePickTrade}
                             createDraftArray={this.createDraftArray}
-                            unloadDraftArray={this.unloadDraftArray}
-                            saveFinalDraftArray={this.saveFinalDraftArray}/>
+                            unloadDraftArray={this.unloadDraftArray}/>
                     </Tab.Pane>
             }
         ];
@@ -117,10 +116,6 @@ class SetupView extends Component {
 
     updateDefenseEnabled( value ){
         this.props.dispatch( setupActions.updateDefenseEnabled( value ) );
-    }
-
-    saveFinalDraftArray(){
-        this.props.dispatch( setupActions.saveFinalDraftArray() );
     }
 
 }

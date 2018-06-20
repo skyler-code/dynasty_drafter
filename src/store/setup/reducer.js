@@ -9,38 +9,44 @@ const initialState = Immutable({
     secondsPerPick: 90,
     snakeDraft: false,
     defenseEnabled: true,
-    finalDraftArray: undefined
+    settingsChanged: false
 });
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
         case types.DRAFT_ORDER_CHANGED:
             return state.merge({
-                draftOrder: action.draftOrder
+                draftOrder: action.draftOrder,
+                settingsChanged: true
             });
         case types.DRAFT_TYPE_CHANGED:
             return state.merge({
-                snakeDraft: action.snakeDraft
+                snakeDraft: action.snakeDraft,
+                settingsChanged: true
             });
         case types.DRAFT_ARRAY_CHANGED:
             return state.merge({
-                draftArray: action.draftArray
+                draftArray: action.draftArray,
+                settingsChanged: true
             });
         case types.NUM_OF_ROUNDS_UPDATED:
             return state.merge({
-                numOfRounds: action.numOfRounds
+                numOfRounds: action.numOfRounds,
+                settingsChanged: true
             });
         case types.SECONDS_PER_PICK_UPDATED:
             return state.merge({
-                secondsPerPick: action.secondsPerPick
+                secondsPerPick: action.secondsPerPick,
+                settingsChanged: true
             });
         case types.DEFENSE_UPDATED:
             return state.merge({
-                defenseEnabled: action.defenseEnabled
+                defenseEnabled: action.defenseEnabled,
+                settingsChanged: true
             });
-        case types.SAVE_FINAL_DRAFT_ORDER:
+        case types.TOGGLE_SETTINGS_CHANGED:
             return state.merge({
-                finalDraftArray: action.finalDraftArray
+                settingsChanged: false
             });
         default:
             return state;
@@ -57,12 +63,8 @@ export function getDraftArray(state){
     return state.setup.draftArray;
 }
 
-export function getFinalDraftArray(state){
-    return state.setup.finalDraftArray;
-}
-
 export function draftArrayExists(state){
-    return !!state.setup.draftArray || !!state.setup.finalDraftArray;
+    return !!state.setup.draftArray;
 }
 
 export function getDraftArrayForView(state){
@@ -95,4 +97,8 @@ export function isSnakeDraftEnabled(state){
 
 export function isDefenseEnabled(state){
     return state.setup.defenseEnabled;
+}
+
+export function haveSettingsChanged(state){
+    return state.setup.settingsChanged;
 }

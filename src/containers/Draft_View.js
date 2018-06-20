@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Grid, Button } from 'semantic-ui-react';
+import { Grid, Button, Header } from 'semantic-ui-react';
 import * as draftActions from "../store/draft/actions";
 import * as routerActions from '../store/router/actions';
+import * as setupActions from '../store/setup/actions';
 import * as draftSelectors from '../store/draft/reducer';
+import { haveSettingsChanged } from '../store/setup/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import CurrentPickInfo from "../components/CurrentPickInfo";
 import DraftStatusTabs from "../components/DraftStatusTabs";
@@ -18,12 +20,20 @@ class DraftView extends Component {
 
     state = {
         timer: null
+    };
+
+    renderSettingsHeader(){
+        if( this.props.haveSettingsChanged )
+            return(
+                <Header as='h2' color='red'>Settings have changed. Reset draft to have them reflected here.</Header>
+            )
     }
 
     render() {
         if(!this.props.playersArray) this.renderLoading();
         return (
         <div>
+            {this.renderSettingsHeader()}
             <Grid columns={2} divided>
                 <Grid.Column>
                     <Grid.Row>
@@ -105,6 +115,7 @@ class DraftView extends Component {
 
     resetDraft() {
         this.props.dispatch(draftActions.setInitialDraftData(true));
+        this.props.dispatch(setupActions.resetSettingsChanged());
         this.props.dispatch(routerActions.endDraft());
     }
 
@@ -154,7 +165,8 @@ class DraftView extends Component {
             draftStatusLeague: draftSelectors.getDraftStatusLeague(state),
             draftStatusTeam: draftSelectors.getDraftStatusTeam(state),
             isDraftFinished: draftSelectors.isDraftFinished(state),
-            isDefenseEnabled: draftSelectors.isDefenseEnabled(state)
+            isDefenseEnabled: draftSelectors.isDefenseEnabled(state),
+            haveSettingsChanged: haveSettingsChanged(state)
         };
     }
 

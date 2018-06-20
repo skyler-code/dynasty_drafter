@@ -106,11 +106,8 @@ export function updateDraftType( snakeEnabled ){
     };
 }
 
-export function saveFinalDraftArray(){
+export function resetSettingsChanged(){
     return (dispatch, getState) => {
-        const draftArray = _.cloneDeep( setupSelectors.getDraftArray( getState() ) );
-        let leagueArray = _.cloneDeep( importSelectors.getParsedLeague( getState() ) );
-        leagueArray.teamInfo = setupSelectors.getDraftOrderForView( getState() ).draftOrder;
-        dispatch( { type: types.SAVE_FINAL_DRAFT_ORDER, finalDraftArray: draftArray, finalLeagueArray: leagueArray } );
+        dispatch( { type: types.TOGGLE_SETTINGS_CHANGED } );
     };
 }
