@@ -22,14 +22,13 @@ class ImportView extends Component {
     }
 
     validLeagueIndicator(){
-        let teamCount = ( this.props.parsedLeague || {} ).teamCount;
-        if(this.props.parsedLeague && teamCount)
+        if( this.props.successfulImport )
             return(
                 <div>
                 <Header as='h2'><Icon name='checkmark' color='green' size='large'/>Successful Import!</Header>
                 </div>
             );
-        else if (this.props.leagueInput && this.props.parsedLeague && !teamCount)
+        else if (this.props.leagueInput && !this.props.successfulImport)
             return(
                 <div>
                 <Header as='h2'><Icon name='close' color='red' size='large'/>Invalid Input!</Header>
@@ -38,7 +37,7 @@ class ImportView extends Component {
     }
 
     showLeaguePreview(){
-        if( this.props.parsedLeague && this.props.parsedLeague.teamCount )
+        if( this.props.successfulImport )
             return(
                 <div>
                     <Grid.Column verticalAlign='middle'>
@@ -88,7 +87,8 @@ function mapStateToProps(state) {
     return {
         parsedLeague: importSelectors.getParsedLeague(state),
         leagueInput: importSelectors.getLeagueInput(state),
-        leagueName: importSelectors.getLeagueName(state)
+        leagueName: importSelectors.getLeagueName(state),
+        successfulImport: importSelectors.successfulImport(state)
     };
 }
 
