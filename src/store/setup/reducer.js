@@ -63,6 +63,10 @@ export function getFinalDraftArray(state){
     return state.setup.finalDraftArray;
 }
 
+export function draftArrayExists(state){
+    return !!state.setup.draftArray || !!state.setup.finalDraftArray;
+}
+
 export function getFinalLeagueArray(state){
     return state.setup.finalLeagueArray;
 }
