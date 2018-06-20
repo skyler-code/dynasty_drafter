@@ -3,15 +3,14 @@
 // normally, our interface to any sort of server API will be as a service
 
 import _ from 'lodash';
-//import moment from 'moment';
 import playerData from '../data/player_data';
-import teamData from '../data/team_data'
+import teamData from '../data/team_data';
 import * as constants from '../data/constants';
 
 
 //const FANTASY_DATA_ENDPOINT = 'https://api.fantasydata.net/v3/nfl/stats/JSON';
 class FantasyDataService {
-  async getFantasyPlayerData() {
+  async getFantasyPlayerData( defenseEnabled ) {
     let returnData = playerData;
     /*const playerDataCreationDate = moment( playerData.savedOn );
     if ( playerDataCreationDate.diff(moment(), "days") >= 99999 ){
@@ -30,7 +29,9 @@ class FantasyDataService {
     returnData = _.filter(returnData, function( plr ){ return ( constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1
                                                                 && plr.Active
                                                                 && plr.Team ) } );
-    returnData = _.map( returnData, stripPlayerObject ).concat( teamData );
+    returnData = _.map( returnData, stripPlayerObject )
+    if( defenseEnabled )
+       returnData = _.concat( returnData, teamData );
     return returnData;
   }
 }

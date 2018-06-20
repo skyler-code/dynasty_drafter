@@ -22,7 +22,8 @@ export function startDraft(){
 export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
-            const playerArray = await fantasyPlayerService.getFantasyPlayerData();
+            const isDefenseEnabled = setupSelectors.isDefenseEnabled( getState() );
+            const playerArray = await fantasyPlayerService.getFantasyPlayerData( isDefenseEnabled );
             const leagueArray = setupSelectors.getFinalLeagueArray( getState() ) || {};
             const draftArray = setupSelectors.getFinalDraftArray( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
