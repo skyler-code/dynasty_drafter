@@ -117,7 +117,7 @@ export default class PlayerPicker extends Component {
                   value={filter ? filter.value : "all"}
                 >
                 <option key="all" value="all">Show All</option>
-                { this.generateFilter( this.props.isDefenseEnabled ? constants.PLAYER_POSITIONS : _without( constants.PLAYER_POSITIONS, 'D/ST' ) ) }
+                { this.generateFilter( _without( constants.PLAYER_POSITIONS, this.props.isDefenseEnabled ? null : 'D/ST' ) ) }
                 </select>
         },
         {
