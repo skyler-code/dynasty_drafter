@@ -3,6 +3,7 @@ import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
 import { Grid, Button } from 'semantic-ui-react';
 import * as draftActions from "../store/draft/actions";
+import * as routerActions from '../store/router/actions';
 import * as draftSelectors from '../store/draft/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import CurrentPickInfo from "../components/CurrentPickInfo";
@@ -20,14 +21,9 @@ class DraftView extends Component {
     };
 
     componentDidMount() {
-        if(!this.props.playersArray)
+        if(!this.props.playersArray){
             this.props.dispatch(draftActions.setInitialDraftData());
-    }
-
-    componentWillUnmount() {
-        if( this.state.timer )
-            clearInterval(this.state.timer);
-        this.props.dispatch(draftActions.endDraft());
+        }
     }
 
     render() {
@@ -105,14 +101,17 @@ class DraftView extends Component {
         if(this.props.isDraftInProgress){
             clearInterval(this.state.timer);
             this.props.dispatch(draftActions.endDraft());
+            this.props.dispatch(routerActions.endDraft());
         } else {
             this.props.dispatch(draftActions.startDraft());
+            this.props.dispatch(routerActions.startDraft());
             this.startTimer();
         }
     }
 
     resetDraft() {
         this.props.dispatch(draftActions.setInitialDraftData());
+        this.props.dispatch(routerActions.endDraft());
     }
 
     tick() {
@@ -121,8 +120,10 @@ class DraftView extends Component {
         } else {
             this.props.dispatch(draftActions.finalizePlayerSelection());
         }
-        if ( !this.props.isDraftInProgress )
+        if ( !this.props.isDraftInProgress ){
             clearInterval(this.state.timer);
+            this.props.dispatch(routerActions.showResults());
+        }
     }
 
     finalizePlayerSelection(){

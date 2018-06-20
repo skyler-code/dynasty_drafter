@@ -25,8 +25,6 @@ class SetupView extends Component {
             this.props.dispatch( setupActions.getInitialDraftInfo() );
     }
 
-
-
     render() {
         const panes = [
             {

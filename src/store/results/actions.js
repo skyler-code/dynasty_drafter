@@ -1,12 +1,15 @@
 import * as draftSelectors from "../draft/reducer";
+import * as importSelectors from '../leagueImport/reducer';
+import * as setupSelectors from '../setup/reducer';
 import * as types from "./actionTypes";
-import _first from "lodash/first";
+import _ from "lodash";
 
 export function setResultDraftData(){
     return (dispatch, getState) => {
-        const finalLeagueArray = draftSelectors.getLeagueArrayForEdit( getState() );
+        let finalLeagueArray = _.cloneDeep( importSelectors.getParsedLeague( getState() ) );
+        finalLeagueArray.teamInfo = setupSelectors.getDraftOrderForView( getState() ).draftOrder;
         const finalDraftArray = draftSelectors.getDraftArrayForEdit( getState() );
-        const selectedTeam = _first( finalLeagueArray.teamInfo ).hashKey;
+        const selectedTeam = _.first( finalLeagueArray.teamInfo ).hashKey;
         dispatch( { type: types.SET_RESULT_DATA,
                     finalLeagueArray: finalLeagueArray,
                     finalDraftArray: finalDraftArray,

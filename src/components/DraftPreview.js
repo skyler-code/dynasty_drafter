@@ -18,15 +18,6 @@ export default class DraftPreview extends Component {
         }
     }
 
-    componentWillUnmount() {
-        if (typeof this.props.saveFinalDraftArray === 'function') {
-          this.props.saveFinalDraftArray();
-        }
-        if (typeof this.props.unloadDraftArray === 'function') {
-          this.props.unloadDraftArray();
-        }
-    }
-
     render() {
         const columns = [
             {

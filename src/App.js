@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
+import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
+import * as routerSelectors from './store/router/reducer';
+import * as routerActions from './store/router/actions';
 import { isDraftFinished, isDraftInProgress } from './store/draft/reducer';
 import { successfulImport } from './store/leagueImport/reducer';
 import { draftArrayExists } from './store/setup/reducer';
@@ -14,11 +17,16 @@ import './App.css';
 
 class App extends Component {
 
+    constructor(props) {
+        super(props);
+        autoBind(this);
+    }
+
     render() {
         const importPane = {
             menuItem: 'Import',
-            render: () =>
-                <Tab.Pane textAlign='center'>
+            pane:
+                <Tab.Pane textAlign='center' key='Import'>
                     <div>
                         <ImportView/>
                     </div>
@@ -26,8 +34,8 @@ class App extends Component {
         };
         const setupPane = {
             menuItem: 'Setup',
-            render: () =>
-                <Tab.Pane>
+            pane:
+                <Tab.Pane key='Setup'>
                     <div>
                         <SetupView/>
                     </div>
@@ -35,8 +43,8 @@ class App extends Component {
         };
         const draftPane = {
             menuItem: 'Draft',
-            render: () =>
-                <Tab.Pane>
+            pane:
+                <Tab.Pane key='Draft'>
                     <div>
                         <DraftView/>
                     </div>
@@ -44,17 +52,21 @@ class App extends Component {
         };
         const resultPane = {
             menuItem: 'Results',
-            render: () =>
-                <Tab.Pane>
+            pane:
+                <Tab.Pane key='Results'>
                     <div>
                         <ResultsView/>
                     </div>
                 </Tab.Pane>
         };
         let displayPanes = function(){
-            let panes = [importPane];
+            let panes = [];
+            const draftNotInProgress = !this.props.isDraftInProgress;
+            if( draftNotInProgress )
+                panes.push( importPane );
             if( this.props.successfulImport ){
-                panes.push( setupPane );
+                if( draftNotInProgress )
+                    panes.push( setupPane );
                 if( this.props.draftArrayExists )
                     panes.push( draftPane );
                 if( this.props.draftFinished )
@@ -67,14 +79,19 @@ class App extends Component {
                 <Helmet>
                     <style>{'body { background-color: #D3D3D3; }'}</style>
                 </Helmet>
-                <Tab panes={ displayPanes() }/>
+                <Tab renderActiveOnly={false} activeIndex={this.props.activeIndex} panes={displayPanes()} onTabChange={this.setActiveIndex}/>
             </div>
         );
+    }
+
+    setActiveIndex( e, { activeIndex } ){
+        this.props.dispatch( routerActions.setActiveIndex( activeIndex ) );
     }
 }
 
 function mapStateToProps(state) {
     return {
+        activeIndex: routerSelectors.getActiveIndex(state),
         draftFinished: isDraftFinished(state),
         successfulImport: successfulImport(state),
         draftArrayExists: draftArrayExists(state),

@@ -5,12 +5,11 @@ import _ from 'lodash';
 const initialState = Immutable({
     draftOrder: undefined,
     draftArray: undefined,
-    numOfRounds: 4,
-    secondsPerPick: 90,
+    numOfRounds: 1,
+    secondsPerPick: 1,
     snakeDraft: false,
     defenseEnabled: true,
-    finalDraftArray: undefined,
-    finalLeagueArray: undefined
+    finalDraftArray: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -41,8 +40,7 @@ export default function reduce(state = initialState, action = {}) {
             });
         case types.SAVE_FINAL_DRAFT_ORDER:
             return state.merge({
-                finalDraftArray: action.finalDraftArray,
-                finalLeagueArray: action.finalLeagueArray
+                finalDraftArray: action.finalDraftArray
             });
         default:
             return state;
@@ -65,10 +63,6 @@ export function getFinalDraftArray(state){
 
 export function draftArrayExists(state){
     return !!state.setup.draftArray || !!state.setup.finalDraftArray;
-}
-
-export function getFinalLeagueArray(state){
-    return state.setup.finalLeagueArray;
 }
 
 export function getDraftArrayForView(state){
