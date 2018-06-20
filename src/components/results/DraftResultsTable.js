@@ -25,9 +25,31 @@ export default class DraftResultsTable extends Component {
                 accessor: "Player",
             },
             {
+                Header: "hashKey",
+                id:"hashKey",
+                accessor: "hashKey",
+                show: false
+            },
+            {
                 Header: "Team",
                 id: "team",
-                accessor: "Team"
+                accessor: "Team",
+                filterable: true,
+                filterMethod: (filter, row) => {
+                if (filter.value === "all") {
+                  return true;
+                }
+                return filter.value === row.hashKey.toString();
+                },
+            Filter: ({ filter, onChange }) =>
+                <select
+                  onChange={event => onChange(event.target.value)}
+                  style={{ width: "100%" }}
+                  value={filter ? filter.value : "all"}
+                >
+                <option key="all" value="all">Show All</option>
+                { this.generateFilter( this.props.teamDropDownList ) }
+                </select>
             }
         ];
         return (
@@ -44,5 +66,9 @@ export default class DraftResultsTable extends Component {
                     showPagination={false}/>
             </div>
         );
+    }
+
+    generateFilter( data ) {
+        return ( data || [] ).map( ( x ) => <option key={x.key} value={x.value}>{x.text}</option> )
     }
 }

@@ -28,7 +28,8 @@ class ResultsView extends Component {
                     <Tab.Pane>
                         <div>
                             <DraftResultsTable
-                                draftResults={this.props.draftResults}/>
+                                draftResults={this.props.draftResults}
+                                teamDropDownList={this.props.teamDropDownList}/>
                         </div>
                     </Tab.Pane>
             },

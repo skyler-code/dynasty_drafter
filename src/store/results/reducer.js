@@ -81,7 +81,8 @@ export function getDraftResultsTable(state){
         let isDefense = plr.FantasyPosition === 'D/ST';
         return {
             Player: ( isDefense ? plr.FullTeamName : plr.Name ) + " (" + plr.FantasyPosition + ")",
-            Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName
+            Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName,
+            hashKey: pick.ownerHashKey
         };
     } );
 }
