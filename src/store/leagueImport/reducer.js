@@ -29,3 +29,7 @@ export function getLeagueName(state){
 export function getLeagueInput(state){
     return state.leagueImport.leagueInput;
 }
+
+export function successfulImport(state){
+    return !!( state.leagueImport.parsedLeague || {} ).teamCount;
+}

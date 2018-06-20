@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 import { connect } from 'react-redux';
-import _ from 'lodash';
-//import * as router from './store/router/reducer';
-import { isDraftFinished } from './store/draft/reducer';
+import { isDraftFinished, isDraftInProgress } from './store/draft/reducer';
+import { successfulImport } from './store/leagueImport/reducer';
+import { draftArrayExists } from './store/setup/reducer';
 import { Tab } from 'semantic-ui-react';
 import DraftView from './containers/Draft_View';
 import ImportView from './containers/Import_View';
@@ -15,51 +15,60 @@ import './App.css';
 class App extends Component {
 
     render() {
-        const panes = [
-            {
-                menuItem: 'Import',
-                render: () =>
-                    <Tab.Pane textAlign='center'>
-                        <div>
-                            <ImportView/>
-                        </div>
-                    </Tab.Pane>
-            },
-            {
-                menuItem: 'Setup',
-                render: () =>
-                    <Tab.Pane>
-                        <div>
-                            <SetupView/>
-                        </div>
-                    </Tab.Pane>
-            },
-            {
-                menuItem: 'Draft',
-                render: () =>
-                    <Tab.Pane>
-                        <div>
-                            <DraftView/>
-                        </div>
-                    </Tab.Pane>
-            },
-            {
-                menuItem: 'Results',
-                render: () =>
-                    <Tab.Pane>
-                        <div>
-                            <ResultsView/>
-                        </div>
-                    </Tab.Pane>
-            }
-        ];
-        const panes2 = _.initial(panes);
+        const importPane = {
+            menuItem: 'Import',
+            render: () =>
+                <Tab.Pane textAlign='center'>
+                    <div>
+                        <ImportView/>
+                    </div>
+                </Tab.Pane>
+        };
+        const setupPane = {
+            menuItem: 'Setup',
+            render: () =>
+                <Tab.Pane>
+                    <div>
+                        <SetupView/>
+                    </div>
+                </Tab.Pane>
+        };
+        const draftPane = {
+            menuItem: 'Draft',
+            render: () =>
+                <Tab.Pane>
+                    <div>
+                        <DraftView/>
+                    </div>
+                </Tab.Pane>
+        };
+        const resultPane = {
+            menuItem: 'Results',
+            render: () =>
+                <Tab.Pane>
+                    <div>
+                        <ResultsView/>
+                    </div>
+                </Tab.Pane>
+        };
+        let displayPanes = function(){
+            let panes = [importPane];
+            /*if ( !this.props.isDraftInProgress )
+                panes.push( importPane );*/
+            if( this.props.successfulImport )
+                panes.push( setupPane );
+            if( this.props.draftArrayExists )
+                panes.push( draftPane );
+            if( this.props.draftFinished )
+                panes.push( resultPane );
+            return panes;
+        }.bind( this );
         return (
             <div className="App">
                 <Helmet>
                     <style>{'body { background-color: #D3D3D3; }'}</style>
                 </Helmet>
-                <Tab panes={ this.props.draftFinished ? panes : panes2 }/>
+                <Tab panes={ displayPanes() }/>
             </div>
         );
     }
@@ -67,7 +76,10 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        draftFinished: isDraftFinished(state)
+        draftFinished: isDraftFinished(state),
+        successfulImport: successfulImport(state),
+        draftArrayExists: draftArrayExists(state),
+        isDraftInProgress: isDraftInProgress(state)
     };
 }
 
