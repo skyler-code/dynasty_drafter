@@ -132,7 +132,7 @@ export function getDraftStatusLeague(state){
         return plr ? plr.Name + ( plr.FantasyPosition === 'D/ST' ? "" : " (" + plr.FantasyPosition + ")" ) : "";
     }
     function formatTeamName( pick ){
-        return pick.Traded_To ? pick.Traded_To.teamName : pick.Original_Owner.teamName;
+        return ( pick.Traded_To || pick.Original_Owner ).teamName;
     }
     return _.map(draftArray, function( pick ){
         return {
@@ -169,13 +169,13 @@ export function getDraftStatusTeam(state){
 export function getCurrentPickName(state){
     const draftArray = state.draft.draftArray || [];
     const currentPick = draftArray[ state.draft.currentPick ] || {};
-    return ( currentPick.Traded_To || {} ).teamName || ( currentPick.Original_Owner || {} ).teamName;
+    return ( currentPick.Traded_To || currentPick.Original_Owner || {} ).teamName;
 }
 
 export function getNextPickName(state){
     const draftArray = state.draft.draftArray || [];
     const nextPick = draftArray[ state.draft.currentPick + 1 ] || {};
-    return ( nextPick.Traded_To || {} ).teamName || ( nextPick.Original_Owner || {} ).teamName;
+    return ( nextPick.Traded_To || nextPick.Original_Owner || {} ).teamName;
 }
 
 export function getCurrentPickInfo(state){

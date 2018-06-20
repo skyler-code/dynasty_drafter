@@ -18,7 +18,7 @@ export function makeDraftTrade( index, tradedTo ){
         const draftOrder = setupSelectors.getDraftOrderForView(getState());
         let pick = _.cloneDeep(draftArray[index]);
         pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
-        pick.ownerHashKey = pick.Traded_To.hashKey;
+        pick.ownerHashKey = ( pick.Traded_To || pick.Original_Owner ).hashKey;
         draftArray[index] = pick;
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
     };

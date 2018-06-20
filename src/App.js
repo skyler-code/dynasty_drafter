@@ -13,6 +13,7 @@ import ImportView from './containers/Import_View';
 import SetupView from './containers/Setup_View';
 import ResultsView from './containers/Results_View';
 import './App.css';
+import * as draftActions from "./store/draft/actions";
 
 
 class App extends Component {
@@ -84,8 +85,10 @@ class App extends Component {
         );
     }
 
-    setActiveIndex( e, { activeIndex } ){
-        this.props.dispatch( routerActions.setActiveIndex( activeIndex ) );
+    setActiveIndex( e, t ){
+        if ( t.panes[t.activeIndex].menuItem === 'Draft' )
+            this.props.dispatch(draftActions.setInitialDraftData());
+        this.props.dispatch( routerActions.setActiveIndex( t.activeIndex ) );
     }
 }
 

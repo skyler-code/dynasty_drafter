@@ -18,12 +18,6 @@ class DraftView extends Component {
 
     state = {
         timer: null
-    };
-
-    componentDidMount() {
-        if(!this.props.playersArray){
-            this.props.dispatch(draftActions.setInitialDraftData());
-        }
     }
 
     render() {
@@ -110,7 +104,7 @@ class DraftView extends Component {
     }
 
     resetDraft() {
-        this.props.dispatch(draftActions.setInitialDraftData());
+        this.props.dispatch(draftActions.setInitialDraftData(true));
         this.props.dispatch(routerActions.endDraft());
     }
 
@@ -122,7 +116,8 @@ class DraftView extends Component {
         }
         if ( !this.props.isDraftInProgress ){
             clearInterval(this.state.timer);
-            this.props.dispatch(routerActions.showResults());
+            if(this.props.isDraftFinished)
+                this.props.dispatch(routerActions.showResults());
         }
     }
 
