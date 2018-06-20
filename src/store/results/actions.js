@@ -1,12 +1,12 @@
 import * as draftSelectors from "../draft/reducer";
 import * as types from "./actionTypes";
-import _ from "lodash";
+import _first from "lodash/first";
 
 export function setResultDraftData(){
     return (dispatch, getState) => {
         const finalLeagueArray = draftSelectors.getLeagueArrayForEdit( getState() );
         const finalDraftArray = draftSelectors.getDraftArrayForEdit( getState() );
-        const selectedTeam = _.first( _.toArray( finalLeagueArray.teamInfo ) ).hashKey;
+        const selectedTeam = _first( finalLeagueArray.teamInfo ).hashKey;
         dispatch( { type: types.SET_RESULT_DATA,
                     finalLeagueArray: finalLeagueArray,
                     finalDraftArray: finalDraftArray,

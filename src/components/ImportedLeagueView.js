@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Accordion, Icon } from 'semantic-ui-react'
 import autoBind from "react-autobind";
-import _ from 'lodash';
 
 export default class ImportedLeagueView extends Component {
 
@@ -22,20 +21,9 @@ export default class ImportedLeagueView extends Component {
         const { activeIndex } = this.state;
         const self = this;
 
-        function generateAccordion() {
-            if(self.props.parsedLeague){
-                return(
-                    <Accordion styled>
-                        {generateAccordionRows()}
-                    </Accordion>
-                )
-            }
-        }
-
         function generateAccordionRows(){
-            const teamInfoArray = _.toArray(self.props.parsedLeague.teamInfo);
             let currentIndex = 0;
-            return teamInfoArray.map( function( team ){
+            return self.props.parsedLeague.teamInfo.map( function( team ){
                 currentIndex++;
                 return(
                     <div key={team.teamName}>
@@ -63,7 +51,9 @@ export default class ImportedLeagueView extends Component {
 
         return (
             <div>
-                {generateAccordion()}
+                <Accordion styled>
+                    {generateAccordionRows()}
+                </Accordion>
             </div>
         )
     }

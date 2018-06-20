@@ -22,16 +22,29 @@ class ImportView extends Component {
     }
 
     validLeagueIndicator(){
-        if(this.props.parsedLeague && this.props.parsedLeague.teamCount)
+        let teamCount = ( this.props.parsedLeague || {} ).teamCount;
+        if(this.props.parsedLeague && teamCount)
             return(
                 <div>
                 <Header as='h2'><Icon name='checkmark' color='green' size='large'/>Successful Import!</Header>
                 </div>
             );
-        else if (this.props.leagueInput && this.props.parsedLeague && !this.props.parsedLeague.teamCount)
+        else if (this.props.leagueInput && this.props.parsedLeague && !teamCount)
             return(
                 <div>
                 <Header as='h2'><Icon name='close' color='red' size='large'/>Invalid Input!</Header>
+                </div>
+            );
+    }
+
+    showLeaguePreview(){
+        if( this.props.parsedLeague && this.props.parsedLeague.teamCount )
+            return(
+                <div>
+                    <Grid.Column verticalAlign='middle'>
+                        <Header as='h2'>{this.props.leagueName}</Header>
+                        <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
+                    </Grid.Column>
                 </div>
             );
     }
@@ -59,25 +72,15 @@ class ImportView extends Component {
                             </Form>
                             {this.validLeagueIndicator()}
                         </Grid.Column>
-                        <Grid.Column verticalAlign='middle'>
-                            <Header as='h2'>{this.props.leagueName}</Header>
-                            <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
-                        </Grid.Column>
+                        {this.showLeaguePreview()}
                     </Grid.Row>
                 </Grid>
             </div>
         );
     }
 
-    renderLoading() {
-        return (
-            <p>Loading....</p>
-        );
-    }
-
     handleInputChange(e){
-        const input = e.target.value;
-        this.props.dispatch(importActions.processUserInput(input));
+        this.props.dispatch( importActions.processUserInput( e.target.value ) );
     }
 }
 
