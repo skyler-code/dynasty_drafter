@@ -8,6 +8,7 @@ import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
 import matchSorter from 'match-sorter';
 import _find from 'lodash/find';
+import _without from 'lodash/without';
 import '../css/PlayerPicker.css';
 import 'react-table/react-table.css';
 import * as constants from '../data/constants';
@@ -116,7 +117,7 @@ export default class PlayerPicker extends Component {
                   value={filter ? filter.value : "all"}
                 >
                 <option key="all" value="all">Show All</option>
-                { this.generateFilter( constants.PLAYER_POSITIONS ) }
+                { this.generateFilter( this.props.isDefenseEnabled ? constants.PLAYER_POSITIONS : _without( constants.PLAYER_POSITIONS, 'D/ST' ) ) }
                 </select>
         },
         {

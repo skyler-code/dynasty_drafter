@@ -34,7 +34,8 @@ export function setInitialDraftData(){
                         leagueArray: leagueArray,
                         draftArray: draftArray,
                         bestAvailablePlayer: bestAvailablePlayer,
-                        timeLeft: timeLeft
+                        timeLeft: timeLeft,
+                        isDefenseEnabled: isDefenseEnabled
             } );
         } catch (error) {
             console.error(error);

@@ -29,7 +29,7 @@ class FantasyDataService {
     returnData = _.filter(returnData, function( plr ){ return ( constants.PLAYER_POSITIONS.indexOf(plr.FantasyPosition) !== -1
                                                                 && plr.Active
                                                                 && plr.Team ) } );
-    returnData = _.map( returnData, stripPlayerObject )
+    returnData = _.map( returnData, stripPlayerObject );
     if( defenseEnabled )
        returnData = _.concat( returnData, teamData );
     return returnData;

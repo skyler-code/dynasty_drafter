@@ -59,7 +59,8 @@ class DraftView extends Component {
                             onDeselectClick={this.onDeselectClick}
                             canFinalizeSelection={this.props.canFinalizeSelection}
                             canDraftPlayer={this.props.canDraftPlayer}
-                            finalizePlayerSelection={this.finalizePlayerSelection}/>
+                            finalizePlayerSelection={this.finalizePlayerSelection}
+                            isDefenseEnabled={this.props.isDefenseEnabled}/>
                     </Grid.Row>
                 </Grid.Column>
                 <Grid.Column>
@@ -159,7 +160,8 @@ class DraftView extends Component {
             currentRound: draftSelectors.getCurrentRound(state),
             draftStatusLeague: draftSelectors.getDraftStatusLeague(state),
             draftStatusTeam: draftSelectors.getDraftStatusTeam(state),
-            isDraftFinished: draftSelectors.isDraftFinished(state)
+            isDraftFinished: draftSelectors.isDraftFinished(state),
+            isDefenseEnabled: draftSelectors.isDefenseEnabled(state)
         };
     }
 

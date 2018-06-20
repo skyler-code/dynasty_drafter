@@ -11,7 +11,8 @@ const initialState = Immutable({
   draftInProgress: false,
   currentPick: 0,
   draftArray: undefined,
-  timeLeft: undefined
+  timeLeft: undefined,
+  isDefenseEnabled: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -49,7 +50,8 @@ export default function reduce(state = initialState, action = {}) {
             bestAvailablePlayer: action.bestAvailablePlayer,
             currentPick: 0,
             draftInProgress: false,
-            timeLeft: action.timeLeft
+            timeLeft: action.timeLeft,
+            isDefenseEnabled: action.isDefenseEnabled
         });
     case types.TIMER_TICK:
         return state.merge({
@@ -195,4 +197,8 @@ export function getTimeLeftInfo(state){
         timeLeftInfo.timeLeftString = moment().minute( Math.floor( timeLeft / 60 ) ).second( timeLeft % 60 ).format('m:ss')
     }
     return timeLeftInfo;
+}
+
+export function isDefenseEnabled(state){
+    return state.draft.isDefenseEnabled;
 }
