@@ -15,15 +15,16 @@ export default class DraftOptions extends Component {
     handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
     handlePasswordChange = (v) => this.setState( { password: v.target.value } );
     savePassword = () => {
+        let passwordCleared = this.props.isPasswordSet && !this.state.password.length;
         this.props.updatePassword( this.state.password );
-        this.setState( { password: '' } );
+        this.setState( { password: '', passwordCleared: passwordCleared } );
     };
 
     renderPasswordHeader = () => {
         if( this.props.isPasswordSet )
             return <Header as='h3' color='green'>Password Set</Header>;
         else
-            return <Header as='h3' color='red'>Password Not Set</Header>;
+            return <Header as='h3' color='red'>Password { this.state.passwordCleared ? "Cleared" : "Not Set" }</Header>;
     };
 
     render() {
