@@ -92,7 +92,8 @@ class DraftView extends Component {
                 showConfirmPassword={this.state.showConfirmPassword}
                 closeConfirmPasswordModal={this.closeConfirmPasswordModal}
                 clickFunction={this.state.clickFunction}
-                confirmMessage={this.state.confirmMessage}/>
+                confirmMessage={this.state.confirmMessage}
+                checkPassword={this.props.checkPassword}/>
             </div>
         </div>
         );

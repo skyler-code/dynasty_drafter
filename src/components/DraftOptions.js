@@ -82,9 +82,10 @@ export default class DraftOptions extends Component {
                 <Input
                     label='Admin Password'
                     type='password'
+                    fluid
                     value={this.state.password}
-                    onChange={this.handlePasswordChange} />
-                    <Button content='Set' onClick={()=> this.savePassword()}/>
+                    onChange={this.handlePasswordChange} /><br/>
+                <Button compact content='Set' onClick={()=> this.savePassword()}/>
             </div>
         );
     }

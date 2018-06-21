@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Modal, Button } from 'semantic-ui-react';
+import { Modal, Button, Input } from 'semantic-ui-react';
 
 export default class ConfirmPasswordModal extends Component {
 
@@ -9,16 +9,28 @@ export default class ConfirmPasswordModal extends Component {
         autoBind(this);
     }
 
+    state = { password: '',
+              passwordIncorrect: false };
+
+    handlePasswordChange = (v) => this.setState( { password: v.target.value } );
+
     render() {
         return (
                 <Modal
                 open={this.props.showConfirmPassword}
-                closeOnEscape={false}
-                closeOnRootNodeClick={false}
-                onClose={this.close}>
+                closeOnEscape={true}
+                closeOnRootNodeClick={true}
+                size='mini'
+                onClose={() => this.props.closeConfirmPasswordModal()}>
                 <Modal.Header>Confirm Password</Modal.Header>
                 <Modal.Content>
-                    <p>This is a test.</p>
+                    <Input
+                    label='Password'
+                    type='password'
+                    value={this.state.password}
+                    error={this.state.passwordIncorrect}
+                    fluid
+                    onChange={this.handlePasswordChange} />
                 </Modal.Content>
                 <Modal.Actions>
                     <Button negative onClick={ () => this.props.closeConfirmPasswordModal() } content='Cancel'/>
@@ -29,8 +41,13 @@ export default class ConfirmPasswordModal extends Component {
     }
 
     confirm() {
-        if( typeof this.props.clickFunction === 'function')
-            this.props.clickFunction();
-        this.props.closeConfirmPasswordModal();
+        const passwordCorrect = this.props.checkPassword( this.state.password );
+        if( passwordCorrect ) {
+            if( typeof this.props.clickFunction === 'function')
+                this.props.clickFunction();
+            this.setState( { password: '' } );
+            this.props.closeConfirmPasswordModal();
+        }
+        this.setState( { passwordIncorrect: !passwordCorrect } );
     }
 }
