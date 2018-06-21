@@ -44,7 +44,9 @@ class SetupView extends Component {
                                             draftType={this.props.draftType}
                                             updateDraftType={this.updateDraftType}
                                             defenseEnabled={this.props.defenseEnabled}
-                                            updateDefenseEnabled={this.updateDefenseEnabled}/>
+                                            updateDefenseEnabled={this.updateDefenseEnabled}
+                                            updatePassword={this.updatePassword}
+                                            isPasswordSet={this.props.isPasswordSet}/>
                                     </Grid.Column>
                                     <Grid.Column>
                                         <DraftOrderSorter
@@ -115,6 +117,10 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.updateDefenseEnabled( value ) );
     }
 
+    updatePassword( value ){
+        this.props.dispatch( setupActions.updatePassword( value ) );
+    }
+
 }
 
 function mapStateToProps(state) {
@@ -127,7 +133,8 @@ function mapStateToProps(state) {
         numOfRounds: setupSelectors.getNumOfRounds(state),
         secondsPerPick: setupSelectors.getSecondsPerPick(state),
         defenseEnabled: setupSelectors.isDefenseEnabled(state),
-        draftType: setupSelectors.isSnakeDraftEnabled(state)
+        draftType: setupSelectors.isSnakeDraftEnabled(state),
+        isPasswordSet: setupSelectors.isPasswordSet(state)
     };
 }
 

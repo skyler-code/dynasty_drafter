@@ -1,6 +1,8 @@
 import * as types from "./actionTypes";
 import _ from "lodash";
 import arraymove from 'array-move';
+import sha256 from 'crypto-js/sha256';
+import { Entropy } from 'entropy-string';
 import * as setupSelectors from "./reducer";
 import * as importSelectors from "../leagueImport/reducer";
 
@@ -103,6 +105,14 @@ export function updateDraftType( snakeEnabled ){
     return (dispatch, getState) => {
         const newValue = snakeEnabled === 'true';
         dispatch( { type: types.DRAFT_TYPE_CHANGED, snakeDraft: newValue } );
+    };
+}
+
+export function updatePassword( password ){
+    return (dispatch, getState) => {
+        const salt = setupSelectors.getSalt( getState() ) || new Entropy().string();
+        const hashedPass = password.length ? sha256(password  + salt).toString() : "";
+        dispatch( { type: types.PASSWORD_UPDATED, password: hashedPass, salt: salt } );
     };
 }
 

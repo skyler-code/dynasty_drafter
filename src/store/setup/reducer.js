@@ -9,7 +9,9 @@ const initialState = Immutable({
     secondsPerPick: 90,
     snakeDraft: false,
     defenseEnabled: true,
-    settingsChanged: false
+    settingsChanged: false,
+    password: "",
+    salt: ""
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -47,6 +49,12 @@ export default function reduce(state = initialState, action = {}) {
         case types.TOGGLE_SETTINGS_CHANGED:
             return state.merge({
                 settingsChanged: false
+            });
+        case types.PASSWORD_UPDATED:
+            return state.merge({
+                password: action.password,
+                salt: action.salt,
+                settingsChanged: true
             });
         default:
             return state;
@@ -101,4 +109,16 @@ export function isDefenseEnabled(state){
 
 export function haveSettingsChanged(state){
     return state.setup.settingsChanged;
+}
+
+export function isPasswordSet(state){
+    return state.setup.password.length > 0;
+}
+
+export function getPassword(state){
+    return state.setup.password;
+}
+
+export function getSalt(state){
+    return state.setup.salt;
 }

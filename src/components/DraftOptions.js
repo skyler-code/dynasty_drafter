@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Form, Radio, Checkbox } from 'semantic-ui-react';
+import { Form, Radio, Checkbox, Button, Input, Header, Divider } from 'semantic-ui-react';
 
 export default class DraftOptions extends Component {
 
@@ -9,8 +9,23 @@ export default class DraftOptions extends Component {
         autoBind(this);
     }
 
-    handleSnakeChange = (e, { value }) => this.props.updateDraftType(value);
+
+    state = { password: '' };
+
+    handleSnakeChange = (e, { value }) => this.props.updateDraftType( value );
     handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
+    handlePasswordChange = (v) => this.setState( { password: v.target.value } );
+    savePassword = () => {
+        this.props.updatePassword( this.state.password );
+        this.setState( { password: '' } );
+    };
+
+    renderPasswordHeader = () => {
+        if( this.props.isPasswordSet )
+            return <Header as='h3' color='green'>Password Set</Header>;
+        else
+            return <Header as='h3' color='red'>Password Not Set</Header>;
+    };
 
     render() {
         return (
@@ -63,6 +78,14 @@ export default class DraftOptions extends Component {
                         </Form.Field>
                     </Form.Group>
                 </Form>
+                <Divider/>
+                {this.renderPasswordHeader()}
+                <Input
+                    label='Admin Password'
+                    type='password'
+                    value={this.state.password}
+                    onChange={this.handlePasswordChange} />
+                    <Button content='Set' onClick={()=> this.savePassword()}/>
             </div>
         );
     }
