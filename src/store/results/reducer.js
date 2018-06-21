@@ -95,7 +95,8 @@ export function getDraftResultCSV(state){
             Pick_Number: currentIndex++,
             Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName,
             Player: plr.Name,
-            Player_Team: plr.Team
+            Player_Team: plr.Team,
+            Player_Position: plr.FantasyPosition
         };
     } );
     if( mappedResults.length )
