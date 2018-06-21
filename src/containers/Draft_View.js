@@ -6,10 +6,11 @@ import * as draftActions from "../store/draft/actions";
 import * as routerActions from '../store/router/actions';
 import * as setupActions from '../store/setup/actions';
 import * as draftSelectors from '../store/draft/reducer';
-import { haveSettingsChanged } from '../store/setup/reducer';
+import * as setupSelectors from '../store/setup/reducer';
 import PlayerPicker from "../components/PlayerPicker";
 import CurrentPickInfo from "../components/CurrentPickInfo";
 import DraftStatusTabs from "../components/DraftStatusTabs";
+import ConfirmPasswordModal from '../components/ConfirmPasswordModal';
 
 class DraftView extends Component {
 
@@ -19,7 +20,9 @@ class DraftView extends Component {
     }
 
     state = {
-        timer: null
+        timer: null,
+        showConfirmPassword: false,
+        clickFunction: undefined
     };
 
     renderSettingsHeader(){
@@ -76,14 +79,18 @@ class DraftView extends Component {
                     primary={!this.props.isDraftInProgress}
                     secondary={this.props.isDraftInProgress}
                     disabled={this.props.isDraftFinished}
-                    onClick={() =>  this.startOrStopDraft()}>
+                    onClick={() => this.passwordCheckRequired( this.startOrStopDraft )}>
                 {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
                 </Button>
                 <Button
                     primary={true}
-                    onClick={() =>  this.resetDraft()}>
+                    onClick={() => this.passwordCheckRequired( this.resetDraft )}>
                 Reset Draft
                 </Button>
+            <ConfirmPasswordModal
+                showConfirmPassword={this.state.showConfirmPassword}
+                closeConfirmPasswordModal={this.closeConfirmPasswordModal}
+                clickFunction={this.state.clickFunction}/>
             </div>
         </div>
         );
@@ -101,6 +108,10 @@ class DraftView extends Component {
 
     onDeselectClick() {
         this.props.dispatch(draftActions.clearPlayerSelection());
+    }
+
+    closeConfirmPasswordModal(){
+        this.setState({showConfirmPassword: false})
     }
 
     startOrStopDraft() {
@@ -145,6 +156,10 @@ class DraftView extends Component {
         let timer = setInterval(this.tick, 1000);
         this.setState({timer});
     }
+
+    passwordCheckRequired( clickFunction ) {
+        this.props.isPasswordSet ? this.setState( { showConfirmPassword: true, clickFunction: clickFunction } ) : clickFunction();
+    }
 }
 
     function mapStateToProps(state) {
@@ -168,7 +183,9 @@ class DraftView extends Component {
             draftStatusTeam: draftSelectors.getDraftStatusTeam(state),
             isDraftFinished: draftSelectors.isDraftFinished(state),
             isDefenseEnabled: draftSelectors.isDefenseEnabled(state),
-            haveSettingsChanged: haveSettingsChanged(state)
+            haveSettingsChanged: setupSelectors.haveSettingsChanged(state),
+            isPasswordSet: setupSelectors.isPasswordSet(state),
+            checkPassword: setupSelectors.checkPassword(state)
         };
     }
 

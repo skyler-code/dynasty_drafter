@@ -1,6 +1,7 @@
 import Immutable from 'seamless-immutable';
 import * as types from './actionTypes';
 import _ from 'lodash';
+import sha256 from 'crypto-js/sha256';
 
 const initialState = Immutable({
     draftOrder: undefined,
@@ -112,11 +113,11 @@ export function haveSettingsChanged(state){
 }
 
 export function isPasswordSet(state){
-    return state.setup.password.length > 0;
+    return !!state.setup.password;
 }
 
-export function getPassword(state){
-    return state.setup.password;
+export function checkPassword(state){
+    return function( input ){ return state.setup.password === sha256( input, state.setup.salt ).toString() };
 }
 
 export function getSalt(state){

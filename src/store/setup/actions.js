@@ -111,7 +111,7 @@ export function updateDraftType( snakeEnabled ){
 export function updatePassword( password ){
     return (dispatch, getState) => {
         const salt = setupSelectors.getSalt( getState() ) || new Entropy().string();
-        const hashedPass = password.length ? sha256(password  + salt).toString() : "";
+        const hashedPass = password.length ? sha256(password, salt).toString() : "";
         dispatch( { type: types.PASSWORD_UPDATED, password: hashedPass, salt: salt } );
     };
 }

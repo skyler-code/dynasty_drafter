@@ -9,7 +9,6 @@ export default class DraftOptions extends Component {
         autoBind(this);
     }
 
-
     state = { password: '' };
 
     handleSnakeChange = (e, { value }) => this.props.updateDraftType( value );
