@@ -22,7 +22,8 @@ class DraftView extends Component {
     state = {
         timer: null,
         showConfirmPassword: false,
-        clickFunction: undefined
+        clickFunction: undefined,
+        confirmMessage: ""
     };
 
     renderSettingsHeader(){
@@ -79,18 +80,19 @@ class DraftView extends Component {
                     primary={!this.props.isDraftInProgress}
                     secondary={this.props.isDraftInProgress}
                     disabled={this.props.isDraftFinished}
-                    onClick={() => this.passwordCheckRequired( this.startOrStopDraft )}>
-                {(this.props.isDraftInProgress ? "Pause" : "Start") + " Draft"}
+                    onClick={() => this.passwordCheckRequired( this.startOrStopDraft, this.getDraftToggleString() )}>
+                {this.getDraftToggleString()}
                 </Button>
                 <Button
                     primary={true}
-                    onClick={() => this.passwordCheckRequired( this.resetDraft )}>
+                    onClick={() => this.passwordCheckRequired( this.resetDraft, 'Reset Draft' )}>
                 Reset Draft
                 </Button>
             <ConfirmPasswordModal
                 showConfirmPassword={this.state.showConfirmPassword}
                 closeConfirmPasswordModal={this.closeConfirmPasswordModal}
-                clickFunction={this.state.clickFunction}/>
+                clickFunction={this.state.clickFunction}
+                confirmMessage={this.state.confirmMessage}/>
             </div>
         </div>
         );
@@ -157,8 +159,12 @@ class DraftView extends Component {
         this.setState({timer});
     }
 
-    passwordCheckRequired( clickFunction ) {
-        this.props.isPasswordSet ? this.setState( { showConfirmPassword: true, clickFunction: clickFunction } ) : clickFunction();
+    passwordCheckRequired( clickFunction, confirmMessage ) {
+        this.props.isPasswordSet ? this.setState( { showConfirmPassword: true, clickFunction: clickFunction, confirmMessage: confirmMessage } ) : clickFunction();
+    }
+
+    getDraftToggleString(){
+        return (this.props.isDraftInProgress ? "Pause" : "Start") + " Draft";
     }
 }
 

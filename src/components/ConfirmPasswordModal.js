@@ -16,13 +16,13 @@ export default class ConfirmPasswordModal extends Component {
                 closeOnEscape={false}
                 closeOnRootNodeClick={false}
                 onClose={this.close}>
-                <Modal.Header>Confirm Admin Password</Modal.Header>
+                <Modal.Header>Confirm Password</Modal.Header>
                 <Modal.Content>
                     <p>This is a test.</p>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button negative onClick={ () => this.props.closeConfirmPasswordModal() }>Cancel</Button>
-                    <Button positive labelPosition='right' icon='checkmark' content='Yes' onClick={ () =>{ this.confirm() } } />
+                    <Button negative onClick={ () => this.props.closeConfirmPasswordModal() } content='Cancel'/>
+                    <Button positive labelPosition='right' icon='checkmark' content={this.props.confirmMessage} onClick={ () =>{ this.confirm() } } />
                 </Modal.Actions>
                 </Modal>
         );
