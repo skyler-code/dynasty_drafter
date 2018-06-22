@@ -70,7 +70,7 @@ export default class ImportedLeagueView extends Component {
                     minRows={0}
                     resizable={false}
                     sortable={false}
-                    className="-striped -highlight"
+                    className="-striped -highlight ImportedLeagueViewTable"
                     pageSize={(this.props.parsedLeagueView || []).length}
                     showPagination={false}/>
             </div>
