@@ -52,7 +52,7 @@ class ImportView extends Component {
         return (
             <div>
                 <div>
-                    <strong>Instructions:</strong> Go to your ESPN fantasy league (link to come, sample here: https://pastebin.com/raw/2eAbShZE ),
+                    <strong>Instructions:</strong> Go to your ESPN fantasy league (http://games.espn.com/ffl/leaguerosters?leagueId=<strong>LEAGUE_ID_HERE</strong>, sample here: https://pastebin.com/raw/2eAbShZE ),
                     use Control-A to select the <strong>entire</strong> page.<br/>Paste into the box below. League preview will show in right pane. Then, go to the Setup tab.
                 </div>
                 <Grid columns={2} divided>
