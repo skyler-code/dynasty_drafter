@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Accordion, Icon } from 'semantic-ui-react'
 import autoBind from "react-autobind";
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import '../css/ImportedLeagueView.css';
 
 export default class ImportedLeagueView extends Component {
 
@@ -8,52 +10,69 @@ export default class ImportedLeagueView extends Component {
         super(props);
         autoBind(this);
     }
-    state = { activeIndex: 0 };
 
-    handleClick = (e, titleProps) => {
-        const { index } = titleProps;
-        const { activeIndex } = this.state;
-        const newIndex = activeIndex === index ? -1 : index;
-        this.setState({ activeIndex: newIndex });
-    };
+    generateFilter( data ) {
+        return ( data || [] ).map( ( x ) => <option key={x.key} value={x.value}>{x.text}</option> );
+    }
 
     render() {
-        const { activeIndex } = this.state;
-        const self = this;
-
-        function generateAccordionRows(){
-            let currentIndex = 0;
-            return self.props.parsedLeague.teamInfo.map( function( team ){
-                currentIndex++;
-                return(
-                    <div key={team.teamName}>
-                        <Accordion.Title active={activeIndex === currentIndex} index={currentIndex} onClick={self.handleClick}>
-                          <Icon name='dropdown' />
-                            {team.teamName}
-                        </Accordion.Title>
-                        <Accordion.Content active={activeIndex === currentIndex}>
-                            { generateAccordionContent( team.players ) }
-                        </Accordion.Content>
-                    </div>
-                );
-            } );
-        }
-
-        function generateAccordionContent( players ){
-            return players.map( function ( player ){
-                return (
-                    <div key={player.Name}>
-                        {player.Name + " - " + player.FantasyPosition}
-                    </div>
-                );
-            } );
-        }
-
+        const columns = [
+            {
+                Header: "#",
+                Cell: (row) => {
+                    return <div>{row.viewIndex + 1}</div>
+                },
+                id: "viewIndex",
+                minWidth: 15
+            },
+            {
+                Header: "Player",
+                id:"playerName",
+                accessor: "playerName",
+            },
+            {
+                Header: "Position",
+                id:"position",
+                accessor: "position",
+                minWidth: 20
+            },
+            {
+                Header: "hashKey",
+                id:"hashKey",
+                accessor: "hashKey",
+                show: false
+            },
+            {
+                Header: "Team",
+                id: "teamName",
+                accessor: "teamName",
+                filterable: true,
+                filterMethod: (filter, row) => {
+                return filter.value === "all" || filter.value === row.hashKey.toString();
+                },
+            Filter: ({ filter, onChange }) =>
+                <select
+                  onChange={event => onChange(event.target.value)}
+                  style={{ width: "100%" }}
+                  value={filter ? filter.value : "all"}
+                >
+                <option key="all" value="all">Show All</option>
+                { this.generateFilter( this.props.teamList ) }
+                </select>
+            }
+        ];
         return (
-            <div>
-                <Accordion styled>
-                    {generateAccordionRows()}
-                </Accordion>
+            <div className="ImportedLeagueView">
+                <ReactTable
+                    data={this.props.parsedLeagueView}
+                    noDataText="No players found."
+                    columns={columns}
+                    minRows={0}
+                    resizable={false}
+                    sortable={false}
+                    className="-striped -highlight"
+                    pageSize={(this.props.parsedLeagueView || []).length}
+                    showPagination={false}/>
             </div>
         )
     }

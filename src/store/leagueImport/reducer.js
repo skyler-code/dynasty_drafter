@@ -1,5 +1,6 @@
 import Immutable from 'seamless-immutable';
 import * as types from "./actionTypes";
+import _ from 'lodash';
 
 const initialState = Immutable({
     leagueInput: "",
@@ -22,6 +23,26 @@ export default function reduce(state = initialState, action = {}) {
 
 export function getParsedLeague(state){
     return state.leagueImport.parsedLeague;
+}
+
+export function getParsedLeagueView(state){
+    let teamInfo = ( state.leagueImport.parsedLeague || {} ).teamInfo;
+    let teamList = [];
+    let parsedLeagueView = [];
+    _.each( teamInfo, function( team ){
+        let teamName = team.teamName;
+        let hashKey = team.hashKey;
+        teamList.push( { text: teamName, key: hashKey, value: hashKey } );
+        _.each( team.players, function( plr ){
+            parsedLeagueView.push( {
+                teamName: teamName,
+                hashKey: hashKey,
+                playerName: plr.Name,
+                position: plr.FantasyPosition
+            } );
+        } );
+    } );
+    return { parsedLeagueView: parsedLeagueView, teamList: teamList };
 }
 
 export function getLeagueName(state){

@@ -40,9 +40,9 @@ class ImportView extends Component {
         if( this.props.successfulImport )
             return(
                 <div>
-                    <Grid.Column verticalAlign='middle'>
+                    <Grid.Column width='10' verticalAlign='middle'>
                         <Header as='h2'>{this.props.leagueName}</Header>
-                        <ImportedLeagueView parsedLeague={this.props.parsedLeague}/>
+                        <ImportedLeagueView parsedLeagueView={this.props.parsedLeagueView} teamList={this.props.teamList}/>
                     </Grid.Column>
                 </div>
             );
@@ -84,11 +84,14 @@ class ImportView extends Component {
 }
 
 function mapStateToProps(state) {
+    const { parsedLeagueView, teamList } = importSelectors.getParsedLeagueView(state);
     return {
         parsedLeague: importSelectors.getParsedLeague(state),
         leagueInput: importSelectors.getLeagueInput(state),
         leagueName: importSelectors.getLeagueName(state),
-        successfulImport: importSelectors.successfulImport(state)
+        successfulImport: importSelectors.successfulImport(state),
+        parsedLeagueView: parsedLeagueView,
+        teamList: teamList
     };
 }
 
