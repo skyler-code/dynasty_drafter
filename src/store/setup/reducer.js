@@ -54,8 +54,7 @@ export default function reduce(state = initialState, action = {}) {
         case types.PASSWORD_UPDATED:
             return state.merge({
                 password: action.password,
-                salt: action.salt,
-                settingsChanged: true
+                salt: action.salt
             });
         case types.RESET_STATE:
             return initialState;
