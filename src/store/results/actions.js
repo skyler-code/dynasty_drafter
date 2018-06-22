@@ -25,3 +25,10 @@ export function setSelectedTeam(hashKey){
         } );
     };
 }
+
+export function resetState(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.RESET_STATE } );
+    };
+}
+

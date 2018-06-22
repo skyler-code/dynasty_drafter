@@ -1,4 +1,3 @@
-//import * as routerSelectors from "./reducer";
 import * as types from "./actionTypes";
 
 export function setActiveIndex(index){
@@ -30,5 +29,11 @@ export function showResults(){
         dispatch( { type: types.CHANGE_INDEX,
                     activeIndex: 3
         } );
+    };
+}
+
+export function resetState(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.RESET_STATE } );
     };
 }

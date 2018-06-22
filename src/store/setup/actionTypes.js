@@ -6,3 +6,4 @@ export const DEFENSE_UPDATED = 'setup.DEFENSE_UPDATED';
 export const DRAFT_TYPE_CHANGED = 'setup.DRAFT_TYPE_CHANGED';
 export const TOGGLE_SETTINGS_CHANGED = 'setup.TOGGLE_SETTINGS_CHANGED';
 export const PASSWORD_UPDATED = 'setup.PASSWORD_UPDATED';
+export const RESET_STATE = 'setup.RESET_STATE';

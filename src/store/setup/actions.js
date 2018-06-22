@@ -121,3 +121,9 @@ export function resetSettingsChanged(){
         dispatch( { type: types.TOGGLE_SETTINGS_CHANGED } );
     };
 }
+
+export function resetState(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.RESET_STATE } );
+    };
+}

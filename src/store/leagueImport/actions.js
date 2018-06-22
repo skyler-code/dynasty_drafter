@@ -7,3 +7,9 @@ export function processUserInput( input ){
         dispatch({ type: types.LEAGUE_IMPORTED, parsedLeague: parsedLeague, leagueInput: input  });
     };
 }
+
+export function resetState(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.RESET_STATE } );
+    };
+}

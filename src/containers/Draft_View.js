@@ -35,6 +35,11 @@ class DraftView extends Component {
             )
     }
 
+    componentWillUnmount(){
+        if(this.state.timer)
+            clearInterval(this.state.timer);
+    }
+
     render() {
         if(!this.props.playersArray) this.renderLoading();
         return (
@@ -135,17 +140,15 @@ class DraftView extends Component {
         this.props.dispatch(routerActions.endDraft());
     }
 
-    tick() {
-        if( this.props.timeLeft > 1 ){
-            this.props.dispatch(draftActions.timerTick());
-        } else {
-            this.props.dispatch(draftActions.finalizePlayerSelection());
-        }
-        if ( !this.props.isDraftInProgress ){
-            clearInterval(this.state.timer);
-            if(this.props.isDraftFinished)
+    tick( ) {
+        if( this.props.isDraftInProgress ) {
+            if( this.props.timeLeft > 1 ){
+                this.props.dispatch(draftActions.timerTick());
+            } else {
+                this.props.dispatch(draftActions.finalizePlayerSelection());
+            }
+        } else if(this.props.isDraftFinished)
                 this.props.dispatch(routerActions.showResults());
-        }
     }
 
     finalizePlayerSelection(){

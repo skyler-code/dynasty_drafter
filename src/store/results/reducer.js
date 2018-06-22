@@ -12,18 +12,20 @@ const initialState = Immutable({
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-    case types.SET_RESULT_DATA:
-        return state.merge({
-            finalLeagueArray: action.finalLeagueArray,
-            finalDraftArray: action.finalDraftArray,
-            selectedTeam: action.selectedTeam
-        });
-    case types.SET_SELECTED_TEAM:
-        return state.merge({
-            selectedTeam: action.selectedTeam
-        });
-    default:
-        return state;
+        case types.SET_RESULT_DATA:
+            return state.merge({
+                finalLeagueArray: action.finalLeagueArray,
+                finalDraftArray: action.finalDraftArray,
+                selectedTeam: action.selectedTeam
+            });
+        case types.SET_SELECTED_TEAM:
+            return state.merge({
+                selectedTeam: action.selectedTeam
+            });
+        case types.RESET_STATE:
+            return initialState;
+        default:
+            return state;
     }
 }
 

@@ -24,7 +24,7 @@ class App extends Component {
         autoBind(this);
     }
 
-    render() {
+    displayPanes = ()=>{
         const importPane = {
             menuItem: 'Import',
             pane:
@@ -61,9 +61,12 @@ class App extends Component {
                     </div>
                 </Tab.Pane>
         };
-        let displayPanes = function(){
-            let panes = [];
-            const draftNotInProgress = !this.props.isDraftInProgress;
+
+        let panes = [];
+        const draftNotInProgress = !this.props.isDraftInProgress;
+        if ( this.props.draftFinished )
+            panes.push( resultPane );
+        else {
             if( draftNotInProgress )
                 panes.push( importPane );
             if( this.props.successfulImport ){
@@ -71,17 +74,18 @@ class App extends Component {
                     panes.push( setupPane );
                 if( this.props.draftArrayExists )
                     panes.push( draftPane );
-                if( this.props.draftFinished )
-                    panes.push( resultPane );
             }
-            return panes;
-        }.bind( this );
+        }
+        return panes;
+    };
+
+    render() {
         return (
             <div className="App">
                 <Helmet>
                     <style>{'body { background-color: #D3D3D3; }'}</style>
                 </Helmet>
-                <Tab renderActiveOnly={false} activeIndex={this.props.activeIndex} panes={displayPanes()} onTabChange={this.setActiveIndex}/>
+                <Tab renderActiveOnly={false} activeIndex={this.props.activeIndex} panes={this.displayPanes()} onTabChange={this.setActiveIndex}/>
             </div>
         );
     }

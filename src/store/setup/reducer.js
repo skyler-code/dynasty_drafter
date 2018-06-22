@@ -6,8 +6,8 @@ import sha256 from 'crypto-js/sha256';
 const initialState = Immutable({
     draftOrder: undefined,
     draftArray: undefined,
-    numOfRounds: 4,
-    secondsPerPick: 90,
+    numOfRounds: 1,
+    secondsPerPick: 1,
     snakeDraft: false,
     defenseEnabled: true,
     settingsChanged: false,
@@ -57,6 +57,8 @@ export default function reduce(state = initialState, action = {}) {
                 salt: action.salt,
                 settingsChanged: true
             });
+        case types.RESET_STATE:
+            return initialState;
         default:
             return state;
     }

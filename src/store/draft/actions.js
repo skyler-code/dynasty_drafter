@@ -117,3 +117,9 @@ function makePick( state ) {
         draftInProgress: draftInProgress
     }
 }
+
+export function resetState(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.RESET_STATE } );
+    };
+}

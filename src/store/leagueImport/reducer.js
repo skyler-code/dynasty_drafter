@@ -8,13 +8,15 @@ const initialState = Immutable({
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-    case types.LEAGUE_IMPORTED:
-        return state.merge( {
-            parsedLeague: action.parsedLeague,
-            leagueInput: action.leagueInput
-        } );
-    default:
-        return state;
+        case types.LEAGUE_IMPORTED:
+            return state.merge( {
+                parsedLeague: action.parsedLeague,
+                leagueInput: action.leagueInput
+            } );
+        case types.RESET_STATE:
+            return initialState;
+        default:
+            return state;
   }
 }
 

@@ -11,8 +11,10 @@ export default function reduce(state = initialState, action = {}) {
             return state.merge({
                 activeIndex: action.activeIndex
             });
-    default:
-        return state;
+        case types.RESET_STATE:
+            return initialState;
+        default:
+            return state;
     }
 }
 

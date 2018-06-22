@@ -18,52 +18,54 @@ const initialState = Immutable({
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-    case types.DRAFT_STARTED:
-        return state.merge({
-            draftInProgress: true,
-            timeLeft: action.timeLeft,
-        });
-    case types.PLAYER_SELECTED:
-        return state.merge({
-            selectedPlayer: action.selectedPlayer
-        });
+        case types.DRAFT_STARTED:
+            return state.merge({
+                draftInProgress: true,
+                timeLeft: action.timeLeft,
+            });
+        case types.PLAYER_SELECTED:
+            return state.merge({
+                selectedPlayer: action.selectedPlayer
+            });
     case types.PLAYER_SELECTION_MADE:
-        return state.merge({
-            availablePlayers: action.availablePlayers,
-            bestAvailablePlayer: action.bestAvailablePlayer,
-            leagueArray: action.leagueArray,
-            draftArray: action.draftArray,
-            selectedPlayer: undefined,
-            currentPick: action.currentPick,
-            timeLeft: action.timeLeft,
-            draftInProgress: action.draftInProgress
-        });
-    case types.CLEAR_PLAYER_SELECTION:
-        return state.merge({
-            selectedPlayer: undefined
-        });
-    case types.SET_INITIAL_DRAFT_DATA:
-        return state.merge({
-            availablePlayers: action.availablePlayers,
-            leagueArray: action.leagueArray,
-            draftArray: action.draftArray,
-            secondsPerPick: action.secondsPerPick,
-            bestAvailablePlayer: action.bestAvailablePlayer,
-            currentPick: 0,
-            draftInProgress: false,
-            timeLeft: action.timeLeft,
-            isDefenseEnabled: action.isDefenseEnabled
-        });
-    case types.TIMER_TICK:
-        return state.merge({
-            timeLeft: action.timeLeft
-        });
-    case types.STOP_DRAFT:
-        return state.merge({
-            draftInProgress: false
-        });
-    default:
-        return state;
+            return state.merge({
+                availablePlayers: action.availablePlayers,
+                bestAvailablePlayer: action.bestAvailablePlayer,
+                leagueArray: action.leagueArray,
+                draftArray: action.draftArray,
+                selectedPlayer: undefined,
+                currentPick: action.currentPick,
+                timeLeft: action.timeLeft,
+                draftInProgress: action.draftInProgress
+            });
+        case types.CLEAR_PLAYER_SELECTION:
+            return state.merge({
+                selectedPlayer: undefined
+            });
+        case types.SET_INITIAL_DRAFT_DATA:
+            return state.merge({
+                availablePlayers: action.availablePlayers,
+                leagueArray: action.leagueArray,
+                draftArray: action.draftArray,
+                secondsPerPick: action.secondsPerPick,
+                bestAvailablePlayer: action.bestAvailablePlayer,
+                currentPick: 0,
+                draftInProgress: false,
+                timeLeft: action.timeLeft,
+                isDefenseEnabled: action.isDefenseEnabled
+            });
+        case types.TIMER_TICK:
+            return state.merge({
+                timeLeft: action.timeLeft
+            });
+        case types.STOP_DRAFT:
+            return state.merge({
+                draftInProgress: false
+            });
+        case types.RESET_STATE:
+            return initialState;
+        default:
+            return state;
     }
 }
 
