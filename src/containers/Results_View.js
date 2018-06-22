@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Tab, Dropdown, Button } from 'semantic-ui-react';
+import { Tab, Dropdown, Button, Confirm } from 'semantic-ui-react';
 import * as resultActions from '../store/results/actions';
 import * as importActions from '../store/leagueImport/actions';
 import * as setupActions from '../store/setup/actions';
@@ -11,7 +11,6 @@ import * as routerActions from "../store/router/actions";
 import TeamStatusTable from '../components/results/TeamStatusTable';
 import DraftResultsTable from '../components/results/DraftResultsTable';
 import ExportTab from '../components/results/ExportTab';
-import ConfirmPasswordModal from '../components/ConfirmPasswordModal';
 import * as setupSelectors from "../store/setup/reducer";
 
 class ResultsView extends Component {
@@ -26,9 +25,7 @@ class ResultsView extends Component {
     }
 
     state = {
-        showConfirmPassword: false,
-        clickFunction: undefined,
-        confirmMessage: ""
+        showConfirm: false
     };
 
     render() {
@@ -71,13 +68,8 @@ class ResultsView extends Component {
         return (
             <div>
                 <Tab panes={panes} /><br/>
-                <Button content='Reset War Room' onClick={() => this.passwordCheckRequired( this.resetRouter, 'Reset War Room' )}/>
-                <ConfirmPasswordModal
-                    showConfirmPassword={this.state.showConfirmPassword}
-                    closeConfirmPasswordModal={this.closeConfirmPasswordModal}
-                    clickFunction={this.state.clickFunction}
-                    confirmMessage={this.state.confirmMessage}
-                    checkPassword={this.props.checkPassword}/>
+                <Button content='Reset War Room' onClick={() => this.toggleResetConfirm()}/>
+                <Confirm open={this.state.showConfirm} onCancel={this.toggleResetConfirm} onConfirm={this.confirm} confirmButton='Reset War Room' />
             </div>
 
         );
@@ -94,12 +86,13 @@ class ResultsView extends Component {
         this.props.dispatch( routerActions.resetState() );
     }
 
-    closeConfirmPasswordModal(){
-        this.setState({showConfirmPassword: false})
+    toggleResetConfirm() {
+        this.setState( { showConfirm: !this.state.showConfirm } );
     }
 
-    passwordCheckRequired( clickFunction, confirmMessage ) {
-        this.props.isPasswordSet ? this.setState( { showConfirmPassword: true, clickFunction: clickFunction, confirmMessage: confirmMessage } ) : clickFunction();
+    confirm() {
+        this.resetRouter();
+        this.toggleResetConfirm();
     }
 }
 

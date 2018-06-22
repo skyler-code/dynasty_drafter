@@ -22,20 +22,20 @@ export default class ConfirmPasswordModal extends Component {
                 closeOnRootNodeClick={true}
                 size='mini'
                 onClose={() => this.props.closeConfirmPasswordModal()}>
-                <Modal.Header>Confirm Password</Modal.Header>
-                <Modal.Content>
-                    <Input
-                    label='Password'
-                    type='password'
-                    value={this.state.password}
-                    error={this.state.passwordIncorrect}
-                    fluid
-                    onChange={this.handlePasswordChange} />
-                </Modal.Content>
-                <Modal.Actions>
-                    <Button negative onClick={ () => this.props.closeConfirmPasswordModal() } content='Cancel'/>
-                    <Button positive labelPosition='right' icon='checkmark' content={this.props.confirmMessage} onClick={ () =>{ this.confirm() } } />
-                </Modal.Actions>
+                    <Modal.Header>Confirm Password</Modal.Header>
+                    <Modal.Content>
+                        <Input
+                        label='Password'
+                        type='password'
+                        value={this.state.password}
+                        error={this.state.passwordIncorrect}
+                        fluid
+                        onChange={this.handlePasswordChange} />
+                    </Modal.Content>
+                    <Modal.Actions>
+                        <Button negative onClick={ () => this.props.closeConfirmPasswordModal() } content='Cancel'/>
+                        <Button positive labelPosition='right' icon='checkmark' content={this.props.confirmMessage} onClick={ () =>{ this.confirm() } } />
+                    </Modal.Actions>
                 </Modal>
         );
     }
