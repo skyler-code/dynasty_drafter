@@ -36,7 +36,10 @@
             );
           }
         }
-      }(window.location))
+      }(window.location));
+      window.onbeforeunload = function() {
+         return "";
+      };
     </script>
     <!-- End Single Page Apps for GitHub Pages -->
 
