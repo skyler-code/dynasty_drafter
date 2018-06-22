@@ -70,7 +70,7 @@ class ResultsView extends Component {
         ];
         return (
             <div>
-                <Tab panes={panes} />
+                <Tab panes={panes} /><br/>
                 <Button content='Reset War Room' onClick={() => this.passwordCheckRequired( this.resetRouter, 'Reset War Room' )}/>
                 <ConfirmPasswordModal
                     showConfirmPassword={this.state.showConfirmPassword}

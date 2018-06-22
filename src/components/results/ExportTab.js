@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Form } from 'semantic-ui-react';
+import { TextArea, Button, Form } from 'semantic-ui-react';
 import fileDownload from 'js-file-download';
 
 export default class ExportTab extends Component {
@@ -16,22 +16,21 @@ export default class ExportTab extends Component {
     render() {
         return (
             <div className="ExportTab">
-                <Form>
-                    <Form.Group>
-                        <Form.Input
-                            label='Draft Results CSV'
-                            control='textarea'
+                <div>
+                    <Form>
+                        <TextArea
                             rows='6'
-                            width={12}
+                            width='6'
                             value={this.props.draftResultsCSV}
                             readOnly/>
-                        <Form.Button
-                            primary
-                            onClick={() =>  this.download()}>
-                            Download CSV
-                        </Form.Button>
-                    </Form.Group>
-                </Form>
+                    </Form>
+                </div><br/>
+                <div>
+                    <Button
+                        primary
+                        onClick={() =>  this.download()}
+                        content='Download CSV'/>
+                </div>
             </div>
         );
     }
