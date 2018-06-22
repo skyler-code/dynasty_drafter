@@ -11,6 +11,7 @@ import PlayerPicker from "../components/PlayerPicker";
 import CurrentPickInfo from "../components/CurrentPickInfo";
 import DraftStatusTabs from "../components/DraftStatusTabs";
 import ConfirmPasswordModal from '../components/ConfirmPasswordModal';
+import ConfirmModal from '../components/ConfirmModal';
 
 class DraftView extends Component {
 
@@ -22,6 +23,7 @@ class DraftView extends Component {
     state = {
         timer: null,
         showConfirmPassword: false,
+        showConfirmModal: false,
         clickFunction: undefined,
         confirmMessage: ""
     };
@@ -99,6 +101,11 @@ class DraftView extends Component {
                 clickFunction={this.state.clickFunction}
                 confirmMessage={this.state.confirmMessage}
                 checkPassword={this.props.checkPassword}/>
+            <ConfirmModal
+                showConfirmModal={this.state.showConfirmModal}
+                clickFunction={this.state.clickFunction}
+                confirmMessage={this.state.confirmMessage}
+                toggleConfirmModal={this.toggleConfirmModal}/>
             </div>
         </div>
         );
@@ -119,7 +126,11 @@ class DraftView extends Component {
     }
 
     closeConfirmPasswordModal(){
-        this.setState({showConfirmPassword: false})
+        this.setState( { showConfirmPassword: false } );
+    }
+
+    toggleConfirmModal(){
+        this.setState( { showConfirmModal: !this.state.showConfirmModal } );
     }
 
     startOrStopDraft() {
@@ -164,7 +175,8 @@ class DraftView extends Component {
     }
 
     passwordCheckRequired( clickFunction, confirmMessage ) {
-        this.props.isPasswordSet ? this.setState( { showConfirmPassword: true, clickFunction: clickFunction, confirmMessage: confirmMessage } ) : clickFunction();
+        const passSet = this.props.isPasswordSet;
+        this.setState( { showConfirmPassword: passSet, showConfirmModal: !passSet, clickFunction: clickFunction, confirmMessage: confirmMessage } );
     }
 
     getDraftToggleString(){

@@ -11,6 +11,7 @@ import * as routerActions from "../store/router/actions";
 import TeamStatusTable from '../components/results/TeamStatusTable';
 import DraftResultsTable from '../components/results/DraftResultsTable';
 import ExportTab from '../components/results/ExportTab';
+import ConfirmModal from '../components/ConfirmModal';
 import * as setupSelectors from "../store/setup/reducer";
 
 class ResultsView extends Component {
@@ -69,7 +70,11 @@ class ResultsView extends Component {
             <div>
                 <Tab panes={panes} /><br/>
                 <Button content='Reset War Room' onClick={() => this.toggleResetConfirm()}/>
-                <Confirm open={this.state.showConfirm} onCancel={this.toggleResetConfirm} onConfirm={this.confirm} confirmButton='Reset War Room' />
+            <ConfirmModal
+                showConfirmModal={this.state.showConfirm}
+                clickFunction={this.confirm}
+                confirmMessage='Reset War Room'
+                toggleConfirmModal={this.toggleResetConfirm}/>
             </div>
 
         );
