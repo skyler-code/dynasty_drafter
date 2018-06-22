@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Tab, Dropdown, Button, Confirm } from 'semantic-ui-react';
+import { Tab, Dropdown, Button } from 'semantic-ui-react';
 import * as resultActions from '../store/results/actions';
 import * as importActions from '../store/leagueImport/actions';
 import * as setupActions from '../store/setup/actions';
