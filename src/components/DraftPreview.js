@@ -33,7 +33,7 @@ export default class DraftPreview extends Component {
                 minWidth: 7
             },
             {
-                Header: "Owner",
+                Header: "Team",
                 id: "originalOwner",
                 accessor: "Original_Owner_Name",
                 sortable: false,

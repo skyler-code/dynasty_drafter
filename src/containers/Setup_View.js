@@ -60,7 +60,7 @@ class SetupView extends Component {
                     </Tab.Pane>
             },
             {
-                menuItem: 'Trade',
+                menuItem: 'Trades',
                 pane:
                     <Tab.Pane key='Trade'>
                         <DraftPreview
