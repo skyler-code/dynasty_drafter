@@ -1,18 +1,17 @@
 import _ from "underscore";
 import teamData from '../data/team_data';
 import * as constants from './../data/constants';
-import stringHash from 'string-hash';
 
-let recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
-let periodRegex = /[.]/g;
-let playerPositions = ["qb", "rb", "wr", "te", "flex", "op", "d/st", "k", "bench", "ir"];
+const recordRegex = /[(]\d?\d[-]\d?\d[)]/g;
+const periodRegex = /[.]/g;
+const playerPositions = ["qb", "rb", "wr", "te", "flex", "op", "d/st", "k", "bench", "ir"];
 
 
 class ESPNParserService {
 
     parseInput( input ) {
         let leagueInfo = {};
-        leagueInfo.teamInfo = generateTeamHashKeys( getTeamInfo( input ) );
+        leagueInfo.teamInfo = getTeamInfo( input );
         leagueInfo.leagueName = getLeagueName( input );
         leagueInfo.teamCount = Object.keys(leagueInfo.teamInfo).length;
         return leagueInfo;
@@ -51,6 +50,7 @@ function getTeamInfo( str )
     splitInput.length = _.lastIndexOf( splitInput, "Need Help?" ) + 1;
     splitInput = _.without(splitInput, "");
     let teamName = "";
+    let count = 0;
     _.forEach(splitInput, function(str){
         if( recordRegex.test( str ) )
         {
@@ -60,6 +60,7 @@ function getTeamInfo( str )
             teamInfo[teamName].players = teamInfo[teamName].players || [];
             teamInfo[teamName].record = parseRecordInfo( str );
             teamInfo[teamName].teamName = teamName;
+            teamInfo[teamName].hashKey = ++count;
         }
         else
         {
@@ -75,13 +76,6 @@ function getTeamInfo( str )
         }
     } );
     return _.toArray(teamInfo);
-}
-
-function generateTeamHashKeys( teamInfo ){
-    _.forEach( teamInfo, function( team ){
-        team.hashKey = stringHash( JSON.stringify( team.players ) );
-    } );
-    return teamInfo;
 }
 
 function parseRecordInfo( str )
