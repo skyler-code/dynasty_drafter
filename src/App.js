@@ -24,7 +24,16 @@ class App extends Component {
         autoBind(this);
     }
 
-    displayPanes = ()=>{
+    componentDidMount() {
+       window.addEventListener("beforeunload", this.onUnload)
+    }
+
+    onUnload = (e) => {
+        if( this.props.successfulImport )
+            e.returnValue = 0;
+    };
+
+    displayPanes = () => {
         const importPane = {
             menuItem: 'Import',
             pane:
