@@ -25,13 +25,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-       window.addEventListener("beforeunload", this.onUnload)
+       window.addEventListener( "beforeunload", ( e ) => {
+           if( this.props.successfulImport )
+                e.returnValue = 0;
+       } );
     }
-
-    onUnload = (e) => {
-        if( this.props.successfulImport )
-            e.returnValue = 0;
-    };
 
     displayPanes = () => {
         const importPane = {
