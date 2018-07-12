@@ -85,7 +85,10 @@ export default class DraftOptions extends Component {
                     fluid
                     value={this.state.password}
                     onChange={this.handlePasswordChange} /><br/>
-                <Button compact content='Set' onClick={()=> this.savePassword()}/>
+                <Button compact
+                    content={this.props.isPasswordSet ? "Clear" : "Set"}
+                    onClick={()=> this.savePassword()}
+                    disabled={!this.state.password.length && !this.props.isPasswordSet}/>
             </div>
         );
     }
