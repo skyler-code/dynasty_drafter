@@ -103,8 +103,7 @@ export function unloadDraftArray(){
 
 export function updateDraftType( snakeEnabled ){
     return (dispatch, getState) => {
-        const newValue = snakeEnabled === 'true';
-        dispatch( { type: types.DRAFT_TYPE_CHANGED, snakeDraft: newValue } );
+        dispatch( { type: types.DRAFT_TYPE_CHANGED, snakeDraft: snakeEnabled } );
     };
 }
 

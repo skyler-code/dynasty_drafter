@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Form, Radio, Checkbox, Button, Input, Header, Divider } from 'semantic-ui-react';
+import { Form, Button, Input, Header, Divider } from 'semantic-ui-react';
 
 export default class DraftOptions extends Component {
 
@@ -11,7 +11,7 @@ export default class DraftOptions extends Component {
 
     state = { password: '' };
 
-    handleSnakeChange = (e, { value }) => this.props.updateDraftType( value );
+    handleSnakeChange = (v) => this.props.updateDraftType(v);
     handleDefenseChange = () =>  this.props.updateDefenseEnabled();
     toggleConfirmWindow = () =>  this.props.toggleConfirmWindow();
     handlePasswordChange = (v) => this.setState( { password: v.target.value } );
@@ -32,7 +32,7 @@ export default class DraftOptions extends Component {
         return (
             <div className="DraftOptions">
                 <Form>
-                    <Form.Group>
+                    <Form.Group grouped>
                         <Form.Input
                             label='Number of Rounds (4-8)'
                             control='input'
@@ -50,39 +50,29 @@ export default class DraftOptions extends Component {
                             value={this.props.secondsPerPick}
                             onChange={this.props.handleTempSecondsPerPicks}
                             onBlur={this.props.handleSecondsPerPicks} />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Field>
-                            <Radio
-                                label='Snake'
-                                name='radioGroup'
-                                value='true'
-                                checked={this.props.draftType}
-                                onChange={this.handleSnakeChange} />
-                        </Form.Field>
-                        <Form.Field>
-                              <Radio
-                                label='Linear'
-                                name='radioGroup'
-                                value='false'
-                                checked={!this.props.draftType}
-                                onChange={this.handleSnakeChange} />
-                        </Form.Field>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Field>
-                            <Checkbox
-                                label='Defenses Enabled'
-                                name='defense_checkbox'
-                                checked={this.props.defenseEnabled}
-                                onChange={this.handleDefenseChange} /><br/>
-                            <Checkbox
-                                label='Confirm Window Enabled'
-                                name='confirm_window_checkbox'
-                                disabled={this.props.isPasswordSet}
-                                checked={this.props.isPasswordSet || this.props.isConfirmModalEnabled}
-                                onChange={this.toggleConfirmWindow} />
-                        </Form.Field>
+                        <Form.Radio
+                            label='Snake'
+                            name='radioGroup'
+                            value='true'
+                            checked={this.props.draftType}
+                            onChange={() => this.handleSnakeChange(true)}/>
+                        <Form.Radio
+                            label='Linear'
+                            name='radioGroup'
+                            value='false'
+                            checked={!this.props.draftType}
+                            onChange={() => this.handleSnakeChange(false)}/>
+                        <Form.Checkbox
+                            label='Defenses Enabled'
+                            name='defense_checkbox'
+                            checked={this.props.defenseEnabled}
+                            onChange={this.handleDefenseChange}/>
+                        <Form.Checkbox
+                            label='Confirm Window Enabled'
+                            name='confirm_window_checkbox'
+                            disabled={this.props.isPasswordSet}
+                            checked={this.props.isPasswordSet || this.props.isConfirmModalEnabled}
+                            onChange={this.toggleConfirmWindow}/>
                     </Form.Group>
                 </Form>
                 <Divider/>
