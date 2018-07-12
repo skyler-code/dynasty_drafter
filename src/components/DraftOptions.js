@@ -29,6 +29,9 @@ export default class DraftOptions extends Component {
     };
 
     render() {
+        let isPasswordSet = this.props.isPasswordSet;
+        let passLength = this.state.password.length;
+        let clearPass = isPasswordSet && !passLength;
         return (
             <div className="DraftOptions">
                 <Form>
@@ -72,8 +75,8 @@ export default class DraftOptions extends Component {
                         <Form.Checkbox
                             label='Confirm Window Enabled'
                             name='confirm_window_checkbox'
-                            disabled={this.props.isPasswordSet}
-                            checked={this.props.isPasswordSet || this.props.isConfirmModalEnabled}
+                            disabled={isPasswordSet}
+                            checked={isPasswordSet || this.props.isConfirmModalEnabled}
                             onChange={this.toggleConfirmWindow}/>
                     </Form.Group>
                 </Form>
@@ -86,9 +89,11 @@ export default class DraftOptions extends Component {
                     value={this.state.password}
                     onChange={this.handlePasswordChange} /><br/>
                 <Button compact
-                    content={this.props.isPasswordSet ? "Clear" : "Set"}
+                    content={clearPass ? "Clear" : isPasswordSet ? "Update" : "Set"}
+                    primary={passLength}
+                    secondary={clearPass}
                     onClick={()=> this.savePassword()}
-                    disabled={!this.state.password.length && !this.props.isPasswordSet}/>
+                    disabled={!passLength && !isPasswordSet}/>
             </div>
         );
     }
