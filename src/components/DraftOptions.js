@@ -32,7 +32,7 @@ export default class DraftOptions extends Component {
         return (
             <div className="DraftOptions">
                 <Form>
-                    <Form.Group grouped>
+                    <Form.Group inline>
                         <Form.Input
                             label='Number of Rounds (4-8)'
                             control='input'
@@ -50,6 +50,8 @@ export default class DraftOptions extends Component {
                             value={this.props.secondsPerPick}
                             onChange={this.props.handleTempSecondsPerPicks}
                             onBlur={this.props.handleSecondsPerPicks} />
+                    </Form.Group>
+                    <Form.Group grouped>
                         <Form.Radio
                             label='Snake'
                             name='radioGroup'
