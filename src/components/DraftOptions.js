@@ -12,7 +12,8 @@ export default class DraftOptions extends Component {
     state = { password: '' };
 
     handleSnakeChange = (e, { value }) => this.props.updateDraftType( value );
-    handleDefenseChange = (e, { checked }) =>  this.props.updateDefenseEnabled( checked );
+    handleDefenseChange = () =>  this.props.updateDefenseEnabled();
+    toggleConfirmWindow = () =>  this.props.toggleConfirmWindow();
     handlePasswordChange = (v) => this.setState( { password: v.target.value } );
     savePassword = () => {
         let passwordCleared = this.props.isPasswordSet && !this.state.password.length;
@@ -74,7 +75,12 @@ export default class DraftOptions extends Component {
                                 label='Defenses Enabled'
                                 name='defense_checkbox'
                                 checked={this.props.defenseEnabled}
-                                onChange={this.handleDefenseChange} />
+                                onChange={this.handleDefenseChange} /><br/>
+                            <Checkbox
+                                label='Confirm Window Enabled'
+                                name='confirm_window_checkbox'
+                                checked={this.props.isConfirmModalEnabled}
+                                onChange={this.toggleConfirmWindow} />
                         </Form.Field>
                     </Form.Group>
                 </Form>

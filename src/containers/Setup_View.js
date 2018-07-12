@@ -46,7 +46,9 @@ class SetupView extends Component {
                                             defenseEnabled={this.props.defenseEnabled}
                                             updateDefenseEnabled={this.updateDefenseEnabled}
                                             updatePassword={this.updatePassword}
-                                            isPasswordSet={this.props.isPasswordSet}/>
+                                            isPasswordSet={this.props.isPasswordSet}
+                                            isConfirmModalEnabled={this.props.isConfirmModalEnabled}
+                                            toggleConfirmWindow={this.toggleConfirmWindow}/>
                                     </Grid.Column>
                                     <Grid.Column>
                                         <DraftOrderSorter
@@ -113,12 +115,16 @@ class SetupView extends Component {
         this.props.dispatch( setupActions.updateDraftType( snakeEnabled ) );
     }
 
-    updateDefenseEnabled( value ){
-        this.props.dispatch( setupActions.updateDefenseEnabled( value ) );
+    updateDefenseEnabled(){
+        this.props.dispatch( setupActions.updateDefenseEnabled() );
     }
 
     updatePassword( value ){
         this.props.dispatch( setupActions.updatePassword( value ) );
+    }
+
+    toggleConfirmWindow(){
+        this.props.dispatch( setupActions.toggleConfirmModal() );
     }
 
 }
@@ -134,7 +140,8 @@ function mapStateToProps(state) {
         secondsPerPick: setupSelectors.getSecondsPerPick(state),
         defenseEnabled: setupSelectors.isDefenseEnabled(state),
         draftType: setupSelectors.isSnakeDraftEnabled(state),
-        isPasswordSet: setupSelectors.isPasswordSet(state)
+        isPasswordSet: setupSelectors.isPasswordSet(state),
+        isConfirmModalEnabled: setupSelectors.isConfirmModalEnabled(state)
     };
 }
 

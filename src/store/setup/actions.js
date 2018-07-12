@@ -44,9 +44,9 @@ export function updateSecondsPerPick( value ){
     };
 }
 
-export function updateDefenseEnabled( value ){
+export function updateDefenseEnabled() {
     return (dispatch, getState) => {
-        dispatch( { type: types.DEFENSE_UPDATED, defenseEnabled: value } );
+        dispatch( { type: types.TOGGLE_DEFENSE } );
     };
 }
 
@@ -114,6 +114,12 @@ export function updatePassword( password ){
         const hashedPass = password.length ? sha256(password, salt).toString() : "";
         dispatch( { type: types.PASSWORD_UPDATED, password: hashedPass, salt: salt } );
     };
+}
+
+export function toggleConfirmModal(){
+    return (dispatch, getState) => {
+        dispatch( { type: types.TOGGLE_CONFIRM_MODAL } )
+    }
 }
 
 export function resetSettingsChanged(){
