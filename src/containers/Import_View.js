@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Form, Grid, Header, Icon } from 'semantic-ui-react';
+import { Form, Grid, Header, Icon, Divider } from 'semantic-ui-react';
 import * as importActions from '../store/leagueImport/actions';
 import * as importSelectors from '../store/leagueImport/reducer';
 import ImportedLeagueView from "../components/ImportedLeagueView";
@@ -42,6 +42,7 @@ class ImportView extends Component {
                 <div>
                     <Grid.Column width='10' verticalAlign='middle'>
                         <Header as='h2'>{this.props.leagueName}</Header>
+                        <Divider/>
                         <ImportedLeagueView parsedLeagueView={this.props.parsedLeagueView} teamList={this.props.teamList}/>
                     </Grid.Column>
                 </div>
@@ -55,16 +56,16 @@ class ImportView extends Component {
                     <strong>Instructions:</strong> Go to your ESPN fantasy league (http://games.espn.com/ffl/leaguerosters?leagueId=<strong>LEAGUE_ID_HERE</strong>, sample here: https://pastebin.com/raw/2eAbShZE ),
                     use Control-A to select the <strong>entire</strong> page.<br/>Paste into the box below. League preview will show in right pane. Then, go to the Setup tab.
                 </div>
+                <Divider/>
                 <Grid columns={2} divided>
                     <Grid.Row>
                         <Grid.Column>
                             <Form>
                                 <Form.Group>
-                                    <Form.Input
+                                    <Form.TextArea
                                         label='Paste ESPN League Here'
-                                        control='textarea'
-                                        rows='6'
-                                        width={12}
+                                        rows='24'
+                                        width={14}
                                         value={this.props.leagueInput}
                                         onChange={this.handleInputChange} />
                                 </Form.Group>
