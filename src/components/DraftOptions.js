@@ -79,7 +79,8 @@ export default class DraftOptions extends Component {
                             <Checkbox
                                 label='Confirm Window Enabled'
                                 name='confirm_window_checkbox'
-                                checked={this.props.isConfirmModalEnabled}
+                                disabled={this.props.isPasswordSet}
+                                checked={this.props.isPasswordSet || this.props.isConfirmModalEnabled}
                                 onChange={this.toggleConfirmWindow} />
                         </Form.Field>
                     </Form.Group>

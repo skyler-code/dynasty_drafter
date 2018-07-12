@@ -87,14 +87,12 @@ class DraftView extends Component {
                     primary={!this.props.isDraftInProgress}
                     secondary={this.props.isDraftInProgress}
                     disabled={this.props.isDraftFinished}
-                    onClick={() => this.passwordCheckRequired( this.startOrStopDraft, this.getDraftToggleString() )}>
-                {this.getDraftToggleString()}
-                </Button>
+                    onClick={() => this.passwordCheckRequired( this.startOrStopDraft, this.getDraftToggleString() )}
+                    content={this.getDraftToggleString()}/>
                 <Button
                     primary={true}
-                    onClick={() => this.passwordCheckRequired( this.resetDraft, 'Reset Draft' )}>
-                Reset Draft
-                </Button>
+                    onClick={() => this.passwordCheckRequired( this.resetDraft, 'Reset Draft' )}
+                    content={'Reset'}/>
             <ConfirmPasswordModal
                 showConfirmPassword={this.state.showConfirmPassword}
                 closeConfirmPasswordModal={this.closeConfirmPasswordModal}
@@ -176,11 +174,20 @@ class DraftView extends Component {
 
     passwordCheckRequired( clickFunction, confirmMessage ) {
         const passSet = this.props.isPasswordSet;
-        this.setState( { showConfirmPassword: passSet, showConfirmModal: !passSet, clickFunction: clickFunction, confirmMessage: confirmMessage } );
+        const showConfirmModal = !passSet && this.props.isConfirmModalEnabled;
+        if( passSet || showConfirmModal )
+            this.setState( {
+                showConfirmPassword: passSet
+                , showConfirmModal: showConfirmModal
+                , clickFunction: clickFunction
+                , confirmMessage: confirmMessage
+            } );
+        if( !passSet && !showConfirmModal )
+            clickFunction();
     }
 
     getDraftToggleString(){
-        return (this.props.isDraftInProgress ? "Pause" : "Start") + " Draft";
+        return this.props.isDraftInProgress ? "Pause" : "Start";
     }
 }
 
@@ -207,7 +214,8 @@ class DraftView extends Component {
             isDefenseEnabled: draftSelectors.isDefenseEnabled(state),
             haveSettingsChanged: setupSelectors.haveSettingsChanged(state),
             isPasswordSet: setupSelectors.isPasswordSet(state),
-            checkPassword: setupSelectors.checkPassword(state)
+            checkPassword: setupSelectors.checkPassword(state),
+            isConfirmModalEnabled: setupSelectors.isConfirmModalEnabled(state)
         };
     }
 
