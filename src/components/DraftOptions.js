@@ -18,12 +18,16 @@ export default class DraftOptions extends Component {
     savePassword = () => {
         let passwordCleared = this.props.isPasswordSet && !this.state.password.length;
         this.props.updatePassword( this.state.password );
-        this.setState( { password: '', passwordCleared: passwordCleared } );
+        this.setState( {
+            password: ''
+            , passwordCleared: passwordCleared
+            , passwordAlreadySet: this.props.isPasswordSet && !passwordCleared
+        } );
     };
 
     renderPasswordHeader = () => {
         if( this.props.isPasswordSet )
-            return <Header as='h3' color='green'>Password Set</Header>;
+            return <Header as='h3' color='green' content={"Password " + (this.state.passwordAlreadySet ? "Updated" : "Set")}/>;
         else
             return <Header as='h3' color='red'>Password { this.state.passwordCleared ? "Cleared" : "Not Set" }</Header>;
     };
