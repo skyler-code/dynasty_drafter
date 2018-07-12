@@ -84,19 +84,15 @@ class ResultsView extends Component {
         this.props.dispatch( resultActions.setSelectedTeam( data.value ) );
     }
 
-    resetRouter(){
-        this.props.dispatch( importActions.resetState() );
-        this.props.dispatch( setupActions.resetState() );
-        this.props.dispatch( draftActions.resetState() );
-        this.props.dispatch( routerActions.resetState() );
-    }
-
     toggleResetConfirm() {
         this.setState( { showConfirm: !this.state.showConfirm } );
     }
 
     confirm() {
-        this.resetRouter();
+        this.props.dispatch( importActions.resetState() );
+        this.props.dispatch( setupActions.resetState() );
+        this.props.dispatch( draftActions.resetState() );
+        this.props.dispatch( routerActions.resetState() );
         this.toggleResetConfirm();
     }
 }

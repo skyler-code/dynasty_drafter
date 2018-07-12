@@ -6,12 +6,13 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import { connect } from 'react-redux';
-import { Tab, Grid } from 'semantic-ui-react';
+import { Tab, Grid, Button } from 'semantic-ui-react';
 import * as setupSelectors from "../store/setup/reducer";
 import * as setupActions from "../store/setup/actions";
 import DraftPreview from "../components/DraftPreview";
 import DraftOptions from "../components/DraftOptions";
 import DraftOrderSorter from "../components/DraftOrderSorter";
+import ConfirmModal from "../components/ConfirmModal";
 
 class SetupView extends Component {
 
@@ -24,6 +25,11 @@ class SetupView extends Component {
         if( ( !this.props.draftOrder || !this.props.draftOrder.length) )
             this.props.dispatch( setupActions.getInitialDraftInfo() );
     }
+
+    state = {
+        showConfirm: false,
+        activeIndex: 0
+    };
 
     render() {
         const panes = [
@@ -75,12 +81,19 @@ class SetupView extends Component {
         ];
         return (
             <div>
-                <Tab panes={panes} renderActiveOnly={false} onTabChange={this.onTabChange}/>
+                <Tab panes={panes} activeIndex={this.state.activeIndex} renderActiveOnly={false} onTabChange={this.onTabChange}/><br/>
+                <Button content='Reset Draft Options' onClick={() => this.toggleResetConfirm()}/>
+                <ConfirmModal
+                    showConfirmModal={this.state.showConfirm}
+                    clickFunction={this.confirm}
+                    confirmMessage='Reset Draft Options'
+                    toggleConfirmModal={this.toggleResetConfirm}/>
             </div>
         );
     }
 
     onTabChange( e, t ){
+        this.setState( { activeIndex: t.activeIndex } );
         if( t.activeIndex && !this.props.draftArray.length )
              this.props.dispatch( setupActions.createDraftArray() );
         else if ( !t.activeIndex )
@@ -125,6 +138,17 @@ class SetupView extends Component {
 
     toggleConfirmWindow(){
         this.props.dispatch( setupActions.toggleConfirmModal() );
+    }
+
+    toggleResetConfirm() {
+        this.setState( { showConfirm: !this.state.showConfirm } );
+    }
+
+    confirm() {
+        this.setState( { activeIndex: 0 } );
+        this.props.dispatch( setupActions.resetState() );
+        this.props.dispatch( setupActions.getInitialDraftInfo() );
+        this.toggleResetConfirm();
     }
 
 }
