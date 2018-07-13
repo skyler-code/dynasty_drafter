@@ -16,19 +16,17 @@ export default class ExportTab extends Component {
     render() {
         return (
             <div className="ExportTab">
-                <div>
-                    <Form>
-                        <Form.TextArea
-                            rows='6'
-                            width='6'
-                            value={this.props.draftResultsCSV}
-                            readOnly/>
-                        <Form.Button
-                            primary
-                            onClick={() =>  this.download()}
-                            content='Download CSV'/>
-                    </Form>
-                </div>
+                <Form>
+                    <Form.TextArea
+                        rows='6'
+                        width='6'
+                        value={this.props.draftResultsCSV}
+                        readOnly/>
+                    <Form.Button
+                        primary
+                        onClick={() =>  this.download()}
+                        content='Download CSV'/>
+                </Form>
             </div>
         );
     }

@@ -13,28 +13,22 @@ export default class DraftOrderSorter extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-    }
-
     renderEditable(cellInfo) {
-    return (
-      <div
-        style={{ backgroundColor: "#fafafa" }}
-        contentEditable
-        suppressContentEditableWarning
-        onBlur={e => {
-          const draftOrder = [...this.props.draftOrder];
-          const cell = _.cloneDeep(draftOrder[cellInfo.index]);
-          cell[cellInfo.column.id] = e.target.innerHTML;
-          draftOrder[cellInfo.index] = cell;
-          this.props.updateDraftOrder( draftOrder );
-        }}
-        dangerouslySetInnerHTML={{
-          __html: this.props.draftOrder[cellInfo.index][cellInfo.column.id]
-        }}
-      />
-    );
-  }
+        return <div
+                    style={{ backgroundColor: "#fafafa" }}
+                    contentEditable
+                    suppressContentEditableWarning
+                    onBlur={e => {
+                        const draftOrder = [...this.props.draftOrder];
+                        const cell = _.cloneDeep(draftOrder[cellInfo.index]);
+                        cell[cellInfo.column.id] = e.target.innerHTML;
+                        draftOrder[cellInfo.index] = cell;
+                        this.props.updateDraftOrder( draftOrder );
+                    }}
+                    dangerouslySetInnerHTML={{
+                        __html: this.props.draftOrder[cellInfo.index][cellInfo.column.id]
+                    }}/>
+    }
 
     render() {
         const columns = [
@@ -72,12 +66,8 @@ export default class DraftOrderSorter extends Component {
                     const downIndex = index + 1 > lastIndex ? 0 : index + 1;
                     return (
                         <div>
-                            <Button icon onClick={() => this.props.shiftDraftOrder( index, upIndex )}>
-                                <Icon name='chevron up' />
-                            </Button>
-                            <Button icon onClick={() => this.props.shiftDraftOrder( index, downIndex )}>
-                                <Icon name='chevron down' />
-                            </Button>
+                            <Button icon={<Icon name='chevron up' />} onClick={() => this.props.shiftDraftOrder( index, upIndex )}/>
+                            <Button icon={<Icon name='chevron down' />} onClick={() => this.props.shiftDraftOrder( index, downIndex )}/>
                         </div>)
                 },
                 sortable: false,

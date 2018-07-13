@@ -25,12 +25,12 @@ export default class ConfirmPasswordModal extends Component {
                     <Modal.Header>Confirm Password</Modal.Header>
                     <Modal.Content>
                         <Input
-                        label='Password'
-                        type='password'
-                        value={this.state.password}
-                        error={this.state.passwordIncorrect}
-                        fluid
-                        onChange={this.handlePasswordChange} />
+                            label='Password'
+                            type='password'
+                            value={this.state.password}
+                            error={this.state.passwordIncorrect}
+                            fluid
+                            onChange={this.handlePasswordChange}/>
                     </Modal.Content>
                     <Modal.Actions>
                         <Button negative onClick={ () => this.props.closeConfirmPasswordModal() } content='Cancel'/>

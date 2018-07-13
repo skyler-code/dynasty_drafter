@@ -10,25 +10,22 @@ export default class CurrentPickInfo extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-    }
-
     render() {
         if(!this.props.isDraftInProgress) return null;
         return (
             <Grid columns={3} divided verticalAlign='middle'>
                 <Grid.Column>
                     <Statistic>
-                        <Statistic.Value>{this.props.timeLeftString}</Statistic.Value>
-                        <Statistic.Label>Time Left</Statistic.Label>
+                        <Statistic.Value content={this.props.timeLeftString}/>
+                        <Statistic.Label content='Time Left'/>
                     </Statistic>
                 </Grid.Column>
                 <Grid.Column>
                     <div>
-                        <Header as='h3'>{ "Pick: "  + this.props.currentPick }</Header>
+                        <Header as='h3' content={"Pick: " + this.props.currentPick}/>
                     </div>
                     <div>
-                        <Header as='h3'>{ "Round: " + this.props.currentRound }</Header>
+                        <Header as='h3' content={"Round: " + this.props.currentRound}/>
                     </div>
                     <div>
                         { "Current Pick: " + this.props.currentPickName }

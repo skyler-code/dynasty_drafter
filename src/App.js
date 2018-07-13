@@ -36,36 +36,28 @@ class App extends Component {
             menuItem: 'Import',
             pane:
                 <Tab.Pane textAlign='center' key='Import'>
-                    <div>
-                        <ImportView/>
-                    </div>
+                    <ImportView/>
                 </Tab.Pane>
         };
         const setupPane = {
             menuItem: 'Setup',
             pane:
                 <Tab.Pane key='Setup'>
-                    <div>
-                        <SetupView/>
-                    </div>
+                    <SetupView/>
                 </Tab.Pane>
         };
         const draftPane = {
             menuItem: 'Draft',
             pane:
                 <Tab.Pane key='Draft'>
-                    <div>
-                        <DraftView/>
-                    </div>
+                    <DraftView/>
                 </Tab.Pane>
         };
         const resultPane = {
             menuItem: 'Results',
             pane:
                 <Tab.Pane key='Results'>
-                    <div>
-                        <ResultsView/>
-                    </div>
+                    <ResultsView/>
                 </Tab.Pane>
         };
 

@@ -17,37 +17,26 @@ export default class PlayerViewer extends Component {
                 <Card>
                     <Card.Content>
                         {this.generatePlayerImage()}
-                        <Card.Header>
-                            {plr.Name || "No Player Selected"}
-                        </Card.Header>
-                        <Card.Meta>
-                            {this.generateMetaInfo()}
-                        </Card.Meta>
-                        <Card.Description>
-                            {this.generatePlayerDescription()}
-                        </Card.Description>
+                        <Card.Header content={plr.Name || "No Player Selected"}/>
+                        <Card.Meta content={this.generateMetaInfo()}/>
+                        <Card.Description content={this.generatePlayerDescription()}/>
                     </Card.Content>
                 </Card>
             </div>
         );
     }
 
-  generatePlayerImage(){
-    if( this.isPlayerSelected() ){
-      return( <Image floated='left' size='mini' src={this.props.selectedPlayer.PhotoUrl} /> )
+    generatePlayerImage(){
+        if( this.isPlayerSelected() )
+            return <Image floated='left' size='mini' src={this.props.selectedPlayer.PhotoUrl} />
     }
-  }
 
-  generateMetaInfo(){
-    if( this.isPlayerSelected() ){
-      const plr = this.props.selectedPlayer;
-      return(
-        <div>
-          {plr.FantasyPosition} {plr.Number ? " #" + plr.Number : ""}
-        </div>
-      );
+    generateMetaInfo(){
+        if( this.isPlayerSelected() ){
+            const plr = this.props.selectedPlayer;
+            return <div> {plr.FantasyPosition} {plr.Number ? " #" + plr.Number : ""} </div>
+        }
     }
-  }
 
     generatePlayerDescription(){
         if( this.isPlayerSelected() ){
@@ -70,18 +59,16 @@ export default class PlayerViewer extends Component {
         }
     }
 
-  selectedPlayer() {
-    return ( this.props.selectedPlayer || {} ) ;
-  }
+    selectedPlayer() {
+        return ( this.props.selectedPlayer || {} ) ;
+    }
 
-  bestAvailablePlayer() {
-    return ( this.props.bestAvailablePlayer || {} ) ;
-  }
+    bestAvailablePlayer() {
+        return ( this.props.bestAvailablePlayer || {} ) ;
+    }
 
-  isPlayerSelected() {
-    return !!this.props.selectedPlayer;
-  }
+    isPlayerSelected() {
+        return !!this.props.selectedPlayer;
+    }
 
 }
-
-// {this.isPlayerSelected() ? "Team Name: " + player.FullTeamName : ""}

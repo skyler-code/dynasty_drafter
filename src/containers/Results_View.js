@@ -22,7 +22,7 @@ class ResultsView extends Component {
     }
 
     componentDidMount() {
-            this.props.dispatch(resultActions.setResultDraftData());
+        this.props.dispatch(resultActions.setResultDraftData());
     }
 
     state = {
@@ -30,17 +30,14 @@ class ResultsView extends Component {
     };
 
     render() {
-
         const panes = [
             {
                 menuItem: 'Draft Results',
                 render: () =>
                     <Tab.Pane>
-                        <div>
-                            <DraftResultsTable
-                                draftResults={this.props.draftResults}
-                                teamDropDownList={this.props.teamDropDownList}/>
-                        </div>
+                        <DraftResultsTable
+                            draftResults={this.props.draftResults}
+                            teamDropDownList={this.props.teamDropDownList}/>
                     </Tab.Pane>
             },
             {
@@ -70,13 +67,12 @@ class ResultsView extends Component {
             <div>
                 <Tab panes={panes} /><br/>
                 <Button content='Reset War Room' onClick={() => this.toggleResetConfirm()}/>
-            <ConfirmModal
-                showConfirmModal={this.state.showConfirm}
-                clickFunction={this.confirm}
-                confirmMessage='Reset War Room'
-                toggleConfirmModal={this.toggleResetConfirm}/>
+                <ConfirmModal
+                    showConfirmModal={this.state.showConfirm}
+                    clickFunction={this.confirm}
+                    confirmMessage='Reset War Room'
+                    toggleConfirmModal={this.toggleResetConfirm}/>
             </div>
-
         );
     }
 

@@ -158,15 +158,13 @@ export default class PlayerPicker extends Component {
                     <Button
                         primary={this.props.canDraftPlayer}
                         disabled={!this.props.canDraftPlayer}
-                        onClick={() => this.finalizePlayerSelection()}>
-                    Draft Player
-                    </Button>
+                        onClick={() => this.finalizePlayerSelection()}
+                        content='Draft Player'/>
                     <Button
                         primary={this.props.canFinalizeSelection}
                         disabled={!this.props.canFinalizeSelection}
-                        onClick={() => this.onDeselectClick()}>
-                        Clear Selection
-                    </Button>
+                        onClick={() => this.onDeselectClick()}
+                        content='Clear Selection'/>
                 </div>
           </div>
         );

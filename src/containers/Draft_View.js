@@ -30,11 +30,10 @@ class DraftView extends Component {
 
     renderSettingsHeader(){
         if( this.props.haveSettingsChanged )
-            return(
-                <Header as='h2' color='red'>
-                Settings have changed. Reset draft to have them reflected here.<Button icon='close' onClick={() => this.props.dispatch(setupActions.resetSettingsChanged())}/>
-                </Header>
-            )
+            return <Header
+                        as='h2'
+                        color='red'
+                        content={<div>Settings have changed. Reset draft to have them reflected here.<Button icon='close' onClick={() => this.resetSettingsChanged()}/></div>}/>
     }
 
     componentWillUnmount(){
@@ -92,7 +91,7 @@ class DraftView extends Component {
                 <Button
                     primary={true}
                     onClick={() => this.passwordCheckRequired( this.resetDraft, 'Reset Draft' )}
-                    content={'Reset'}/>
+                    content='Reset'/>
             <ConfirmPasswordModal
                 showConfirmPassword={this.state.showConfirmPassword}
                 closeConfirmPasswordModal={this.closeConfirmPasswordModal}
@@ -110,9 +109,7 @@ class DraftView extends Component {
     }
 
     renderLoading() {
-        return (
-            <p>Loading....</p>
-        );
+        return <p>Loading....</p>
     }
 
     onRowClick(playerID) {
@@ -149,7 +146,7 @@ class DraftView extends Component {
         this.props.dispatch(routerActions.endDraft());
     }
 
-    tick( ) {
+    tick() {
         if( this.props.isDraftInProgress ) {
             if( this.props.timeLeft > 1 ){
                 this.props.dispatch(draftActions.timerTick());
@@ -188,6 +185,10 @@ class DraftView extends Component {
 
     getDraftToggleString(){
         return this.props.isDraftInProgress ? "Pause" : "Start";
+    }
+
+    resetSettingsChanged(){
+        this.props.dispatch(setupActions.resetSettingsChanged());
     }
 }
 

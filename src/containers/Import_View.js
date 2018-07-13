@@ -18,22 +18,11 @@ class ImportView extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-    }
-
     validLeagueIndicator(){
         if( this.props.successfulImport )
-            return(
-                <div>
-                <Header as='h2'><Icon name='checkmark' color='green' size='large'/>Successful Import!</Header>
-                </div>
-            );
+            return <Header as='h2' content={<div><Icon name='checkmark' color='green' size='large'/>Successful Import!</div>}/>;
         else if (this.props.leagueInput && !this.props.successfulImport)
-            return(
-                <div>
-                <Header as='h2'><Icon name='close' color='red' size='large'/>Invalid Input!</Header>
-                </div>
-            );
+            return <Header as='h2' content={<div><Icon name='close' color='red' size='large'/>Invalid Input!</div>}/>;
     }
 
     showLeaguePreview(){
@@ -41,7 +30,7 @@ class ImportView extends Component {
             return(
                 <div>
                     <Grid.Column width='10' verticalAlign='middle'>
-                        <Header as='h2'>{this.props.leagueName}</Header>
+                        <Header as='h2' content={this.props.leagueName}/>
                         <Divider/>
                         <ImportedLeagueView parsedLeagueView={this.props.parsedLeagueView} teamList={this.props.teamList}/>
                     </Grid.Column>

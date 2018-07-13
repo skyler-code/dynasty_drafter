@@ -61,7 +61,7 @@ class SetupView extends Component {
                                             draftOrder={this.props.draftOrder}
                                             updateDraftOrder={this.updateDraftOrder}
                                             shiftDraftOrder={this.shiftDraftOrder}/>
-                                        </Grid.Column>
+                                    </Grid.Column>
                                 </Grid.Row>
                             </Grid>
                         </div>

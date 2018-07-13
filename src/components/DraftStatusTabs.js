@@ -11,41 +11,25 @@ export default class DraftStatusTabs extends Component {
         autoBind(this);
     }
 
-    componentDidMount() {
-    }
-
-    componentWillUnmount() {
-    }
-
     render() {
-        const currentTeamInfoTabName = this.props.currentPickName + " Team Info";
         const panes = [
             {
                 menuItem: 'Draft Results',
                 render: () =>
                     <Tab.Pane>
-                        <div>
-                            <DraftStatusLeague
-                                draftStatusLeague={this.props.draftStatusLeague}/>
-                        </div>
+                        <DraftStatusLeague
+                            draftStatusLeague={this.props.draftStatusLeague}/>
                     </Tab.Pane>
             },
             {
-                menuItem: currentTeamInfoTabName,
+                menuItem: this.props.currentPickName + " Team Info",
                 render: () =>
                     <Tab.Pane>
-                        <div>
-                            <DraftStatusTeam
-                                draftStatusTeam={this.props.draftStatusTeam}/>
-                        </div>
+                        <DraftStatusTeam
+                            draftStatusTeam={this.props.draftStatusTeam}/>
                     </Tab.Pane>
             }
         ];
-        return (
-            <div>
-                <Tab panes={panes}/>
-            </div>
-        );
+        return <Tab panes={panes}/>
     }
-
 }
