@@ -1,17 +1,12 @@
-// actions are where most of the business logic takes place
-// they are dispatched by views or by other actions
-// there are 3 types of actions:
-//  async thunks - when doing asynchronous business logic like accessing a service
-//  sync thunks - when you have substantial business logic but it's not async
-//  plain object actions - when you just send a plain action to the reducer
-
 import _ from 'lodash';
 import * as types from './actionTypes';
 import * as draftSelectors from './reducer';
 import * as setupSelectors from '../setup/reducer';
 import * as importSelectors from '../leagueImport/reducer';
 import espnParserService from "../../services/espn_parser";
-import fantasyPlayerService from "../../services/fantasy_data";
+import playerData from '../../data/player_data';
+import teamData from '../../data/team_data';
+import * as constants from '../../data/constants';
 
 export function startDraft(){
     return (dispatch, getState) => {
@@ -24,7 +19,7 @@ export function setInitialDraftData(){
     return async(dispatch, getState) => {
         try {
             const isDefenseEnabled = setupSelectors.isDefenseEnabled( getState() );
-            const playerArray = await fantasyPlayerService.getFantasyPlayerData( isDefenseEnabled );
+            const playerArray = getFantasyPlayerData( isDefenseEnabled );
             const leagueArray = importSelectors.getParsedLeague( getState() ) || {};
             const draftArray = setupSelectors.getDraftArray( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
@@ -122,4 +117,36 @@ export function resetState(){
     return (dispatch, getState) => {
         dispatch( { type: types.RESET_STATE } );
     };
+}
+
+function getFantasyPlayerData( defenseEnabled ) {
+    let stripPlayerObject = ( plr ) => {
+        let getFullTeamName = ( teamName ) => {
+            return _.find( teamData, function( team ){
+                return team.Team === teamName;
+            } ).FullTeamName;
+        };
+        return {
+            PlayerID: plr.PlayerID,
+            Team: plr.Team,
+            FullTeamName: getFullTeamName(plr.Team),
+            Number: plr.Number,
+            FirstName: plr.FirstName || "",
+            LastName: plr.LastName || "",
+            Name: plr.Name,
+            Position: plr.Position,
+            FantasyPosition: plr.FantasyPosition,
+            PhotoUrl: plr.PhotoUrl,
+            AverageDraftPosition: plr.AverageDraftPosition,
+            Age: plr.Age,
+            College: plr.College,
+            Experience: plr.Experience,
+            ExperienceString: plr.ExperienceString,
+            hashKey: plr.hashKey || constants.hashPlayerInfo( plr )
+        }
+    };
+    let returnData = _.map( playerData, stripPlayerObject );
+    if( defenseEnabled )
+        returnData = _.concat( returnData, teamData );
+    return returnData;
 }

@@ -34,7 +34,7 @@ export default class DraftOptions extends Component {
 
     render() {
         let isPasswordSet = this.props.isPasswordSet;
-        let passLength = this.state.password.length;
+        let passLength = !!this.state.password.length;
         let clearPass = isPasswordSet && !passLength;
         return (
             <div className="DraftOptions">
