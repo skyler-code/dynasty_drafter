@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
-import { Form, Button, Input, Header, Divider } from 'semantic-ui-react';
+import { Form, Header, Divider, Grid } from 'semantic-ui-react';
 
 export default class DraftOptions extends Component {
 
@@ -26,10 +26,10 @@ export default class DraftOptions extends Component {
     };
 
     renderPasswordHeader = () => {
-        if( this.props.isPasswordSet )
-            return <Header as='h3' color='green' content={"Password " + (this.state.passwordAlreadySet ? "Updated" : "Set")}/>;
-        else
-            return <Header as='h3' color='red'>Password { this.state.passwordCleared ? "Cleared" : "Not Set" }</Header>;
+        let isPassSet = this.props.isPasswordSet;
+        let color = isPassSet ? 'green' : 'red';
+        let content = 'Password ' + ( isPassSet ? ( this.state.passwordAlreadySet ? "Updated" : "Set" ) : ( this.state.passwordCleared ? "Cleared" : "Not Set" ) );
+        return <Header as='h3' color={color} content={content}/>;
     };
 
     render() {
@@ -83,21 +83,24 @@ export default class DraftOptions extends Component {
                             checked={isPasswordSet || this.props.isConfirmModalEnabled}
                             onChange={this.toggleConfirmWindow}/>
                     </Form.Group>
+                    <Divider/>
+                    {this.renderPasswordHeader()}<br/>
+                    <Grid className="centered">
+                        <Form.Group>
+                            <Form.Input
+                                placeholder='Admin Password'
+                                type='password'
+                                value={this.state.password}
+                                onChange={this.handlePasswordChange}/>
+                            <Form.Button
+                                content={clearPass ? "Clear" : isPasswordSet ? "Update" : "Set"}
+                                primary={passLength}
+                                secondary={clearPass}
+                                onClick={()=> this.savePassword()}
+                                disabled={!passLength && !isPasswordSet}/>
+                        </Form.Group>
+                    </Grid>
                 </Form>
-                <Divider/>
-                {this.renderPasswordHeader()}
-                <Input
-                    label='Admin Password'
-                    type='password'
-                    fluid
-                    value={this.state.password}
-                    onChange={this.handlePasswordChange} /><br/>
-                <Button compact
-                    content={clearPass ? "Clear" : isPasswordSet ? "Update" : "Set"}
-                    primary={passLength}
-                    secondary={clearPass}
-                    onClick={()=> this.savePassword()}
-                    disabled={!passLength && !isPasswordSet}/>
             </div>
         );
     }
