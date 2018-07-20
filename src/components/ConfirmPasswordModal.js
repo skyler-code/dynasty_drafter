@@ -17,12 +17,12 @@ export default class ConfirmPasswordModal extends Component {
     render() {
         return (
                 <Modal
-                open={this.props.showConfirmPassword}
-                closeOnEscape={true}
-                closeOnRootNodeClick={true}
-                size='mini'
-                onClose={() => this.props.closeConfirmPasswordModal()}>
-                    <Modal.Header>Confirm Password</Modal.Header>
+                    open={this.props.showConfirmPassword}
+                    closeOnEscape={true}
+                    closeOnRootNodeClick={true}
+                    size='mini'
+                    onClose={() => this.props.closeConfirmPasswordModal()}>
+                    <Modal.Header content='Confirm Password'/>
                     <Modal.Content>
                         <Input
                             label='Password'

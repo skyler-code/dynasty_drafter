@@ -44,14 +44,13 @@ export default class DraftPreview extends Component {
                 id: "newOwner",
                 accessor: "Traded_To_Hash_Key",
                 Cell: (row) => {
-                   return( <select
-                      onChange={event => this.handlePickTrade(row.index, event.target.value)}
-                      style={{ width: "100%" }}
-                      value={row.value}
-                    >
-                    <option key="no" value=""/>
-                    { this.generateFilter( this.props.teamNames, row.original.Original_Owner_Hash_Key ) }
-                    </select> )
+                    return <select
+                            onChange={event => this.handlePickTrade(row.index, event.target.value)}
+                            style={{ width: "100%" }}
+                            value={row.value}>
+                            <option key="no" value=""/>
+                            { this.generateFilter( this.props.teamNames, row.original.Original_Owner_Hash_Key ) }
+                        </select>
                 },
                 sortable: false,
                 minWidth: 15

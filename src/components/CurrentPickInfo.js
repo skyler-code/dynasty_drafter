@@ -21,18 +21,15 @@ export default class CurrentPickInfo extends Component {
                     </Statistic>
                 </Grid.Column>
                 <Grid.Column>
-                    <div>
-                        <Header as='h3' content={"Pick: " + this.props.currentPick}/>
-                    </div>
-                    <div>
-                        <Header as='h3' content={"Round: " + this.props.currentRound}/>
-                    </div>
-                    <div>
-                        { "Current Pick: " + this.props.currentPickName }
-                    </div>
-                    <div>
+                        <Header as='h3'
+                                content={
+                                    <div>
+                                        {"Pick: " + this.props.currentPick}<br/>
+                                        {"Round: " + this.props.currentRound}
+                                    </div>
+                                }/>
+                        { "Current Pick: " + this.props.currentPickName }<br/>
                         { this.props.nextPickName ? "Next Pick: " + this.props.nextPickName : "" }
-                    </div>
                 </Grid.Column>
                 <Grid.Column>
                     <PlayerViewer

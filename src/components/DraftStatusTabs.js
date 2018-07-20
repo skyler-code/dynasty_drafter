@@ -16,18 +16,12 @@ export default class DraftStatusTabs extends Component {
             {
                 menuItem: 'Draft Results',
                 render: () =>
-                    <Tab.Pane>
-                        <DraftStatusLeague
-                            draftStatusLeague={this.props.draftStatusLeague}/>
-                    </Tab.Pane>
+                    <Tab.Pane content={<DraftStatusLeague draftStatusLeague={this.props.draftStatusLeague}/>}/>
             },
             {
                 menuItem: this.props.currentPickName + " Team Info",
                 render: () =>
-                    <Tab.Pane>
-                        <DraftStatusTeam
-                            draftStatusTeam={this.props.draftStatusTeam}/>
-                    </Tab.Pane>
+                    <Tab.Pane content={<DraftStatusTeam draftStatusTeam={this.props.draftStatusTeam}/>}/>
             }
         ];
         return <Tab panes={panes}/>

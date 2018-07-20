@@ -35,30 +35,22 @@ class App extends Component {
         const importPane = {
             menuItem: 'Import',
             pane:
-                <Tab.Pane textAlign='center' key='Import'>
-                    <ImportView/>
-                </Tab.Pane>
+                <Tab.Pane textAlign='center' key='Import' content={<ImportView/>}/>
         };
         const setupPane = {
             menuItem: 'Setup',
             pane:
-                <Tab.Pane key='Setup'>
-                    <SetupView/>
-                </Tab.Pane>
+                <Tab.Pane key='Setup' content={<SetupView/>}/>
         };
         const draftPane = {
             menuItem: 'Draft',
             pane:
-                <Tab.Pane key='Draft'>
-                    <DraftView/>
-                </Tab.Pane>
+                <Tab.Pane key='Draft' content={<DraftView/>}/>
         };
         const resultPane = {
             menuItem: 'Results',
             pane:
-                <Tab.Pane key='Results'>
-                    <ResultsView/>
-                </Tab.Pane>
+                <Tab.Pane key='Results' content={<ResultsView/>}/>
         };
 
         let panes = [];
