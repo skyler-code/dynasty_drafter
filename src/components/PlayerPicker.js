@@ -1,8 +1,3 @@
-// components are "dumb" react components that are not aware of redux
-// they receive data from their parents through regular react props
-// they are allowed to have local component state and view logic
-// use them to avoid having view logic & local component state in "smart" components
-
 import React, { Component } from 'react';
 import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
@@ -83,12 +78,10 @@ export default class PlayerPicker extends Component {
                 },
                 Filter: ({ filter, onChange }) =>
                     <select
-                          onChange={event => onChange(event.target.value)}
-                          style={{ width: "100%" }}
-                          value={filter ? filter.value : "all"}
-                    >
-                        <option key="all" value="all">Show All</option>
-                        { this.generateFilter( constants.NFL_TEAMS ) }
+                        onChange={event => onChange(event.target.value)}
+                        style={{ width: "100%" }}
+                        value={filter ? filter.value : "all"}>
+                        {this.generateFilter( constants.NFL_TEAMS )}
                     </select>
             },
             {
@@ -103,9 +96,8 @@ export default class PlayerPicker extends Component {
                     <select
                         onChange={event => onChange(event.target.value)}
                         style={{ width: "100%" }}
-                        value={filter ? filter.value : "all"} >
-                        <option key="all" value="all">Show All</option>
-                        { this.generateFilter( _without( constants.PLAYER_POSITIONS, this.props.isDefenseEnabled ? null : 'D/ST' ) ) }
+                        value={filter ? filter.value : "all"}>
+                        {this.generateFilter( _without( constants.PLAYER_POSITIONS, this.props.isDefenseEnabled ? null : 'D/ST' ) )}
                     </select>
             },
             {
@@ -141,14 +133,13 @@ export default class PlayerPicker extends Component {
                     resizable={false}
                     className="-striped -highlight"
                     defaultSorted={ [ { id: "adp", desc: false } ] }
-                    getTrProps={(state, rowInfo, column) => {
+                    getTrProps={(state, rowInfo) => {
                     rowInfo = rowInfo || {};
-                    const selected = this.isSelected( rowInfo.original );
                         return {
                             style: {
-                                backgroundColor : selected ? '#c0f0ff' : null
+                                backgroundColor : this.isSelected( rowInfo.original ) ? '#c0f0ff' : null
                             },
-                            onClick: (e) => {
+                            onClick: () => {
                                 this.onRowClick(rowInfo.original.PlayerID);
                             }
                         }
@@ -193,6 +184,6 @@ export default class PlayerPicker extends Component {
     }
 
     generateFilter( data ) {
-        return ( data || [] ).map( ( x ) => <option key={x} value={x}>{x}</option> )
+        return [<option key="all" value="all">Show All</option>].concat( ( data || [] ).map( ( x ) => <option key={x} value={x}>{x}</option> ) );
     }
 }

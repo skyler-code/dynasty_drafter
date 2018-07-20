@@ -19,7 +19,7 @@ export function makeDraftTrade( index, tradedTo ){
         let draftArray = _.cloneDeep(setupSelectors.getDraftArray(getState()));
         const draftOrder = setupSelectors.getDraftOrderForView(getState());
         let pick = _.cloneDeep(draftArray[index]);
-        pick.Traded_To = _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } );
+        pick.Traded_To = tradedTo ? _.find( draftOrder.teamNames, function( team ){ return team.hashKey === Number( tradedTo ); } ) : undefined;
         pick.ownerHashKey = ( pick.Traded_To || pick.Original_Owner ).hashKey;
         draftArray[index] = pick;
         dispatch( { type: types.DRAFT_ARRAY_CHANGED, draftArray: draftArray } );
