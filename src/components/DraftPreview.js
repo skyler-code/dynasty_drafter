@@ -20,7 +20,6 @@ export default class DraftPreview extends Component {
                 Cell: (row) => {
                     return <div>{~~( row.index / this.props.numOfTeams )+1}</div>
                 },
-                sortable: false,
                 minWidth: 5
             },
             {
@@ -29,14 +28,12 @@ export default class DraftPreview extends Component {
                     return <div>{row.index + 1}</div>
                 },
                 id: "viewIndex",
-                sortable: false,
                 minWidth: 7
             },
             {
                 Header: "Team",
                 id: "originalOwner",
                 accessor: "Original_Owner_Name",
-                sortable: false,
                 minWidth: 15
             },
             {
@@ -52,7 +49,6 @@ export default class DraftPreview extends Component {
                             { this.generateFilter( this.props.teamNames, row.original.Original_Owner_Hash_Key ) }
                         </select>
                 },
-                sortable: false,
                 minWidth: 15
             }
         ];

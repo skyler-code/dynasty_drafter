@@ -38,7 +38,6 @@ export default class DraftOrderSorter extends Component {
                     return <div>{row.index + 1}</div>
                 },
                 id: "index",
-                sortable: false,
                 minWidth: 3
             },
             {
@@ -46,14 +45,12 @@ export default class DraftOrderSorter extends Component {
                 id: "teamName",
                 accessor: "teamName",
                 Cell: this.renderEditable,
-                sortable: false,
                 minWidth: 15
             },
             {
                 Header: "Record",
                 id: "record",
                 accessor: t => t.record.recordString,
-                sortable: false,
                 minWidth: 3
             },
             {
@@ -70,7 +67,6 @@ export default class DraftOrderSorter extends Component {
                             <Button icon={<Icon name='chevron down' />} onClick={() => this.props.shiftDraftOrder( index, downIndex )}/>
                         </div>)
                 },
-                sortable: false,
                 minWidth: 5
             }
         ];

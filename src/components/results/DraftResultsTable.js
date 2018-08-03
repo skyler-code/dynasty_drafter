@@ -12,12 +12,20 @@ export default class DraftResultsTable extends Component {
     render() {
         const columns = [
             {
+                Header: "Round",
+                id: "round",
+                Cell: (row) => {
+                    return <div>{~~( row.index / this.props.numOfTeams )+1}</div>
+                },
+                minWidth: 8
+            },
+            {
                 Header: "#",
                 Cell: (row) => {
                     return <div>{row.viewIndex + 1}</div>
                 },
                 id: "viewIndex",
-                minWidth: 15
+                minWidth: 8
             },
             {
                 Header: "Player",

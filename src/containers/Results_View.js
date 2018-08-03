@@ -37,7 +37,8 @@ class ResultsView extends Component {
                     <Tab.Pane>
                         <DraftResultsTable
                             draftResults={this.props.draftResults}
-                            teamDropDownList={this.props.teamDropDownList}/>
+                            teamDropDownList={this.props.teamDropDownList}
+                            numOfTeams={this.props.numOfTeams}/>
                     </Tab.Pane>
             },
             {
@@ -100,6 +101,7 @@ function mapStateToProps(state) {
         teamDropDownList: resultSelectors.getTeamList(state),
         selectedTeam: resultSelectors.getSelectedTeam(state),
         selectedTeamStatus: resultSelectors.getSelectedTeamInfo(state),
+        numOfTeams: resultSelectors.getNumberOfTeams(state),
         draftResults: resultSelectors.getDraftResultsTable(state),
         draftResultsCSV: resultSelectors.getDraftResultCSV(state),
         formatDraftResultsCSVName: resultSelectors.formatDraftResultsCSVName(state),

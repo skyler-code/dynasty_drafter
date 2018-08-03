@@ -53,6 +53,10 @@ export function getTeamList(state) {
     } );
 }
 
+export function getNumberOfTeams(state){
+    return ( state.results.finalLeagueArray || {} ).teamCount;
+}
+
 export function getSelectedTeamInfo(state){
     let draftArray = state.results.finalDraftArray;
     let leagueArray = (state.results.finalLeagueArray || {}).teamInfo;
