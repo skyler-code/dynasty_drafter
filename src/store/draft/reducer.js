@@ -31,7 +31,6 @@ export default function reduce(state = initialState, action = {}) {
             return state.merge({
                 availablePlayers: action.availablePlayers,
                 bestAvailablePlayer: action.bestAvailablePlayer,
-                leagueArray: action.leagueArray,
                 draftArray: action.draftArray,
                 selectedPlayer: undefined,
                 currentPick: action.currentPick,

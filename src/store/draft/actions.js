@@ -86,7 +86,6 @@ export function endDraft() {
 
 function makePick( state ) {
     const draftArray = draftSelectors.getDraftArrayForEdit(state);
-    const leagueArray = draftSelectors.getLeagueArrayForEdit(state);
     const selectedPlayer = draftSelectors.getSelectedOrBestPlayer(state);
     const timeLeft = draftSelectors.getSecondsPerPick(state);
     const availablePlayers = _.filter( draftSelectors.getAvailablePlayersForView(state), function(p){ return p.hashKey !== selectedPlayer.hashKey; } );
@@ -105,7 +104,6 @@ function makePick( state ) {
     return {
         availablePlayers: availablePlayers,
         bestAvailablePlayer: bestAvailablePlayer,
-        leagueArray: leagueArray,
         draftArray: draftArray,
         currentPick: currentPick,
         timeLeft: timeLeft,
