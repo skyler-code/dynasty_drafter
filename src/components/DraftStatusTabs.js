@@ -21,7 +21,9 @@ export default class DraftStatusTabs extends Component {
             {
                 menuItem: this.props.currentPickName + " Team Info",
                 render: () =>
-                    <Tab.Pane content={<DraftStatusTeam draftStatusTeam={this.props.draftStatusTeam}/>}/>
+                    <Tab.Pane content={<DraftStatusTeam
+                                        draftStatusTeam={this.props.draftStatusTeam}
+                                        isDefenseEnabled={this.props.isDefenseEnabled}/>}/>
             }
         ];
         return <Tab panes={panes}/>

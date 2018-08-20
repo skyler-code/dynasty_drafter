@@ -3,6 +3,8 @@ import autoBind from 'react-autobind';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import '../css/DraftStatusLeague.css';
+import _without from "lodash/without";
+import * as constants from '../data/constants';
 
 export default class DraftStatusTeam extends Component {
     constructor(props) {
@@ -29,13 +31,35 @@ export default class DraftStatusTeam extends Component {
                 Header: "Team",
                 id: "team",
                 accessor: "Team",
-                minWidth: 15
+                minWidth: 25,
+                filterable: true,
+                filterMethod: (filter, row) => {
+                    return filter.value === "all" || row[filter.id] === filter.value;
+                },
+                Filter: ({ filter, onChange }) =>
+                    <select
+                        onChange={event => onChange(event.target.value)}
+                        style={{ width: "100%" }}
+                        value={filter ? filter.value : "all"}>
+                        {this.generateFilter( constants.NFL_TEAMS )}
+                    </select>
             },
             {
                 Header: "Position",
                 id: "position",
                 accessor: "FantasyPosition",
-                minWidth: 15
+                minWidth: 25,
+                filterable: true,
+                filterMethod: (filter, row) => {
+                    return filter.value === "all" || row[filter.id] === filter.value;
+                },
+                Filter: ({ filter, onChange }) =>
+                    <select
+                        onChange={event => onChange(event.target.value)}
+                        style={{ width: "100%" }}
+                        value={filter ? filter.value : "all"}>
+                        {this.generateFilter( _without( constants.PLAYER_POSITIONS, this.props.isDefenseEnabled ? null : 'D/ST' ) )}
+                    </select>
             }
         ];
         return (
@@ -52,5 +76,9 @@ export default class DraftStatusTeam extends Component {
                     showPagination={false}/>
             </div>
         );
+    }
+
+    generateFilter( data ) {
+        return [<option key="all" value="all">Show All</option>].concat( ( data || [] ).map( ( x ) => <option key={x} value={x}>{x}</option> ) );
     }
 }
