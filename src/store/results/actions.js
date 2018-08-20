@@ -10,10 +10,14 @@ export function setResultDraftData(){
         finalLeagueArray.teamInfo = setupSelectors.getDraftOrderForView( getState() ).draftOrder;
         const finalDraftArray = draftSelectors.getDraftArrayForEdit( getState() );
         const selectedTeam = _.first( finalLeagueArray.teamInfo ).hashKey;
+        const freeAgents = _.cloneDeep( draftSelectors.getAvailablePlayers( getState() ) );
+        const isDefenseEnabled = draftSelectors.isDefenseEnabled( getState() );
         dispatch( { type: types.SET_RESULT_DATA,
                     finalLeagueArray: finalLeagueArray,
                     finalDraftArray: finalDraftArray,
-                    selectedTeam: selectedTeam
+                    selectedTeam: selectedTeam,
+                    freeAgents: freeAgents,
+                    isDefenseEnabled: isDefenseEnabled
         } );
     };
 }

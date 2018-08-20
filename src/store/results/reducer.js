@@ -7,7 +7,8 @@ import moment from 'moment';
 const initialState = Immutable({
     finalLeagueArray: undefined,
     finalDraftArray: undefined,
-    selectedTeam: undefined
+    selectedTeam: undefined,
+    freeAgents: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
@@ -16,7 +17,9 @@ export default function reduce(state = initialState, action = {}) {
             return state.merge({
                 finalLeagueArray: action.finalLeagueArray,
                 finalDraftArray: action.finalDraftArray,
-                selectedTeam: action.selectedTeam
+                selectedTeam: action.selectedTeam,
+                freeAgents: action.freeAgents,
+                isDefenseEnabled: action.isDefenseEnabled
             });
         case types.SET_SELECTED_TEAM:
             return state.merge({
@@ -107,4 +110,12 @@ export function getDraftResultCSV(state){
     } );
     if( mappedResults.length )
         return json2csv.parse( mappedResults );
+}
+
+export function getFreeAgents(state){
+    return _.clone( state.results.freeAgents );
+}
+
+export function isDefenseEnabled(state){
+    return state.results.isDefenseEnabled;
 }

@@ -10,6 +10,7 @@ import * as resultSelectors from '../store/results/reducer';
 import * as routerActions from "../store/router/actions";
 import TeamStatusTable from '../components/results/TeamStatusTable';
 import DraftResultsTable from '../components/results/DraftResultsTable';
+import DraftResultsFreeAgents from '../components/results/DraftResultsFreeAgents';
 import ExportTab from '../components/results/ExportTab';
 import ConfirmModal from '../components/ConfirmModal';
 import * as setupSelectors from "../store/setup/reducer";
@@ -52,6 +53,15 @@ class ResultsView extends Component {
                             <TeamStatusTable
                                 selectedTeamStatus={this.props.selectedTeamStatus}/>
                         </div>
+                    </Tab.Pane>
+            },
+            {
+                menuItem: 'Free Agents',
+                render: () =>
+                    <Tab.Pane>
+                        <DraftResultsFreeAgents
+                            freeAgents={this.props.freeAgents}
+                            isDefenseEnabled={this.props.isDefenseEnabled}/>
                     </Tab.Pane>
             },
             {
@@ -106,7 +116,8 @@ function mapStateToProps(state) {
         draftResultsCSV: resultSelectors.getDraftResultCSV(state),
         formatDraftResultsCSVName: resultSelectors.formatDraftResultsCSVName(state),
         isPasswordSet: setupSelectors.isPasswordSet(state),
-        checkPassword: setupSelectors.checkPassword(state)
+        checkPassword: setupSelectors.checkPassword(state),
+        freeAgents: resultSelectors.getFreeAgents(state)
     };
 }
 
