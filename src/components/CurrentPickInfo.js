@@ -11,7 +11,6 @@ export default class CurrentPickInfo extends Component {
     }
 
     render() {
-        if(!this.props.isDraftInProgress) return null;
         return (
             <Grid columns={3} divided verticalAlign='middle'>
                 <Grid.Column>
