@@ -37,6 +37,15 @@ export default function reduce(state = initialState, action = {}) {
                 timeLeft: action.timeLeft,
                 draftInProgress: action.draftInProgress
             });
+    case types.UNDO_PLAYER_SELECTION:
+            return state.merge({
+                availablePlayers: action.availablePlayers,
+                bestAvailablePlayer: action.bestAvailablePlayer,
+                draftArray: action.draftArray,
+                selectedPlayer: undefined,
+                currentPick: action.currentPick,
+                timeLeft: action.timeLeft
+            });
         case types.CLEAR_PLAYER_SELECTION:
             return state.merge({
                 selectedPlayer: undefined
@@ -212,4 +221,18 @@ export function getTimeLeftInfo(state){
 
 export function isDefenseEnabled(state){
     return state.draft.isDefenseEnabled;
+}
+
+export function canUndoLastPick(state){
+    return !!( ( _.first( state.draft.draftArray ) || {} ).Player_Picked );
+}
+
+export function undoLastPickString(state){
+    const draftArray = state.draft.draftArray || [];
+    const currentPick = state.draft.currentPick;
+    const lastPickNum =  currentPick > 0 ? currentPick - 1 : 0;
+    const lastPick = draftArray[ lastPickNum ] || {};
+    const lastPickName = ( lastPick.Traded_To || lastPick.Original_Owner || {} ).teamName;
+    const playerName = (lastPick.Player_Picked || {} ).Name || "";
+    return "Undo " + lastPickName + "'s pick of " + playerName + "?";
 }

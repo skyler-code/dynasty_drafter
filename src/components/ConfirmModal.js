@@ -17,6 +17,7 @@ export default class ConfirmModal extends Component {
                     onCancel={this.props.toggleConfirmModal}
                     onConfirm={this.confirm}
                     confirmButton={this.props.confirmMessage}
+                    content={this.props.topConfirmMessage}
                     size='mini'/>
             </div>
         );

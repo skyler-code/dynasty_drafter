@@ -62,6 +62,19 @@ export function finalizePlayerSelection() {
     };
 }
 
+export function undoPlayerSelection() {
+    return (dispatch, getState) => {
+        const pickInfo = undoLastPick(getState());
+        dispatch( { type: types.UNDO_PLAYER_SELECTION,
+                    availablePlayers: pickInfo.availablePlayers,
+                    bestAvailablePlayer: pickInfo.bestAvailablePlayer,
+                    draftArray: pickInfo.draftArray,
+                    selectedPlayer: undefined,
+                    currentPick: pickInfo.currentPick,
+                    timeLeft: pickInfo.timeLeft } );
+    };
+}
+
 export function clearPlayerSelection() {
     return (dispatch, getState) => {
         dispatch( { type: types.CLEAR_PLAYER_SELECTION } );
@@ -108,6 +121,28 @@ function makePick( state ) {
         currentPick: currentPick,
         timeLeft: timeLeft,
         draftInProgress: draftInProgress
+    }
+}
+
+function undoLastPick( state ) {
+    const draftArray = draftSelectors.getDraftArrayForEdit(state);
+    const pickToUndo = draftSelectors.getCurrentPick(state) - 1;
+    let lastPick = draftArray[pickToUndo];
+    const lastPickedPlayer = draftArray[pickToUndo].Player_Picked;
+    const timeLeft = draftSelectors.getSecondsPerPick( state );
+    const availablePlayers = draftSelectors.getAvailablePlayersForView( state );
+    availablePlayers.push(lastPickedPlayer);
+    const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+
+    lastPick.Player_Picked = undefined;
+    draftArray[pickToUndo] = lastPick;
+
+    return {
+        availablePlayers: availablePlayers,
+        bestAvailablePlayer: bestAvailablePlayer,
+        draftArray: draftArray,
+        currentPick: pickToUndo,
+        timeLeft: timeLeft
     }
 }
 

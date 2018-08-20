@@ -25,7 +25,8 @@ class DraftView extends Component {
         showConfirmPassword: false,
         showConfirmModal: false,
         clickFunction: undefined,
-        confirmMessage: ""
+        confirmMessage: "",
+        topConfirmMessage: ""
     };
 
     renderSettingsHeader(){
@@ -92,6 +93,11 @@ class DraftView extends Component {
                     primary={true}
                     onClick={() => this.passwordCheckRequired( this.resetDraft, 'Reset Draft' )}
                     content='Reset'/>
+                <Button
+                    primary={this.props.canUndoLastPick}
+                    disabled={!this.props.canUndoLastPick}
+                    onClick={() => this.passwordCheckRequired( this.undoLastPick, 'Undo', this.props.undoLastPickString )}
+                    content='Undo Last Pick'/>
             <ConfirmPasswordModal
                 showConfirmPassword={this.state.showConfirmPassword}
                 closeConfirmPasswordModal={this.closeConfirmPasswordModal}
@@ -102,6 +108,7 @@ class DraftView extends Component {
                 showConfirmModal={this.state.showConfirmModal}
                 clickFunction={this.state.clickFunction}
                 confirmMessage={this.state.confirmMessage}
+                topConfirmMessage={this.state.topConfirmMessage}
                 toggleConfirmModal={this.toggleConfirmModal}/>
             </div>
         </div>
@@ -169,7 +176,7 @@ class DraftView extends Component {
         this.setState({timer});
     }
 
-    passwordCheckRequired( clickFunction, confirmMessage ) {
+    passwordCheckRequired( clickFunction, confirmMessage, topConfirmMessage ) {
         const passSet = this.props.isPasswordSet;
         const showConfirmModal = !passSet && this.props.isConfirmModalEnabled;
         if( passSet || showConfirmModal )
@@ -178,6 +185,7 @@ class DraftView extends Component {
                 , showConfirmModal: showConfirmModal
                 , clickFunction: clickFunction
                 , confirmMessage: confirmMessage
+                , topConfirmMessage: topConfirmMessage
             } );
         if( !passSet && !showConfirmModal )
             clickFunction();
@@ -189,6 +197,10 @@ class DraftView extends Component {
 
     resetSettingsChanged(){
         this.props.dispatch(setupActions.resetSettingsChanged());
+    }
+
+    undoLastPick(){
+        this.props.dispatch( draftActions.undoPlayerSelection() )
     }
 }
 
@@ -216,7 +228,9 @@ class DraftView extends Component {
             haveSettingsChanged: setupSelectors.haveSettingsChanged(state),
             isPasswordSet: setupSelectors.isPasswordSet(state),
             checkPassword: setupSelectors.checkPassword(state),
-            isConfirmModalEnabled: setupSelectors.isConfirmModalEnabled(state)
+            isConfirmModalEnabled: setupSelectors.isConfirmModalEnabled(state),
+            canUndoLastPick: draftSelectors.canUndoLastPick(state),
+            undoLastPickString: draftSelectors.undoLastPickString(state)
         };
     }
 
