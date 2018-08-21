@@ -34,19 +34,18 @@ export default class PlayerPicker extends Component {
                 minWidth: 15
             },
             {
-                Header: "ADP",
+                Header: "Standard",
                 id:"adp",
                 accessor: "AverageDraftPosition",
-                minWidth: 15,
-                sortMethod: (a, b) => {
-                    if(!a && b){
-                        return 1;
-                    }
-                    if(a && !b){
-                        return -1;
-                    }
-                    return a > b ? 1 : -1;
-                }
+                minWidth: 17,
+                sortMethod: this.sort
+            },
+            {
+                Header: "Dynasty",
+                id:"dynastyRanking",
+                accessor: "DynastyRanking",
+                minWidth: 17,
+                sortMethod: this.sort
             },
             {
                 Header: "Name",
@@ -61,15 +60,7 @@ export default class PlayerPicker extends Component {
                 Header: "Team",
                 accessor: "Team",
                 minWidth: 25,
-                sortMethod: (a, b) => {
-                    if(!a && b){
-                        return 1;
-                    }
-                    if(a && !b){
-                        return -1;
-                    }
-                    return a > b ? 1 : -1;
-                },
+                sortMethod: this.sort,
                 filterable: true,
                 filterMethod: (filter, row) => {
                     return filter.value === "all" || row[filter.id] === filter.value;
@@ -134,6 +125,16 @@ export default class PlayerPicker extends Component {
                 />
           </div>
         );
+    }
+
+    sort(a, b) {
+        if(!a && b){
+            return 1;
+        }
+        if(a && !b){
+            return -1;
+        }
+        return a > b ? 1 : -1;
     }
 
     generateFilter( data ) {
