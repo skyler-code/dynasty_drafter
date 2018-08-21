@@ -103,7 +103,8 @@ function parsePlayerInfoStr( str )
     if( !isNullOrWhitespace( playerName ) && _.isString(infoStrSplit[0]) && _.isString(infoStrSplit[1]) )
         playerInfo = { Name: playerName, Team: _.first( infoStrSplit ).toUpperCase(), FantasyPosition: infoStrSplit[1] };
     else if ( playerName.includes("D/ST") ){
-        let team = _.find(teamData, function( team ){ return team.Name.includes( playerName ) } );
+        const defName = playerName.substring(0, playerName.indexOf("D/ST") );
+        const team = _.find(teamData, function( team ){ return team.Name.includes( defName ) } );
         playerInfo = { Name: team.Name, Team: team.Team, FantasyPosition: team.FantasyPosition };
     }
     if( playerInfo )
