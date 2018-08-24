@@ -172,6 +172,7 @@ function getFantasyPlayerData( defenseEnabled ) {
             PhotoUrl: plr.PhotoUrl,
             AverageDraftPosition: plr.AverageDraftPosition,
             DynastyRanking: plr.DynastyRanking,
+            Status: plr.Status,
             Age: plr.Age,
             College: plr.College,
             Experience: plr.Experience,

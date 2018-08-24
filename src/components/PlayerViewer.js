@@ -47,6 +47,7 @@ export default class PlayerViewer extends Component {
                     <div>{plr.College ? "College: " + plr.College : ""}</div>
                     <div>{plr.Age ? "Age: " + plr.Age : "" }</div>
                     <div>{plr.ExperienceString ? "Experience: " + plr.ExperienceString : ""}</div>
+                    <div>{plr.Status ? "Status: " + plr.Status : ""}</div>
                 </div>
             );
         } else if ( this.props.isDraftInProgress ) {
