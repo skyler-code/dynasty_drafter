@@ -23,7 +23,7 @@ export function setInitialDraftData(){
             const leagueArray = importSelectors.getParsedLeague( getState() ) || {};
             const draftArray = setupSelectors.getDraftArray( getState() );
             const availablePlayers = espnParserService.getAvailablePlayers( playerArray, leagueArray );
-            const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+            const bestAvailablePlayer = _.minBy( availablePlayers, 'DynastyRanking' );
             const timeLeft = setupSelectors.getSecondsPerPick( getState() );
             dispatch( { type: types.SET_INITIAL_DRAFT_DATA,
                         availablePlayers: availablePlayers,
@@ -105,7 +105,7 @@ function makePick( state ) {
     let currentPickInfo = draftSelectors.getCurrentPickInfo(state);
     let currentPick = draftSelectors.getCurrentPick(state);
     let draftInProgress = true;
-    const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+    const bestAvailablePlayer = _.minBy( availablePlayers, 'DynastyRanking' );
     currentPickInfo.Player_Picked = selectedPlayer;
     draftArray[currentPick] = currentPickInfo;
 
@@ -132,7 +132,7 @@ function undoLastPick( state ) {
     const timeLeft = draftSelectors.getSecondsPerPick( state );
     const availablePlayers = draftSelectors.getAvailablePlayersForView( state );
     availablePlayers.push(lastPickedPlayer);
-    const bestAvailablePlayer = _.minBy( availablePlayers, 'AverageDraftPosition' );
+    const bestAvailablePlayer = _.minBy( availablePlayers, 'DynastyRanking' );
 
     lastPick.Player_Picked = undefined;
     draftArray[pickToUndo] = lastPick;
