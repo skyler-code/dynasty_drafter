@@ -121,7 +121,7 @@ export default class PlayerPicker extends Component {
                     minRows={0}
                     resizable={false}
                     className="-striped -highlight"
-                    defaultSorted={ [ { id: "adp", desc: false } ] }
+                    defaultSorted={ [ { id: "dynastyRanking", desc: false } ] }
                 />
           </div>
         );
