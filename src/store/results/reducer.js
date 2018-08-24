@@ -8,18 +8,20 @@ const initialState = Immutable({
     finalLeagueArray: undefined,
     finalDraftArray: undefined,
     selectedTeam: undefined,
-    freeAgents: undefined
+    freeAgents: undefined,
+    showTrollPane: false
 });
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-        case types.SET_RESULT_DATA:
+    case types.SET_RESULT_DATA:
             return state.merge({
                 finalLeagueArray: action.finalLeagueArray,
                 finalDraftArray: action.finalDraftArray,
                 selectedTeam: action.selectedTeam,
                 freeAgents: action.freeAgents,
-                isDefenseEnabled: action.isDefenseEnabled
+                isDefenseEnabled: action.isDefenseEnabled,
+                showTrollPane: action.showTrollPane
             });
         case types.SET_SELECTED_TEAM:
             return state.merge({
@@ -34,6 +36,10 @@ export default function reduce(state = initialState, action = {}) {
 
 export function getFinalLeagueArray(state) {
     return state.results.finalLeagueArray;
+}
+
+export function showTrollPane(state){
+    return state.results.showTrollPane;
 }
 
 export function getFinalDraftArray(state) {

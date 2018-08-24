@@ -12,12 +12,14 @@ export function setResultDraftData(){
         const selectedTeam = _.first( finalLeagueArray.teamInfo ).hashKey;
         const freeAgents = _.cloneDeep( draftSelectors.getAvailablePlayers( getState() ) );
         const isDefenseEnabled = draftSelectors.isDefenseEnabled( getState() );
+        const showTrollPane = finalLeagueArray.leagueName === "Andrew Outzen Memorial League";
         dispatch( { type: types.SET_RESULT_DATA,
                     finalLeagueArray: finalLeagueArray,
                     finalDraftArray: finalDraftArray,
                     selectedTeam: selectedTeam,
                     freeAgents: freeAgents,
-                    isDefenseEnabled: isDefenseEnabled
+                    isDefenseEnabled: isDefenseEnabled,
+                    showTrollPane: showTrollPane
         } );
     };
 }

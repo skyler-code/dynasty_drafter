@@ -70,7 +70,8 @@ class ResultsView extends Component {
                     <Tab.Pane>
                         <ExportTab
                             draftResultsCSV={this.props.draftResultsCSV}
-                            formatDraftResultsCSVName={this.props.formatDraftResultsCSVName}/>
+                            formatDraftResultsCSVName={this.props.formatDraftResultsCSVName}
+                            showTrollPane={this.props.showTrollPane}/>
                     </Tab.Pane>
             }
         ];
@@ -117,7 +118,8 @@ function mapStateToProps(state) {
         formatDraftResultsCSVName: resultSelectors.formatDraftResultsCSVName(state),
         isPasswordSet: setupSelectors.isPasswordSet(state),
         checkPassword: setupSelectors.checkPassword(state),
-        freeAgents: resultSelectors.getFreeAgents(state)
+        freeAgents: resultSelectors.getFreeAgents(state),
+        showTrollPane: resultSelectors.showTrollPane(state)
     };
 }
 
