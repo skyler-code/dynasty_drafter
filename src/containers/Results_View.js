@@ -7,16 +7,15 @@ import * as importActions from '../store/leagueImport/actions';
 import * as setupActions from '../store/setup/actions';
 import * as draftActions from '../store/draft/actions';
 import * as resultSelectors from '../store/results/reducer';
-import * as routerActions from "../store/router/actions";
+import * as routerActions from '../store/router/actions';
 import TeamStatusTable from '../components/results/TeamStatusTable';
 import DraftResultsTable from '../components/results/DraftResultsTable';
 import DraftResultsFreeAgents from '../components/results/DraftResultsFreeAgents';
 import ExportTab from '../components/results/ExportTab';
 import ConfirmModal from '../components/ConfirmModal';
-import * as setupSelectors from "../store/setup/reducer";
+import * as setupSelectors from '../store/setup/reducer';
 
 class ResultsView extends Component {
-
     constructor(props) {
         super(props);
         autoBind(this);
@@ -34,73 +33,85 @@ class ResultsView extends Component {
         const panes = [
             {
                 menuItem: 'Draft Results',
-                render: () =>
+                render: () => (
                     <Tab.Pane>
                         <DraftResultsTable
                             draftResults={this.props.draftResults}
                             teamDropDownList={this.props.teamDropDownList}
-                            numOfTeams={this.props.numOfTeams}/>
+                            numOfTeams={this.props.numOfTeams}
+                        />
                     </Tab.Pane>
+                )
             },
             {
                 menuItem: 'Team Info',
-                render: () =>
+                render: () => (
                     <Tab.Pane>
                         <div>
-                            <Dropdown selection options={this.props.teamDropDownList} defaultValue={this.props.selectedTeam} onChange={(e, d) => this.onTeamDropDownChange(d)}/>
+                            <Dropdown
+                                selection
+                                options={this.props.teamDropDownList}
+                                defaultValue={this.props.selectedTeam}
+                                onChange={(e, d) => this.onTeamDropDownChange(d)}
+                            />
                         </div>
                         <div>
-                            <TeamStatusTable
-                                selectedTeamStatus={this.props.selectedTeamStatus}/>
+                            <TeamStatusTable selectedTeamStatus={this.props.selectedTeamStatus} />
                         </div>
                     </Tab.Pane>
+                )
             },
             {
                 menuItem: 'Free Agents',
-                render: () =>
+                render: () => (
                     <Tab.Pane>
                         <DraftResultsFreeAgents
                             freeAgents={this.props.freeAgents}
-                            isDefenseEnabled={this.props.isDefenseEnabled}/>
+                            isDefenseEnabled={this.props.isDefenseEnabled}
+                        />
                     </Tab.Pane>
+                )
             },
             {
                 menuItem: 'Export',
-                render: () =>
+                render: () => (
                     <Tab.Pane>
                         <ExportTab
                             draftResultsCSV={this.props.draftResultsCSV}
                             formatDraftResultsCSVName={this.props.formatDraftResultsCSVName}
-                            showTrollPane={this.props.showTrollPane}/>
+                        />
                     </Tab.Pane>
+                )
             }
         ];
         return (
             <div>
-                <Tab panes={panes} /><br/>
-                <Button content='Reset War Room' onClick={() => this.toggleResetConfirm()}/>
+                <Tab panes={panes} />
+                <br />
+                <Button content="Reset War Room" onClick={() => this.toggleResetConfirm()} />
                 <ConfirmModal
                     showConfirmModal={this.state.showConfirm}
                     clickFunction={this.confirm}
-                    confirmMessage='Reset War Room'
-                    toggleConfirmModal={this.toggleResetConfirm}/>
+                    confirmMessage="Reset War Room"
+                    toggleConfirmModal={this.toggleResetConfirm}
+                />
             </div>
         );
     }
 
-    onTeamDropDownChange( data ){
-        this.props.dispatch( resultActions.setSelectedTeam( data.value ) );
+    onTeamDropDownChange(data) {
+        this.props.dispatch(resultActions.setSelectedTeam(data.value));
     }
 
     toggleResetConfirm() {
-        this.setState( { showConfirm: !this.state.showConfirm } );
+        this.setState({ showConfirm: !this.state.showConfirm });
     }
 
     confirm() {
-        this.props.dispatch( importActions.resetState() );
-        this.props.dispatch( setupActions.resetState() );
-        this.props.dispatch( draftActions.resetState() );
-        this.props.dispatch( routerActions.resetState() );
+        this.props.dispatch(importActions.resetState());
+        this.props.dispatch(setupActions.resetState());
+        this.props.dispatch(draftActions.resetState());
+        this.props.dispatch(routerActions.resetState());
         this.toggleResetConfirm();
     }
 }
@@ -118,8 +129,7 @@ function mapStateToProps(state) {
         formatDraftResultsCSVName: resultSelectors.formatDraftResultsCSVName(state),
         isPasswordSet: setupSelectors.isPasswordSet(state),
         checkPassword: setupSelectors.checkPassword(state),
-        freeAgents: resultSelectors.getFreeAgents(state),
-        showTrollPane: resultSelectors.showTrollPane(state)
+        freeAgents: resultSelectors.getFreeAgents(state)
     };
 }
 

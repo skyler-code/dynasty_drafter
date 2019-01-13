@@ -1,5 +1,5 @@
 import Immutable from 'seamless-immutable';
-import * as types from "./actionTypes";
+import * as types from './actionTypes';
 import _ from 'lodash';
 import json2csv from 'json2csv';
 import moment from 'moment';
@@ -8,20 +8,18 @@ const initialState = Immutable({
     finalLeagueArray: undefined,
     finalDraftArray: undefined,
     selectedTeam: undefined,
-    freeAgents: undefined,
-    showTrollPane: false
+    freeAgents: undefined
 });
 
 export default function reduce(state = initialState, action = {}) {
     switch (action.type) {
-    case types.SET_RESULT_DATA:
+        case types.SET_RESULT_DATA:
             return state.merge({
                 finalLeagueArray: action.finalLeagueArray,
                 finalDraftArray: action.finalDraftArray,
                 selectedTeam: action.selectedTeam,
                 freeAgents: action.freeAgents,
-                isDefenseEnabled: action.isDefenseEnabled,
-                showTrollPane: action.showTrollPane
+                isDefenseEnabled: action.isDefenseEnabled
             });
         case types.SET_SELECTED_TEAM:
             return state.merge({
@@ -38,47 +36,42 @@ export function getFinalLeagueArray(state) {
     return state.results.finalLeagueArray;
 }
 
-export function showTrollPane(state){
-    return state.results.showTrollPane;
-}
-
 export function getFinalDraftArray(state) {
     return state.results.finalDraftArray;
 }
 
-export function getSelectedTeam(state){
+export function getSelectedTeam(state) {
     return state.results.selectedTeam;
 }
 
-export function formatDraftResultsCSVName(state){
-    const leagueName = ( ( state.results.finalLeagueArray || {} ).leagueName || '' ).replace(/\s/g, '');
+export function formatDraftResultsCSVName(state) {
+    const leagueName = ((state.results.finalLeagueArray || {}).leagueName || '').replace(/\s/g, '');
     let timestamp = moment().format('MMDDYY-HHmm');
-    return "draft-" + leagueName + "-" + timestamp + ".csv";
+    return 'draft-' + leagueName + '-' + timestamp + '.csv';
 }
 
 export function getTeamList(state) {
-    return _.map( ( state.results.finalLeagueArray || {} ).teamInfo, function( team ){
+    return _.map((state.results.finalLeagueArray || {}).teamInfo, function(team) {
         return { text: team.teamName, key: team.hashKey, value: team.hashKey };
-    } );
+    });
 }
 
-export function getNumberOfTeams(state){
-    return ( state.results.finalLeagueArray || {} ).teamCount;
+export function getNumberOfTeams(state) {
+    return (state.results.finalLeagueArray || {}).teamCount;
 }
 
-export function getSelectedTeamInfo(state){
+export function getSelectedTeamInfo(state) {
     let draftArray = state.results.finalDraftArray;
     let leagueArray = (state.results.finalLeagueArray || {}).teamInfo;
     let selectedTeam = state.results.selectedTeam;
-    if(!leagueArray)
-        return [];
-    let teamFromLeagueArray = _.find( leagueArray, function(team){
+    if (!leagueArray) return [];
+    let teamFromLeagueArray = _.find(leagueArray, function(team) {
         return team.hashKey === selectedTeam;
-    } );
-    let draftPicks = _.filter(draftArray, function(pick){
+    });
+    let draftPicks = _.filter(draftArray, function(pick) {
         return pick.ownerHashKey === selectedTeam && pick.Player_Picked;
-    } );
-    let draftedPlayers = _.map(draftPicks, function(pick){
+    });
+    let draftedPlayers = _.map(draftPicks, function(pick) {
         let plr = pick.Player_Picked;
         let isDefense = plr.FantasyPosition === 'D/ST';
         return {
@@ -87,41 +80,44 @@ export function getSelectedTeamInfo(state){
             FantasyPosition: plr.FantasyPosition
         };
     });
-    return _.concat( teamFromLeagueArray.players, draftedPlayers );
+    return _.concat(teamFromLeagueArray.players, draftedPlayers);
 }
 
-export function getDraftResultsTable(state){
-    return _.map( state.results.finalDraftArray, function( pick ){
+export function getDraftResultsTable(state) {
+    return _.map(state.results.finalDraftArray, function(pick) {
         let plr = pick.Player_Picked;
         let isDefense = plr.FantasyPosition === 'D/ST';
         return {
-            Player: ( isDefense ? plr.FullTeamName : plr.Name ) + " (" + plr.FantasyPosition + ")",
-            Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName,
+            Player: (isDefense ? plr.FullTeamName : plr.Name) + ' (' + plr.FantasyPosition + ')',
+            Team: pick.Traded_To
+                ? pick.Traded_To.teamName + ' (from: ' + pick.Original_Owner.teamName + ')'
+                : pick.Original_Owner.teamName,
             hashKey: pick.ownerHashKey
         };
-    } );
+    });
 }
 
-export function getDraftResultCSV(state){
+export function getDraftResultCSV(state) {
     let currentIndex = 1;
-    let mappedResults = _.map( state.results.finalDraftArray, function( pick ){
+    let mappedResults = _.map(state.results.finalDraftArray, function(pick) {
         let plr = pick.Player_Picked;
         return {
             Pick: currentIndex++,
-            Team: pick.Traded_To ? pick.Traded_To.teamName + " (from: " + pick.Original_Owner.teamName + ")" : pick.Original_Owner.teamName,
+            Team: pick.Traded_To
+                ? pick.Traded_To.teamName + ' (from: ' + pick.Original_Owner.teamName + ')'
+                : pick.Original_Owner.teamName,
             Player: plr.Name,
             Player_Team: plr.Team,
             Player_Position: plr.FantasyPosition
         };
-    } );
-    if( mappedResults.length )
-        return json2csv.parse( mappedResults );
+    });
+    if (mappedResults.length) return json2csv.parse(mappedResults);
 }
 
-export function getFreeAgents(state){
-    return _.clone( state.results.freeAgents );
+export function getFreeAgents(state) {
+    return _.clone(state.results.freeAgents);
 }
 
-export function isDefenseEnabled(state){
+export function isDefenseEnabled(state) {
     return state.results.isDefenseEnabled;
 }
